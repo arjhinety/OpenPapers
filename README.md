@@ -197,7 +197,7 @@ The documentation index groups guides by task and audience:
 
 ## Project status and roadmap
 
-Version `1.0.0` is the current release baseline. The project prioritizes provenance and citation verification before automatic citation output.
+Version `1.0.0` is the current release baseline. The 1.0 contract: OpenPapers is a provenance-first **infrastructure layer** for discovering works by identifier or exact title, retrieving, extracting, reconciling, and locating evidence from scholarly sources — with explicit refusal instead of fabrication. High-quality open-ended fuzzy scholarly search is explicitly out of the 1.0 contract (measured at ≈0.5 Recall@10); see [known limitations](docs/limitations.md). The project prioritizes provenance and citation verification before automatic citation output.
 
 Quality is gated by a five-level test program (static, offline integration, spawned-process end-to-end, live-provider evaluation, container runtime) with a claims matrix mapping every public claim to recorded evidence; see [the test plan](docs/testing.md). Reliability claims are scoped by [known limitations](docs/limitations.md): live search is measured — exact-title Recall@10 1.0 and identifier resolution 1.0 over the recorded 30-case run, with fuzzy discovery at 0.5 — not guaranteed.
 
