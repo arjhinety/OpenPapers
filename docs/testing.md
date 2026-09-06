@@ -48,6 +48,10 @@ Two precision numbers appear in the evidence and measure different layers. Both 
 
 This is why final-answer metrics stay high (answer correctness 1.0 on the v5 holdout, fabricated answers 0) while exhaustive candidate precision is moderate: the answer-assembly and evidence-selection layers consume the candidate pool and are measured separately. When citing OpenPapers extraction quality, use the metric that matches the layer being discussed and name it explicitly.
 
+## Scale experiment (post-release, not a release claim)
+
+`evals/results/scale-experiment-*.json` runs the full real-source pipeline (acquire → parse → extract → answer/refuse) over 100 arXiv papers auto-sampled across 15 categories (in-domain and out-of-domain, 1997–2026). With no hand-annotated gold, it measures pipeline behavior, not accuracy: 99/100 acquired, 0 parse failures, 60/99 papers yielded extracted facts (mean 2.17), 158/158 refusal probes returned UNKNOWN with 0 fabricated answers, and pipeline self-consistency was 1.0 over 298 auto-generated tasks. The manual audit of a seeded 25-candidate sample (`scale-experiment-audit.json`) estimates cross-predicate candidate precision at 0.28 (Wilson 95% CI 0.14–0.48) on this randomly sampled corpus — lower than the curated v5 holdout (0.563), consistent with the high-recall extraction profile described under [metric semantics](#metric-semantics). Legacy pre-2007 arXiv identifiers (`cond-mat/9703183` style) are rejected by the identity resolver by design; all 15 such failures were transparently surfaced. This experiment is not comparable to the hand-annotated benchmarks and does not alter any 1.0.0 claim.
+
 ## Known unmeasured areas
 
 - Live ranking beyond top-10, across regions, providers outage patterns, and long time spans (mitigated, not eliminated, by the scheduled CI live eval).

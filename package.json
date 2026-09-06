@@ -75,7 +75,8 @@
     "eval:real-v5-dev": "npm run eval:acquire-real-v5 -- --split=development && npm run build && node --env-file-if-exists=.env evals/runners/run-real-source-v5-wrapper.mjs",
     "eval:real-v5-holdout": "node --env-file-if-exists=.env evals/runners/run-real-source-v5-wrapper.mjs --split=holdout --allow-holdout",
     "eval:pdf-gold": "node evals/runners/run-pdf-gold-fidelity.mjs",
-    "test:package": "node scripts/package-e2e.mjs"
+    "test:package": "node scripts/package-e2e.mjs",
+    "eval:scale": "node evals/runners/run-scale-experiment.mjs"
   },
   "bin": {
     "openpapers": "dist/mcp/server.js"
