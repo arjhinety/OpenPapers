@@ -70,7 +70,10 @@
     "test:docker": "node scripts/docker-e2e.mjs",
     "test:e2e": "npm run build && npx vitest run tests/e2e/ tests/tools-matrix.test.ts",
     "verify": "npm run check && npm run test:e2e",
-    "test:coverage": "npx vitest run --coverage"
+    "test:coverage": "npx vitest run --coverage",
+    "eval:acquire-real-v5": "node scripts/acquire-real-source-v5.mjs",
+    "eval:real-v5-dev": "npm run eval:acquire-real-v5 -- --split=development && npm run build && node --env-file-if-exists=.env evals/runners/run-real-source-v5-wrapper.mjs",
+    "eval:real-v5-holdout": "node --env-file-if-exists=.env evals/runners/run-real-source-v5-wrapper.mjs --split=holdout --allow-holdout"
   },
   "bin": {
     "openpapers": "dist/mcp/server.js"
