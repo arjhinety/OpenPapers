@@ -1,0 +1,46 @@
+{
+  "version": "live-search-v1",
+  "sourcePolicy": "Gold cases drawn from canonical-retrieval-v1.json; every target is a real published work with a stable arXiv identifier and DOI. No fabricated targets.",
+  "protocol": {
+    "method": "service.search against live providers (arxiv, crossref, openalex, semantic_scholar)",
+    "limit": 10,
+    "matchRule": "a returned work matches the gold target when its normalized arXiv id or normalized DOI equals the gold identifier",
+    "modes": {
+      "title-exact": "query is the canonical title",
+      "title-fuzzy": "query is a descriptive paraphrase; discovery quality, not guaranteed ranking",
+      "identifier": "query is an arXiv id or DOI string"
+    }
+  },
+  "cases": [
+    { "caseId": "le-001", "mode": "title-exact", "query": "Attention Is All You Need", "goldWork": "attention", "goldArxiv": "1706.03762", "goldDoi": "10.48550/arxiv.1706.03762" },
+    { "caseId": "le-002", "mode": "title-exact", "query": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding", "goldWork": "bert", "goldArxiv": "1810.04805", "goldDoi": "10.48550/arxiv.1810.04805" },
+    { "caseId": "le-003", "mode": "title-exact", "query": "Language Models are Few-Shot Learners", "goldWork": "gpt3", "goldArxiv": "2005.14165", "goldDoi": "10.48550/arxiv.2005.14165" },
+    { "caseId": "le-004", "mode": "title-exact", "query": "LLaMA: Open and Efficient Foundation Language Models", "goldWork": "llama", "goldArxiv": "2302.13971", "goldDoi": "10.48550/arxiv.2302.13971" },
+    { "caseId": "le-005", "mode": "title-exact", "query": "LoRA: Low-Rank Adaptation of Large Language Models", "goldWork": "lora", "goldArxiv": "2106.09685", "goldDoi": "10.48550/arxiv.2106.09685" },
+    { "caseId": "le-006", "mode": "title-exact", "query": "QLoRA: Efficient Finetuning of Quantized LLMs", "goldWork": "qlora", "goldArxiv": "2305.14314", "goldDoi": "10.48550/arxiv.2305.14314" },
+    { "caseId": "le-007", "mode": "title-exact", "query": "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness", "goldWork": "flashattention", "goldArxiv": "2205.14135", "goldDoi": "10.48550/arxiv.2205.14135" },
+    { "caseId": "le-008", "mode": "title-exact", "query": "Direct Preference Optimization: Your Language Model is Secretly a Reward Model", "goldWork": "dpo", "goldArxiv": "2305.18290", "goldDoi": "10.48550/arxiv.2305.18290" },
+    { "caseId": "le-009", "mode": "title-exact", "query": "ORPO: Monolithic Preference Optimization without Reference Model", "goldWork": "orpo", "goldArxiv": "2403.07691", "goldDoi": "10.48550/arxiv.2403.07691" },
+    { "caseId": "le-010", "mode": "title-exact", "query": "Toolformer: Language Models Can Teach Themselves to Use Tools", "goldWork": "toolformer", "goldArxiv": "2302.04761", "goldDoi": "10.48550/arxiv.2302.04761" },
+    { "caseId": "le-011", "mode": "title-exact", "query": "Medusa: Simple LLM Inference Acceleration Framework with Multiple Decoding Heads", "goldWork": "medusa", "goldArxiv": "2401.10774", "goldDoi": "10.48550/arxiv.2401.10774" },
+    { "caseId": "le-012", "mode": "title-exact", "query": "EAGLE: Speculative Sampling Requires Rethinking Feature Uncertainty", "goldWork": "eagle", "goldArxiv": "2401.15077", "goldDoi": "10.48550/arxiv.2401.15077" },
+    { "caseId": "le-013", "mode": "title-exact", "query": "DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter", "goldWork": "distilbert", "goldArxiv": "1910.01108", "goldDoi": "10.48550/arxiv.1910.01108" },
+    { "caseId": "le-014", "mode": "title-exact", "query": "Mistral 7B", "goldWork": "mistral", "goldArxiv": "2310.06825", "goldDoi": "10.48550/arxiv.2310.06825" },
+    { "caseId": "le-015", "mode": "title-exact", "query": "Mixtral of Experts", "goldWork": "mixtral", "goldArxiv": "2401.04088", "goldDoi": "10.48550/arxiv.2401.04088" },
+    { "caseId": "le-016", "mode": "title-exact", "query": "Gemma: Open Models Based on Gemini Research and Technology", "goldWork": "gemma", "goldArxiv": "2403.08295", "goldDoi": "10.48550/arxiv.2403.08295" },
+    { "caseId": "lf-001", "mode": "title-fuzzy", "query": "the transformer architecture for sequence transduction based entirely on attention", "goldWork": "attention", "goldArxiv": "1706.03762", "goldDoi": "10.48550/arxiv.1706.03762" },
+    { "caseId": "lf-002", "mode": "title-fuzzy", "query": "pretraining deep bidirectional transformers for language understanding", "goldWork": "bert", "goldArxiv": "1810.04805", "goldDoi": "10.48550/arxiv.1810.04805" },
+    { "caseId": "lf-003", "mode": "title-fuzzy", "query": "language models that learn from a few examples in the prompt", "goldWork": "gpt3", "goldArxiv": "2005.14165", "goldDoi": "10.48550/arxiv.2005.14165" },
+    { "caseId": "lf-004", "mode": "title-fuzzy", "query": "memory efficient exact attention kernels aware of input output access patterns", "goldWork": "flashattention", "goldArxiv": "2205.14135", "goldDoi": "10.48550/arxiv.2205.14135" },
+    { "caseId": "lf-005", "mode": "title-fuzzy", "query": "training language models to follow instructions using human feedback data", "goldWork": "instructgpt", "goldArxiv": "2203.02155", "goldDoi": "10.48550/arxiv.2203.02155" },
+    { "caseId": "lf-006", "mode": "title-fuzzy", "query": "a family of lightweight open weight models released by Google", "goldWork": "gemma", "goldArxiv": "2403.08295", "goldDoi": "10.48550/arxiv.2403.08295" },
+    { "caseId": "li-001", "mode": "identifier", "query": "arXiv:2106.09685", "goldWork": "lora", "goldArxiv": "2106.09685", "goldDoi": "10.48550/arxiv.2106.09685" },
+    { "caseId": "li-002", "mode": "identifier", "query": "2305.14314", "goldWork": "qlora", "goldArxiv": "2305.14314", "goldDoi": "10.48550/arxiv.2305.14314" },
+    { "caseId": "li-003", "mode": "identifier", "query": "https://arxiv.org/abs/1706.03762", "goldWork": "attention", "goldArxiv": "1706.03762", "goldDoi": "10.48550/arxiv.1706.03762" },
+    { "caseId": "li-004", "mode": "identifier", "query": "10.48550/arXiv.2305.18290", "goldWork": "dpo", "goldArxiv": "2305.18290", "goldDoi": "10.48550/arxiv.2305.18290" },
+    { "caseId": "li-005", "mode": "identifier", "query": "doi:10.48550/arXiv.2302.04761", "goldWork": "toolformer", "goldArxiv": "2302.04761", "goldDoi": "10.48550/arxiv.2302.04761" },
+    { "caseId": "li-006", "mode": "identifier", "query": "2401.10774", "goldWork": "medusa", "goldArxiv": "2401.10774", "goldDoi": "10.48550/arxiv.2401.10774" },
+    { "caseId": "li-007", "mode": "identifier", "query": "https://doi.org/10.48550/arXiv.2401.15077", "goldWork": "eagle", "goldArxiv": "2401.15077", "goldDoi": "10.48550/arxiv.2401.15077" },
+    { "caseId": "li-008", "mode": "identifier", "query": "2210.11416", "goldWork": "flan", "goldArxiv": "2210.11416", "goldDoi": "10.48550/arxiv.2210.11416" }
+  ]
+}
