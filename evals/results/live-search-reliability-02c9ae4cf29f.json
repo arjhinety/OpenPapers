@@ -1,0 +1,668 @@
+{
+  "schemaVersion": "openpapers.live-search-reliability.v1",
+  "kind": "live-provider",
+  "commit": "02c9ae4cf29fb4053ef4878a46954dfcee7c4e7a",
+  "timestamp": "2026-09-06T05:19:28.663Z",
+  "workingTreeDirty": true,
+  "configuration": {
+    "providerMode": "live",
+    "liveProviders": [
+      "arxiv",
+      "crossref",
+      "openalex",
+      "semantic_scholar"
+    ],
+    "limit": 10,
+    "throttleMs": 1100,
+    "networkRegion": "single-region residential network"
+  },
+  "dataset": {
+    "version": "live-search-v1",
+    "cases": 30,
+    "matchRule": "a returned work matches the gold target when its normalized arXiv id or normalized DOI equals the gold identifier"
+  },
+  "thresholds": {
+    "titleExactRecallAt10": 0.9,
+    "identityCorrectRate": 0.95,
+    "zeroResultWithNoFailureReportedRate": 0
+  },
+  "thresholdsMet": {
+    "titleExactRecallAt10": true,
+    "identityCorrectRate": true,
+    "zeroResultWithNoFailureReportedRate": true
+  },
+  "aggregate": {
+    "cases": 30,
+    "liveRecallAt10": 0.9,
+    "titleExactRecallAt10": 1,
+    "titleFuzzyRecallAt10": 0.5,
+    "identifierResolutionRate": 1,
+    "identityCorrectRate": 1,
+    "zeroResultWithNoFailureReportedRate": 0,
+    "casesWithProviderFailures": 9,
+    "totalProviderFailures": 9,
+    "medianLatencyMs": 5064,
+    "maxLatencyMs": 33889
+  },
+  "cases": [
+    {
+      "caseId": "le-001",
+      "mode": "title-exact",
+      "query": "Attention Is All You Need",
+      "goldWork": "attention",
+      "returned": 10,
+      "candidates": 37,
+      "goldRank": 1,
+      "foundInTop10": true,
+      "identityCorrect": true,
+      "providerFailures": [],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 3062,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "le-002",
+      "mode": "title-exact",
+      "query": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+      "goldWork": "bert",
+      "returned": 10,
+      "candidates": 38,
+      "goldRank": 1,
+      "foundInTop10": true,
+      "identityCorrect": true,
+      "providerFailures": [],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 2873,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "le-003",
+      "mode": "title-exact",
+      "query": "Language Models are Few-Shot Learners",
+      "goldWork": "gpt3",
+      "returned": 10,
+      "candidates": 36,
+      "goldRank": 1,
+      "foundInTop10": true,
+      "identityCorrect": true,
+      "providerFailures": [],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 2576,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "le-004",
+      "mode": "title-exact",
+      "query": "LLaMA: Open and Efficient Foundation Language Models",
+      "goldWork": "llama",
+      "returned": 10,
+      "candidates": 37,
+      "goldRank": 1,
+      "foundInTop10": true,
+      "identityCorrect": true,
+      "providerFailures": [],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 3554,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "le-005",
+      "mode": "title-exact",
+      "query": "LoRA: Low-Rank Adaptation of Large Language Models",
+      "goldWork": "lora",
+      "returned": 10,
+      "candidates": 38,
+      "goldRank": 1,
+      "foundInTop10": true,
+      "identityCorrect": true,
+      "providerFailures": [],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 2585,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "le-006",
+      "mode": "title-exact",
+      "query": "QLoRA: Efficient Finetuning of Quantized LLMs",
+      "goldWork": "qlora",
+      "returned": 10,
+      "candidates": 35,
+      "goldRank": 1,
+      "foundInTop10": true,
+      "identityCorrect": true,
+      "providerFailures": [],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 16031,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "le-007",
+      "mode": "title-exact",
+      "query": "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness",
+      "goldWork": "flashattention",
+      "returned": 10,
+      "candidates": 29,
+      "goldRank": 1,
+      "foundInTop10": true,
+      "identityCorrect": true,
+      "providerFailures": [],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 2420,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "le-008",
+      "mode": "title-exact",
+      "query": "Direct Preference Optimization: Your Language Model is Secretly a Reward Model",
+      "goldWork": "dpo",
+      "returned": 10,
+      "candidates": 37,
+      "goldRank": 1,
+      "foundInTop10": true,
+      "identityCorrect": true,
+      "providerFailures": [],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 4942,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "le-009",
+      "mode": "title-exact",
+      "query": "ORPO: Monolithic Preference Optimization without Reference Model",
+      "goldWork": "orpo",
+      "returned": 10,
+      "candidates": 35,
+      "goldRank": 1,
+      "foundInTop10": true,
+      "identityCorrect": true,
+      "providerFailures": [],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 2429,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "le-010",
+      "mode": "title-exact",
+      "query": "Toolformer: Language Models Can Teach Themselves to Use Tools",
+      "goldWork": "toolformer",
+      "returned": 10,
+      "candidates": 38,
+      "goldRank": 1,
+      "foundInTop10": true,
+      "identityCorrect": true,
+      "providerFailures": [],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 1685,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "le-011",
+      "mode": "title-exact",
+      "query": "Medusa: Simple LLM Inference Acceleration Framework with Multiple Decoding Heads",
+      "goldWork": "medusa",
+      "returned": 10,
+      "candidates": 29,
+      "goldRank": 1,
+      "foundInTop10": true,
+      "identityCorrect": true,
+      "providerFailures": [],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 1297,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "le-012",
+      "mode": "title-exact",
+      "query": "EAGLE: Speculative Sampling Requires Rethinking Feature Uncertainty",
+      "goldWork": "eagle",
+      "returned": 10,
+      "candidates": 34,
+      "goldRank": 1,
+      "foundInTop10": true,
+      "identityCorrect": true,
+      "providerFailures": [],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 2189,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "le-013",
+      "mode": "title-exact",
+      "query": "DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter",
+      "goldWork": "distilbert",
+      "returned": 10,
+      "candidates": 32,
+      "goldRank": 1,
+      "foundInTop10": true,
+      "identityCorrect": true,
+      "providerFailures": [],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 1623,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "le-014",
+      "mode": "title-exact",
+      "query": "Mistral 7B",
+      "goldWork": "mistral",
+      "returned": 10,
+      "candidates": 21,
+      "goldRank": 1,
+      "foundInTop10": true,
+      "identityCorrect": true,
+      "providerFailures": [
+        "arxiv: Error: invalid arXiv identifier: http://arxiv.org/abs/nucl-ex/0511007v1"
+      ],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 5229,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "le-015",
+      "mode": "title-exact",
+      "query": "Mixtral of Experts",
+      "goldWork": "mixtral",
+      "returned": 10,
+      "candidates": 37,
+      "goldRank": 1,
+      "foundInTop10": true,
+      "identityCorrect": true,
+      "providerFailures": [],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 3004,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "le-016",
+      "mode": "title-exact",
+      "query": "Gemma: Open Models Based on Gemini Research and Technology",
+      "goldWork": "gemma",
+      "returned": 10,
+      "candidates": 30,
+      "goldRank": 1,
+      "foundInTop10": true,
+      "identityCorrect": true,
+      "providerFailures": [
+        "semantic_scholar: Error: HTTP 429: Semantic Scholar rate limit reached"
+      ],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 2902,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "lf-001",
+      "mode": "title-fuzzy",
+      "query": "the transformer architecture for sequence transduction based entirely on attention",
+      "goldWork": "attention",
+      "returned": 10,
+      "candidates": 30,
+      "goldRank": 0,
+      "foundInTop10": false,
+      "identityCorrect": false,
+      "providerFailures": [
+        "semantic_scholar: Error: invalid Semantic Scholar response: expected data array"
+      ],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 4511,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "lf-002",
+      "mode": "title-fuzzy",
+      "query": "pretraining deep bidirectional transformers for language understanding",
+      "goldWork": "bert",
+      "returned": 10,
+      "candidates": 39,
+      "goldRank": 3,
+      "foundInTop10": true,
+      "identityCorrect": true,
+      "providerFailures": [],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 7308,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "lf-003",
+      "mode": "title-fuzzy",
+      "query": "language models that learn from a few examples in the prompt",
+      "goldWork": "gpt3",
+      "returned": 10,
+      "candidates": 35,
+      "goldRank": 0,
+      "foundInTop10": false,
+      "identityCorrect": false,
+      "providerFailures": [],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 33889,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "lf-004",
+      "mode": "title-fuzzy",
+      "query": "memory efficient exact attention kernels aware of input output access patterns",
+      "goldWork": "flashattention",
+      "returned": 10,
+      "candidates": 39,
+      "goldRank": 7,
+      "foundInTop10": true,
+      "identityCorrect": true,
+      "providerFailures": [],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 7543,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "lf-005",
+      "mode": "title-fuzzy",
+      "query": "training language models to follow instructions using human feedback data",
+      "goldWork": "instructgpt",
+      "returned": 10,
+      "candidates": 36,
+      "goldRank": 2,
+      "foundInTop10": true,
+      "identityCorrect": true,
+      "providerFailures": [],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 20744,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "lf-006",
+      "mode": "title-fuzzy",
+      "query": "a family of lightweight open weight models released by Google",
+      "goldWork": "gemma",
+      "returned": 10,
+      "candidates": 30,
+      "goldRank": 0,
+      "foundInTop10": false,
+      "identityCorrect": false,
+      "providerFailures": [
+        "semantic_scholar: Error: invalid Semantic Scholar response: expected data array"
+      ],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 5185,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "li-001",
+      "mode": "identifier",
+      "query": "arXiv:2106.09685",
+      "goldWork": "lora",
+      "returned": 10,
+      "candidates": 34,
+      "goldRank": 1,
+      "foundInTop10": true,
+      "identityCorrect": true,
+      "providerFailures": [],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 10389,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "li-002",
+      "mode": "identifier",
+      "query": "2305.14314",
+      "goldWork": "qlora",
+      "returned": 10,
+      "candidates": 22,
+      "goldRank": 1,
+      "foundInTop10": true,
+      "identityCorrect": true,
+      "providerFailures": [
+        "semantic_scholar: Error: invalid Semantic Scholar response: expected data array"
+      ],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 7429,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "li-003",
+      "mode": "identifier",
+      "query": "https://arxiv.org/abs/1706.03762",
+      "goldWork": "attention",
+      "returned": 10,
+      "candidates": 20,
+      "goldRank": 1,
+      "foundInTop10": true,
+      "identityCorrect": true,
+      "providerFailures": [
+        "semantic_scholar: Error: invalid arXiv identifier: physics/0701333"
+      ],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 28599,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "li-004",
+      "mode": "identifier",
+      "query": "10.48550/arXiv.2305.18290",
+      "goldWork": "dpo",
+      "returned": 10,
+      "candidates": 31,
+      "goldRank": 1,
+      "foundInTop10": true,
+      "identityCorrect": true,
+      "providerFailures": [],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 6292,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "li-005",
+      "mode": "identifier",
+      "query": "doi:10.48550/arXiv.2302.04761",
+      "goldWork": "toolformer",
+      "returned": 10,
+      "candidates": 31,
+      "goldRank": 1,
+      "foundInTop10": true,
+      "identityCorrect": true,
+      "providerFailures": [
+        "arxiv: Error: arXiv request failed: 400"
+      ],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 19665,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "li-006",
+      "mode": "identifier",
+      "query": "2401.10774",
+      "goldWork": "medusa",
+      "returned": 10,
+      "candidates": 21,
+      "goldRank": 1,
+      "foundInTop10": true,
+      "identityCorrect": true,
+      "providerFailures": [
+        "semantic_scholar: Error: invalid Semantic Scholar response: expected data array"
+      ],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 7483,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "li-007",
+      "mode": "identifier",
+      "query": "https://doi.org/10.48550/arXiv.2401.15077",
+      "goldWork": "eagle",
+      "returned": 10,
+      "candidates": 31,
+      "goldRank": 1,
+      "foundInTop10": true,
+      "identityCorrect": true,
+      "providerFailures": [],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 6767,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "li-008",
+      "mode": "identifier",
+      "query": "2210.11416",
+      "goldWork": "flan",
+      "returned": 10,
+      "candidates": 21,
+      "goldRank": 1,
+      "foundInTop10": true,
+      "identityCorrect": true,
+      "providerFailures": [
+        "semantic_scholar: Error: invalid Semantic Scholar response: expected data array"
+      ],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 6775,
+      "zeroResultSuspicion": false
+    }
+  ],
+  "limitations": "Measured from one network region with anonymous provider access on one timestamp. Ranking metrics describe the top-10 of this run, not a guarantee; see docs/limitations.md."
+}

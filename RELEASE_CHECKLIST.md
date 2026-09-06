@@ -77,3 +77,19 @@ Added by the [test plan](docs/testing.md); re-run against the final verified com
 - [x] `npm run test:live` thresholds met: title-exact Recall@10 1.0 (16 cases), identifier resolution 1.0 (8 cases), identity correctness 1.0, zero-result-with-no-reported-failure 0; evidence in `evals/results/live-search-reliability-*.json`. Fuzzy discovery 0.5 recorded and scoped as discovery quality.
 - [x] `npm run test:coverage` produces a v8 coverage report; `scripts/postgres-integration.mjs` includes the service-level round-trip (`serviceRoundTrip`).
 - [x] Identifier-shaped queries probe arXiv/Crossref natively (`tests/identifier-probe.test.ts`); arXiv-minted DOIs (`10.48550/arXiv.*`) route to the arXiv probe rather than Crossref.
+
+## 1.0.0 final release-candidate verification (2026-09-06)
+
+Executed after the release-integrity pass (clean history, version alignment, holdout expansion, PDF fidelity gold set, metric-semantics documentation). All gates were run against commit `02c9ae4cf29fb4053ef4878a46954dfcee7c4e7a`; the release commit containing this checklist and the recorded evidence is its immediate successor. The delta between the two commits contains no shipped source changes: documentation, recorded evidence, the new `scripts/package-e2e.mjs` distribution gate, and a `.gitignore` entry. `npm run check` was additionally re-run at the release commit itself.
+
+- [x] `npm run verify` (version-consistency gate, TypeScript check, architecture rules, production build, Vitest): 67 test files, 257 tests passed; versions consistent across 7 locations.
+- [x] `npm run test:coverage`: v8 coverage report produced (67 files, 257 tests).
+- [x] `npm run test:postgres`: rollback, identity migration, reconnect, vector search, and service-level round-trip passed (the service-level stores now initialize explicitly; this check previously failed on CI).
+- [x] `npm run test:docker`: full compose E2E passed with evidence in `evals/results/docker-e2e-02c9ae4cf29f.json` (12/12 steps including collection survival across container restart and 30-run benchmark).
+- [x] `npm run test:live` (strict): thresholds met — title-exact Recall@10 1.0, identifier resolution 1.0, identity correctness 1.0, zero silent failures; fuzzy discovery 0.5 recorded (out of the 1.0 contract per [limitations](docs/limitations.md)); evidence in `evals/results/live-search-reliability-02c9ae4cf29f.json`.
+- [x] `npm run eval:real-v5-holdout`: frozen 20-case/40-task holdout — answer correctness 1.0, fact recall 1.0, fabricated answers 0, support-status accuracy 0.975 (single disclosed miss: `v5-rwkv-task-1`); evidence in `evals/results/real-source-v5-holdout-*.json`.
+- [x] `npm run eval:pdf-gold`: PDF parsing fidelity over the frozen 26-paper `pdf-gold-v1` set; evidence in `evals/results/pdf-gold-fidelity-*.json`.
+- [x] `npm run test:package`: pristine tarball install (`openpapers-1.0.0.tgz`), spawned installed binary over stdio, version match, 37 tools, search + collection + persistence across restart — passed for both the SQLite and PostgreSQL backends.
+- [x] `npm pack --dry-run` and `npm audit --audit-level=high`: tarball builds; 0 vulnerabilities.
+- [x] Version metadata consistent across `package.json`, `package-lock.json`, `server.json`, `src/mcp/server.ts`, and the `CHANGELOG.md` head (`1.0.0`), enforced by `scripts/check-versions.mjs`.
+- [x] No GitHub release or npm publication existed before this freeze; the `v1.0.0` tag is created at the release commit at publication time.
