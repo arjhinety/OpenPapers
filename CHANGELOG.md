@@ -6,6 +6,10 @@ First stable release. Consolidates the parallel research lines (v4 candidate-evi
 
 - Added the production fact extraction pipeline (`src/extraction/facts.ts`) with candidate validation diagnostics and a rejection-reason taxonomy.
 - Added real-PDF fact extraction and evidence span recovery (v5.3 / v5.3.1) with recorded evaluation checkpoints.
+- Expanded the frozen real-source holdout from 3 to 20 cases (`research-real-v5`: ML, systems, biology, medicine, physics, social science; obscure, recent, and old papers; with and without repositories). Frozen holdout: answer correctness 1.0 over 40 tasks, fact recall 1.0, fabricated answers 0.
+- Added a frozen PDF parsing fidelity gold set (`pdf-gold-v1`, 26 papers, gold from versioned arXiv metadata): GROBID title token F1 0.976, author recall 0.774 / precision 0.825, abstract token F1 0.957; PyMuPDF pipeline abstract first-page coverage 0.943.
+- Aligned the MCP registry manifest (`server.json`) to 1.0.0 and added a version-consistency gate (`scripts/check-versions.mjs`) to `npm run check`.
+- Documented metric semantics (scoped canonical fact metrics vs cross-predicate exhaustive candidate precision), the 1.0 contract boundary (reliable infrastructure, not fuzzy search), and retrieval terminology (lexical-hash default vs optional semantic backend).
 - Added the `reconstruct_research` MCP tool (37 bounded tools total).
 - Added explicit ordered SQLite migrations with legacy upgrade coverage.
 - Added shared storage contracts and an injected Postgres query boundary.
