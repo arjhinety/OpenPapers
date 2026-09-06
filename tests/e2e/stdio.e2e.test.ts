@@ -1,12 +1,13 @@
 import { describe, expect, it } from 'vitest';
 import { spawn, type ChildProcess } from 'node:child_process';
-import { mkdtempSync, rmSync, statSync } from 'node:fs';
+import { mkdtempSync, readFileSync, rmSync, statSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { createInterface } from 'node:readline';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = join(fileURLToPath(import.meta.url), '..', '..', '..');
+const serverVersion = (JSON.parse(readFileSync(join(root, 'package.json'), 'utf8')) as { version: string }).version;
 
 type JsonRpcMessage = { id?: number; result?: any; error?: { code: number; message: string } };
 
@@ -76,7 +77,7 @@ describe('stdio process end-to-end', () => {
 
     const initialized = await client.call('initialize', { protocolVersion: '2025-06-18', capabilities: {}, clientInfo: { name: 'openpapers-e2e', version: '0.0.0' } });
     expect(initialized.result?.serverInfo?.name).toBe('OpenPapers');
-    expect(initialized.result?.serverInfo?.version).toBe('1.0.0');
+    expect(initialized.result?.serverInfo?.version).toBe(serverVersion);
     client.notify('notifications/initialized');
 
     const tools = await client.call('tools/list', {});

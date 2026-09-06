@@ -31,7 +31,7 @@
     "test": "node --no-warnings ./node_modules/vitest/vitest.mjs run",
     "lint": "tsc -p tsconfig.json --noEmit",
     "architecture-check": "node scripts/verify-architecture.mjs",
-    "check": "npm run lint && npm run architecture-check && npm run build && npm test",
+    "check": "node scripts/check-versions.mjs && npm run lint && npm run architecture-check && npm run build && npm test",
     "eval:baseline": "npm run build && node evals/runners/run-baseline.mjs",
     "eval:research": "npm run build && node evals/runners/run-research-tasks.mjs",
     "eval:pdf": "npm run build && node evals/runners/run-pdf.mjs",

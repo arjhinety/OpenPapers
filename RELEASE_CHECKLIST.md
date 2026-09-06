@@ -37,7 +37,7 @@ docker compose down
 
 Verify MCP initialization, `tools/list`, at least one bounded `tools/call`, PostgreSQL/pgvector readiness, GROBID readiness, non-root application execution, and persistent data behavior. Control-plane benchmark results do not represent provider, PDF, GROBID, PostgreSQL, or model throughput.
 
-Latest verification: Compose configuration/build/start passed; all three services became healthy; GROBID returned `true`; MCP initialize, `tools/list` (36 tools), adversarial search/lookup, and create/list collection read-after-write passed; the application ran as `uid=1000(node)`; `/app/data` was writable; pgvector was present; and the 30-run benchmark completed with HTTP 200 responses. Benchmark medians were initialize 21.83 ms, `tools/list` 16.22 ms, and `tools/call` 13.02 ms.
+Current verification: Compose configuration/build/start passed; all three services became healthy; GROBID returned `true`; MCP initialize, `tools/list` (37 tools), adversarial search/lookup, and create/list collection read-after-write passed; the application ran as `uid=1000(node)`; `/app/data` was writable; pgvector was present; and the 30-run benchmark completed with HTTP 200 responses.
 
 - [x] Compose configuration and image build
 - [x] PostgreSQL and GROBID health checks
@@ -56,7 +56,7 @@ Latest verification: Compose configuration/build/start passed; all three service
 ## Publication state
 
 - [x] Changelog is updated for the current unreleased baseline.
-- [x] Version metadata is consistent between `package.json` and `package-lock.json` (`0.1.0`, Apache-2.0, Node.js >=22.5).
+- [x] Version metadata is consistent across `package.json`, `package-lock.json`, `server.json`, `src/mcp/server.ts`, and the `CHANGELOG.md` head entry (`1.0.0`, Apache-2.0, Node.js >=22.5); enforced by `scripts/check-versions.mjs` in `npm run check`.
 - [x] Git working tree is clean after the release checklist update and commit.
 
 ## 1.0.0 release verification (2026-09-05)

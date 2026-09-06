@@ -1,12 +1,13 @@
 import { describe, expect, it } from 'vitest';
 import { spawn, type ChildProcess } from 'node:child_process';
-import { mkdtempSync, rmSync } from 'node:fs';
+import { mkdtempSync, readFileSync, rmSync } from 'node:fs';
 import { createServer as createTcpServer } from 'node:net';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = join(fileURLToPath(import.meta.url), '..', '..', '..');
+const serverVersion = (JSON.parse(readFileSync(join(root, 'package.json'), 'utf8')) as { version: string }).version;
 
 function findFreePort(): Promise<number> {
   return new Promise(resolve => {
@@ -62,7 +63,7 @@ describe('HTTP process end-to-end', () => {
 
     const initialized = await post(port, undefined, { jsonrpc: '2.0', id: 1, method: 'initialize', params: { protocolVersion: '2025-06-18', capabilities: {}, clientInfo: { name: 'openpapers-e2e', version: '0.0.0' } } });
     expect(initialized.status).toBe(200);
-    expect(initialized.json?.result?.serverInfo?.version).toBe('1.0.0');
+    expect(initialized.json?.result?.serverInfo?.version).toBe(serverVersion);
     const sessionId = initialized.sessionId;
 
     await post(port, sessionId, { jsonrpc: '2.0', method: 'notifications/initialized' });
