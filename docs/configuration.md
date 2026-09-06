@@ -20,8 +20,10 @@ All variables are optional for the default SQLite/stdio workflow. Values belong 
 | `PYTHON_COMMAND` | `python` | Python executable for PDF fallback adapters. |
 | `PYMUPDF_SCRIPT` | `scripts/parse_pymupdf.py` | PyMuPDF adapter path. |
 | `DOCLING_SCRIPT` | `scripts/parse_docling.py` | Docling adapter path. |
+| `OPENPAPERS_FIXTURE_PROVIDERS` | unset | Set to `1` to replace every provider and the paper acquirer with deterministic offline fixtures (`src/testing/fixtures.ts`). Intended for end-to-end tests and offline demos; never represents live provider behavior. |
+| `OPENALEX_EMAIL` | unset | OpenAlex polite-pool contact address appended as the `mailto` query parameter. |
 
-`OPENALEX_EMAIL` is not currently read by the implementation and is intentionally not included. OpenAlex access is anonymous unless a future adapter adds a configured contact address.
+`OPENALEX_EMAIL` is read by the OpenAlex adapter at request time; include it in `.env` for the polite pool.
 
 ## Credentials
 

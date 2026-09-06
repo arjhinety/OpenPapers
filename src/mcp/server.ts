@@ -25,6 +25,8 @@ async function main(): Promise<void> {
   const fixture = process.env.OPENPAPERS_FIXTURE_PROVIDERS === '1' ? createFixtureProviders() : undefined;
   if (fixture) console.error('OpenPapers fixture-provider mode: all providers are served from deterministic offline fixtures.');
   const research = new ResearchService(postgres ?? undefined, fixture?.arxiv as any, fixture?.crossref as any, fixture?.openalex as any, fixture?.semanticScholar as any, fixture?.acquirer as any);
+  if(postgres) research.setVectorRetriever(new PostgresVectorRetriever(postgres,new HashEmbeddingProvider()));
+  if (research.db instanceof PostgresResearchStore) await research.db.initialize();
   if (fixture) {
     const ecosystemDeps = { github: fixture.github as any, huggingface: fixture.huggingface as any };
     if (process.env.MCP_TRANSPORT === 'http') {
@@ -35,8 +37,6 @@ async function main(): Promise<void> {
     }
     return;
   }
-  if(postgres) research.setVectorRetriever(new PostgresVectorRetriever(postgres,new HashEmbeddingProvider()));
-  if (research.db instanceof PostgresResearchStore) await research.db.initialize();
   const mode = process.env.MCP_TRANSPORT ?? 'stdio';
   if (mode === 'http') {
     await runHttp(research);
