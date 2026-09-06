@@ -37,6 +37,11 @@ describe('structured document parsing', () => {
     expect(parsed).toMatchObject({title:'Namespaced',sections:[{heading:'Method',text:'Namespace-safe text.'}]});
   });
 
+  it('extracts ordered Unicode, multi-part, and consortium authors from the document header', () => {
+    const parsed = parseGrobidTei('https://example.com/authors.pdf', '<TEI><teiHeader><fileDesc><titleStmt><title>Authors</title></titleStmt><sourceDesc><biblStruct><analytic><author><persName><forename>Zoë</forename><forename type="middle">L.</forename><surname>Nguyen-Smith</surname></persName></author><author><persName><surname>山田</surname><forename>太郎</forename></persName></author><author><orgName>Open Research Consortium</orgName></author></analytic></biblStruct></sourceDesc></fileDesc></teiHeader><text><body/></text></TEI>');
+    expect(parsed.authors).toEqual(['Zoë L. Nguyen-Smith', '太郎 山田', 'Open Research Consortium']);
+  });
+
   it('posts PDF bytes to GROBID and returns parsed TEI', async () => {
     let request: Request | undefined;
     const fetcher = async (input: RequestInfo | URL, init?: RequestInit) => { request = new Request(input, init); return new Response('<TEI><teiHeader><fileDesc><titleStmt><title>Result</title></titleStmt></fileDesc></teiHeader><text><body><div><head>Body</head><p>Content.</p></div></body></text></TEI>', {status:200, headers:{'content-type':'application/xml'}}); };

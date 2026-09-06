@@ -51,6 +51,17 @@ export function parseDocument(document: AcquiredDocument): ParsedDocument {
 export function parseGrobidTei(url: string, tei: string): ParsedDocument {
   const normalizedTei = tei.replace(/<(\/?)(?:tei|ns\d+):/gi, '<$1');
   const titleMatch = normalizedTei.match(/<title\b[^>]*>([\s\S]*?)<\/title>/i);
+  const textStart = normalizedTei.indexOf('<text');
+  const header = normalizedTei.match(/<teiHeader\b[^>]*>([\s\S]*?)<\/teiHeader>/i)?.[1] ?? (textStart >= 0 ? normalizedTei.slice(0, textStart) : '');
+  const authors = [...header.matchAll(/<author\b[^>]*>([\s\S]*?)<\/author>/gi)].map(match => {
+    const content = match[1] ?? '';
+    const organization = content.match(/<(?:orgName|orgname)\b[^>]*>([\s\S]*?)<\/(?:orgName|orgname)>/i)?.[1];
+    if (organization) return textOf(organization);
+    const given = [...content.matchAll(/<(?:forename|firstname)\b[^>]*>([\s\S]*?)<\/(?:forename|firstname)>/gi)].map(item => textOf(item[1]!));
+    const middle = [...content.matchAll(/<middlename\b[^>]*>([\s\S]*?)<\/middlename>/gi)].map(item => textOf(item[1]!));
+    const family = [...content.matchAll(/<(?:surname|lastname)\b[^>]*>([\s\S]*?)<\/(?:surname|lastname)>/gi)].map(item => textOf(item[1]!));
+    return [...given, ...middle, ...family].filter(Boolean).join(' ');
+  }).filter(Boolean);
   const body = normalizedTei.match(/<body\b[^>]*>([\s\S]*?)<\/body>/i)?.[1] ?? '';
   const sections: DocumentSection[] = [];
   const sectionByDepth = new Map<number, DocumentSection>();
@@ -121,7 +132,7 @@ export function parseGrobidTei(url: string, tei: string): ParsedDocument {
   const appendices = sections.filter(section => section.isAppendix);
   const referenceIds = new Set(references.map(reference => reference.id).filter((id): id is string => Boolean(id)));
   const warnings = [...new Set(citations.filter(citation => !referenceIds.has(citation.target)).map(citation => `unresolved citation target: ${citation.target}`))];
-  return {format:'pdf',url,...(titleMatch ? {title:textOf(titleMatch[1]!)} : {}),sections,references,warnings,equations,figures,tables,appendices,citations};
+  return {format:'pdf',url,...(titleMatch ? {title:textOf(titleMatch[1]!)} : {}),...(authors.length ? {authors} : {}),sections,references,warnings,equations,figures,tables,appendices,citations};
 }
 
 export interface DocumentChunk { chunkId: string; url: string; format: 'html' | 'pdf'; ordinal: number; kind: 'section' | 'equation' | 'figure' | 'table' | 'reference'; sectionHeading: string; sectionLevel: number; text: string; referenceId?: string; page?: number; pageId?: string; }

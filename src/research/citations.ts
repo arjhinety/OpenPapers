@@ -2,7 +2,8 @@ import { createHash } from 'node:crypto';
 import type { Author, Evidence, EvidenceType, Identifier, Locator, ResearchWork, SourceQuality } from '../models/research.js';
 
 const DOI_PATTERN = /^10\.\d{4,9}\/\S+$/i;
-const ARXIV_PATTERN = /^(?:\d{4}\.\d{4,5}|[a-z-]+\.[A-Z]{2}\/\d{7})(?:v\d+)?$/i;
+const MODERN_ARXIV_PATTERN = /^\d{4}\.\d{4,5}(?:v\d+)?$/i;
+const LEGACY_ARXIV_PATTERN = /^(?:cond-mat|hep-th|hep-ph|hep-ex|astro-ph|gr-qc|nucl-th|nucl-ex|math|nlin|cs|q-bio|q-fin|quant-ph|physics|stat)\/\d{7}(?:v\d+)?$/i;
 
 export function normalizeDoi(value: string): string {
   const normalized = value.trim()
@@ -18,7 +19,7 @@ export function normalizeArxivId(value: string): string {
   let normalized = value.trim().replace(/^https?:\/\/(?:www\.)?arxiv\.org\/(?:abs|pdf)\//i, '').replace(/\.pdf$/i, '').replace(/^arxiv:/i, '');
   normalized = normalized.replace(/^https?:\/\/export\.arxiv\.org\/api\/query\?id_list=/i, '').split(',')[0] ?? normalized;
   normalized = normalized.replace(/v\d+$/i, '');
-  if (!ARXIV_PATTERN.test(normalized)) throw new Error(`invalid arXiv identifier: ${value}`);
+  if (!MODERN_ARXIV_PATTERN.test(normalized) && !LEGACY_ARXIV_PATTERN.test(normalized)) throw new Error(`invalid arXiv identifier: ${value}`);
   return normalized.toLowerCase();
 }
 export function normalizeAuthorName(name: string): string { return name.normalize('NFKD').replace(/[\u0300-\u036f]/g, '').replace(/[^\p{L}\p{N} ]/gu, ' ').replace(/\s+/g, ' ').trim().toLowerCase(); }
