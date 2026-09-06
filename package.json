@@ -1,13 +1,25 @@
 {
   "name": "openpapers",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "license": "Apache-2.0",
   "description": "Provenance-first MCP server for reproducible LLM/ML research",
   "mcpName": "io.github.arrogance231/openpapers",
-  "repository": {"type":"git","url":"https://github.com/arrogance231/OpenPapers.git"},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arrogance231/OpenPapers.git"
+  },
   "homepage": "https://github.com/arrogance231/OpenPapers#readme",
-  "bugs": {"url":"https://github.com/arrogance231/OpenPapers/issues"},
-  "keywords": ["mcp","research","scholarly","provenance","llm","machine-learning"],
+  "bugs": {
+    "url": "https://github.com/arrogance231/OpenPapers/issues"
+  },
+  "keywords": [
+    "mcp",
+    "research",
+    "scholarly",
+    "provenance",
+    "llm",
+    "machine-learning"
+  ],
   "type": "module",
   "engines": {
     "node": ">=22.5"
@@ -52,10 +64,25 @@
     "eval:holdout": "npm run build && node evals/runners/run-retrieval-holdout.mjs",
     "test:postgres": "npm run build && node scripts/postgres-integration.mjs",
     "package:dry-run": "npm pack --dry-run",
-    "prepack": "npm run build"
+    "prepack": "npm run build",
+    "eval:live-search": "npm run build && node --env-file-if-exists=.env evals/runners/run-live-search-reliability.mjs",
+    "test:live": "npm run build && node --env-file-if-exists=.env evals/runners/run-live-search-reliability.mjs --strict",
+    "test:docker": "node scripts/docker-e2e.mjs",
+    "test:e2e": "npm run build && npx vitest run tests/e2e/ tests/tools-matrix.test.ts",
+    "verify": "npm run check && npm run test:e2e",
+    "test:coverage": "npx vitest run --coverage"
   },
-  "bin": {"openpapers": "dist/mcp/server.js"},
-  "files": ["dist", "README.md", "LICENSE.md", "CHANGELOG.md", "docs", ".env.example"],
+  "bin": {
+    "openpapers": "dist/mcp/server.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE.md",
+    "CHANGELOG.md",
+    "docs",
+    ".env.example"
+  ],
   "dependencies": {
     "@modelcontextprotocol/node": "^2.0.0",
     "@modelcontextprotocol/server": "^2.0.0",
@@ -66,6 +93,7 @@
     "@types/better-sqlite3": "^7.6.12",
     "@types/node": "^22.15.0",
     "@types/pg": "^8.23.1",
+    "@vitest/coverage-v8": "^3.2.7",
     "tsx": "^4.19.4",
     "typescript": "^5.8.3",
     "vitest": "^3.2.4"

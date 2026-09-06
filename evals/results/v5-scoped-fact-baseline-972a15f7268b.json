@@ -1,0 +1,437 @@
+{
+  "schemaVersion": "openpapers.scoped-fact-result.v1",
+  "benchmark": "research-facts-v5-development",
+  "commit": "972a15f7268b50d0fa8b308841257cdecb24728d",
+  "timestamp": "2026-09-05T07:28:17.475Z",
+  "workingTreeDirty": true,
+  "methodology": {
+    "completenessPolicy": "EXHAUSTIVE_WITHIN_SCOPE",
+    "duplicatePolicy": "CANONICAL_WITH_MULTIPLE_LOCATORS",
+    "fuzzyEquivalence": false,
+    "sourceDerivedGold": false,
+    "parser": "bounded source-section fixtures",
+    "validatorLayer": "v5.1 CandidateEvidence -> validation -> ResearchFact"
+  },
+  "metrics": {
+    "papers": 6,
+    "goldFacts": 7,
+    "candidateCount": 9,
+    "tp": 7,
+    "fp": 2,
+    "fn": 0,
+    "outOfScope": 0,
+    "duplicateEquivalent": 0,
+    "precision": 0.7777777777777778,
+    "recall": 1,
+    "f1": 0.8750000000000001,
+    "meanCandidateRecall": 1,
+    "meanCandidatesPerGold": 1.3333333333333333,
+    "meanValidatedDensityPer1000Tokens": 60.59388142721476
+  },
+  "familyMetrics": {
+    "training": {
+      "goldFacts": 3,
+      "tp": 3,
+      "fp": 1,
+      "fn": 0,
+      "precision": 0.75,
+      "recall": 1,
+      "f1": 0.8571428571428571
+    },
+    "optimization": {
+      "goldFacts": 2,
+      "tp": 2,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1
+    },
+    "architecture": {
+      "goldFacts": 2,
+      "tp": 2,
+      "fp": 1,
+      "fn": 0,
+      "precision": 0.6666666666666666,
+      "recall": 1,
+      "f1": 0.8
+    }
+  },
+  "perPaper": [
+    {
+      "paperId": "1706.03762",
+      "candidates": 2,
+      "inScopeCandidates": 2,
+      "candidateRecall": 1,
+      "candidatesPerGold": 1,
+      "tp": 2,
+      "fp": 0,
+      "fn": 0,
+      "outOfScope": 0,
+      "duplicateEquivalent": 0,
+      "rejectionReasons": {},
+      "precision": 1,
+      "recall": 1,
+      "f1": 1,
+      "valueAccuracy": 1,
+      "predicateAccuracy": 1,
+      "roleAccuracy": null,
+      "scopeAccuracy": 1,
+      "stageAccuracy": null,
+      "sourceAccuracy": null,
+      "locatorAccuracy": 1,
+      "validatedFactDensityPer1000Tokens": 35.714285714285715,
+      "matches": [
+        {
+          "candidate": {
+            "predicate": "training.dataset",
+            "value": "WMT 2014 English-German",
+            "section": "Training",
+            "locator": {
+              "section": "Training",
+              "page": 5
+            }
+          },
+          "gold": {
+            "factId": "1706-training-data",
+            "predicate": "training.dataset",
+            "canonicalValue": "WMT 2014 English-German",
+            "rawEvidence": "standard WMT 2014 English-German dataset",
+            "page": 5,
+            "section": "Training",
+            "locator": "Training",
+            "sourceClass": "MAIN_METHOD",
+            "subject": "our models",
+            "scope": "training",
+            "stage": "pretraining",
+            "annotationNote": "Explicit current-work training dataset."
+          },
+          "classification": "TP"
+        },
+        {
+          "candidate": {
+            "predicate": "optimization.optimizer",
+            "value": "Adam",
+            "section": "Training",
+            "locator": {
+              "section": "Training",
+              "page": 5
+            }
+          },
+          "gold": {
+            "factId": "1706-optimizer",
+            "predicate": "optimization.optimizer",
+            "canonicalValue": "Adam",
+            "rawEvidence": "We used the Adam optimizer",
+            "page": 5,
+            "section": "Training",
+            "locator": "Training",
+            "sourceClass": "MAIN_METHOD",
+            "subject": "our models",
+            "scope": "training",
+            "stage": "pretraining",
+            "annotationNote": "Explicit current-work optimizer."
+          },
+          "classification": "TP"
+        }
+      ],
+      "falsePositiveCategories": [],
+      "falseNegativeCategories": []
+    },
+    {
+      "paperId": "1810.04805",
+      "candidates": 2,
+      "inScopeCandidates": 2,
+      "candidateRecall": 1,
+      "candidatesPerGold": 2,
+      "tp": 1,
+      "fp": 1,
+      "fn": 0,
+      "outOfScope": 0,
+      "duplicateEquivalent": 0,
+      "rejectionReasons": {},
+      "precision": 0.5,
+      "recall": 1,
+      "f1": 0.6666666666666666,
+      "valueAccuracy": 1,
+      "predicateAccuracy": 1,
+      "roleAccuracy": null,
+      "scopeAccuracy": 1,
+      "stageAccuracy": null,
+      "sourceAccuracy": null,
+      "locatorAccuracy": 1,
+      "validatedFactDensityPer1000Tokens": 76.92307692307693,
+      "matches": [
+        {
+          "candidate": {
+            "predicate": "architecture.depth",
+            "value": 12,
+            "section": "BERT",
+            "locator": {
+              "section": "BERT",
+              "page": 4
+            },
+            "subject": "BERTBASE"
+          },
+          "gold": {
+            "factId": "1810-base-layers",
+            "predicate": "architecture.depth",
+            "canonicalValue": 12,
+            "rawEvidence": "BERTBASE has 12 layers",
+            "page": 4,
+            "section": "BERT",
+            "locator": "BERT",
+            "sourceClass": "MAIN_METHOD",
+            "subject": "BERTBASE",
+            "scope": "architecture",
+            "stage": "all",
+            "annotationNote": "Explicit architecture configuration."
+          },
+          "classification": "TP"
+        }
+      ],
+      "falsePositiveCategories": [
+        {
+          "category": "unsupported_or_normalization_mismatch",
+          "predicate": "architecture.depth",
+          "section": "BERT",
+          "value": 24
+        }
+      ],
+      "falseNegativeCategories": []
+    },
+    {
+      "paperId": "2106.09685",
+      "candidates": 1,
+      "inScopeCandidates": 1,
+      "candidateRecall": 1,
+      "candidatesPerGold": 1,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "outOfScope": 0,
+      "duplicateEquivalent": 0,
+      "rejectionReasons": {},
+      "precision": 1,
+      "recall": 1,
+      "f1": 1,
+      "valueAccuracy": 1,
+      "predicateAccuracy": 1,
+      "roleAccuracy": null,
+      "scopeAccuracy": 1,
+      "stageAccuracy": null,
+      "sourceAccuracy": null,
+      "locatorAccuracy": 1,
+      "validatedFactDensityPer1000Tokens": 33.333333333333336,
+      "matches": [
+        {
+          "candidate": {
+            "predicate": "training.parameter_update",
+            "value": "base weights frozen",
+            "section": "Our Method",
+            "locator": {
+              "section": "Our Method",
+              "page": 4
+            }
+          },
+          "gold": {
+            "factId": "2106-frozen-base",
+            "predicate": "training.parameter_update",
+            "canonicalValue": "base weights frozen",
+            "rawEvidence": "During training, W0 is frozen and does not receive gradient updates",
+            "page": 4,
+            "section": "Our Method",
+            "locator": "Our Method",
+            "sourceClass": "MAIN_METHOD",
+            "subject": "W0",
+            "scope": "training",
+            "stage": "finetuning",
+            "annotationNote": "Negative/update-status fact preserved explicitly."
+          },
+          "classification": "TP"
+        }
+      ],
+      "falsePositiveCategories": [],
+      "falseNegativeCategories": []
+    },
+    {
+      "paperId": "2205.14135",
+      "candidates": 1,
+      "inScopeCandidates": 1,
+      "candidateRecall": 1,
+      "candidatesPerGold": 1,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "outOfScope": 0,
+      "duplicateEquivalent": 0,
+      "rejectionReasons": {},
+      "precision": 1,
+      "recall": 1,
+      "f1": 1,
+      "valueAccuracy": 1,
+      "predicateAccuracy": 1,
+      "roleAccuracy": null,
+      "scopeAccuracy": 1,
+      "stageAccuracy": null,
+      "sourceAccuracy": null,
+      "locatorAccuracy": 1,
+      "validatedFactDensityPer1000Tokens": 37.03703703703704,
+      "matches": [
+        {
+          "candidate": {
+            "predicate": "architecture.attention.algorithm",
+            "value": "FlashAttention",
+            "section": "Introduction",
+            "locator": {
+              "section": "Introduction",
+              "page": 1
+            }
+          },
+          "gold": {
+            "factId": "2205-tiling",
+            "predicate": "architecture.attention.algorithm",
+            "canonicalValue": "FlashAttention",
+            "rawEvidence": "We present FlashAttention, an IO-aware exact attention algorithm",
+            "page": 1,
+            "section": "Introduction",
+            "locator": "Introduction",
+            "sourceClass": "MAIN_METHOD",
+            "subject": "our algorithm",
+            "scope": "architecture",
+            "stage": "all",
+            "annotationNote": "Current-work contribution, not related-work mention."
+          },
+          "classification": "TP"
+        }
+      ],
+      "falsePositiveCategories": [],
+      "falseNegativeCategories": []
+    },
+    {
+      "paperId": "2305.14314",
+      "candidates": 2,
+      "inScopeCandidates": 2,
+      "candidateRecall": 1,
+      "candidatesPerGold": 2,
+      "tp": 1,
+      "fp": 1,
+      "fn": 0,
+      "outOfScope": 0,
+      "duplicateEquivalent": 0,
+      "rejectionReasons": {},
+      "precision": 0.5,
+      "recall": 1,
+      "f1": 0.6666666666666666,
+      "valueAccuracy": 1,
+      "predicateAccuracy": 1,
+      "roleAccuracy": null,
+      "scopeAccuracy": 1,
+      "stageAccuracy": null,
+      "sourceAccuracy": null,
+      "locatorAccuracy": 1,
+      "validatedFactDensityPer1000Tokens": 125,
+      "matches": [
+        {
+          "candidate": {
+            "predicate": "training.precision",
+            "value": "4-bit",
+            "section": "QLORA Finetuning",
+            "locator": {
+              "section": "QLORA Finetuning",
+              "page": 4
+            }
+          },
+          "gold": {
+            "factId": "2305-4bit-frozen",
+            "predicate": "training.precision",
+            "canonicalValue": "4-bit",
+            "rawEvidence": "a frozen, 4-bit quantized pretrained language model",
+            "page": 4,
+            "section": "QLORA Finetuning",
+            "locator": "QLORA Finetuning",
+            "sourceClass": "MAIN_METHOD",
+            "subject": "pretrained language model",
+            "scope": "training",
+            "stage": "finetuning",
+            "annotationNote": "Precision and frozen status are explicit."
+          },
+          "classification": "TP"
+        }
+      ],
+      "falsePositiveCategories": [
+        {
+          "category": "unsupported_or_normalization_mismatch",
+          "predicate": "training.parameter_update",
+          "section": "QLORA Finetuning",
+          "value": "base weights frozen"
+        }
+      ],
+      "falseNegativeCategories": []
+    },
+    {
+      "paperId": "2305.18290",
+      "candidates": 1,
+      "inScopeCandidates": 1,
+      "candidateRecall": 1,
+      "candidatesPerGold": 1,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "outOfScope": 0,
+      "duplicateEquivalent": 0,
+      "rejectionReasons": {},
+      "precision": 1,
+      "recall": 1,
+      "f1": 1,
+      "valueAccuracy": 1,
+      "predicateAccuracy": 1,
+      "roleAccuracy": null,
+      "scopeAccuracy": 1,
+      "stageAccuracy": null,
+      "sourceAccuracy": null,
+      "locatorAccuracy": 1,
+      "validatedFactDensityPer1000Tokens": 55.55555555555555,
+      "matches": [
+        {
+          "candidate": {
+            "predicate": "optimization.preference_method",
+            "value": "DPO",
+            "section": "Introduction",
+            "locator": {
+              "section": "Introduction",
+              "page": 1
+            }
+          },
+          "gold": {
+            "factId": "2305-dpo",
+            "predicate": "optimization.preference_method",
+            "canonicalValue": "DPO",
+            "rawEvidence": "Direct Preference Optimization (DPO)",
+            "page": 1,
+            "section": "Introduction",
+            "locator": "Introduction",
+            "sourceClass": "MAIN_METHOD",
+            "subject": "our main contribution",
+            "scope": "training",
+            "stage": "preference optimization",
+            "annotationNote": "Explicit normalization DPO is declared."
+          },
+          "classification": "TP"
+        }
+      ],
+      "falsePositiveCategories": [],
+      "falseNegativeCategories": []
+    }
+  ],
+  "errorDecomposition": {
+    "falsePositiveCategories": {
+      "unsupported_or_normalization_mismatch": 2
+    },
+    "falseNegativeCategories": {}
+  },
+  "holdout": {
+    "created": false,
+    "usedForTuning": false
+  }
+}

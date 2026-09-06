@@ -1,0 +1,189 @@
+{
+  "schemaVersion": "openpapers.v5-3-1-span-recovery.v2",
+  "benchmark": "research-facts-v5-2-development",
+  "commit": "972a15f7268b50d0fa8b308841257cdecb24728d",
+  "timestamp": "2026-09-05T07:28:37.285Z",
+  "parser": "pymupdf-live",
+  "rows": [
+    {
+      "paperId": "1706.03762",
+      "factId": "1706-training-data",
+      "predicate": "training.dataset",
+      "goldPage": 5,
+      "goldSection": "Training",
+      "rawEvidence": "standard WMT 2014 English-German dataset",
+      "sha256": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697",
+      "rawExactPresent": true,
+      "rawPages": [
+        7
+      ],
+      "layoutNormalizedPresent": true,
+      "layoutPages": [
+        7
+      ],
+      "tokenSequencePresent": true,
+      "tokenPages": [
+        7
+      ],
+      "recoveredOriginalLocator": {
+        "page": 7
+      },
+      "sectionRecovered": true,
+      "section": "Training Data and Batching"
+    },
+    {
+      "paperId": "1706.03762",
+      "factId": "1706-optimizer",
+      "predicate": "optimization.optimizer",
+      "goldPage": 5,
+      "goldSection": "Training",
+      "rawEvidence": "We used the Adam optimizer",
+      "sha256": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697",
+      "rawExactPresent": true,
+      "rawPages": [
+        7
+      ],
+      "layoutNormalizedPresent": true,
+      "layoutPages": [
+        7
+      ],
+      "tokenSequencePresent": true,
+      "tokenPages": [
+        7
+      ],
+      "recoveredOriginalLocator": {
+        "page": 7
+      },
+      "sectionRecovered": true,
+      "section": "Optimizer"
+    },
+    {
+      "paperId": "1810.04805",
+      "factId": "1810-base-layers",
+      "predicate": "architecture.depth",
+      "goldPage": 4,
+      "goldSection": "BERT",
+      "rawEvidence": "BERTBASE has 12 layers",
+      "sha256": "5692a5514787a8c6727b4ff3b726a3385798bc68e12138d1d4af83947e2acf6e",
+      "rawExactPresent": false,
+      "rawPages": [],
+      "layoutNormalizedPresent": false,
+      "layoutPages": [],
+      "tokenSequencePresent": false,
+      "tokenPages": [],
+      "recoveredOriginalLocator": null,
+      "sectionRecovered": false,
+      "section": null
+    },
+    {
+      "paperId": "2106.09685",
+      "factId": "2106-frozen-base",
+      "predicate": "training.parameter_update",
+      "goldPage": 4,
+      "goldSection": "LOW-RANK-PARAMETRIZED UPDATE MATRICES",
+      "rawEvidence": "During training, W0 is frozen and does not receive gradient updates",
+      "sha256": "e9a0d3128767db616085dc0f4e6e455e672e89af823e8ed1282793682787395a",
+      "rawExactPresent": true,
+      "rawPages": [
+        4
+      ],
+      "layoutNormalizedPresent": true,
+      "layoutPages": [
+        4
+      ],
+      "tokenSequencePresent": true,
+      "tokenPages": [
+        4
+      ],
+      "recoveredOriginalLocator": {
+        "page": 4
+      },
+      "sectionRecovered": true,
+      "section": "LOW-RANK-PARAMETRIZED UPDATE MATRICES"
+    },
+    {
+      "paperId": "2205.14135",
+      "factId": "2205-tiling",
+      "predicate": "architecture.attention.algorithm",
+      "goldPage": 1,
+      "goldSection": "Introduction",
+      "rawEvidence": "We present FlashAttention, an IO-aware exact attention algorithm",
+      "sha256": "ca7f9fda10b90fc05dd291a3accc85e9c1a4a860b99b31928dab03ed3fcb14e4",
+      "rawExactPresent": false,
+      "rawPages": [],
+      "layoutNormalizedPresent": false,
+      "layoutPages": [],
+      "tokenSequencePresent": false,
+      "tokenPages": [],
+      "recoveredOriginalLocator": null,
+      "sectionRecovered": false,
+      "section": null
+    },
+    {
+      "paperId": "2305.14314",
+      "factId": "2305-4bit-frozen",
+      "predicate": "training.precision",
+      "goldPage": 4,
+      "goldSection": "QLORA Finetuning",
+      "rawEvidence": "a frozen, 4-bit quantized pretrained language model",
+      "sha256": "33a4e757c19d6ea8d3cca8958fce8fe405e290272e135c99ee66065c775d5bd1",
+      "rawExactPresent": true,
+      "rawPages": [
+        1
+      ],
+      "layoutNormalizedPresent": true,
+      "layoutPages": [
+        1
+      ],
+      "tokenSequencePresent": true,
+      "tokenPages": [
+        1
+      ],
+      "recoveredOriginalLocator": {
+        "page": 1
+      },
+      "sectionRecovered": false,
+      "section": null
+    },
+    {
+      "paperId": "2305.18290",
+      "factId": "2305-dpo",
+      "predicate": "optimization.preference_method",
+      "goldPage": 1,
+      "goldSection": "Introduction",
+      "rawEvidence": "Direct Preference Optimization (DPO)",
+      "sha256": "92cb3a2b71362acda98a789b03d88688fd33cf5fcf13f81d2b1de30ee7d3b67a",
+      "rawExactPresent": true,
+      "rawPages": [
+        2
+      ],
+      "layoutNormalizedPresent": true,
+      "layoutPages": [
+        1,
+        2
+      ],
+      "tokenSequencePresent": true,
+      "tokenPages": [
+        1,
+        2
+      ],
+      "recoveredOriginalLocator": {
+        "page": 1
+      },
+      "sectionRecovered": true,
+      "section": "Introduction"
+    }
+  ],
+  "summary": {
+    "facts": 7,
+    "rawExactRecall": 0.7142857142857143,
+    "layoutNormalizedRecall": 0.7142857142857143,
+    "tokenSequenceRecall": 0.7142857142857143,
+    "sectionRecovery": 0.5714285714285714,
+    "physicalPageAgreement": 0.2857142857142857
+  },
+  "holdout": {
+    "created": false,
+    "usedForTuning": false
+  }
+}

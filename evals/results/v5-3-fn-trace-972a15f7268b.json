@@ -1,0 +1,2541 @@
+{
+  "schemaVersion": "openpapers.v5-3-fn-trace.v1",
+  "benchmark": "research-facts-v5-2-development",
+  "commit": "972a15f7268b50d0fa8b308841257cdecb24728d",
+  "timestamp": "2026-09-05T07:28:27.075Z",
+  "parser": "pymupdf-live",
+  "rows": [
+    {
+      "paperId": "1706.03762",
+      "factId": "1706-training-data",
+      "predicate": "training.dataset",
+      "value": "WMT 2014 English-German",
+      "goldPage": 5,
+      "goldSection": "Training",
+      "rawEvidence": "standard WMT 2014 English-German dataset",
+      "sha256": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697",
+      "rawTextPresent": true,
+      "rawTextPage": 7,
+      "correctPage": false,
+      "parserSections": [
+        {
+          "heading": "Training",
+          "page": 7
+        },
+        {
+          "heading": "Training Data and Batching",
+          "page": 7
+        }
+      ],
+      "sectionRecovered": true,
+      "candidateGenerated": true,
+      "candidates": [
+        {
+          "predicate": "training.dataset",
+          "value": "WMT 2014 English-German",
+          "section": "Training Data and Batching",
+          "locator": {
+            "section": "Training Data and Batching",
+            "page": 7
+          }
+        }
+      ],
+      "validatorAccepted": true,
+      "acceptedFacts": [
+        {
+          "value": "WMT 2014 English-German",
+          "section": "Training Data and Batching",
+          "locator": {
+            "section": "Training Data and Batching",
+            "page": 7
+          }
+        }
+      ],
+      "failureStage": "NONE",
+      "parseSuccess": true
+    },
+    {
+      "paperId": "1706.03762",
+      "factId": "1706-optimizer",
+      "predicate": "optimization.optimizer",
+      "value": "Adam",
+      "goldPage": 5,
+      "goldSection": "Training",
+      "rawEvidence": "We used the Adam optimizer",
+      "sha256": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697",
+      "rawTextPresent": true,
+      "rawTextPage": 7,
+      "correctPage": false,
+      "parserSections": [
+        {
+          "heading": "Training",
+          "page": 7
+        },
+        {
+          "heading": "Training Data and Batching",
+          "page": 7
+        },
+        {
+          "heading": "Optimizer",
+          "page": 7
+        }
+      ],
+      "sectionRecovered": true,
+      "candidateGenerated": true,
+      "candidates": [
+        {
+          "predicate": "optimization.optimizer",
+          "value": "Adam",
+          "section": "Optimizer",
+          "locator": {
+            "section": "Optimizer",
+            "page": 7
+          }
+        },
+        {
+          "predicate": "optimization.optimizer",
+          "value": "Adam",
+          "section": "2017.",
+          "locator": {
+            "section": "2017.",
+            "page": 11
+          }
+        }
+      ],
+      "validatorAccepted": true,
+      "acceptedFacts": [
+        {
+          "value": "Adam",
+          "section": "Optimizer",
+          "locator": {
+            "section": "Optimizer",
+            "page": 7
+          }
+        },
+        {
+          "value": "Adam",
+          "section": "2017.",
+          "locator": {
+            "section": "2017.",
+            "page": 11
+          }
+        }
+      ],
+      "failureStage": "NONE",
+      "parseSuccess": true
+    },
+    {
+      "paperId": "1810.04805",
+      "factId": "1810-base-layers",
+      "predicate": "architecture.depth",
+      "value": 12,
+      "goldPage": 4,
+      "goldSection": "BERT",
+      "rawEvidence": "BERTBASE has 12 layers",
+      "sha256": "5692a5514787a8c6727b4ff3b726a3385798bc68e12138d1d4af83947e2acf6e",
+      "rawTextPresent": false,
+      "rawTextPage": null,
+      "correctPage": false,
+      "parserSections": [
+        {
+          "heading": "BERT",
+          "page": 3
+        },
+        {
+          "heading": "Pre-training BERT",
+          "page": 4
+        },
+        {
+          "heading": "Fine-tuning BERT",
+          "page": 5
+        },
+        {
+          "heading": "Feature-based Approach with BERT",
+          "page": 9
+        },
+        {
+          "heading": "Feature-based approach (BERTBASE)",
+          "page": 9
+        },
+        {
+          "heading": "BERT",
+          "page": 15
+        },
+        {
+          "heading": "BERT",
+          "page": 15
+        }
+      ],
+      "sectionRecovered": true,
+      "candidateGenerated": false,
+      "candidates": [],
+      "validatorAccepted": false,
+      "acceptedFacts": [],
+      "failureStage": "CANDIDATE_DISCOVERY",
+      "parseSuccess": true
+    },
+    {
+      "paperId": "2106.09685",
+      "factId": "2106-frozen-base",
+      "predicate": "training.parameter_update",
+      "value": "base weights frozen",
+      "goldPage": 4,
+      "goldSection": "LOW-RANK-PARAMETRIZED UPDATE MATRICES",
+      "rawEvidence": "During training, W0 is frozen and does not receive gradient updates",
+      "sha256": "e9a0d3128767db616085dc0f4e6e455e672e89af823e8ed1282793682787395a",
+      "rawTextPresent": true,
+      "rawTextPage": 4,
+      "correctPage": true,
+      "parserSections": [
+        {
+          "heading": "LOW-RANK-PARAMETRIZED UPDATE MATRICES",
+          "page": 4
+        }
+      ],
+      "sectionRecovered": true,
+      "candidateGenerated": true,
+      "candidates": [
+        {
+          "predicate": "training.parameter_update",
+          "value": "base weights frozen",
+          "section": "𝑟",
+          "locator": {
+            "section": "𝑟",
+            "page": 1
+          }
+        },
+        {
+          "predicate": "training.parameter_update",
+          "value": "base weights frozen",
+          "section": "𝑟",
+          "locator": {
+            "section": "𝑟",
+            "page": 1
+          }
+        },
+        {
+          "predicate": "training.parameter_update",
+          "value": "base weights frozen",
+          "section": "LOW-RANK-PARAMETRIZED UPDATE MATRICES",
+          "locator": {
+            "section": "LOW-RANK-PARAMETRIZED UPDATE MATRICES",
+            "page": 4
+          }
+        },
+        {
+          "predicate": "training.parameter_update",
+          "value": "base weights frozen",
+          "section": "APPLYING LORA TO TRANSFORMER",
+          "locator": {
+            "section": "APPLYING LORA TO TRANSFORMER",
+            "page": 5
+          }
+        },
+        {
+          "predicate": "training.parameter_update",
+          "value": "base weights frozen",
+          "section": "RELATED WORKS",
+          "locator": {
+            "section": "RELATED WORKS",
+            "page": 8
+          }
+        },
+        {
+          "predicate": "training.parameter_update",
+          "value": "base weights frozen",
+          "section": "ROBERTA",
+          "locator": {
+            "section": "ROBERTA",
+            "page": 18
+          }
+        },
+        {
+          "predicate": "training.parameter_update",
+          "value": "base weights frozen",
+          "section": "DEBERTA",
+          "locator": {
+            "section": "DEBERTA",
+            "page": 18
+          }
+        }
+      ],
+      "validatorAccepted": true,
+      "acceptedFacts": [
+        {
+          "value": "base weights frozen",
+          "section": "𝑟",
+          "locator": {
+            "section": "𝑟",
+            "page": 1
+          }
+        },
+        {
+          "value": "base weights frozen",
+          "section": "𝑟",
+          "locator": {
+            "section": "𝑟",
+            "page": 1
+          }
+        },
+        {
+          "value": "base weights frozen",
+          "section": "LOW-RANK-PARAMETRIZED UPDATE MATRICES",
+          "locator": {
+            "section": "LOW-RANK-PARAMETRIZED UPDATE MATRICES",
+            "page": 4
+          }
+        },
+        {
+          "value": "base weights frozen",
+          "section": "APPLYING LORA TO TRANSFORMER",
+          "locator": {
+            "section": "APPLYING LORA TO TRANSFORMER",
+            "page": 5
+          }
+        },
+        {
+          "value": "base weights frozen",
+          "section": "ROBERTA",
+          "locator": {
+            "section": "ROBERTA",
+            "page": 18
+          }
+        },
+        {
+          "value": "base weights frozen",
+          "section": "DEBERTA",
+          "locator": {
+            "section": "DEBERTA",
+            "page": 18
+          }
+        }
+      ],
+      "failureStage": "NONE",
+      "parseSuccess": true
+    },
+    {
+      "paperId": "2205.14135",
+      "factId": "2205-tiling",
+      "predicate": "architecture.attention.algorithm",
+      "value": "FlashAttention",
+      "goldPage": 1,
+      "goldSection": "Introduction",
+      "rawEvidence": "We present FlashAttention, an IO-aware exact attention algorithm",
+      "sha256": "ca7f9fda10b90fc05dd291a3accc85e9c1a4a860b99b31928dab03ed3fcb14e4",
+      "rawTextPresent": false,
+      "rawTextPage": null,
+      "correctPage": false,
+      "parserSections": [
+        {
+          "heading": "Introduction",
+          "page": 1
+        }
+      ],
+      "sectionRecovered": true,
+      "candidateGenerated": true,
+      "candidates": [
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "Introduction",
+          "locator": {
+            "section": "Introduction",
+            "page": 1
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "(>1 TB)",
+          "locator": {
+            "section": "(>1 TB)",
+            "page": 2
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "(>1 TB)",
+          "locator": {
+            "section": "(>1 TB)",
+            "page": 2
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "(>1 TB)",
+          "locator": {
+            "section": "(>1 TB)",
+            "page": 2
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "(>1 TB)",
+          "locator": {
+            "section": "(>1 TB)",
+            "page": 2
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "(>1 TB)",
+          "locator": {
+            "section": "(>1 TB)",
+            "page": 2
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "(>1 TB)",
+          "locator": {
+            "section": "(>1 TB)",
+            "page": 2
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "(>1 TB)",
+          "locator": {
+            "section": "(>1 TB)",
+            "page": 2
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "(>1 TB)",
+          "locator": {
+            "section": "(>1 TB)",
+            "page": 2
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "(>1 TB)",
+          "locator": {
+            "section": "(>1 TB)",
+            "page": 2
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "(>1 TB)",
+          "locator": {
+            "section": "(>1 TB)",
+            "page": 2
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "(>1 TB)",
+          "locator": {
+            "section": "(>1 TB)",
+            "page": 2
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "(>1 TB)",
+          "locator": {
+            "section": "(>1 TB)",
+            "page": 2
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "(>1 TB)",
+          "locator": {
+            "section": "(>1 TB)",
+            "page": 2
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "(>1 TB)",
+          "locator": {
+            "section": "(>1 TB)",
+            "page": 2
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "(>1 TB)",
+          "locator": {
+            "section": "(>1 TB)",
+            "page": 2
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "(>1 TB)",
+          "locator": {
+            "section": "(>1 TB)",
+            "page": 2
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "(>1 TB)",
+          "locator": {
+            "section": "(>1 TB)",
+            "page": 2
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "(>1 TB)",
+          "locator": {
+            "section": "(>1 TB)",
+            "page": 2
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "(>1 TB)",
+          "locator": {
+            "section": "(>1 TB)",
+            "page": 2
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "(>1 TB)",
+          "locator": {
+            "section": "(>1 TB)",
+            "page": 2
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "O = PV ∈R𝑁×𝑑,",
+          "locator": {
+            "section": "O = PV ∈R𝑁×𝑑,",
+            "page": 4
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "FlashAttention: Algorithm, Analysis, and Extensions",
+          "locator": {
+            "section": "FlashAttention: Algorithm, Analysis, and Extensions",
+            "page": 4
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "ℓ(𝑥) .",
+          "locator": {
+            "section": "ℓ(𝑥) .",
+            "page": 5
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "14:",
+          "locator": {
+            "section": "14:",
+            "page": 5
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "Analysis: IO Complexity of FlashAttention",
+          "locator": {
+            "section": "Analysis: IO Complexity of FlashAttention",
+            "page": 5
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "Attention",
+          "locator": {
+            "section": "Attention",
+            "page": 6
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "HBM Accesses (GB)",
+          "locator": {
+            "section": "HBM Accesses (GB)",
+            "page": 6
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "HBM",
+          "locator": {
+            "section": "HBM",
+            "page": 6
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "HBM",
+          "locator": {
+            "section": "HBM",
+            "page": 6
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "HBM",
+          "locator": {
+            "section": "HBM",
+            "page": 6
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "HBM",
+          "locator": {
+            "section": "HBM",
+            "page": 6
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "HBM",
+          "locator": {
+            "section": "HBM",
+            "page": 6
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "HBM",
+          "locator": {
+            "section": "HBM",
+            "page": 6
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "HBM",
+          "locator": {
+            "section": "HBM",
+            "page": 6
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "HBM",
+          "locator": {
+            "section": "HBM",
+            "page": 6
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "Extension: Block-Sparse FlashAttention",
+          "locator": {
+            "section": "Extension: Block-Sparse FlashAttention",
+            "page": 6
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "Given a predeﬁned block sparsity mask M ∈{0, 1}𝑁/𝐵𝑟×𝑁/𝐵𝑐we can easily adapt Algorithm 1 to only",
+          "locator": {
+            "section": "Given a predeﬁned block sparsity mask M ∈{0, 1}𝑁/𝐵𝑟×𝑁/𝐵𝑐we can easily adapt Algorithm 1 to only",
+            "page": 7
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "Given a predeﬁned block sparsity mask M ∈{0, 1}𝑁/𝐵𝑟×𝑁/𝐵𝑐we can easily adapt Algorithm 1 to only",
+          "locator": {
+            "section": "Given a predeﬁned block sparsity mask M ∈{0, 1}𝑁/𝐵𝑟×𝑁/𝐵𝑐we can easily adapt Algorithm 1 to only",
+            "page": 7
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "√",
+          "locator": {
+            "section": "√",
+            "page": 7
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "√",
+          "locator": {
+            "section": "√",
+            "page": 7
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "Experiments",
+          "locator": {
+            "section": "Experiments",
+            "page": 7
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "Experiments",
+          "locator": {
+            "section": "Experiments",
+            "page": 7
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "Experiments",
+          "locator": {
+            "section": "Experiments",
+            "page": 7
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "Experiments",
+          "locator": {
+            "section": "Experiments",
+            "page": 7
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "Experiments",
+          "locator": {
+            "section": "Experiments",
+            "page": 7
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "Experiments",
+          "locator": {
+            "section": "Experiments",
+            "page": 7
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "Experiments",
+          "locator": {
+            "section": "Experiments",
+            "page": 7
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "Experiments",
+          "locator": {
+            "section": "Experiments",
+            "page": 7
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "BERT.",
+          "locator": {
+            "section": "BERT.",
+            "page": 7
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "BERT.",
+          "locator": {
+            "section": "BERT.",
+            "page": 7
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "20.0 ± 1.5",
+          "locator": {
+            "section": "20.0 ± 1.5",
+            "page": 7
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "GPT-2.",
+          "locator": {
+            "section": "GPT-2.",
+            "page": 7
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "GPT-2.",
+          "locator": {
+            "section": "GPT-2.",
+            "page": 7
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "GPT-2.",
+          "locator": {
+            "section": "GPT-2.",
+            "page": 7
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "GPT-2.",
+          "locator": {
+            "section": "GPT-2.",
+            "page": 7
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "GPT-2.",
+          "locator": {
+            "section": "GPT-2.",
+            "page": 7
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "GPT-2.",
+          "locator": {
+            "section": "GPT-2.",
+            "page": 7
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "GPT-2.",
+          "locator": {
+            "section": "GPT-2.",
+            "page": 7
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "59.3 -",
+          "locator": {
+            "section": "59.3 -",
+            "page": 8
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "59.8 2.4×",
+          "locator": {
+            "section": "59.8 2.4×",
+            "page": 8
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "Better Models with Longer Sequences",
+          "locator": {
+            "section": "Better Models with Longer Sequences",
+            "page": 8
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "Better Models with Longer Sequences",
+          "locator": {
+            "section": "Better Models with Longer Sequences",
+            "page": 8
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "Better Models with Longer Sequences",
+          "locator": {
+            "section": "Better Models with Longer Sequences",
+            "page": 8
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "Better Models with Longer Sequences",
+          "locator": {
+            "section": "Better Models with Longer Sequences",
+            "page": 8
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "Better Models with Longer Sequences",
+          "locator": {
+            "section": "Better Models with Longer Sequences",
+            "page": 8
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "FlashAttention",
+          "locator": {
+            "section": "FlashAttention",
+            "page": 9
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "Crossover Points",
+          "locator": {
+            "section": "Crossover Points",
+            "page": 9
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "\u0017",
+          "locator": {
+            "section": "\u0017",
+            "page": 9
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "61.4 \u0017",
+          "locator": {
+            "section": "61.4 \u0017",
+            "page": 9
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "61.4 \u0017",
+          "locator": {
+            "section": "61.4 \u0017",
+            "page": 9
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "61.4 \u0017",
+          "locator": {
+            "section": "61.4 \u0017",
+            "page": 9
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "Benchmarking Attention",
+          "locator": {
+            "section": "Benchmarking Attention",
+            "page": 9
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "Benchmarking Attention",
+          "locator": {
+            "section": "Benchmarking Attention",
+            "page": 9
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "Benchmarking Attention",
+          "locator": {
+            "section": "Benchmarking Attention",
+            "page": 9
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "Benchmarking Attention",
+          "locator": {
+            "section": "Benchmarking Attention",
+            "page": 9
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "Benchmarking Attention",
+          "locator": {
+            "section": "Benchmarking Attention",
+            "page": 9
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "Benchmarking Attention",
+          "locator": {
+            "section": "Benchmarking Attention",
+            "page": 9
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "Benchmarking Attention",
+          "locator": {
+            "section": "Benchmarking Attention",
+            "page": 9
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "Benchmarking Attention",
+          "locator": {
+            "section": "Benchmarking Attention",
+            "page": 9
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "Benchmarking Attention",
+          "locator": {
+            "section": "Benchmarking Attention",
+            "page": 9
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "16 A",
+          "locator": {
+            "section": "16 A",
+            "page": 17
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "16 A",
+          "locator": {
+            "section": "16 A",
+            "page": 17
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "B",
+          "locator": {
+            "section": "B",
+            "page": 17
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "B.3",
+          "locator": {
+            "section": "B.3",
+            "page": 19
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "B.4",
+          "locator": {
+            "section": "B.4",
+            "page": 20
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "B.4",
+          "locator": {
+            "section": "B.4",
+            "page": 20
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "B.4",
+          "locator": {
+            "section": "B.4",
+            "page": 20
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "B.4",
+          "locator": {
+            "section": "B.4",
+            "page": 20
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "˜",
+          "locator": {
+            "section": "˜",
+            "page": 21
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "21 B.5",
+          "locator": {
+            "section": "21 B.5",
+            "page": 22
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "21 B.5",
+          "locator": {
+            "section": "21 B.5",
+            "page": 22
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "21 B.5",
+          "locator": {
+            "section": "21 B.5",
+            "page": 22
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "21 B.5",
+          "locator": {
+            "section": "21 B.5",
+            "page": 22
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "21 B.5",
+          "locator": {
+            "section": "21 B.5",
+            "page": 22
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "21 B.5",
+          "locator": {
+            "section": "21 B.5",
+            "page": 22
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "21 B.5",
+          "locator": {
+            "section": "21 B.5",
+            "page": 22
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "□",
+          "locator": {
+            "section": "□",
+            "page": 24
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "D.1",
+          "locator": {
+            "section": "D.1",
+            "page": 25
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "D.1",
+          "locator": {
+            "section": "D.1",
+            "page": 25
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "D.2",
+          "locator": {
+            "section": "D.2",
+            "page": 25
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "GPT-2",
+          "locator": {
+            "section": "GPT-2",
+            "page": 26
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "GPT-2",
+          "locator": {
+            "section": "GPT-2",
+            "page": 26
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "Val perplexity",
+          "locator": {
+            "section": "Val perplexity",
+            "page": 27
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "Val perplexity",
+          "locator": {
+            "section": "Val perplexity",
+            "page": 27
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "E.3",
+          "locator": {
+            "section": "E.3",
+            "page": 27
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "E.4",
+          "locator": {
+            "section": "E.4",
+            "page": 27
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "FlashAttention forward + backward",
+          "locator": {
+            "section": "FlashAttention forward + backward",
+            "page": 28
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "FlashAttention forward + backward",
+          "locator": {
+            "section": "FlashAttention forward + backward",
+            "page": 28
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "FlashAttention forward + backward",
+          "locator": {
+            "section": "FlashAttention forward + backward",
+            "page": 28
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "E.5",
+          "locator": {
+            "section": "E.5",
+            "page": 28
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "T4",
+          "locator": {
+            "section": "T4",
+            "page": 29
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "-",
+          "locator": {
+            "section": "-",
+            "page": 31
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "-",
+          "locator": {
+            "section": "-",
+            "page": 32
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "-",
+          "locator": {
+            "section": "-",
+            "page": 32
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "-",
+          "locator": {
+            "section": "-",
+            "page": 32
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "-",
+          "locator": {
+            "section": "-",
+            "page": 32
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "-",
+          "locator": {
+            "section": "-",
+            "page": 33
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "-",
+          "locator": {
+            "section": "-",
+            "page": 33
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "-",
+          "locator": {
+            "section": "-",
+            "page": 33
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "-",
+          "locator": {
+            "section": "-",
+            "page": 33
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "-",
+          "locator": {
+            "section": "-",
+            "page": 34
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "-",
+          "locator": {
+            "section": "-",
+            "page": 34
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "-",
+          "locator": {
+            "section": "-",
+            "page": 34
+          }
+        },
+        {
+          "predicate": "architecture.attention.algorithm",
+          "value": "FlashAttention",
+          "section": "-",
+          "locator": {
+            "section": "-",
+            "page": 34
+          }
+        }
+      ],
+      "validatorAccepted": true,
+      "acceptedFacts": [
+        {
+          "value": "FlashAttention",
+          "section": "Introduction",
+          "locator": {
+            "section": "Introduction",
+            "page": 1
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "(>1 TB)",
+          "locator": {
+            "section": "(>1 TB)",
+            "page": 2
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "(>1 TB)",
+          "locator": {
+            "section": "(>1 TB)",
+            "page": 2
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "(>1 TB)",
+          "locator": {
+            "section": "(>1 TB)",
+            "page": 2
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "(>1 TB)",
+          "locator": {
+            "section": "(>1 TB)",
+            "page": 2
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "(>1 TB)",
+          "locator": {
+            "section": "(>1 TB)",
+            "page": 2
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "(>1 TB)",
+          "locator": {
+            "section": "(>1 TB)",
+            "page": 2
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "(>1 TB)",
+          "locator": {
+            "section": "(>1 TB)",
+            "page": 2
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "(>1 TB)",
+          "locator": {
+            "section": "(>1 TB)",
+            "page": 2
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "(>1 TB)",
+          "locator": {
+            "section": "(>1 TB)",
+            "page": 2
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "(>1 TB)",
+          "locator": {
+            "section": "(>1 TB)",
+            "page": 2
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "(>1 TB)",
+          "locator": {
+            "section": "(>1 TB)",
+            "page": 2
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "(>1 TB)",
+          "locator": {
+            "section": "(>1 TB)",
+            "page": 2
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "(>1 TB)",
+          "locator": {
+            "section": "(>1 TB)",
+            "page": 2
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "(>1 TB)",
+          "locator": {
+            "section": "(>1 TB)",
+            "page": 2
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "(>1 TB)",
+          "locator": {
+            "section": "(>1 TB)",
+            "page": 2
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "(>1 TB)",
+          "locator": {
+            "section": "(>1 TB)",
+            "page": 2
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "(>1 TB)",
+          "locator": {
+            "section": "(>1 TB)",
+            "page": 2
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "(>1 TB)",
+          "locator": {
+            "section": "(>1 TB)",
+            "page": 2
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "O = PV ∈R𝑁×𝑑,",
+          "locator": {
+            "section": "O = PV ∈R𝑁×𝑑,",
+            "page": 4
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "FlashAttention: Algorithm, Analysis, and Extensions",
+          "locator": {
+            "section": "FlashAttention: Algorithm, Analysis, and Extensions",
+            "page": 4
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "ℓ(𝑥) .",
+          "locator": {
+            "section": "ℓ(𝑥) .",
+            "page": 5
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "14:",
+          "locator": {
+            "section": "14:",
+            "page": 5
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "Analysis: IO Complexity of FlashAttention",
+          "locator": {
+            "section": "Analysis: IO Complexity of FlashAttention",
+            "page": 5
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "Attention",
+          "locator": {
+            "section": "Attention",
+            "page": 6
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "HBM Accesses (GB)",
+          "locator": {
+            "section": "HBM Accesses (GB)",
+            "page": 6
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "HBM",
+          "locator": {
+            "section": "HBM",
+            "page": 6
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "HBM",
+          "locator": {
+            "section": "HBM",
+            "page": 6
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "HBM",
+          "locator": {
+            "section": "HBM",
+            "page": 6
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "HBM",
+          "locator": {
+            "section": "HBM",
+            "page": 6
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "HBM",
+          "locator": {
+            "section": "HBM",
+            "page": 6
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "HBM",
+          "locator": {
+            "section": "HBM",
+            "page": 6
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "HBM",
+          "locator": {
+            "section": "HBM",
+            "page": 6
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "HBM",
+          "locator": {
+            "section": "HBM",
+            "page": 6
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "Extension: Block-Sparse FlashAttention",
+          "locator": {
+            "section": "Extension: Block-Sparse FlashAttention",
+            "page": 6
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "Given a predeﬁned block sparsity mask M ∈{0, 1}𝑁/𝐵𝑟×𝑁/𝐵𝑐we can easily adapt Algorithm 1 to only",
+          "locator": {
+            "section": "Given a predeﬁned block sparsity mask M ∈{0, 1}𝑁/𝐵𝑟×𝑁/𝐵𝑐we can easily adapt Algorithm 1 to only",
+            "page": 7
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "Given a predeﬁned block sparsity mask M ∈{0, 1}𝑁/𝐵𝑟×𝑁/𝐵𝑐we can easily adapt Algorithm 1 to only",
+          "locator": {
+            "section": "Given a predeﬁned block sparsity mask M ∈{0, 1}𝑁/𝐵𝑟×𝑁/𝐵𝑐we can easily adapt Algorithm 1 to only",
+            "page": 7
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "√",
+          "locator": {
+            "section": "√",
+            "page": 7
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "√",
+          "locator": {
+            "section": "√",
+            "page": 7
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "Experiments",
+          "locator": {
+            "section": "Experiments",
+            "page": 7
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "Experiments",
+          "locator": {
+            "section": "Experiments",
+            "page": 7
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "Experiments",
+          "locator": {
+            "section": "Experiments",
+            "page": 7
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "Experiments",
+          "locator": {
+            "section": "Experiments",
+            "page": 7
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "Experiments",
+          "locator": {
+            "section": "Experiments",
+            "page": 7
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "Experiments",
+          "locator": {
+            "section": "Experiments",
+            "page": 7
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "Experiments",
+          "locator": {
+            "section": "Experiments",
+            "page": 7
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "Experiments",
+          "locator": {
+            "section": "Experiments",
+            "page": 7
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "BERT.",
+          "locator": {
+            "section": "BERT.",
+            "page": 7
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "BERT.",
+          "locator": {
+            "section": "BERT.",
+            "page": 7
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "20.0 ± 1.5",
+          "locator": {
+            "section": "20.0 ± 1.5",
+            "page": 7
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "GPT-2.",
+          "locator": {
+            "section": "GPT-2.",
+            "page": 7
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "GPT-2.",
+          "locator": {
+            "section": "GPT-2.",
+            "page": 7
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "GPT-2.",
+          "locator": {
+            "section": "GPT-2.",
+            "page": 7
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "GPT-2.",
+          "locator": {
+            "section": "GPT-2.",
+            "page": 7
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "59.3 -",
+          "locator": {
+            "section": "59.3 -",
+            "page": 8
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "59.8 2.4×",
+          "locator": {
+            "section": "59.8 2.4×",
+            "page": 8
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "Better Models with Longer Sequences",
+          "locator": {
+            "section": "Better Models with Longer Sequences",
+            "page": 8
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "Better Models with Longer Sequences",
+          "locator": {
+            "section": "Better Models with Longer Sequences",
+            "page": 8
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "Better Models with Longer Sequences",
+          "locator": {
+            "section": "Better Models with Longer Sequences",
+            "page": 8
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "Better Models with Longer Sequences",
+          "locator": {
+            "section": "Better Models with Longer Sequences",
+            "page": 8
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "Better Models with Longer Sequences",
+          "locator": {
+            "section": "Better Models with Longer Sequences",
+            "page": 8
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "FlashAttention",
+          "locator": {
+            "section": "FlashAttention",
+            "page": 9
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "Crossover Points",
+          "locator": {
+            "section": "Crossover Points",
+            "page": 9
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "\u0017",
+          "locator": {
+            "section": "\u0017",
+            "page": 9
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "61.4 \u0017",
+          "locator": {
+            "section": "61.4 \u0017",
+            "page": 9
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "61.4 \u0017",
+          "locator": {
+            "section": "61.4 \u0017",
+            "page": 9
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "61.4 \u0017",
+          "locator": {
+            "section": "61.4 \u0017",
+            "page": 9
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "Benchmarking Attention",
+          "locator": {
+            "section": "Benchmarking Attention",
+            "page": 9
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "Benchmarking Attention",
+          "locator": {
+            "section": "Benchmarking Attention",
+            "page": 9
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "Benchmarking Attention",
+          "locator": {
+            "section": "Benchmarking Attention",
+            "page": 9
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "Benchmarking Attention",
+          "locator": {
+            "section": "Benchmarking Attention",
+            "page": 9
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "Benchmarking Attention",
+          "locator": {
+            "section": "Benchmarking Attention",
+            "page": 9
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "16 A",
+          "locator": {
+            "section": "16 A",
+            "page": 17
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "16 A",
+          "locator": {
+            "section": "16 A",
+            "page": 17
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "B",
+          "locator": {
+            "section": "B",
+            "page": 17
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "B.3",
+          "locator": {
+            "section": "B.3",
+            "page": 19
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "B.4",
+          "locator": {
+            "section": "B.4",
+            "page": 20
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "B.4",
+          "locator": {
+            "section": "B.4",
+            "page": 20
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "B.4",
+          "locator": {
+            "section": "B.4",
+            "page": 20
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "B.4",
+          "locator": {
+            "section": "B.4",
+            "page": 20
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "˜",
+          "locator": {
+            "section": "˜",
+            "page": 21
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "21 B.5",
+          "locator": {
+            "section": "21 B.5",
+            "page": 22
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "21 B.5",
+          "locator": {
+            "section": "21 B.5",
+            "page": 22
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "21 B.5",
+          "locator": {
+            "section": "21 B.5",
+            "page": 22
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "21 B.5",
+          "locator": {
+            "section": "21 B.5",
+            "page": 22
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "21 B.5",
+          "locator": {
+            "section": "21 B.5",
+            "page": 22
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "21 B.5",
+          "locator": {
+            "section": "21 B.5",
+            "page": 22
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "□",
+          "locator": {
+            "section": "□",
+            "page": 24
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "D.1",
+          "locator": {
+            "section": "D.1",
+            "page": 25
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "D.1",
+          "locator": {
+            "section": "D.1",
+            "page": 25
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "D.2",
+          "locator": {
+            "section": "D.2",
+            "page": 25
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "GPT-2",
+          "locator": {
+            "section": "GPT-2",
+            "page": 26
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "Val perplexity",
+          "locator": {
+            "section": "Val perplexity",
+            "page": 27
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "E.3",
+          "locator": {
+            "section": "E.3",
+            "page": 27
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "E.4",
+          "locator": {
+            "section": "E.4",
+            "page": 27
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "FlashAttention forward + backward",
+          "locator": {
+            "section": "FlashAttention forward + backward",
+            "page": 28
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "FlashAttention forward + backward",
+          "locator": {
+            "section": "FlashAttention forward + backward",
+            "page": 28
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "FlashAttention forward + backward",
+          "locator": {
+            "section": "FlashAttention forward + backward",
+            "page": 28
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "E.5",
+          "locator": {
+            "section": "E.5",
+            "page": 28
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "T4",
+          "locator": {
+            "section": "T4",
+            "page": 29
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "-",
+          "locator": {
+            "section": "-",
+            "page": 31
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "-",
+          "locator": {
+            "section": "-",
+            "page": 32
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "-",
+          "locator": {
+            "section": "-",
+            "page": 32
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "-",
+          "locator": {
+            "section": "-",
+            "page": 32
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "-",
+          "locator": {
+            "section": "-",
+            "page": 32
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "-",
+          "locator": {
+            "section": "-",
+            "page": 33
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "-",
+          "locator": {
+            "section": "-",
+            "page": 33
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "-",
+          "locator": {
+            "section": "-",
+            "page": 33
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "-",
+          "locator": {
+            "section": "-",
+            "page": 33
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "-",
+          "locator": {
+            "section": "-",
+            "page": 34
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "-",
+          "locator": {
+            "section": "-",
+            "page": 34
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "-",
+          "locator": {
+            "section": "-",
+            "page": 34
+          }
+        },
+        {
+          "value": "FlashAttention",
+          "section": "-",
+          "locator": {
+            "section": "-",
+            "page": 34
+          }
+        }
+      ],
+      "failureStage": "NONE",
+      "parseSuccess": true
+    },
+    {
+      "paperId": "2305.14314",
+      "factId": "2305-4bit-frozen",
+      "predicate": "training.precision",
+      "value": "4-bit",
+      "goldPage": 4,
+      "goldSection": "QLORA Finetuning",
+      "rawEvidence": "a frozen, 4-bit quantized pretrained language model",
+      "sha256": "33a4e757c19d6ea8d3cca8958fce8fe405e290272e135c99ee66065c775d5bd1",
+      "rawTextPresent": true,
+      "rawTextPage": 1,
+      "correctPage": false,
+      "parserSections": [
+        {
+          "heading": "QLORA Finetuning",
+          "page": 4
+        }
+      ],
+      "sectionRecovered": true,
+      "candidateGenerated": true,
+      "candidates": [
+        {
+          "predicate": "training.precision",
+          "value": "4-bit",
+          "section": "879 ± 1",
+          "locator": {
+            "section": "879 ± 1",
+            "page": 2
+          }
+        },
+        {
+          "predicate": "training.precision",
+          "value": "4-bit",
+          "section": "QLORA Finetuning",
+          "locator": {
+            "section": "QLORA Finetuning",
+            "page": 4
+          }
+        },
+        {
+          "predicate": "training.precision",
+          "value": "4-bit",
+          "section": "Summary",
+          "locator": {
+            "section": "Summary",
+            "page": 7
+          }
+        },
+        {
+          "predicate": "training.precision",
+          "value": "4-bit",
+          "section": "Guanaco: QLORA trained on OASST1 is a State-of-the-art Chatbot",
+          "locator": {
+            "section": "Guanaco: QLORA trained on OASST1 is a State-of-the-art Chatbot",
+            "page": 9
+          }
+        },
+        {
+          "predicate": "training.precision",
+          "value": "4-bit",
+          "section": "2017.",
+          "locator": {
+            "section": "2017.",
+            "page": 17
+          }
+        }
+      ],
+      "validatorAccepted": true,
+      "acceptedFacts": [
+        {
+          "value": "4-bit",
+          "section": "879 ± 1",
+          "locator": {
+            "section": "879 ± 1",
+            "page": 2
+          }
+        },
+        {
+          "value": "4-bit",
+          "section": "QLORA Finetuning",
+          "locator": {
+            "section": "QLORA Finetuning",
+            "page": 4
+          }
+        },
+        {
+          "value": "4-bit",
+          "section": "Guanaco: QLORA trained on OASST1 is a State-of-the-art Chatbot",
+          "locator": {
+            "section": "Guanaco: QLORA trained on OASST1 is a State-of-the-art Chatbot",
+            "page": 9
+          }
+        },
+        {
+          "value": "4-bit",
+          "section": "2017.",
+          "locator": {
+            "section": "2017.",
+            "page": 17
+          }
+        }
+      ],
+      "failureStage": "NONE",
+      "parseSuccess": true
+    },
+    {
+      "paperId": "2305.18290",
+      "factId": "2305-dpo",
+      "predicate": "optimization.preference_method",
+      "value": "DPO",
+      "goldPage": 1,
+      "goldSection": "Introduction",
+      "rawEvidence": "Direct Preference Optimization (DPO)",
+      "sha256": "92cb3a2b71362acda98a789b03d88688fd33cf5fcf13f81d2b1de30ee7d3b67a",
+      "rawTextPresent": true,
+      "rawTextPage": 1,
+      "correctPage": true,
+      "parserSections": [
+        {
+          "heading": "Introduction",
+          "page": 1
+        }
+      ],
+      "sectionRecovered": true,
+      "candidateGenerated": true,
+      "candidates": [
+        {
+          "predicate": "optimization.preference_method",
+          "value": "DPO",
+          "section": "Introduction",
+          "locator": {
+            "section": "Introduction",
+            "page": 1
+          }
+        }
+      ],
+      "validatorAccepted": true,
+      "acceptedFacts": [
+        {
+          "value": "DPO",
+          "section": "Introduction",
+          "locator": {
+            "section": "Introduction",
+            "page": 1
+          }
+        }
+      ],
+      "failureStage": "NONE",
+      "parseSuccess": true
+    }
+  ],
+  "summary": {
+    "facts": 7,
+    "parseSuccess": 7,
+    "rawTextRecall": 0.7142857142857143,
+    "pageRecall": 0.2857142857142857,
+    "sectionRecovery": 1,
+    "candidateRecall": 0.8571428571428571,
+    "validatorAcceptance": 0.8571428571428571,
+    "byFailureStage": {
+      "NONE": 6,
+      "CANDIDATE_DISCOVERY": 1
+    }
+  },
+  "holdout": {
+    "created": false,
+    "usedForTuning": false
+  }
+}

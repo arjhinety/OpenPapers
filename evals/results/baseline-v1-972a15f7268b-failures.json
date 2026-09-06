@@ -1,0 +1,1749 @@
+{
+  "schemaVersion": "openpapers.retrieval-failure-report.v1",
+  "kind": "offline-fixture",
+  "commit": "972a15f7268b50d0fa8b308841257cdecb24728d",
+  "timestamp": "2026-09-05T07:27:01.368Z",
+  "workingTreeDirty": true,
+  "dataset": "retrieval-v1",
+  "categories": {
+    "not_retrieved": 0,
+    "ranked_below_k": 15,
+    "returned": 74
+  },
+  "totalRelevant": 89,
+  "diagnostics": [
+    {
+      "query": "speculative decoding training",
+      "gold": [
+        {
+          "goldWorkId": "medusa",
+          "returned": true,
+          "finalRank": 1,
+          "provider": "eval-fixture",
+          "providerNativeRank": 11,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 2.6666666666666665,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0.3333333333333333,
+            "textTokenOverlap": 0.6666666666666666,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        },
+        {
+          "goldWorkId": "eagle",
+          "returned": true,
+          "finalRank": 2,
+          "provider": "eval-fixture",
+          "providerNativeRank": 12,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 2.6666666666666665,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0.3333333333333333,
+            "textTokenOverlap": 0.6666666666666666,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        },
+        {
+          "goldWorkId": "attention-is-all-you-need",
+          "returned": true,
+          "finalRank": 7,
+          "provider": "eval-fixture",
+          "providerNativeRank": 1,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 0,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0,
+            "textTokenOverlap": 0,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        }
+      ]
+    },
+    {
+      "query": "multi-token prediction language models",
+      "gold": [
+        {
+          "goldWorkId": "medusa",
+          "returned": false,
+          "finalRank": null,
+          "provider": "eval-fixture",
+          "providerNativeRank": 11,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 0.4,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0,
+            "textTokenOverlap": 0.2,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": "ranked_below_k"
+        },
+        {
+          "goldWorkId": "eagle",
+          "returned": false,
+          "finalRank": null,
+          "provider": "eval-fixture",
+          "providerNativeRank": 12,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 0,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0,
+            "textTokenOverlap": 0,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": "ranked_below_k"
+        }
+      ]
+    },
+    {
+      "query": "knowledge distillation for small language models",
+      "gold": [
+        {
+          "goldWorkId": "bert",
+          "returned": true,
+          "finalRank": 5,
+          "provider": "eval-fixture",
+          "providerNativeRank": 2,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 2,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0.3333333333333333,
+            "textTokenOverlap": 0.3333333333333333,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        },
+        {
+          "goldWorkId": "gpt3",
+          "returned": true,
+          "finalRank": 6,
+          "provider": "eval-fixture",
+          "providerNativeRank": 3,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 2,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0.3333333333333333,
+            "textTokenOverlap": 0.3333333333333333,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        },
+        {
+          "goldWorkId": "llama",
+          "returned": true,
+          "finalRank": 7,
+          "provider": "eval-fixture",
+          "providerNativeRank": 4,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 2,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0.3333333333333333,
+            "textTokenOverlap": 0.3333333333333333,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        }
+      ]
+    },
+    {
+      "query": "on-policy distillation LLM",
+      "gold": [
+        {
+          "goldWorkId": "dpo",
+          "returned": false,
+          "finalRank": null,
+          "provider": "eval-fixture",
+          "providerNativeRank": 8,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 0,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0,
+            "textTokenOverlap": 0,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": "ranked_below_k"
+        },
+        {
+          "goldWorkId": "orpo",
+          "returned": false,
+          "finalRank": null,
+          "provider": "eval-fixture",
+          "providerNativeRank": 9,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 0,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0,
+            "textTokenOverlap": 0,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": "ranked_below_k"
+        }
+      ]
+    },
+    {
+      "query": "function calling supervised fine tuning",
+      "gold": [
+        {
+          "goldWorkId": "toolformer",
+          "returned": true,
+          "finalRank": 1,
+          "provider": "eval-fixture",
+          "providerNativeRank": 10,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 1.2,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0,
+            "textTokenOverlap": 0.6,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        }
+      ]
+    },
+    {
+      "query": "tool calling post training",
+      "gold": [
+        {
+          "goldWorkId": "toolformer",
+          "returned": true,
+          "finalRank": 4,
+          "provider": "eval-fixture",
+          "providerNativeRank": 10,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 1,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0,
+            "textTokenOverlap": 0.5,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        },
+        {
+          "goldWorkId": "dpo",
+          "returned": false,
+          "finalRank": null,
+          "provider": "eval-fixture",
+          "providerNativeRank": 8,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 0,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0,
+            "textTokenOverlap": 0,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": "ranked_below_k"
+        }
+      ]
+    },
+    {
+      "query": "preference optimization without reference model",
+      "gold": [
+        {
+          "goldWorkId": "orpo",
+          "returned": true,
+          "finalRank": 1,
+          "provider": "eval-fixture",
+          "providerNativeRank": 9,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 16,
+          "signals": {
+            "textContainsQuery": true,
+            "titleTokenOverlap": 1,
+            "textTokenOverlap": 1,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        }
+      ]
+    },
+    {
+      "query": "mixture of experts routing",
+      "gold": [
+        {
+          "goldWorkId": "llama",
+          "returned": true,
+          "finalRank": 3,
+          "provider": "eval-fixture",
+          "providerNativeRank": 4,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 1.5,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0,
+            "textTokenOverlap": 0.75,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        }
+      ]
+    },
+    {
+      "query": "long context attention efficiency",
+      "gold": [
+        {
+          "goldWorkId": "flashattention",
+          "returned": true,
+          "finalRank": 1,
+          "provider": "eval-fixture",
+          "providerNativeRank": 7,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 13,
+          "signals": {
+            "textContainsQuery": true,
+            "titleTokenOverlap": 0.25,
+            "textTokenOverlap": 1,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        },
+        {
+          "goldWorkId": "attention-is-all-you-need",
+          "returned": true,
+          "finalRank": 2,
+          "provider": "eval-fixture",
+          "providerNativeRank": 1,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 1.5,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0.25,
+            "textTokenOverlap": 0.25,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        }
+      ]
+    },
+    {
+      "query": "quantization aware decoding",
+      "gold": [
+        {
+          "goldWorkId": "qlora",
+          "returned": true,
+          "finalRank": 8,
+          "provider": "eval-fixture",
+          "providerNativeRank": 6,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 0,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0,
+            "textTokenOverlap": 0,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        },
+        {
+          "goldWorkId": "medusa",
+          "returned": true,
+          "finalRank": 1,
+          "provider": "eval-fixture",
+          "providerNativeRank": 11,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 2,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0.3333333333333333,
+            "textTokenOverlap": 0.3333333333333333,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        }
+      ]
+    },
+    {
+      "query": "low rank adaptation quantized language models",
+      "gold": [
+        {
+          "goldWorkId": "lora",
+          "returned": true,
+          "finalRank": 1,
+          "provider": "eval-fixture",
+          "providerNativeRank": 5,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 5,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0.8333333333333334,
+            "textTokenOverlap": 0.8333333333333334,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        },
+        {
+          "goldWorkId": "qlora",
+          "returned": true,
+          "finalRank": 4,
+          "provider": "eval-fixture",
+          "providerNativeRank": 6,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 2,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0.16666666666666666,
+            "textTokenOverlap": 0.6666666666666666,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        }
+      ]
+    },
+    {
+      "query": "transformer pretraining language understanding",
+      "gold": [
+        {
+          "goldWorkId": "attention-is-all-you-need",
+          "returned": true,
+          "finalRank": 4,
+          "provider": "eval-fixture",
+          "providerNativeRank": 1,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 1.5,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0,
+            "textTokenOverlap": 0.75,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        },
+        {
+          "goldWorkId": "bert",
+          "returned": true,
+          "finalRank": 1,
+          "provider": "eval-fixture",
+          "providerNativeRank": 2,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 4,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0.5,
+            "textTokenOverlap": 1,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        },
+        {
+          "goldWorkId": "gpt3",
+          "returned": true,
+          "finalRank": 3,
+          "provider": "eval-fixture",
+          "providerNativeRank": 3,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 2,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0.25,
+            "textTokenOverlap": 0.5,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        }
+      ]
+    },
+    {
+      "query": "transformer architecture self attention",
+      "gold": [
+        {
+          "goldWorkId": "attention-is-all-you-need",
+          "returned": true,
+          "finalRank": 1,
+          "provider": "eval-fixture",
+          "providerNativeRank": 1,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 3,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0.25,
+            "textTokenOverlap": 1,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        },
+        {
+          "goldWorkId": "bert",
+          "returned": true,
+          "finalRank": 6,
+          "provider": "eval-fixture",
+          "providerNativeRank": 2,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 0.5,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0,
+            "textTokenOverlap": 0.25,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        }
+      ]
+    },
+    {
+      "query": "sparse mixture of experts",
+      "gold": [
+        {
+          "goldWorkId": "mixtral",
+          "returned": true,
+          "finalRank": 1,
+          "provider": "eval-fixture",
+          "providerNativeRank": 21,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 14,
+          "signals": {
+            "textContainsQuery": true,
+            "titleTokenOverlap": 0.5,
+            "textTokenOverlap": 1,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        },
+        {
+          "goldWorkId": "llama",
+          "returned": true,
+          "finalRank": 3,
+          "provider": "eval-fixture",
+          "providerNativeRank": 4,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 1.5,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0,
+            "textTokenOverlap": 0.75,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        }
+      ]
+    },
+    {
+      "query": "multi token prediction",
+      "gold": [
+        {
+          "goldWorkId": "medusa",
+          "returned": false,
+          "finalRank": null,
+          "provider": "eval-fixture",
+          "providerNativeRank": 11,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 0,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0,
+            "textTokenOverlap": 0,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": "ranked_below_k"
+        },
+        {
+          "goldWorkId": "eagle",
+          "returned": false,
+          "finalRank": null,
+          "provider": "eval-fixture",
+          "providerNativeRank": 12,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 0,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0,
+            "textTokenOverlap": 0,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": "ranked_below_k"
+        }
+      ]
+    },
+    {
+      "query": "long context transformers",
+      "gold": [
+        {
+          "goldWorkId": "flashattention",
+          "returned": true,
+          "finalRank": 3,
+          "provider": "eval-fixture",
+          "providerNativeRank": 7,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 1.3333333333333333,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0,
+            "textTokenOverlap": 0.6666666666666666,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        },
+        {
+          "goldWorkId": "attention-is-all-you-need",
+          "returned": true,
+          "finalRank": 4,
+          "provider": "eval-fixture",
+          "providerNativeRank": 1,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 0,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0,
+            "textTokenOverlap": 0,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        }
+      ]
+    },
+    {
+      "query": "grouped query attention",
+      "gold": [
+        {
+          "goldWorkId": "mistral",
+          "returned": true,
+          "finalRank": 1,
+          "provider": "eval-fixture",
+          "providerNativeRank": 22,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 12,
+          "signals": {
+            "textContainsQuery": true,
+            "titleTokenOverlap": 0,
+            "textTokenOverlap": 1,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        },
+        {
+          "goldWorkId": "llama",
+          "returned": true,
+          "finalRank": 7,
+          "provider": "eval-fixture",
+          "providerNativeRank": 4,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 0,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0,
+            "textTokenOverlap": 0,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        }
+      ]
+    },
+    {
+      "query": "efficient attention",
+      "gold": [
+        {
+          "goldWorkId": "flashattention",
+          "returned": true,
+          "finalRank": 1,
+          "provider": "eval-fixture",
+          "providerNativeRank": 7,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 6,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 1,
+            "textTokenOverlap": 1,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        },
+        {
+          "goldWorkId": "attention-is-all-you-need",
+          "returned": true,
+          "finalRank": 2,
+          "provider": "eval-fixture",
+          "providerNativeRank": 1,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 4,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0.5,
+            "textTokenOverlap": 1,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        }
+      ]
+    },
+    {
+      "query": "speculative heads",
+      "gold": [
+        {
+          "goldWorkId": "medusa",
+          "returned": true,
+          "finalRank": 1,
+          "provider": "eval-fixture",
+          "providerNativeRank": 11,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 4,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0.5,
+            "textTokenOverlap": 1,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        },
+        {
+          "goldWorkId": "eagle",
+          "returned": true,
+          "finalRank": 2,
+          "provider": "eval-fixture",
+          "providerNativeRank": 12,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 3,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0.5,
+            "textTokenOverlap": 0.5,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        }
+      ]
+    },
+    {
+      "query": "draft model decoding",
+      "gold": [
+        {
+          "goldWorkId": "medusa",
+          "returned": true,
+          "finalRank": 1,
+          "provider": "eval-fixture",
+          "providerNativeRank": 11,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 2.6666666666666665,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0.3333333333333333,
+            "textTokenOverlap": 0.6666666666666666,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        },
+        {
+          "goldWorkId": "eagle",
+          "returned": true,
+          "finalRank": 9,
+          "provider": "eval-fixture",
+          "providerNativeRank": 12,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 0.6666666666666666,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0,
+            "textTokenOverlap": 0.3333333333333333,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        }
+      ]
+    },
+    {
+      "query": "Medusa inference acceleration",
+      "gold": [
+        {
+          "goldWorkId": "medusa",
+          "returned": true,
+          "finalRank": 1,
+          "provider": "eval-fixture",
+          "providerNativeRank": 11,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 6,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 1,
+            "textTokenOverlap": 1,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        }
+      ]
+    },
+    {
+      "query": "EAGLE speculative sampling",
+      "gold": [
+        {
+          "goldWorkId": "eagle",
+          "returned": true,
+          "finalRank": 1,
+          "provider": "eval-fixture",
+          "providerNativeRank": 12,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 6,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 1,
+            "textTokenOverlap": 1,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        }
+      ]
+    },
+    {
+      "query": "knowledge distillation",
+      "gold": [
+        {
+          "goldWorkId": "distilbert",
+          "returned": true,
+          "finalRank": 1,
+          "provider": "eval-fixture",
+          "providerNativeRank": 13,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 12,
+          "signals": {
+            "textContainsQuery": true,
+            "titleTokenOverlap": 0,
+            "textTokenOverlap": 1,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        },
+        {
+          "goldWorkId": "minilm",
+          "returned": true,
+          "finalRank": 2,
+          "provider": "eval-fixture",
+          "providerNativeRank": 14,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 3,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0.5,
+            "textTokenOverlap": 0.5,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        },
+        {
+          "goldWorkId": "tinybert",
+          "returned": false,
+          "finalRank": null,
+          "provider": "eval-fixture",
+          "providerNativeRank": 15,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 0,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0,
+            "textTokenOverlap": 0,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": "ranked_below_k"
+        }
+      ]
+    },
+    {
+      "query": "sequence level distillation",
+      "gold": [
+        {
+          "goldWorkId": "distilbert",
+          "returned": true,
+          "finalRank": 3,
+          "provider": "eval-fixture",
+          "providerNativeRank": 13,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 0.6666666666666666,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0,
+            "textTokenOverlap": 0.3333333333333333,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        },
+        {
+          "goldWorkId": "minilm",
+          "returned": true,
+          "finalRank": 1,
+          "provider": "eval-fixture",
+          "providerNativeRank": 14,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 2,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0.3333333333333333,
+            "textTokenOverlap": 0.3333333333333333,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        }
+      ]
+    },
+    {
+      "query": "supervised fine tuning language models",
+      "gold": [
+        {
+          "goldWorkId": "instructgpt",
+          "returned": true,
+          "finalRank": 2,
+          "provider": "eval-fixture",
+          "providerNativeRank": 16,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 3.2,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0.4,
+            "textTokenOverlap": 0.8,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        },
+        {
+          "goldWorkId": "flan",
+          "returned": true,
+          "finalRank": 4,
+          "provider": "eval-fixture",
+          "providerNativeRank": 17,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 2.8,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0.4,
+            "textTokenOverlap": 0.6,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        },
+        {
+          "goldWorkId": "self-instruct",
+          "returned": true,
+          "finalRank": 5,
+          "provider": "eval-fixture",
+          "providerNativeRank": 18,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 2.8,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0.4,
+            "textTokenOverlap": 0.6,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        }
+      ]
+    },
+    {
+      "query": "tool calling SFT",
+      "gold": [
+        {
+          "goldWorkId": "toolformer",
+          "returned": true,
+          "finalRank": 2,
+          "provider": "eval-fixture",
+          "providerNativeRank": 10,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 1.3333333333333333,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0,
+            "textTokenOverlap": 0.6666666666666666,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        },
+        {
+          "goldWorkId": "toollm",
+          "returned": true,
+          "finalRank": 1,
+          "provider": "eval-fixture",
+          "providerNativeRank": 20,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 2,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0.3333333333333333,
+            "textTokenOverlap": 0.3333333333333333,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        },
+        {
+          "goldWorkId": "gorilla",
+          "returned": true,
+          "finalRank": 3,
+          "provider": "eval-fixture",
+          "providerNativeRank": 19,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 0.6666666666666666,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0,
+            "textTokenOverlap": 0.3333333333333333,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        }
+      ]
+    },
+    {
+      "query": "structured output fine tuning",
+      "gold": [
+        {
+          "goldWorkId": "instructgpt",
+          "returned": true,
+          "finalRank": 3,
+          "provider": "eval-fixture",
+          "providerNativeRank": 16,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 1,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0,
+            "textTokenOverlap": 0.5,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        },
+        {
+          "goldWorkId": "flan",
+          "returned": true,
+          "finalRank": 4,
+          "provider": "eval-fixture",
+          "providerNativeRank": 17,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 0.5,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0,
+            "textTokenOverlap": 0.25,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        }
+      ]
+    },
+    {
+      "query": "preference optimization",
+      "gold": [
+        {
+          "goldWorkId": "dpo",
+          "returned": true,
+          "finalRank": 1,
+          "provider": "eval-fixture",
+          "providerNativeRank": 8,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 16,
+          "signals": {
+            "textContainsQuery": true,
+            "titleTokenOverlap": 1,
+            "textTokenOverlap": 1,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        },
+        {
+          "goldWorkId": "orpo",
+          "returned": true,
+          "finalRank": 2,
+          "provider": "eval-fixture",
+          "providerNativeRank": 9,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 16,
+          "signals": {
+            "textContainsQuery": true,
+            "titleTokenOverlap": 1,
+            "textTokenOverlap": 1,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        }
+      ]
+    },
+    {
+      "query": "DPO language model alignment",
+      "gold": [
+        {
+          "goldWorkId": "dpo",
+          "returned": true,
+          "finalRank": 1,
+          "provider": "eval-fixture",
+          "providerNativeRank": 8,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 3,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0.5,
+            "textTokenOverlap": 0.5,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        }
+      ]
+    },
+    {
+      "query": "ORPO without reference model",
+      "gold": [
+        {
+          "goldWorkId": "orpo",
+          "returned": true,
+          "finalRank": 1,
+          "provider": "eval-fixture",
+          "providerNativeRank": 9,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 6,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 1,
+            "textTokenOverlap": 1,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        }
+      ]
+    },
+    {
+      "query": "RLHF instruction following",
+      "gold": [
+        {
+          "goldWorkId": "instructgpt",
+          "returned": true,
+          "finalRank": 3,
+          "provider": "eval-fixture",
+          "providerNativeRank": 16,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 0.6666666666666666,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0,
+            "textTokenOverlap": 0.3333333333333333,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        }
+      ]
+    },
+    {
+      "query": "function calling benchmarks",
+      "gold": [
+        {
+          "goldWorkId": "toolformer",
+          "returned": true,
+          "finalRank": 1,
+          "provider": "eval-fixture",
+          "providerNativeRank": 10,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 1.3333333333333333,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0,
+            "textTokenOverlap": 0.6666666666666666,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        },
+        {
+          "goldWorkId": "gorilla",
+          "returned": false,
+          "finalRank": null,
+          "provider": "eval-fixture",
+          "providerNativeRank": 19,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 0,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0,
+            "textTokenOverlap": 0,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": "ranked_below_k"
+        },
+        {
+          "goldWorkId": "toollm",
+          "returned": false,
+          "finalRank": null,
+          "provider": "eval-fixture",
+          "providerNativeRank": 20,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 0,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0,
+            "textTokenOverlap": 0,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": "ranked_below_k"
+        }
+      ]
+    },
+    {
+      "query": "FlashAttention CUDA kernels",
+      "gold": [
+        {
+          "goldWorkId": "flashattention",
+          "returned": true,
+          "finalRank": 1,
+          "provider": "eval-fixture",
+          "providerNativeRank": 7,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 2,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0.3333333333333333,
+            "textTokenOverlap": 0.3333333333333333,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        }
+      ]
+    },
+    {
+      "query": "distributed LLM training foundation models",
+      "gold": [
+        {
+          "goldWorkId": "llama",
+          "returned": true,
+          "finalRank": 1,
+          "provider": "eval-fixture",
+          "providerNativeRank": 4,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 2.8,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0.4,
+            "textTokenOverlap": 0.6,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        },
+        {
+          "goldWorkId": "mistral",
+          "returned": false,
+          "finalRank": null,
+          "provider": "eval-fixture",
+          "providerNativeRank": 22,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 0,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0,
+            "textTokenOverlap": 0,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": "ranked_below_k"
+        },
+        {
+          "goldWorkId": "gemma",
+          "returned": true,
+          "finalRank": 3,
+          "provider": "eval-fixture",
+          "providerNativeRank": 23,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 1.6,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0.2,
+            "textTokenOverlap": 0.4,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        }
+      ]
+    },
+    {
+      "query": "tensor parallelism inference serving",
+      "gold": [
+        {
+          "goldWorkId": "mistral",
+          "returned": true,
+          "finalRank": 2,
+          "provider": "eval-fixture",
+          "providerNativeRank": 22,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 0.5,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0,
+            "textTokenOverlap": 0.25,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        },
+        {
+          "goldWorkId": "llama",
+          "returned": true,
+          "finalRank": 6,
+          "provider": "eval-fixture",
+          "providerNativeRank": 4,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 0,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0,
+            "textTokenOverlap": 0,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        }
+      ]
+    },
+    {
+      "query": "quantized inference language models",
+      "gold": [
+        {
+          "goldWorkId": "qlora",
+          "returned": true,
+          "finalRank": 9,
+          "provider": "eval-fixture",
+          "providerNativeRank": 6,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 2,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0.25,
+            "textTokenOverlap": 0.5,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        },
+        {
+          "goldWorkId": "mistral",
+          "returned": false,
+          "finalRank": null,
+          "provider": "eval-fixture",
+          "providerNativeRank": 22,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 1,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0,
+            "textTokenOverlap": 0.5,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": "ranked_below_k"
+        }
+      ]
+    },
+    {
+      "query": "API tool use language models",
+      "gold": [
+        {
+          "goldWorkId": "toolformer",
+          "returned": true,
+          "finalRank": 2,
+          "provider": "eval-fixture",
+          "providerNativeRank": 10,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 4.4,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0.6,
+            "textTokenOverlap": 1,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        },
+        {
+          "goldWorkId": "gorilla",
+          "returned": true,
+          "finalRank": 9,
+          "provider": "eval-fixture",
+          "providerNativeRank": 19,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 2.4000000000000004,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0.2,
+            "textTokenOverlap": 0.8,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        },
+        {
+          "goldWorkId": "toollm",
+          "returned": true,
+          "finalRank": 1,
+          "provider": "eval-fixture",
+          "providerNativeRank": 20,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 4.800000000000001,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0.8,
+            "textTokenOverlap": 0.8,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        }
+      ]
+    },
+    {
+      "query": "instruction tuning open language models",
+      "gold": [
+        {
+          "goldWorkId": "flan",
+          "returned": true,
+          "finalRank": 1,
+          "provider": "eval-fixture",
+          "providerNativeRank": 17,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 4,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0.6,
+            "textTokenOverlap": 0.8,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        },
+        {
+          "goldWorkId": "instructgpt",
+          "returned": true,
+          "finalRank": 4,
+          "provider": "eval-fixture",
+          "providerNativeRank": 16,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 3.2,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0.4,
+            "textTokenOverlap": 0.8,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        },
+        {
+          "goldWorkId": "gemma",
+          "returned": true,
+          "finalRank": 2,
+          "provider": "eval-fixture",
+          "providerNativeRank": 23,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 3.6,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0.4,
+            "textTokenOverlap": 1,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        }
+      ]
+    },
+    {
+      "query": "parameter efficient fine tuning",
+      "gold": [
+        {
+          "goldWorkId": "lora",
+          "returned": true,
+          "finalRank": 1,
+          "provider": "eval-fixture",
+          "providerNativeRank": 5,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 12,
+          "signals": {
+            "textContainsQuery": true,
+            "titleTokenOverlap": 0,
+            "textTokenOverlap": 1,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        },
+        {
+          "goldWorkId": "qlora",
+          "returned": true,
+          "finalRank": 2,
+          "provider": "eval-fixture",
+          "providerNativeRank": 6,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 2.5,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0.25,
+            "textTokenOverlap": 0.75,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        }
+      ]
+    },
+    {
+      "query": "attention memory efficiency",
+      "gold": [
+        {
+          "goldWorkId": "flashattention",
+          "returned": true,
+          "finalRank": 1,
+          "provider": "eval-fixture",
+          "providerNativeRank": 7,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 4.666666666666666,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0.6666666666666666,
+            "textTokenOverlap": 1,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        },
+        {
+          "goldWorkId": "attention-is-all-you-need",
+          "returned": true,
+          "finalRank": 2,
+          "provider": "eval-fixture",
+          "providerNativeRank": 1,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 2,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0.3333333333333333,
+            "textTokenOverlap": 0.3333333333333333,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        }
+      ]
+    },
+    {
+      "query": "language model compression",
+      "gold": [
+        {
+          "goldWorkId": "distilbert",
+          "returned": false,
+          "finalRank": null,
+          "provider": "eval-fixture",
+          "providerNativeRank": 13,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 0.6666666666666666,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0,
+            "textTokenOverlap": 0.3333333333333333,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": "ranked_below_k"
+        },
+        {
+          "goldWorkId": "minilm",
+          "returned": true,
+          "finalRank": 10,
+          "provider": "eval-fixture",
+          "providerNativeRank": 14,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 2,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0.3333333333333333,
+            "textTokenOverlap": 0.3333333333333333,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        },
+        {
+          "goldWorkId": "tinybert",
+          "returned": false,
+          "finalRank": null,
+          "provider": "eval-fixture",
+          "providerNativeRank": 15,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 2,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0.3333333333333333,
+            "textTokenOverlap": 0.3333333333333333,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": "ranked_below_k"
+        }
+      ]
+    },
+    {
+      "query": "open foundation language models",
+      "gold": [
+        {
+          "goldWorkId": "llama",
+          "returned": true,
+          "finalRank": 2,
+          "provider": "eval-fixture",
+          "providerNativeRank": 4,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 6,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 1,
+            "textTokenOverlap": 1,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        },
+        {
+          "goldWorkId": "mistral",
+          "returned": false,
+          "finalRank": null,
+          "provider": "eval-fixture",
+          "providerNativeRank": 22,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 1,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0,
+            "textTokenOverlap": 0.5,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": "ranked_below_k"
+        },
+        {
+          "goldWorkId": "gemma",
+          "returned": true,
+          "finalRank": 1,
+          "provider": "eval-fixture",
+          "providerNativeRank": 23,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 14,
+          "signals": {
+            "textContainsQuery": true,
+            "titleTokenOverlap": 0.5,
+            "textTokenOverlap": 1,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        }
+      ]
+    },
+    {
+      "query": "few shot language model learning",
+      "gold": [
+        {
+          "goldWorkId": "gpt3",
+          "returned": true,
+          "finalRank": 1,
+          "provider": "eval-fixture",
+          "providerNativeRank": 3,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 4.4,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 0.6,
+            "textTokenOverlap": 1,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        }
+      ]
+    },
+    {
+      "query": "bidirectional language understanding",
+      "gold": [
+        {
+          "goldWorkId": "bert",
+          "returned": true,
+          "finalRank": 1,
+          "provider": "eval-fixture",
+          "providerNativeRank": 2,
+          "providerNativeScore": null,
+          "normalizedOpenPapersScore": 6,
+          "signals": {
+            "textContainsQuery": false,
+            "titleTokenOverlap": 1,
+            "textTokenOverlap": 1,
+            "citationContribution": 0,
+            "arxivBoost": 0
+          },
+          "failure": null
+        }
+      ]
+    }
+  ]
+}
