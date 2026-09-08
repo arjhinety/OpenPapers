@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "openpapers.docker-e2e.v1",
+  "kind": "runtime-docker-e2e",
+  "commit": "02c9ae4cf29fb4053ef4878a46954dfcee7c4e7a",
+  "timestamp": "2026-09-06T05:14:47.338Z",
+  "fixtureMode": true,
+  "steps": [
+    {
+      "name": "compose up --build --wait",
+      "status": "PASS",
+      "detail": "#18 resolving provenance for metadata file | #18 DONE 0.1s | "
+    },
+    {
+      "name": "endpoint reachable",
+      "status": "PASS"
+    },
+    {
+      "name": "mcp initialize + tools/list",
+      "status": "PASS",
+      "detail": "37 tools, server 1.0.0"
+    },
+    {
+      "name": "tools/call search_papers (fixture providers)",
+      "status": "PASS",
+      "detail": "top work work_c1653fea9d14fa2b"
+    },
+    {
+      "name": "persistence: create_collection",
+      "status": "PASS",
+      "detail": "collection-c386d64b558b4b45e3f31a63"
+    },
+    {
+      "name": "persistence: restart app container",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "persistence: collection survives restart",
+      "status": "PASS"
+    },
+    {
+      "name": "GROBID isalive",
+      "status": "PASS"
+    },
+    {
+      "name": "adversarial MCP smoke",
+      "status": "PASS",
+      "detail": "{\"tools\":37,\"search_results\":1,\"evidence_records\":1,\"canonical_found_in_title_search\":true,\"provider_failures\":[],\"sources_searched\":[\"arxiv\",\"crossref\",\"openalex\",\"semantic_scholar\"]} | "
+    },
+    {
+      "name": "30-run MCP benchmark",
+      "status": "PASS",
+      "detail": "{\"name\":\"tools/list\",\"requests\":10,\"statuses\":[200],\"min_ms\":6.72,\"median_ms\":7.88,\"p95_ms\":14.54,\"max_ms\":14.54} | {\"name\":\"tools/call\",\"requests\":10,\"statuses\":[200],\"min_ms\":5.47,\"median_ms\":6.5,\"p"
+    },
+    {
+      "name": "benchmark medians",
+      "status": "PASS",
+      "detail": "initialize median 13.18ms, tools/list median 7.88ms, tools/call median 6.5ms"
+    },
+    {
+      "name": "compose down -v",
+      "status": "PASS"
+    }
+  ],
+  "passed": true
+}

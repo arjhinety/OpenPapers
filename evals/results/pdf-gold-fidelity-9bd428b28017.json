@@ -1,0 +1,738 @@
+{
+ "schemaVersion": "openpapers.pdf-gold-fidelity.v1",
+ "commit": "9bd428b28017a909cd5261d50f0c54b4a3c21fef",
+ "goldSet": "pdf-gold-v1",
+ "paperCount": 26,
+ "grobidUrl": "http://127.0.0.1:8070",
+ "notes": [
+  "Gold title/authors/abstract come from versioned arXiv abstract pages (independent of both parsers).",
+  "The shipped PyMuPDF pipeline (scripts/parse_pymupdf.py) does not attempt title or author extraction (titleAttempted/authorExtracted=false); its title metrics are recorded as 0, not as extraction failures.",
+  "Abstract is scored as token-F1 against gold for GROBID, and as first-page token coverage for the PyMuPDF pipeline because the shipped parser does not segment the abstract.",
+  "Section headings and reference counts are descriptive cross-parser statistics, not gold-scored."
+ ],
+ "aggregate": {
+  "grobid": {
+   "titleExactRate": 0.8846153846153846,
+   "meanTitleTokenF1": 0.9759615384615384,
+   "meanAuthorRecall": 0.7737713706605109,
+   "meanAuthorPrecision": 0.8249671060646669,
+   "meanAbstractTokenF1": 0.9574311414802276,
+   "meanAbstractFirstPageTokenRecall": null,
+   "errors": 0
+  },
+  "pymupdf": {
+   "titleExactRate": 0,
+   "meanTitleTokenF1": 0,
+   "meanAuthorRecall": null,
+   "meanAuthorPrecision": null,
+   "meanAbstractTokenF1": null,
+   "meanAbstractFirstPageTokenRecall": 0.9426659115672897,
+   "meanSectionHeadingOverlapWithGrobid": 0.30703427969450386,
+   "errors": 0
+  }
+ },
+ "rows": [
+  {
+   "caseId": "v5-distilbert",
+   "grobid": {
+    "titleExact": true,
+    "titleTokenF1": 1,
+    "authorRecall": 1,
+    "authorPrecision": 0.8,
+    "abstractTokenF1": 0.9560439560439561,
+    "referenceCount": 0,
+    "sectionCount": 15,
+    "headerError": null,
+    "fullTextError": null
+   },
+   "pymupdf": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "titleAttempted": false,
+    "abstractFirstPageTokenRecall": 0.9831932773109243,
+    "authorExtracted": false,
+    "pageCount": 5,
+    "sectionCount": 21,
+    "sectionHeadingOverlapWithGrobid": 0.3448275862068966,
+    "error": null
+   },
+   "goldPageCountIndependent": null,
+   "latencyMs": 18235
+  },
+  {
+   "caseId": "v5-roberta",
+   "grobid": {
+    "titleExact": true,
+    "titleTokenF1": 1,
+    "authorRecall": 1,
+    "authorPrecision": 0.9090909090909091,
+    "abstractTokenF1": 1,
+    "referenceCount": 0,
+    "sectionCount": 38,
+    "headerError": null,
+    "fullTextError": null
+   },
+   "pymupdf": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "titleAttempted": false,
+    "abstractFirstPageTokenRecall": 0.9069767441860465,
+    "authorExtracted": false,
+    "pageCount": 13,
+    "sectionCount": 104,
+    "sectionHeadingOverlapWithGrobid": 0.3917525773195876,
+    "error": null
+   },
+   "goldPageCountIndependent": null,
+   "latencyMs": 27034
+  },
+  {
+   "caseId": "v5-clip",
+   "grobid": {
+    "titleExact": true,
+    "titleTokenF1": 1,
+    "authorRecall": 1,
+    "authorPrecision": 1,
+    "abstractTokenF1": 0.9701492537313433,
+    "referenceCount": 0,
+    "sectionCount": 74,
+    "headerError": null,
+    "fullTextError": null
+   },
+   "pymupdf": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "titleAttempted": false,
+    "abstractFirstPageTokenRecall": 0.8941176470588236,
+    "authorExtracted": false,
+    "pageCount": 48,
+    "sectionCount": 338,
+    "sectionHeadingOverlapWithGrobid": 0.07903780068728522,
+    "error": null
+   },
+   "goldPageCountIndependent": null,
+   "latencyMs": 97032
+  },
+  {
+   "caseId": "v5-mqa",
+   "grobid": {
+    "titleExact": true,
+    "titleTokenF1": 1,
+    "authorRecall": 0,
+    "authorPrecision": 0,
+    "abstractTokenF1": 0.993006993006993,
+    "referenceCount": 0,
+    "sectionCount": 18,
+    "headerError": null,
+    "fullTextError": null
+   },
+   "pymupdf": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "titleAttempted": false,
+    "abstractFirstPageTokenRecall": 0.9767441860465116,
+    "authorExtracted": false,
+    "pageCount": 9,
+    "sectionCount": 39,
+    "sectionHeadingOverlapWithGrobid": 0.4117647058823529,
+    "error": null
+   },
+   "goldPageCountIndependent": null,
+   "latencyMs": 6059
+  },
+  {
+   "caseId": "v5-gemma2",
+   "grobid": {
+    "titleExact": true,
+    "titleTokenF1": 1,
+    "authorRecall": 0.005050505050505051,
+    "authorPrecision": 0.5,
+    "abstractTokenF1": 0.9914529914529915,
+    "referenceCount": 0,
+    "sectionCount": 62,
+    "headerError": null,
+    "fullTextError": null
+   },
+   "pymupdf": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "titleAttempted": false,
+    "abstractFirstPageTokenRecall": 0.9848484848484849,
+    "authorExtracted": false,
+    "pageCount": 21,
+    "sectionCount": 186,
+    "sectionHeadingOverlapWithGrobid": 0.13414634146341464,
+    "error": null
+   },
+   "goldPageCountIndependent": null,
+   "latencyMs": 25993
+  },
+  {
+   "caseId": "v5-deepseekmoe",
+   "grobid": {
+    "titleExact": true,
+    "titleTokenF1": 1,
+    "authorRecall": 1,
+    "authorPrecision": 1,
+    "abstractTokenF1": 0.9952153110047847,
+    "referenceCount": 0,
+    "sectionCount": 63,
+    "headerError": null,
+    "fullTextError": null
+   },
+   "pymupdf": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "titleAttempted": false,
+    "abstractFirstPageTokenRecall": 0.993103448275862,
+    "authorExtracted": false,
+    "pageCount": 33,
+    "sectionCount": 198,
+    "sectionHeadingOverlapWithGrobid": 0.03787878787878788,
+    "error": null
+   },
+   "goldPageCountIndependent": null,
+   "latencyMs": 23219
+  },
+  {
+   "caseId": "v5-retnet",
+   "grobid": {
+    "titleExact": true,
+    "titleTokenF1": 1,
+    "authorRecall": 0.875,
+    "authorPrecision": 0.7,
+    "abstractTokenF1": 0.9534883720930233,
+    "referenceCount": 0,
+    "sectionCount": 37,
+    "headerError": null,
+    "fullTextError": null
+   },
+   "pymupdf": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "titleAttempted": false,
+    "abstractFirstPageTokenRecall": 0.9126984126984127,
+    "authorExtracted": false,
+    "pageCount": 14,
+    "sectionCount": 88,
+    "sectionHeadingOverlapWithGrobid": 0.2765957446808511,
+    "error": null
+   },
+   "goldPageCountIndependent": null,
+   "latencyMs": 15806
+  },
+  {
+   "caseId": "v5-rwkv",
+   "grobid": {
+    "titleExact": true,
+    "titleTokenF1": 1,
+    "authorRecall": 0.9117647058823529,
+    "authorPrecision": 0.6829268292682927,
+    "abstractTokenF1": 1,
+    "referenceCount": 0,
+    "sectionCount": 83,
+    "headerError": null,
+    "fullTextError": null
+   },
+   "pymupdf": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "titleAttempted": false,
+    "abstractFirstPageTokenRecall": 0.9426229508196722,
+    "authorExtracted": false,
+    "pageCount": 30,
+    "sectionCount": 160,
+    "sectionHeadingOverlapWithGrobid": 0.4689265536723164,
+    "error": null
+   },
+   "goldPageCountIndependent": null,
+   "latencyMs": 22082
+  },
+  {
+   "caseId": "v5-reflexion",
+   "grobid": {
+    "titleExact": true,
+    "titleTokenF1": 1,
+    "authorRecall": 1,
+    "authorPrecision": 1,
+    "abstractTokenF1": 0.9623430962343096,
+    "referenceCount": 0,
+    "sectionCount": 42,
+    "headerError": null,
+    "fullTextError": null
+   },
+   "pymupdf": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "titleAttempted": false,
+    "abstractFirstPageTokenRecall": 0.9784172661870504,
+    "authorExtracted": false,
+    "pageCount": 19,
+    "sectionCount": 65,
+    "sectionHeadingOverlapWithGrobid": 0.3170731707317073,
+    "error": null
+   },
+   "goldPageCountIndependent": null,
+   "latencyMs": 7160
+  },
+  {
+   "caseId": "v5-constitutional",
+   "grobid": {
+    "titleExact": true,
+    "titleTokenF1": 1,
+    "authorRecall": 1,
+    "authorPrecision": 1,
+    "abstractTokenF1": 0.96875,
+    "referenceCount": 0,
+    "sectionCount": 55,
+    "headerError": null,
+    "fullTextError": null
+   },
+   "pymupdf": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "titleAttempted": false,
+    "abstractFirstPageTokenRecall": 0.9761904761904762,
+    "authorExtracted": false,
+    "pageCount": 34,
+    "sectionCount": 104,
+    "sectionHeadingOverlapWithGrobid": 0.6043956043956044,
+    "error": null
+   },
+   "goldPageCountIndependent": null,
+   "latencyMs": 12528
+  },
+  {
+   "caseId": "v5-llava",
+   "grobid": {
+    "titleExact": true,
+    "titleTokenF1": 1,
+    "authorRecall": 1,
+    "authorPrecision": 1,
+    "abstractTokenF1": 0.8295454545454546,
+    "referenceCount": 0,
+    "sectionCount": 48,
+    "headerError": null,
+    "fullTextError": null
+   },
+   "pymupdf": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "titleAttempted": false,
+    "abstractFirstPageTokenRecall": 0.8359375,
+    "authorExtracted": false,
+    "pageCount": 25,
+    "sectionCount": 71,
+    "sectionHeadingOverlapWithGrobid": 0.5301204819277109,
+    "error": null
+   },
+   "goldPageCountIndependent": null,
+   "latencyMs": 19832
+  },
+  {
+   "caseId": "v5-colbertv2",
+   "grobid": {
+    "titleExact": true,
+    "titleTokenF1": 1,
+    "authorRecall": 1,
+    "authorPrecision": 1,
+    "abstractTokenF1": 0.972972972972973,
+    "referenceCount": 0,
+    "sectionCount": 39,
+    "headerError": null,
+    "fullTextError": null
+   },
+   "pymupdf": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "titleAttempted": false,
+    "abstractFirstPageTokenRecall": 0.96875,
+    "authorExtracted": false,
+    "pageCount": 20,
+    "sectionCount": 82,
+    "sectionHeadingOverlapWithGrobid": 0.43820224719101125,
+    "error": null
+   },
+   "goldPageCountIndependent": null,
+   "latencyMs": 16716
+  },
+  {
+   "caseId": "v5-flan",
+   "grobid": {
+    "titleExact": true,
+    "titleTokenF1": 1,
+    "authorRecall": 0.8181818181818182,
+    "authorPrecision": 0.8181818181818182,
+    "abstractTokenF1": 0.8953488372093024,
+    "referenceCount": 0,
+    "sectionCount": 31,
+    "headerError": null,
+    "fullTextError": null
+   },
+   "pymupdf": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "titleAttempted": false,
+    "abstractFirstPageTokenRecall": 0.8709677419354839,
+    "authorExtracted": false,
+    "pageCount": 22,
+    "sectionCount": 86,
+    "sectionHeadingOverlapWithGrobid": 0.2839506172839506,
+    "error": null
+   },
+   "goldPageCountIndependent": null,
+   "latencyMs": 15638
+  },
+  {
+   "caseId": "v5-atlas",
+   "grobid": {
+    "titleExact": true,
+    "titleTokenF1": 1,
+    "authorRecall": 1,
+    "authorPrecision": 1,
+    "abstractTokenF1": 1,
+    "referenceCount": 0,
+    "sectionCount": 78,
+    "headerError": null,
+    "fullTextError": null
+   },
+   "pymupdf": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "titleAttempted": false,
+    "abstractFirstPageTokenRecall": 1,
+    "authorExtracted": false,
+    "pageCount": 33,
+    "sectionCount": 140,
+    "sectionHeadingOverlapWithGrobid": 0.5071428571428571,
+    "error": null
+   },
+   "goldPageCountIndependent": null,
+   "latencyMs": 19037
+  },
+  {
+   "caseId": "v5-deepseekv3",
+   "grobid": {
+    "titleExact": false,
+    "titleTokenF1": 0.5,
+    "authorRecall": 0,
+    "authorPrecision": null,
+    "abstractTokenF1": 0.9619047619047619,
+    "referenceCount": 0,
+    "sectionCount": 102,
+    "headerError": null,
+    "fullTextError": null
+   },
+   "pymupdf": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "titleAttempted": false,
+    "abstractFirstPageTokenRecall": 0.9185185185185185,
+    "authorExtracted": false,
+    "pageCount": 53,
+    "sectionCount": 212,
+    "sectionHeadingOverlapWithGrobid": 0.22362869198312235,
+    "error": null
+   },
+   "goldPageCountIndependent": null,
+   "latencyMs": 27711
+  },
+  {
+   "caseId": "v5-deepseekr1",
+   "grobid": {
+    "titleExact": false,
+    "titleTokenF1": 1,
+    "authorRecall": 0,
+    "authorPrecision": null,
+    "abstractTokenF1": 0.9629629629629629,
+    "referenceCount": 0,
+    "sectionCount": 113,
+    "headerError": null,
+    "fullTextError": null
+   },
+   "pymupdf": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "titleAttempted": false,
+    "abstractFirstPageTokenRecall": 0.9736842105263158,
+    "authorExtracted": false,
+    "pageCount": 86,
+    "sectionCount": 224,
+    "sectionHeadingOverlapWithGrobid": 0.199203187250996,
+    "error": null
+   },
+   "goldPageCountIndependent": null,
+   "latencyMs": 31098
+  },
+  {
+   "caseId": "v5-medpalm",
+   "grobid": {
+    "titleExact": true,
+    "titleTokenF1": 1,
+    "authorRecall": 0.9,
+    "authorPrecision": 0.9,
+    "abstractTokenF1": 0.9966101694915255,
+    "referenceCount": 0,
+    "sectionCount": 91,
+    "headerError": null,
+    "fullTextError": null
+   },
+   "pymupdf": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "titleAttempted": false,
+    "abstractFirstPageTokenRecall": 0.9948979591836735,
+    "authorExtracted": false,
+    "pageCount": 44,
+    "sectionCount": 256,
+    "sectionHeadingOverlapWithGrobid": 0.1388888888888889,
+    "error": null
+   },
+   "goldPageCountIndependent": null,
+   "latencyMs": 24038
+  },
+  {
+   "caseId": "v5-hyenadna",
+   "grobid": {
+    "titleExact": true,
+    "titleTokenF1": 1,
+    "authorRecall": 0.8461538461538461,
+    "authorPrecision": 0.8461538461538461,
+    "abstractTokenF1": 0.8975903614457831,
+    "referenceCount": 0,
+    "sectionCount": 47,
+    "headerError": null,
+    "fullTextError": null
+   },
+   "pymupdf": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "titleAttempted": false,
+    "abstractFirstPageTokenRecall": 0.9530516431924883,
+    "authorExtracted": false,
+    "pageCount": 25,
+    "sectionCount": 123,
+    "sectionHeadingOverlapWithGrobid": 0.34782608695652173,
+    "error": null
+   },
+   "goldPageCountIndependent": null,
+   "latencyMs": 19438
+  },
+  {
+   "caseId": "v5-dnabert2",
+   "grobid": {
+    "titleExact": false,
+    "titleTokenF1": 0.875,
+    "authorRecall": 0.8333333333333334,
+    "authorPrecision": 0.7142857142857143,
+    "abstractTokenF1": 0.9387755102040817,
+    "referenceCount": 0,
+    "sectionCount": 31,
+    "headerError": null,
+    "fullTextError": null
+   },
+   "pymupdf": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "titleAttempted": false,
+    "abstractFirstPageTokenRecall": 0.9715909090909091,
+    "authorExtracted": false,
+    "pageCount": 23,
+    "sectionCount": 142,
+    "sectionHeadingOverlapWithGrobid": 0.1826086956521739,
+    "error": null
+   },
+   "goldPageCountIndependent": null,
+   "latencyMs": 24557
+  },
+  {
+   "caseId": "v5-gw150914",
+   "grobid": {
+    "titleExact": true,
+    "titleTokenF1": 1,
+    "authorRecall": 0,
+    "authorPrecision": 0,
+    "abstractTokenF1": 0.9213483146067416,
+    "referenceCount": 0,
+    "sectionCount": 15,
+    "headerError": null,
+    "fullTextError": null
+   },
+   "pymupdf": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "titleAttempted": false,
+    "abstractFirstPageTokenRecall": 0.8527131782945736,
+    "authorExtracted": false,
+    "pageCount": 16,
+    "sectionCount": 101,
+    "sectionHeadingOverlapWithGrobid": 0.16216216216216217,
+    "error": null
+   },
+   "goldPageCountIndependent": null,
+   "latencyMs": 20899
+  },
+  {
+   "caseId": "v5-dpo",
+   "grobid": {
+    "titleExact": true,
+    "titleTokenF1": 1,
+    "authorRecall": 1,
+    "authorPrecision": 1,
+    "abstractTokenF1": 0.9721115537848606,
+    "referenceCount": 0,
+    "sectionCount": 47,
+    "headerError": null,
+    "fullTextError": null
+   },
+   "pymupdf": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "titleAttempted": false,
+    "abstractFirstPageTokenRecall": 0.9937888198757764,
+    "authorExtracted": false,
+    "pageCount": 27,
+    "sectionCount": 210,
+    "sectionHeadingOverlapWithGrobid": 0.3458646616541353,
+    "error": null
+   },
+   "goldPageCountIndependent": null,
+   "latencyMs": 18000
+  },
+  {
+   "caseId": "v5-flashattention2",
+   "grobid": {
+    "titleExact": true,
+    "titleTokenF1": 1,
+    "authorRecall": 1,
+    "authorPrecision": 1,
+    "abstractTokenF1": 0.9962264150943396,
+    "referenceCount": 0,
+    "sectionCount": 35,
+    "headerError": null,
+    "fullTextError": null
+   },
+   "pymupdf": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "titleAttempted": false,
+    "abstractFirstPageTokenRecall": 0.9885714285714285,
+    "authorExtracted": false,
+    "pageCount": 14,
+    "sectionCount": 90,
+    "sectionHeadingOverlapWithGrobid": 0.3968253968253968,
+    "error": null
+   },
+   "goldPageCountIndependent": null,
+   "latencyMs": 7978
+  },
+  {
+   "caseId": "v5-zephyr",
+   "grobid": {
+    "titleExact": true,
+    "titleTokenF1": 1,
+    "authorRecall": 0.9285714285714286,
+    "authorPrecision": 0.9285714285714286,
+    "abstractTokenF1": 0.9435897435897436,
+    "referenceCount": 0,
+    "sectionCount": 22,
+    "headerError": null,
+    "fullTextError": null
+   },
+   "pymupdf": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "titleAttempted": false,
+    "abstractFirstPageTokenRecall": 0.9024390243902439,
+    "authorExtracted": false,
+    "pageCount": 14,
+    "sectionCount": 72,
+    "sectionHeadingOverlapWithGrobid": 0.41509433962264153,
+    "error": null
+   },
+   "goldPageCountIndependent": null,
+   "latencyMs": 10448
+  },
+  {
+   "caseId": "v5-santurkar",
+   "grobid": {
+    "titleExact": true,
+    "titleTokenF1": 1,
+    "authorRecall": 1,
+    "authorPrecision": 1,
+    "abstractTokenF1": 0.9523809523809523,
+    "referenceCount": 0,
+    "sectionCount": 64,
+    "headerError": null,
+    "fullTextError": null
+   },
+   "pymupdf": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "titleAttempted": false,
+    "abstractFirstPageTokenRecall": 0.8759124087591241,
+    "authorExtracted": false,
+    "pageCount": 43,
+    "sectionCount": 164,
+    "sectionHeadingOverlapWithGrobid": 0.15343915343915343,
+    "error": null
+   },
+   "goldPageCountIndependent": null,
+   "latencyMs": 13902
+  },
+  {
+   "caseId": "v5-gilardi",
+   "grobid": {
+    "titleExact": true,
+    "titleTokenF1": 1,
+    "authorRecall": 1,
+    "authorPrecision": 1,
+    "abstractTokenF1": 0.8765432098765432,
+    "referenceCount": 0,
+    "sectionCount": 19,
+    "headerError": null,
+    "fullTextError": null
+   },
+   "pymupdf": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "titleAttempted": false,
+    "abstractFirstPageTokenRecall": 0.93,
+    "authorExtracted": false,
+    "pageCount": 13,
+    "sectionCount": 38,
+    "sectionHeadingOverlapWithGrobid": 0.4594594594594595,
+    "error": null
+   },
+   "goldPageCountIndependent": null,
+   "latencyMs": 5752
+  },
+  {
+   "caseId": "v5-aifeynman",
+   "grobid": {
+    "titleExact": true,
+    "titleTokenF1": 1,
+    "authorRecall": 1,
+    "authorPrecision": 1,
+    "abstractTokenF1": 0.9848484848484849,
+    "referenceCount": 0,
+    "sectionCount": 28,
+    "headerError": null,
+    "fullTextError": null
+   },
+   "pymupdf": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "titleAttempted": false,
+    "abstractFirstPageTokenRecall": 0.9295774647887324,
+    "authorExtracted": false,
+    "pageCount": 15,
+    "sectionCount": 286,
+    "sectionHeadingOverlapWithGrobid": 0.1320754716981132,
+    "error": null
+   },
+   "goldPageCountIndependent": null,
+   "latencyMs": 10281
+  }
+ ]
+}

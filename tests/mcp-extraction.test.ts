@@ -10,14 +10,14 @@ function capture() {
 describe('MCP extraction evidence boundary', () => {
   it('registers the Phase 6 extraction tools', () => {
     const {server, handlers} = capture();
-    registerTools(server as any, {extractPaperClaims:vi.fn(),extractPaperFacts:vi.fn(),extractTrainingParameters:vi.fn(),recipeFromPaper:vi.fn()} as any);
+    registerTools(server as any, {extractPaperClaims:vi.fn(),extractPaperFacts:vi.fn(),extractCanonicalPaperFacts:vi.fn().mockResolvedValue({facts:[],diagnostics:{accepted:0,rejections:[]}}),extractTrainingParameters:vi.fn(),recipeFromPaper:vi.fn()} as any);
     expect([...handlers.keys()]).toEqual(expect.arrayContaining(['extract_paper_facts','extract_paper_claims','extract_training_parameters','extract_training_recipe_from_url']));
   });
 
   it('returns claim evidence and citation text at the MCP boundary', async () => {
     const {server, handlers} = capture();
     const claim = {claimId:'claim-a',claimKey:'loss|loss',kind:'loss',statement:'Uses KL.',sourceUrl:'https://example.com/paper',locator:{section:'Loss'},confidence:'heuristic',evidenceType:'DERIVED',evidence:{evidenceId:'evidence-a',sourceId:'https://example.com/paper',authors:[],title:'Loss claim',identifiers:{},locator:{section:'Loss'},evidenceType:'DERIVED',sourceQuality:'C',evidence:'Uses KL.',citationText:'https://example.com/paper#Loss'}};
-    registerTools(server as any, {extractPaperClaims:vi.fn().mockResolvedValue({claims:[claim],conflicts:[]}),extractPaperFacts:vi.fn(),extractTrainingParameters:vi.fn(),recipeFromPaper:vi.fn()} as any);
+    registerTools(server as any, {extractPaperClaims:vi.fn().mockResolvedValue({claims:[claim],conflicts:[]}),extractPaperFacts:vi.fn(),extractCanonicalPaperFacts:vi.fn().mockResolvedValue({facts:[],diagnostics:{accepted:0,rejections:[]}}),extractTrainingParameters:vi.fn(),recipeFromPaper:vi.fn()} as any);
     const response = await handlers.get('extract_paper_claims')!({url:claim.sourceUrl});
     expect(response.structuredContent.evidence).toEqual([claim.evidence]);
     expect(response.content[0].text).toContain(claim.evidence.citationText);
@@ -28,6 +28,7 @@ describe('MCP extraction evidence boundary', () => {
     const locator = {section:'Training'};
     registerTools(server as any, {
       extractPaperClaims:vi.fn(),
+      extractCanonicalPaperFacts:vi.fn().mockResolvedValue({facts:[],diagnostics:{accepted:0,rejections:[]}}),
       extractPaperFacts:vi.fn().mockResolvedValue([{kind:'methodology',text:'Uses supervised training.',sourceUrl:'https://example.com/paper',locator,confidence:'heuristic'}]),
       extractTrainingParameters:vi.fn().mockResolvedValue([{name:'batch_size',value:'32',sourceUrl:'https://example.com/paper',locator,confidence:'explicit'}]),
       recipeFromPaper:vi.fn()

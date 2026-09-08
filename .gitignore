@@ -9,3 +9,6 @@ data/
 *.sqlite-*
 .hermes/
 .cache/real-source/
+coverage/
+evals/results/*.json
+.zcode/

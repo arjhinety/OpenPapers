@@ -14,7 +14,7 @@ The package exposes the `openpapers` executable. For a packed-install smoke test
 npm pack
 mkdir /tmp/openpapers-smoke && cd /tmp/openpapers-smoke
 npm init -y
-npm install /path/to/openpapers-0.1.0.tgz
+npm install /path/to/openpapers-1.0.0.tgz
 npm exec -- openpapers
 ```
 

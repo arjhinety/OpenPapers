@@ -1,0 +1,144 @@
+{
+  "schemaVersion": "openpapers.retrieval-holdout-result.v1",
+  "kind": "offline-untouched-checkpoint",
+  "commit": "972a15f7268b50d0fa8b308841257cdecb24728d",
+  "dataset": "retrieval-holdout-v1",
+  "developmentDataNotUsed": true,
+  "metrics": {
+    "queries": 5,
+    "mrr": 1,
+    "recallAt1": 1,
+    "precisionAt1": 1,
+    "recallAt5": 1,
+    "precisionAt5": 0.2,
+    "recallAt10": 1,
+    "precisionAt10": 0.1
+  },
+  "rows": [
+    {
+      "query": "parameter efficient fine tuning with low rank adapters",
+      "relevant": [
+        "lora"
+      ],
+      "returned": [
+        "lora",
+        "flashattention",
+        "llama",
+        "qlora",
+        "medusa",
+        "instructgpt",
+        "self-instruct",
+        "gorilla",
+        "attention-is-all-you-need",
+        "bert"
+      ],
+      "mrr": 1,
+      "recallAt1": 1,
+      "precisionAt1": 1,
+      "recallAt5": 1,
+      "precisionAt5": 0.2,
+      "recallAt10": 1,
+      "precisionAt10": 0.1
+    },
+    {
+      "query": "preference optimization without a reference model",
+      "relevant": [
+        "orpo"
+      ],
+      "returned": [
+        "orpo",
+        "dpo",
+        "distilbert",
+        "gorilla",
+        "self-instruct",
+        "mixtral",
+        "attention-is-all-you-need",
+        "bert",
+        "gpt3",
+        "llama"
+      ],
+      "mrr": 1,
+      "recallAt1": 1,
+      "precisionAt1": 1,
+      "recallAt5": 1,
+      "precisionAt5": 0.2,
+      "recallAt10": 1,
+      "precisionAt10": 0.1
+    },
+    {
+      "query": "memory efficient exact attention IO awareness",
+      "relevant": [
+        "flashattention"
+      ],
+      "returned": [
+        "flashattention",
+        "attention-is-all-you-need",
+        "llama",
+        "qlora",
+        "minilm",
+        "lora",
+        "bert",
+        "gpt3",
+        "dpo",
+        "orpo"
+      ],
+      "mrr": 1,
+      "recallAt1": 1,
+      "precisionAt1": 1,
+      "recallAt5": 1,
+      "precisionAt5": 0.2,
+      "recallAt10": 1,
+      "precisionAt10": 0.1
+    },
+    {
+      "query": "self generated instructions for language model alignment",
+      "relevant": [
+        "self-instruct"
+      ],
+      "returned": [
+        "self-instruct",
+        "bert",
+        "dpo",
+        "minilm",
+        "tinybert",
+        "instructgpt",
+        "gorilla",
+        "gpt3",
+        "llama",
+        "lora"
+      ],
+      "mrr": 1,
+      "recallAt1": 1,
+      "precisionAt1": 1,
+      "recallAt5": 1,
+      "precisionAt5": 0.2,
+      "recallAt10": 1,
+      "precisionAt10": 0.1
+    },
+    {
+      "query": "sparse mixture of experts routing language model",
+      "relevant": [
+        "mixtral"
+      ],
+      "returned": [
+        "mixtral",
+        "bert",
+        "lora",
+        "dpo",
+        "gorilla",
+        "self-instruct",
+        "gpt3",
+        "llama",
+        "qlora",
+        "orpo"
+      ],
+      "mrr": 1,
+      "recallAt1": 1,
+      "precisionAt1": 1,
+      "recallAt5": 1,
+      "precisionAt5": 0.2,
+      "recallAt10": 1,
+      "precisionAt10": 0.1
+    }
+  ]
+}

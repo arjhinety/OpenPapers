@@ -7,7 +7,7 @@ const html = new TextEncoder().encode('<html><head><title>Paper</title><script>i
 describe('structured document parsing', () => {
   it('parses GROBID TEI sections and bibliographic references', () => {
     const parsed = parseGrobidTei('https://example.com/paper.pdf', '<TEI><teiHeader><fileDesc><titleStmt><title>GROBID Paper</title></titleStmt></fileDesc></teiHeader><text><body><pb n="3" xml:id="page_3"/><div><head>Introduction</head><p>Text <ref type="bibr" target="#b1">[1]</ref>.</p><formula> x = y + 1 </formula><figure><figDesc>System overview.</figDesc></figure><table><head>Results</head><row><cell>A</cell><cell>B</cell></row></table><div><head>Nested</head><p>Nested text.</p></div></div><div type="appendix"><head>Appendix A</head><p>Supplementary details.</p></div></body><back><div type="references"><listBibl><biblStruct xml:id="b1"><analytic><title>Referenced Work</title><author><persName><surname>Doe</surname></persName></author></analytic><monogr><imprint><date when="2024"/></imprint></monogr><idno type="DOI">10.1234/example</idno></biblStruct></listBibl></div></back></text></TEI>');
-    expect(parsed).toMatchObject({format:'pdf',title:'GROBID Paper'});
+    expect(parsed).toMatchObject({format:'pdf',title:'GROBID Paper',parser:{name:'grobid'}});
     expect(parsed.sections).toEqual(expect.arrayContaining([{level:1,heading:'Introduction',text:'Text [1].',page:3,pageId:'page_3'},{level:2,heading:'Nested',text:'Nested text.',page:3,pageId:'page_3'}]));
     expect(parsed.references).toMatchObject([{text:'Referenced Work',id:'b1',title:'Referenced Work',authors:['Doe'],year:2024,doi:'10.1234/example'}]);
     expect(parsed.equations).toEqual(['x = y + 1']);
@@ -37,6 +37,15 @@ describe('structured document parsing', () => {
     expect(parsed).toMatchObject({title:'Namespaced',sections:[{heading:'Method',text:'Namespace-safe text.'}]});
   });
 
+  it('extracts ordered Unicode, multi-part, and consortium authors from the document header', () => {
+    const parsed = parseGrobidTei('https://example.com/authors.pdf', '<TEI><teiHeader><fileDesc><titleStmt><title>Authors</title></titleStmt><sourceDesc><biblStruct><analytic><author><persName><forename>Zoë</forename><forename type="middle">L.</forename><surname>Nguyen-Smith</surname></persName></author><author><persName><surname>山田</surname><forename>太郎</forename></persName></author><author><orgName>Open Research Consortium</orgName></author></analytic></biblStruct></sourceDesc></fileDesc></teiHeader><text><body/></text></TEI>');
+    expect(parsed.authors).toEqual(['Zoë L. Nguyen-Smith', '太郎 山田', 'Open Research Consortium']);
+  });
+
+  it('keeps equation page provenance across page breaks', () => {
+    const parsed=parseGrobidTei('https://example.com/equations.pdf','<TEI><text><body><pb n="1"/><div><head>Method</head><formula>x=1</formula></div><pb n="2"/><div><formula>y=2</formula></div></body></text></TEI>');
+    expect(parsed.equationMetadata).toEqual([{text:'x=1',page:1},{text:'y=2',page:2}]); expect(searchDocument(parsed,'y=2')[0]).toMatchObject({kind:'equation',page:2});
+  });
   it('posts PDF bytes to GROBID and returns parsed TEI', async () => {
     let request: Request | undefined;
     const fetcher = async (input: RequestInfo | URL, init?: RequestInit) => { request = new Request(input, init); return new Response('<TEI><teiHeader><fileDesc><titleStmt><title>Result</title></titleStmt></fileDesc></teiHeader><text><body><div><head>Body</head><p>Content.</p></div></body></text></TEI>', {status:200, headers:{'content-type':'application/xml'}}); };
@@ -51,6 +60,11 @@ describe('structured document parsing', () => {
     const fetcher = async () => new Response(new ReadableStream({pull(controller) { const chunk=chunks[index++]; if(chunk) controller.enqueue(chunk); else controller.close(); }, cancel() { cancelled=true; }}), {status:200, headers:{'content-type':'application/xml','content-length':'1'}});
     await expect(new GrobidClient('http://grobid:8070', fetcher, 20).process(new Uint8Array([1]), 'paper.pdf')).rejects.toThrow('GROBID response size limit');
     expect(cancelled).toBe(true);
+  });
+  it('uses configured fallbacks when GROBID returns a successful non-TEI body', async () => {
+    const fallback={name:'pymupdf' as const,extract:async()=>({format:'pdf' as const,url:'file.pdf',sections:[],references:[],warnings:[]})};
+    const chain=new PdfParserChain({process:async()=>{return new GrobidClient('http://grobid:8070',async()=>new Response('<html>error</html>',{status:200})).process(new Uint8Array([1]));}},[fallback]);
+    await expect(chain.process(new Uint8Array([1]),'file.pdf')).resolves.toMatchObject({parser:{name:'pymupdf'},warnings:[expect.stringContaining('TEI body is missing')]});
   });
   it('uses configured fallbacks after GROBID failure and preserves a warning', async () => {
     const fallback = {name:'pymupdf', extract:async () => ({format:'pdf' as const,url:'file.pdf',sections:[],references:[],warnings:[]})};

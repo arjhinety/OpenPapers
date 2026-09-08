@@ -129,12 +129,12 @@ See [the installation guide](docs/installation.md) for deployment choices and [t
 
 ## MCP tools
 
-OpenPapers registers 36 bounded tools. The inventory below matches the current server registration:
+OpenPapers registers 37 bounded tools. The inventory below matches the current server registration:
 
 - **Retrieval**: `search_papers`, `get_paper`, `get_bibtex`, `research_method`, `research_topic`
 - **Graphs**: `get_references`, `get_citations`, `get_related_papers`, `resolve_author`
 - **Documents and extraction**: `read_paper`, `search_within_paper`, `extract_paper_facts`, `extract_paper_claims`, `extract_training_parameters`
-- **Verification and reproducibility**: `extract_training_recipe`, `extract_training_recipe_from_url`, `build_research_report`, `compare_paper_to_code`, `compare_papers`, `compare_methods`, `verify_claim`
+- **Verification and reproducibility**: `extract_training_recipe`, `extract_training_recipe_from_url`, `build_research_report`, `compare_paper_to_code`, `compare_papers`, `compare_methods`, `verify_claim`, `reconstruct_research`
 - **Developer ecosystem**: `find_implementations`, `find_models`, `find_datasets`, `find_repository_configs`, `get_repository_config`
 - **Research library**: `create_collection`, `list_collections`, `add_paper_to_collection`, `remove_paper_from_collection`, `delete_collection`, `export_research_pack`, `import_research_pack`, `refresh_collection`, `refresh_paper`, `vector_search`
 
@@ -197,7 +197,9 @@ The documentation index groups guides by task and audience:
 
 ## Project status and roadmap
 
-Version `0.1.0` is the current package baseline. The project prioritizes provenance and citation verification before automatic citation output.
+Version `1.0.0` is the current release baseline. The 1.0 contract: OpenPapers is a provenance-first **infrastructure layer** for discovering works by identifier or exact title, retrieving, extracting, reconciling, and locating evidence from scholarly sources — with explicit refusal instead of fabrication. High-quality open-ended fuzzy scholarly search is explicitly out of the 1.0 contract (measured at ≈0.5 Recall@10); see [known limitations](docs/limitations.md). The project prioritizes provenance and citation verification before automatic citation output.
+
+Quality is gated by a five-level test program (static, offline integration, spawned-process end-to-end, live-provider evaluation, container runtime) with a claims matrix mapping every public claim to recorded evidence; see [the test plan](docs/testing.md). Reliability claims are scoped by [known limitations](docs/limitations.md): live search is measured — exact-title Recall@10 1.0 and identifier resolution 1.0 over the recorded 30-case run, with fuzzy discovery at 0.5 — not guaranteed.
 
 The [changelog](CHANGELOG.md) records completed work. The [roadmap](docs/roadmap.md) describes citation metadata, source-aware citation output, and deferred retrieval improvements.
 

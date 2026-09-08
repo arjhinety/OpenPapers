@@ -55,7 +55,7 @@ The MCP v2 `McpServer` factory registers typed tools. `serveStdio` serves local 
 - Implemented: bounded `read_paper` MCP acquisition/parsing and `search_within_paper`; matches carry stable URL, section heading/level, page number/ID when supplied by GROBID, chunk ordinal, and chunk ID provenance.
 
 ### Phase 6 — Evidence-backed extraction — COMPLETE
-- Completed graph relationship refinement using explicit provider lineage metadata and live end-to-end HTTP MCP verification. Positive OpenAlex graph results and transparent Semantic Scholar provider failures were both observed.
+- Completed graph relationship refinement using explicit provider lineage metadata and deterministic/in-process verification. Live HTTP graph behavior remains an environment-dependent release gate and is not asserted by the credential-free suite.
 - Implemented first slice: deterministic section-heading and structured-equation extraction is exposed through `ResearchService.extractPaperFacts` and the bounded `extract_paper_facts` MCP tool. Results are explicitly heuristic and carry URL/section/page locators.
 - Implemented second slice: heuristic facts normalize into stable derived claims; SQLite persists claims and conflict records, and `extract_paper_claims` exposes the reconciled result through MCP.
 - Implemented third slice: explicit training parameter extraction recognizes labeled numeric and optimizer values without inferring unlabeled numbers, and exposes section/page provenance through `extract_training_parameters`.

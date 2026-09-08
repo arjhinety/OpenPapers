@@ -2,6 +2,10 @@
 
 Use this checklist for a release candidate. Mark items only after running them against the current checkout and record environment-dependent evidence in the release notes.
 
+> **Current checkout status:** this document contains historical gate records for older commits. They are not evidence for the current HEAD. Before release, record `git rev-parse HEAD`, rerun every gate below, and attach artifacts whose filenames include that commit.
+>
+> **Latest clean release verification:** `npm run test:docker`, `npm run test:postgres`, and the frozen v5 holdout passed at the current release candidate. Artifacts are generated under `evals/results/` with the exact HEAD; generated results are ignored so they do not dirty the release tree.
+
 ## Automated gates
 
 - [x] `npm ci --no-audit --no-fund`
@@ -10,6 +14,11 @@ Use this checklist for a release candidate. Mark items only after running them a
 - [x] `npm run build`
 - [x] `npm test`
 - [x] `npm run check`
+- [x] `npm run test:e2e`
+- [x] `npm run test:coverage`
+- [x] `npm run test:package`
+- [x] `npm run test:postgres`
+- [x] `npm run test:docker`
 - [x] `git diff --check`
 
 ## Documentation and security
@@ -37,7 +46,7 @@ docker compose down
 
 Verify MCP initialization, `tools/list`, at least one bounded `tools/call`, PostgreSQL/pgvector readiness, GROBID readiness, non-root application execution, and persistent data behavior. Control-plane benchmark results do not represent provider, PDF, GROBID, PostgreSQL, or model throughput.
 
-Latest verification: Compose configuration/build/start passed; all three services became healthy; GROBID returned `true`; MCP initialize, `tools/list` (36 tools), adversarial search/lookup, and create/list collection read-after-write passed; the application ran as `uid=1000(node)`; `/app/data` was writable; pgvector was present; and the 30-run benchmark completed with HTTP 200 responses. Benchmark medians were initialize 21.83 ms, `tools/list` 16.22 ms, and `tools/call` 13.02 ms.
+Current verification: Compose configuration/build/start passed; all three services became healthy; GROBID returned `true`; MCP initialize, `tools/list` (37 tools), adversarial search/lookup, and create/list collection read-after-write passed; the application ran as `uid=1000(node)`; `/app/data` was writable; pgvector was present; and the 30-run benchmark completed with HTTP 200 responses.
 
 - [x] Compose configuration and image build
 - [x] PostgreSQL and GROBID health checks
@@ -56,5 +65,40 @@ Latest verification: Compose configuration/build/start passed; all three service
 ## Publication state
 
 - [x] Changelog is updated for the current unreleased baseline.
-- [x] Version metadata is consistent between `package.json` and `package-lock.json` (`0.1.0`, Apache-2.0, Node.js >=22.5).
+- [x] Version metadata is consistent across `package.json`, `package-lock.json`, `server.json`, `src/mcp/server.ts`, and the `CHANGELOG.md` head entry (`1.0.0`, Apache-2.0, Node.js >=22.5); enforced by `scripts/check-versions.mjs` in `npm run check`.
 - [x] Git working tree is clean after the release checklist update and commit.
+
+## 1.0.0 release verification (2026-09-05)
+
+Re-run against the merged release candidate at commit `972a15f7268b50d0fa8b308841257cdecb24728d`:
+
+- [x] `npm run check` (TypeScript check, architecture rules, production build, Vitest): 62 test files, 217 tests passed.
+- [x] Release evaluations recorded in `evals/results/*-972a15f7268b*.json`; summary in `CHANGELOG.md`. Retrieval ranking matches the accepted R-001 state exactly; the holdout split was not used for tuning.
+- [x] Runtime gates re-verified with Docker Compose: all three services healthy; GROBID `/api/isalive` returned `true`; MCP initialize, `tools/list` (37 tools), adversarial search/lookup, and create/list collection read-after-write passed; the 30-run benchmark completed with HTTP 200 responses. Medians: initialize 8.01 ms, `tools/list` 8.81 ms, `tools/call` 6.92 ms.
+- [x] Version metadata consistent between `package.json` and `package-lock.json` (`1.0.0`, Apache-2.0, Node.js >=22.5).
+
+## 1.0.0 QA program gates (2026-09-05)
+
+Added by the [test plan](docs/testing.md); re-run against the final verified commit:
+
+- [x] `npm run test:e2e`: 37-tool behavioral matrix plus spawned-process suites (stdio handshake through tool calls and invalid-tool errors; HTTP socket with origin validation and shutdown port release; SQLite close/reopen persistence).
+- [x] `npm run test:docker`: compose stack with fixture providers, 37 tools over a real socket, collection survives `compose restart` (PostgreSQL), GROBID isalive, adversarial smoke, benchmark; evidence in `evals/results/docker-e2e-*.json`.
+- [x] `npm run test:live` thresholds met: title-exact Recall@10 1.0 (16 cases), identifier resolution 1.0 (8 cases), identity correctness 1.0, zero-result-with-no-reported-failure 0; evidence in `evals/results/live-search-reliability-*.json`. Fuzzy discovery 0.5 recorded and scoped as discovery quality.
+- [x] `npm run test:coverage` produces a v8 coverage report; `scripts/postgres-integration.mjs` includes the service-level round-trip (`serviceRoundTrip`).
+- [x] Identifier-shaped queries probe arXiv/Crossref natively (`tests/identifier-probe.test.ts`); arXiv-minted DOIs (`10.48550/arXiv.*`) route to the arXiv probe rather than Crossref.
+
+## 1.0.0 final release-candidate verification (2026-09-06)
+
+Executed after the release-integrity pass (clean history, version alignment, holdout expansion, PDF fidelity gold set, metric-semantics documentation). All gates were run against commit `02c9ae4cf29fb4053ef4878a46954dfcee7c4e7a`; the release commit containing this checklist and the recorded evidence is its immediate successor. The delta between the two commits contains no shipped source changes: documentation, recorded evidence, the new `scripts/package-e2e.mjs` distribution gate, and a `.gitignore` entry. `npm run check` was additionally re-run at the release commit itself.
+
+- [x] `npm run verify` (version-consistency gate, TypeScript check, architecture rules, production build, Vitest): 67 test files, 257 tests passed; versions consistent across 7 locations.
+- [x] `npm run test:coverage`: v8 coverage report produced (67 files, 257 tests).
+- [x] `npm run test:postgres`: rollback, identity migration, reconnect, vector search, and service-level round-trip passed (the service-level stores now initialize explicitly; this check previously failed on CI).
+- [x] `npm run test:docker`: full compose E2E passed with evidence in `evals/results/docker-e2e-02c9ae4cf29f.json` (12/12 steps including collection survival across container restart and 30-run benchmark).
+- [x] `npm run test:live` (strict): thresholds met — title-exact Recall@10 1.0, identifier resolution 1.0, identity correctness 1.0, zero silent failures; fuzzy discovery 0.5 recorded (out of the 1.0 contract per [limitations](docs/limitations.md)); evidence in `evals/results/live-search-reliability-02c9ae4cf29f.json`.
+- [x] `npm run eval:real-v5-holdout`: frozen 20-case/40-task holdout — answer correctness 1.0, fact recall 1.0, fabricated answers 0, support-status accuracy 0.975 (single disclosed miss: `v5-rwkv-task-1`); evidence in `evals/results/real-source-v5-holdout-*.json`.
+- [x] `npm run eval:pdf-gold`: PDF parsing fidelity over the frozen 26-paper `pdf-gold-v1` set; evidence in `evals/results/pdf-gold-fidelity-*.json`.
+- [x] `npm run test:package`: pristine tarball install (`openpapers-1.0.0.tgz`), spawned installed binary over stdio, version match, 37 tools, search + collection + persistence across restart — passed for both the SQLite and PostgreSQL backends.
+- [x] `npm pack --dry-run` and `npm audit --audit-level=high`: tarball builds; 0 vulnerabilities.
+- [x] Version metadata consistent across `package.json`, `package-lock.json`, `server.json`, `src/mcp/server.ts`, and the `CHANGELOG.md` head (`1.0.0`), enforced by `scripts/check-versions.mjs`.
+- [x] No GitHub release or npm publication existed before this freeze; the `v1.0.0` tag is created at the release commit at publication time.

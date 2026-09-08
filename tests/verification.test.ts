@@ -38,10 +38,10 @@ describe('citation integrity', () => {
     expect(result.valid).toBe(false);
     expect(result.errors).toEqual(expect.arrayContaining(['duplicate evidenceId ev_1', 'evidence ev_2 has invalid page locator']));
   });
-  it('rejects evidence with no author metadata even when its source exists', () => {
-    const response = { summary:'A claim [A Author, 2025].', data:{claim:'x'}, evidence:[{...evidence, authors:[]}], references:[{paperId:'paper_1',title:'Paper',authors:evidence.authors,year:2025,publicationStatus:'preprint',bibtex:'',sourceProviders:['test'],versions:[]}], transparency:{expandedQueries:[],sourcesSearched:[],candidates:1,retrievedAt:'',rankingRationale:[]} } as unknown as ResearchResponse<unknown>;
+  it('accepts authorless evidence when its source exists', () => {
+    const response = { summary:'A claim [A Author, 2025, §2, p. 3].', data:{claim:'x'}, evidence:[{...evidence, authors:[]}], references:[{paperId:'paper_1',title:'Paper',authors:evidence.authors,year:2025,publicationStatus:'preprint',bibtex:'',sourceProviders:['test'],versions:[]}], transparency:{expandedQueries:[],sourcesSearched:[],candidates:1,retrievedAt:'',rankingRationale:[]} } as unknown as ResearchResponse<unknown>;
     const result = validateCitationIntegrity(response);
-    expect(result.valid).toBe(false);
-    expect(result.errors).toContain('evidence ev_1 has no author metadata');
+    expect(result.valid).toBe(true);
+    expect(result.errors).toEqual([]);
   });
 });

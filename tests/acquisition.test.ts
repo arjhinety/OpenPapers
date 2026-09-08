@@ -7,6 +7,8 @@ describe('bounded paper acquisition', () => {
     await expect(new PaperAcquirer(fetcher).acquire('http://127.0.0.1/paper')).rejects.toThrow('unsafe host');
     await expect(new PaperAcquirer(fetcher).acquire('http://169.254.169.254/latest/meta-data')).rejects.toThrow('unsafe host');
     await expect(new PaperAcquirer(fetcher).acquire('http://[::ffff:127.0.0.1]/paper')).rejects.toThrow('unsafe host');
+    await expect(new PaperAcquirer(fetcher).acquire('http://[::7f00:1]/paper')).rejects.toThrow('unsafe host');
+    await expect(new PaperAcquirer(fetcher).acquire('http://[::c0a8:101]/paper')).rejects.toThrow('unsafe host');
   });
 
   it('rejects declared bodies over the configured limit', async () => {

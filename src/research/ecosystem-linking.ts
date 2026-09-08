@@ -1,7 +1,7 @@
 import type { GitHubRepository } from '../providers/github.js';
 import type { HubItem, PaperLink } from '../providers/huggingface.js';
 import type { Evidence, ResearchWork } from '../models/research.js';
-import { makeEvidence } from './citations.js';
+import { makeEvidence, normalizeArxivId, normalizeDoi } from './citations.js';
 
 export interface ReconciledPaperLink extends PaperLink {
   status: 'VERIFIED' | 'UNVERIFIED';
@@ -15,7 +15,7 @@ export interface RepositoryLinkAssessment { level: 'PAPER_REFERENCED' | 'AUTHOR_
 
 export function classifyRepositoryAttribution(repository: GitHubRepository, paper: ResearchWork, readme = ''): RepositoryAttribution {
   const text = readme.toLowerCase();
-  const identifiers = [paper.arxivId, paper.doi].filter((value): value is string => Boolean(value)).map(value => value.toLowerCase());
+  const identifiers = [paper.arxivId, paper.doi].filter((value): value is string => Boolean(value)).map(value => { try { return value.startsWith('10.') ? normalizeDoi(value) : normalizeArxivId(value); } catch { return value.toLowerCase(); } });
   const referencesPaper = identifiers.some(identifier => text.includes(identifier));
   const owner = repository.owner.toLowerCase().replace(/[^a-z0-9]/g, '');
   const officialClaim = /\bofficial implementation\b/.test(text);
@@ -61,4 +61,5 @@ export function repositoryLinkEvidence(repository: { htmlUrl: string; fullName: 
   return [makeEvidence(repository.htmlUrl, paper, `GitHub repository ${repository.fullName}: ${assessment.reasons.join('; ')}`, assessment.level === 'PAPER_REFERENCED' ? 'SECONDARY_SOURCE' : 'DERIVED', 'D', locator)];
 }
 
-export function reconcilePaperLinks(item: HubItem, resolver: PaperResolver): ReconciledPaperLinks { return { itemId: item.id, links: item.paperLinks.map(link => { const paperId = resolver(link); return paperId ? { ...link, status: 'VERIFIED' as const, paperId } : { ...link, status: 'UNVERIFIED' as const }; }) }; }
+export function reconcilePaperLinks(item: HubItem, resolver: PaperResolver): ReconciledPaperLinks { const seen=new Set<string>(); const links=item.paperLinks.filter(link=>{const key=`${link.type}:${normalisePaperLink(link)}`;if(seen.has(key))return false;seen.add(key);return true;}).map(link=>{ const paperId = resolver(link); return paperId ? { ...link, status: 'VERIFIED' as const, paperId } : { ...link, status: 'UNVERIFIED' as const }; }); return { itemId: item.id, links }; }
+function normalisePaperLink(link:PaperLink):string { try{return link.type==='arxiv'?normalizeArxivId(link.value):normalizeDoi(link.value);}catch{return link.value.trim().toLowerCase();} }

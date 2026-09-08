@@ -41,6 +41,17 @@ describe('citation and canonicalization invariants', () => {
     const aliases = ['arXiv:1706.03762', '1706.03762', '1706.03762v1', '1706.03762v7', 'https://arxiv.org/abs/1706.03762v7', 'https://www.arxiv.org/pdf/1706.03762v1.pdf'];
     expect(new Set(aliases.map(normalizeArxivId))).toEqual(new Set(['1706.03762']));
   });
+  it('normalizes legacy category-style arXiv identifiers without losing the category', () => {
+    const aliases = ['cond-mat/9703183', 'cond-mat/9703183v2', 'arXiv:cond-mat/9703183', 'https://arxiv.org/abs/cond-mat/9703183v2'];
+    expect(new Set(aliases.map(normalizeArxivId))).toEqual(new Set(['cond-mat/9703183']));
+    expect(normalizeArxivId(normalizeArxivId('cond-mat/9703183v2'))).toBe('cond-mat/9703183');
+  });
+  it('distinguishes malformed legacy identifiers from syntactically valid unknown categories', () => {
+    for (const value of ['cond-mat9703183', 'cond-mat//9703183', 'cond-mat/abc', 'cond-mat/970318', 'cond-mat/97031830']) {
+      expect(() => normalizeArxivId(value)).toThrow(/invalid arXiv identifier/);
+    }
+    expect(() => normalizeArxivId('foo/9703183')).toThrow(/invalid arXiv identifier/);
+  });
   it('reconciles overlapping provider identifiers to one work identity', () => {
     const canonical = paperId('A Paper', [author('Alice Smith')], '10.1234/abc');
     const openalex = mapOpenAlexWork({title:'A Paper', authorships:[{author:{display_name:'Alice Smith'}}], doi:'https://doi.org/10.1234/ABC'});
@@ -60,6 +71,14 @@ describe('citation and canonicalization invariants', () => {
   });
   it('rejects malformed successful arXiv XML instead of treating it as no results', async () => {
     await expect(new ArxivProvider(async () => new Response('<html>not arxiv</html>', {status:200})).search('paper')).rejects.toThrow(/invalid arXiv response/);
+  });
+  it('round-trips a legacy arXiv identifier through the provider query', async () => {
+    let requested = '';
+    const xml = '<feed><entry><id>http://arxiv.org/abs/cond-mat/9703183v2</id><title>Legacy paper</title><author><name>Ada Lovelace</name></author><published>1997-03-18T00:00:00Z</published></entry></feed>';
+    const provider = new ArxivProvider(async input => { requested = String(input); return new Response(xml, { status: 200 }); });
+    const works = await provider.searchById('arXiv:cond-mat/9703183v2');
+    expect(requested).toContain('id:cond-mat%2F9703183');
+    expect(works[0]).toMatchObject({ arxivId: 'cond-mat/9703183', title: 'Legacy paper' });
   });
   it('renders author and locator in evidence citation', () => {
     const work: ResearchWork = { paperId:'work_x', title:'A Paper', authors:[author('Alice Smith'), author('Bob Jones')], year:2025, arxivId:'2501.00001', publicationStatus:'preprint', bibtex:'', sourceProviders:['arxiv'], versions:[] };

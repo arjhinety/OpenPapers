@@ -1,0 +1,266 @@
+{
+ "schemaVersion": "openpapers.scale-experiment-audit.v1",
+ "commit": "4b232414904f88bb29ba05433bff2b92ad6bf020",
+ "dataset": "research-scale-v1",
+ "method": "Each seeded 25-candidate sample fact was manually judged against its raw evidence sentence: TRUE only if it states a fact of the paper's own work; reference titles, related-work mentions, background definitions, future work, and lexical false positives count as FALSE.",
+ "auditSize": 25,
+ "candidatePoolSize": 215,
+ "trueCount": 7,
+ "estimatedCandidatePrecision": 0.28,
+ "wilson95": [
+  0.1428367383738157,
+  0.47576971896558296
+ ],
+ "verdicts": [
+  {
+   "caseId": "scale-2609-04195",
+   "category": "q-bio.NC",
+   "predicate": "system.zero_stage",
+   "value": "parameters",
+   "section": "1985).",
+   "page": 17,
+   "rawEvidence": "Transformer Integrator neuron Origin of K Learned linear projection weights, unconstrained Axonal conduction delays, a physical property fixed by anatomy Gating Softmax: continuous, every key contributes Calcium threshold: all-or-none, subthreshold input contributes nothing Sparsity Absent; all tokens participate at every step Intrinsic to the threshold, not imposed by regularization Plasticity Gr",
+   "verdict": "FALSE"
+  },
+  {
+   "caseId": "scale-2609-03883",
+   "category": "q-bio.NC",
+   "predicate": "reasoning.trace_type",
+   "value": "thought",
+   "section": "1,3,8,9",
+   "page": 1,
+   "rawEvidence": "Inferring Affective Consciousness in an Artificial Agent A Case Study Abstract: Creatures that display ‘hedonic place preference behaviour’ are thought by many scientists to experience feelings, on the assumption that their attraction to pleasure-producing substances which lack nutritional value (e.",
+   "verdict": "FALSE"
+  },
+  {
+   "caseId": "scale-2609-04199",
+   "category": "cs.LG",
+   "predicate": "training.stage",
+   "value": "fine-tuning",
+   "section": "Limitations",
+   "page": 7,
+   "rawEvidence": "QLoRA: Efficient fine-tuning of quantized LLMs.",
+   "verdict": "FALSE"
+  },
+  {
+   "caseId": "scale-2609-04202",
+   "category": "cs.CV",
+   "predicate": "model.formulation",
+   "value": "multimodal model",
+   "section": "DPFM [3]",
+   "page": 13,
+   "rawEvidence": "Self-supervised learning for multimodal non-rigid 3d shape matching.",
+   "verdict": "FALSE"
+  },
+  {
+   "caseId": "scale-2609-03901",
+   "category": "cs.IR",
+   "predicate": "retrieval.retriever",
+   "value": "dual-encoder dense retriever",
+   "section": "Semantic and Dense Retrieval",
+   "page": 4,
+   "rawEvidence": "[17] demonstrated that a dense passage retrieval model substantially outperforms BM25 for open-domain question answering.",
+   "verdict": "FALSE"
+  },
+  {
+   "caseId": "scale-2609-04173",
+   "category": "cs.CL",
+   "predicate": "evaluation.method",
+   "value": "pairwise judging",
+   "section": "Related work",
+   "page": 3,
+   "rawEvidence": "While these metrics, such as Comet [39] or LLM-as-a-judge [40], correlate more with human judgment of translation quality, they are plagued by problems, including low interpretability, unreliability, vulnerability to reward-hacking, self-preference, and other hidden biases [14, 41–44].",
+   "verdict": "FALSE"
+  },
+  {
+   "caseId": "scale-2609-03318",
+   "category": "cs.DC",
+   "predicate": "architecture.moe",
+   "value": "mixture of experts",
+   "section": "CONCLUSION AND FUTURE WORK",
+   "page": 12,
+   "rawEvidence": "Fi-nally, emerging architectures, including sparse mixture-of-experts and state-space models, expose new input-dependent execution structures.",
+   "verdict": "FALSE"
+  },
+  {
+   "caseId": "scale-2609-04083",
+   "category": "cs.CL",
+   "predicate": "training.objective",
+   "value": "contrastive learning",
+   "section": "Yale University",
+   "page": 1,
+   "rawEvidence": "We further introduce a graded evaluation protocol and compare contrastive learning, pairwise CoSENT, and listwise Rank-KL under the same data and tuning budget.",
+   "verdict": "TRUE"
+  },
+  {
+   "caseId": "scale-2609-04183",
+   "category": "cs.CV",
+   "predicate": "training.objective",
+   "value": "contrastive learning",
+   "section": "Model Training and Inference",
+   "page": 5,
+   "rawEvidence": ", 2026), our training objective consists of a captioning loss Lcap and a contrastive loss Lcon, supplemented by our pro-posed gated attraction loss Lattr.",
+   "verdict": "TRUE"
+  },
+  {
+   "caseId": "scale-2609-04183",
+   "category": "cs.CV",
+   "predicate": "reasoning.trace_type",
+   "value": "thought",
+   "section": "1(2):3.",
+   "page": 11,
+   "rawEvidence": "Chain-of-thought prompting elic-its reasoning in large language models.",
+   "verdict": "FALSE"
+  },
+  {
+   "caseId": "scale-2609-04168",
+   "category": "cs.LG",
+   "predicate": "model.formulation",
+   "value": "decoder-only Transformer",
+   "section": "ResNet-50 + 3D Position Encoder +",
+   "page": 8,
+   "rawEvidence": "Transformer Decoder + Query Generator BEVFormer-based 4 6 Spatial Cross-attention + 6 Transformer + 6 Temporal Self-attention latency (hybrid-L) and the highest throughput (hybrid-T).",
+   "verdict": "FALSE"
+  },
+  {
+   "caseId": "scale-2609-02797",
+   "category": "econ.GN",
+   "predicate": "training.stage",
+   "value": "fine-tuning",
+   "section": "194–232. IEEE, 2024.",
+   "page": 9,
+   "rawEvidence": "Just ask for calibration: Strategies for eliciting calibrated confidence scores from language models fine-tuned with human feedback.",
+   "verdict": "FALSE"
+  },
+  {
+   "caseId": "scale-2609-04066",
+   "category": "cs.LG",
+   "predicate": "system.zero_stage",
+   "value": "parameters",
+   "section": "\u0000",
+   "page": 20,
+   "rawEvidence": "With low uncertainty and low Hi, Kalman gain Ki tends towards zero, making small or no updates to model parameters.",
+   "verdict": "FALSE"
+  },
+  {
+   "caseId": "scale-2609-03501",
+   "category": "stat.ML",
+   "predicate": "architecture.moe",
+   "value": "mixture of experts",
+   "section": "Introduction",
+   "page": 2,
+   "rawEvidence": "A prominent example is the mixture-of-experts (MoE) architecture, in which a router assigns each input to a subset of expert networks and combines their outputs in an input-dependent manner.",
+   "verdict": "FALSE"
+  },
+  {
+   "caseId": "scale-2609-03779",
+   "category": "astro-ph.IM",
+   "predicate": "training.objective",
+   "value": "contrastive learning",
+   "section": "′′].",
+   "page": 3,
+   "rawEvidence": "Morphological classification scheme To project the radio images into a feature space that more com-pactly encodes their morphological properties, we used the Sim-ple Framework for Contrastive Learning of Visual Representa-tions (SimCLR; Chen et al.",
+   "verdict": "TRUE"
+  },
+  {
+   "caseId": "scale-2609-04183",
+   "category": "cs.CV",
+   "predicate": "model.formulation",
+   "value": "decoder-only Transformer",
+   "section": "Preliminaries",
+   "page": 3,
+   "rawEvidence": "To generate these masks, we employ a Transformer decoder taking video fea-tures with Nv frames v = {vi}Nv i=1, extracted from the video V using CLIP ViT-L/14 (Doso-vitskiy et al.",
+   "verdict": "TRUE"
+  },
+  {
+   "caseId": "scale-2609-04196",
+   "category": "cs.CV",
+   "predicate": "system.zero_stage",
+   "value": "gradients",
+   "section": "(9)",
+   "page": 7,
+   "rawEvidence": "Normalizing each modality by its own view count keeps the appearance gra-dient magnitude stable, while the ramp starts the geometry weight at zero so that early depth gradients do not perturb the shared modulation and output layers.",
+   "verdict": "FALSE"
+  },
+  {
+   "caseId": "scale-2609-04180",
+   "category": "cs.CL",
+   "predicate": "training.preference_method",
+   "value": "DPO",
+   "section": "(1)",
+   "page": 2,
+   "rawEvidence": "Direct Preference Optimization (DPO) offers a neat change of perspective.",
+   "verdict": "TRUE"
+  },
+  {
+   "caseId": "scale-2609-04094",
+   "category": "cs.LG",
+   "predicate": "training.stage",
+   "value": "PPO",
+   "section": "D",
+   "page": 18,
+   "rawEvidence": "Second, we run a single PPO epoch per batch, so every update is on-policy and the im-portance ratio is 1 at the time of the step, which makes the clipping range inactive in practice.",
+   "verdict": "TRUE"
+  },
+  {
+   "caseId": "scale-2609-04203",
+   "category": "cs.CV",
+   "predicate": "training.stage",
+   "value": "fine-tuning",
+   "section": "SSL",
+   "page": 1,
+   "rawEvidence": "A likely reason is that existing training objectives, whether supervised fine-tuning for single-answer correctness [34, 40, 41, 52] or contrastive alignment of video–text pairs [17, 21, 59, 61], do not require 1 arXiv:2609.",
+   "verdict": "FALSE"
+  },
+  {
+   "caseId": "scale-2609-04172",
+   "category": "cs.CL",
+   "predicate": "training.algorithm",
+   "value": "GRPO",
+   "section": "Actor Entropy",
+   "page": 15,
+   "rawEvidence": "RLVR draws 8 rollouts per query and scores each by outcome under GRPO.",
+   "verdict": "TRUE"
+  },
+  {
+   "caseId": "scale-2609-03915",
+   "category": "cs.IR",
+   "predicate": "training.stage",
+   "value": "pretraining",
+   "section": "KDD, 6491–6501. ACM.",
+   "page": 8,
+   "rawEvidence": "REALM: Retrieval-Augmented Language Model Pre-Training.",
+   "verdict": "FALSE"
+  },
+  {
+   "caseId": "scale-2609-04022",
+   "category": "cs.CL",
+   "predicate": "training.stage",
+   "value": "SFT",
+   "section": "Summary",
+   "page": 1,
+   "rawEvidence": "Ensuring these systems are helpful, harmless, and honest has largely relied on Reinforcement Learning from Human or Artiﬁcial Intelligence (AI) Feedback, Supervised Fine-Tuning and inference-time alignment, which directly constrain model responses toward human-centric values 1,8-10.",
+   "verdict": "FALSE"
+  },
+  {
+   "caseId": "scale-2609-04105",
+   "category": "cs.LG",
+   "predicate": "system.zero_stage",
+   "value": "gradients",
+   "section": "0.508 0.986×",
+   "page": 22,
+   "rawEvidence": "The core passes the exact-zero-dO test, returns finite nonzero gradients for a nonzero dO, and passes its represented-operand reference gate.",
+   "verdict": "FALSE"
+  },
+  {
+   "caseId": "scale-2609-04147",
+   "category": "cs.LG",
+   "predicate": "model.formulation",
+   "value": "multimodal model",
+   "section": "(2)",
+   "page": 8,
+   "rawEvidence": "Future work includes automatic image-based registration, a wider-field-of-view camera, and stronger baselines (BEV-based, multimodal, diffusion or transformer policies).",
+   "verdict": "FALSE"
+  }
+ ]
+}

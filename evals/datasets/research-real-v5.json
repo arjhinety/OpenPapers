@@ -1,0 +1,2146 @@
+{
+ "version": "research-real-v5",
+ "status": "fact-first-real-source",
+ "annotationPolicy": "V5 fact-first corpus expanding the frozen real-source holdout from 3 to 20 cases with domain breadth (ML, systems, biology, medicine, physics, social science; obscure, recent, and old papers; with and without repositories). Annotations verified against acquired paper text using the predicate vocabulary of src/research/facts.ts; cross-domain cases deliberately probe the refusal path with expectedStatus UNKNOWN where no supported predicate applies.",
+ "splitPolicy": {
+  "development": "6 new cases (annotation pipeline validation)",
+  "holdout": "20 new cases (frozen before extraction tuning)",
+  "holdoutInfluencedTuning": false
+ },
+ "cases": [
+  {
+   "caseId": "v5-distilbert",
+   "split": "holdout",
+   "title": "DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter",
+   "category": "training",
+   "source": {
+    "arxivId": "1910.01108",
+    "arxivVersion": "v4",
+    "absUrl": "https://arxiv.org/abs/1910.01108v4",
+    "pdfUrl": "https://arxiv.org/pdf/1910.01108v4",
+    "paperRevisionDate": null,
+    "repositoryUrl": "https://github.com/huggingface/transformers",
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [
+     "abstract",
+     "introduction",
+     "method",
+     "experiments",
+     "appendix"
+    ],
+    "predicates": [
+     "training.objective",
+     "training.stage"
+    ],
+    "completeness": "task_linked_non_exhaustive"
+   },
+   "facts": [
+    {
+     "predicate": "training.objective",
+     "value": "knowledge distillation",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "training.objective",
+     "value": "masked language model",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "training.stage",
+     "value": "fine-tuning",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "training.stage",
+     "value": "pretraining",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    }
+   ],
+   "tasks": [
+    {
+     "taskId": "v5-distilbert-task-1",
+     "query": "During which pretraining stage is distillation applied?",
+     "predicate": "training.stage",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "training.stage": "pretraining"
+     },
+     "annotationRationale": "Distillation happens during pre-training and adaptation phases."
+    },
+    {
+     "taskId": "v5-distilbert-task-2",
+     "query": "Which optimizer was used to train DistilBERT?",
+     "predicate": "optimization.optimizer",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "annotationRationale": "The paper does not state a named optimizer; the system must refuse rather than guess."
+    }
+   ]
+  },
+  {
+   "caseId": "v5-roberta",
+   "split": "holdout",
+   "title": "RoBERTa: A Robustly Optimized BERT Pretraining Approach",
+   "category": "training",
+   "source": {
+    "arxivId": "1907.11692",
+    "arxivVersion": "v1",
+    "absUrl": "https://arxiv.org/abs/1907.11692v1",
+    "pdfUrl": "https://arxiv.org/pdf/1907.11692v1",
+    "paperRevisionDate": null,
+    "repositoryUrl": "https://github.com/facebookresearch/fairseq",
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [
+     "abstract",
+     "introduction",
+     "method",
+     "experiments",
+     "appendix"
+    ],
+    "predicates": [
+     "training.objective",
+     "training.stage",
+     "system.parallelism"
+    ],
+    "completeness": "task_linked_non_exhaustive"
+   },
+   "facts": [
+    {
+     "predicate": "training.objective",
+     "value": "masked language model",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "training.stage",
+     "value": "fine-tuning",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "training.stage",
+     "value": "pretraining",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "system.parallelism",
+     "value": "data parallelism",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    }
+   ],
+   "tasks": [
+    {
+     "taskId": "v5-roberta-task-1",
+     "query": "Which parallelism strategy does RoBERTa use for large-batch training?",
+     "predicate": "system.parallelism",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "system.parallelism": "data parallelism"
+     },
+     "annotationRationale": "Large batches are trained with distributed data parallel training."
+    },
+    {
+     "taskId": "v5-roberta-task-2",
+     "query": "Which optimizer schedule was used for pretraining?",
+     "predicate": "optimization.optimizer",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "annotationRationale": "No named optimizer schedule is captured by the supported predicate set."
+    }
+   ]
+  },
+  {
+   "caseId": "v5-clip",
+   "split": "holdout",
+   "title": "Learning Transferable Visual Models From Natural Language Supervision",
+   "category": "model",
+   "source": {
+    "arxivId": "2103.00020",
+    "arxivVersion": "v1",
+    "absUrl": "https://arxiv.org/abs/2103.00020v1",
+    "pdfUrl": "https://arxiv.org/pdf/2103.00020v1",
+    "paperRevisionDate": null,
+    "repositoryUrl": "https://github.com/openai/CLIP",
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [
+     "abstract",
+     "introduction",
+     "method",
+     "experiments",
+     "appendix"
+    ],
+    "predicates": [
+     "training.stage",
+     "training.objective",
+     "model.formulation",
+     "evaluation.regime"
+    ],
+    "completeness": "task_linked_non_exhaustive"
+   },
+   "facts": [
+    {
+     "predicate": "training.stage",
+     "value": "pretraining",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "training.objective",
+     "value": "contrastive learning",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "model.formulation",
+     "value": "multimodal model",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "evaluation.regime",
+     "value": "zero-shot",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "evaluation.regime",
+     "value": "few-shot",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "evaluation.regime",
+     "value": "one-shot",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    }
+   ],
+   "tasks": [
+    {
+     "taskId": "v5-clip-task-1",
+     "query": "What modality capability does CLIP connect?",
+     "predicate": "model.formulation",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "model.formulation": "multimodal model"
+     },
+     "annotationRationale": "CLIP learns image representations from text via a multimodal image-text setup."
+    },
+    {
+     "taskId": "v5-clip-task-2",
+     "query": "Which optimizer was used to train CLIP?",
+     "predicate": "optimization.optimizer",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "annotationRationale": "Optimizer details are not captured by the supported predicate set."
+    }
+   ]
+  },
+  {
+   "caseId": "v5-mqa",
+   "split": "holdout",
+   "title": "Fast Transformer Decoding: One Write-Head is All You Need",
+   "category": "architecture",
+   "source": {
+    "arxivId": "1911.02150",
+    "arxivVersion": "v1",
+    "absUrl": "https://arxiv.org/abs/1911.02150v1",
+    "pdfUrl": "https://arxiv.org/pdf/1911.02150v1",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [
+     "abstract",
+     "introduction",
+     "method",
+     "experiments",
+     "appendix"
+    ],
+    "predicates": [
+     "architecture.attention"
+    ],
+    "completeness": "task_linked_non_exhaustive"
+   },
+   "facts": [
+    {
+     "predicate": "architecture.attention",
+     "value": "multi-query attention",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "architecture.attention",
+     "value": "multi-head attention",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    }
+   ],
+   "tasks": [
+    {
+     "taskId": "v5-mqa-task-1",
+     "query": "Which attention mechanisms are contrasted in this paper?",
+     "predicate": "architecture.attention",
+     "expectedStatus": "CONFLICTING",
+     "expectedAnswer": {
+      "architecture.attention": "multi-query attention"
+     },
+     "annotationRationale": "The paper proposes multi-query attention while reviewing multi-head attention; extraction yields both candidates and the system must flag the conflict rather than silently choose."
+    }
+   ]
+  },
+  {
+   "caseId": "v5-gemma2",
+   "split": "holdout",
+   "title": "Gemma 2: Improving Open Language Models at a Practical Size",
+   "category": "model",
+   "source": {
+    "arxivId": "2408.00118",
+    "arxivVersion": "v3",
+    "absUrl": "https://arxiv.org/abs/2408.00118v3",
+    "pdfUrl": "https://arxiv.org/pdf/2408.00118v3",
+    "paperRevisionDate": null,
+    "repositoryUrl": "https://github.com/google-deepmind/gemma",
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [
+     "abstract",
+     "introduction",
+     "method",
+     "experiments",
+     "appendix"
+    ],
+    "predicates": [
+     "training.objective",
+     "architecture.attention",
+     "model.formulation",
+     "training.stage"
+    ],
+    "completeness": "task_linked_non_exhaustive"
+   },
+   "facts": [
+    {
+     "predicate": "training.objective",
+     "value": "knowledge distillation",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "architecture.attention",
+     "value": "grouped-query attention",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "model.formulation",
+     "value": "decoder-only Transformer",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "training.stage",
+     "value": "pretraining",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "training.stage",
+     "value": "SFT",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "training.stage",
+     "value": "fine-tuning",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "training.stage",
+     "value": "reward model",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    }
+   ],
+   "tasks": [
+    {
+     "taskId": "v5-gemma2-task-1",
+     "query": "Which attention topology does Gemma 2 use?",
+     "predicate": "architecture.attention",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "architecture.attention": "grouped-query attention"
+     },
+     "annotationRationale": "Gemma 2 uses Grouped-Query Attention."
+    },
+    {
+     "taskId": "v5-gemma2-task-2",
+     "query": "What learning rate was used for pretraining Gemma 2?",
+     "predicate": "optimization.optimizer",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "annotationRationale": "Learning rate is not captured by the supported predicate set."
+    }
+   ]
+  },
+  {
+   "caseId": "v5-deepseekmoe",
+   "split": "holdout",
+   "title": "DeepSeekMoE: Towards Ultimate Expert Specialization in Mixture-of-Experts Language Models",
+   "category": "architecture",
+   "source": {
+    "arxivId": "2401.06066",
+    "arxivVersion": "v1",
+    "absUrl": "https://arxiv.org/abs/2401.06066v1",
+    "pdfUrl": "https://arxiv.org/pdf/2401.06066v1",
+    "paperRevisionDate": null,
+    "repositoryUrl": "https://github.com/deepseek-ai/DeepSeek-MoE",
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [
+     "abstract",
+     "introduction",
+     "method",
+     "experiments",
+     "appendix"
+    ],
+    "predicates": [
+     "architecture.moe",
+     "evaluation.regime",
+     "training.stage",
+     "architecture.attention",
+     "system.parallelism"
+    ],
+    "completeness": "task_linked_non_exhaustive"
+   },
+   "facts": [
+    {
+     "predicate": "architecture.moe",
+     "value": "mixture of experts",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "evaluation.regime",
+     "value": "zero-shot",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "evaluation.regime",
+     "value": "few-shot",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "training.stage",
+     "value": "SFT",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "training.stage",
+     "value": "fine-tuning",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "architecture.attention",
+     "value": "multi-head attention",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "training.stage",
+     "value": "pretraining",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "system.parallelism",
+     "value": "data parallelism",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    }
+   ],
+   "tasks": [
+    {
+     "taskId": "v5-deepseekmoe-task-1",
+     "query": "What sparse expert architecture does DeepSeekMoE build on?",
+     "predicate": "architecture.moe",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "architecture.moe": "mixture of experts"
+     },
+     "annotationRationale": "DeepSeekMoE is a Mixture-of-Experts language model."
+    },
+    {
+     "taskId": "v5-deepseekmoe-task-2",
+     "query": "What learning rate was used for DeepSeekMoE pretraining?",
+     "predicate": "optimization.optimizer",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "annotationRationale": "Learning rate is not captured by the supported predicate set."
+    }
+   ]
+  },
+  {
+   "caseId": "v5-retnet",
+   "split": "holdout",
+   "title": "Retentive Network: A Successor to Transformer for Large Language Models",
+   "category": "architecture",
+   "source": {
+    "arxivId": "2307.08621",
+    "arxivVersion": "v4",
+    "absUrl": "https://arxiv.org/abs/2307.08621v4",
+    "pdfUrl": "https://arxiv.org/pdf/2307.08621v4",
+    "paperRevisionDate": null,
+    "repositoryUrl": "https://github.com/microsoft/unilm",
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [
+     "abstract",
+     "introduction",
+     "method",
+     "experiments",
+     "appendix"
+    ],
+    "predicates": [
+     "evaluation.regime"
+    ],
+    "completeness": "task_linked_non_exhaustive"
+   },
+   "facts": [
+    {
+     "predicate": "evaluation.regime",
+     "value": "zero-shot",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "evaluation.regime",
+     "value": "few-shot",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    }
+   ],
+   "tasks": [
+    {
+     "taskId": "v5-retnet-task-1",
+     "query": "Which attention formulation does RetNet substitute with multi-scale retention?",
+     "predicate": "architecture.attention",
+     "expectedStatus": "CONFLICTING",
+     "expectedAnswer": {
+      "architecture.attention": "FlashAttention"
+     },
+     "annotationRationale": "Extraction surfaces several attention-related mentions (FlashAttention comparisons, multi-head attention baseline, linear-attention variants); the system must report a conflict instead of asserting RetNet uses one of them."
+    },
+    {
+     "taskId": "v5-retnet-task-2",
+     "query": "What context length does RetNet train with?",
+     "predicate": "optimization.optimizer",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "annotationRationale": "Training hyperparameters are not captured by the supported predicate set."
+    }
+   ]
+  },
+  {
+   "caseId": "v5-rwkv",
+   "split": "holdout",
+   "title": "RWKV: Reinventing RNNs for the Transformer Era",
+   "category": "architecture",
+   "source": {
+    "arxivId": "2305.13048",
+    "arxivVersion": "v2",
+    "absUrl": "https://arxiv.org/abs/2305.13048v2",
+    "pdfUrl": "https://arxiv.org/pdf/2305.13048v2",
+    "paperRevisionDate": null,
+    "repositoryUrl": "https://github.com/BlinkDL/RWKV-LM",
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [
+     "abstract",
+     "introduction",
+     "method",
+     "experiments",
+     "appendix"
+    ],
+    "predicates": [
+     "architecture.attention",
+     "evaluation.regime",
+     "training.stage"
+    ],
+    "completeness": "task_linked_non_exhaustive"
+   },
+   "facts": [
+    {
+     "predicate": "architecture.attention",
+     "value": "linear attention",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "evaluation.regime",
+     "value": "zero-shot",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "training.stage",
+     "value": "pretraining",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "training.stage",
+     "value": "fine-tuning",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    }
+   ],
+   "tasks": [
+    {
+     "taskId": "v5-rwkv-task-1",
+     "query": "Which attention formulation does RWKV use?",
+     "predicate": "architecture.attention",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "architecture.attention": "linear attention"
+     },
+     "annotationRationale": "RWKV reformulates attention with a variant of linear attention."
+    },
+    {
+     "taskId": "v5-rwkv-task-2",
+     "query": "Which corpus was RWKV pretrained on?",
+     "predicate": "data.training_dataset",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "annotationRationale": "The pretraining corpus is not captured by the supported predicate set."
+    }
+   ]
+  },
+  {
+   "caseId": "v5-reflexion",
+   "split": "holdout",
+   "title": "Reflexion: Language Agents with Verbal Reinforcement Learning",
+   "category": "reasoning",
+   "source": {
+    "arxivId": "2303.11366",
+    "arxivVersion": "v4",
+    "absUrl": "https://arxiv.org/abs/2303.11366v4",
+    "pdfUrl": "https://arxiv.org/pdf/2303.11366v4",
+    "paperRevisionDate": null,
+    "repositoryUrl": "https://github.com/noahshinn/reflexion",
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [
+     "abstract",
+     "introduction",
+     "method",
+     "experiments",
+     "appendix"
+    ],
+    "predicates": [
+     "reasoning.trace_type"
+    ],
+    "completeness": "task_linked_non_exhaustive"
+   },
+   "facts": [
+    {
+     "predicate": "reasoning.trace_type",
+     "value": "action",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "reasoning.trace_type",
+     "value": "thought",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "reasoning.trace_type",
+     "value": "observation",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    }
+   ],
+   "tasks": [
+    {
+     "taskId": "v5-reflexion-task-1",
+     "query": "Do the agent trajectories contain action elements?",
+     "predicate": "reasoning.trace_type",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "reasoning.trace_type": "action"
+     },
+     "annotationRationale": "Trajectories are actor traces with action choices."
+    },
+    {
+     "taskId": "v5-reflexion-task-2",
+     "query": "Do the agent trajectories contain thought elements?",
+     "predicate": "reasoning.trace_type",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "reasoning.trace_type": "thought"
+     },
+     "annotationRationale": "Actor models include Chain of Thought and ReAct traces."
+    },
+    {
+     "taskId": "v5-reflexion-task-3",
+     "query": "Do the agent trajectories contain observation elements?",
+     "predicate": "reasoning.trace_type",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "annotationRationale": "Trajectories include environment observations."
+    }
+   ]
+  },
+  {
+   "caseId": "v5-constitutional",
+   "split": "holdout",
+   "title": "Constitutional AI: Harmlessness from AI Feedback",
+   "category": "training",
+   "source": {
+    "arxivId": "2212.08073",
+    "arxivVersion": "v1",
+    "absUrl": "https://arxiv.org/abs/2212.08073v1",
+    "pdfUrl": "https://arxiv.org/pdf/2212.08073v1",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [
+     "abstract",
+     "introduction",
+     "method",
+     "experiments",
+     "appendix"
+    ],
+    "predicates": [
+     "reasoning.trace_type",
+     "evaluation.regime",
+     "training.stage"
+    ],
+    "completeness": "task_linked_non_exhaustive"
+   },
+   "facts": [
+    {
+     "predicate": "reasoning.trace_type",
+     "value": "thought",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "evaluation.regime",
+     "value": "few-shot",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "training.stage",
+     "value": "pretraining",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    }
+   ],
+   "tasks": [
+    {
+     "taskId": "v5-constitutional-task-1",
+     "query": "Which reasoning trace element appears in the constitutional RL evaluation?",
+     "predicate": "reasoning.trace_type",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "reasoning.trace_type": "thought"
+     },
+     "annotationRationale": "Chain-of-Thought prompting is used in the constitutional RL evaluation."
+    },
+    {
+     "taskId": "v5-constitutional-task-2",
+     "query": "What batch size was used for RL training?",
+     "predicate": "optimization.optimizer",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "annotationRationale": "RL batch size is not captured by the supported predicate set."
+    }
+   ]
+  },
+  {
+   "caseId": "v5-llava",
+   "split": "holdout",
+   "title": "Visual Instruction Tuning",
+   "category": "model",
+   "source": {
+    "arxivId": "2304.08485",
+    "arxivVersion": "v2",
+    "absUrl": "https://arxiv.org/abs/2304.08485v2",
+    "pdfUrl": "https://arxiv.org/pdf/2304.08485v2",
+    "paperRevisionDate": null,
+    "repositoryUrl": "https://github.com/haotian-liu/LLaVA",
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [
+     "abstract",
+     "introduction",
+     "method",
+     "experiments",
+     "appendix"
+    ],
+    "predicates": [
+     "model.formulation",
+     "training.stage",
+     "system.parallelism"
+    ],
+    "completeness": "task_linked_non_exhaustive"
+   },
+   "facts": [
+    {
+     "predicate": "model.formulation",
+     "value": "multimodal model",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "training.stage",
+     "value": "fine-tuning",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "training.stage",
+     "value": "pretraining",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "system.parallelism",
+     "value": "data parallelism",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    }
+   ],
+   "tasks": [
+    {
+     "taskId": "v5-llava-task-1",
+     "query": "What modality capability does LLaVA target?",
+     "predicate": "model.formulation",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "model.formulation": "multimodal model"
+     },
+     "annotationRationale": "LLaVA extends instruction tuning to the language-image multimodal space."
+    },
+    {
+     "taskId": "v5-llava-task-2",
+     "query": "During which pretraining stage is feature alignment performed?",
+     "predicate": "training.stage",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "training.stage": "pretraining"
+     },
+     "annotationRationale": "Stage 1 is pre-training for feature alignment."
+    }
+   ]
+  },
+  {
+   "caseId": "v5-colbertv2",
+   "split": "holdout",
+   "title": "ColBERTv2: Effective and Efficient Retrieval via Lightweight Late Interaction",
+   "category": "retrieval",
+   "source": {
+    "arxivId": "2112.01488",
+    "arxivVersion": "v3",
+    "absUrl": "https://arxiv.org/abs/2112.01488v3",
+    "pdfUrl": "https://arxiv.org/pdf/2112.01488v3",
+    "paperRevisionDate": null,
+    "repositoryUrl": "https://github.com/stanford-futuredata/ColBERT",
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [
+     "abstract",
+     "introduction",
+     "method",
+     "experiments",
+     "appendix"
+    ],
+    "predicates": [
+     "retrieval.component",
+     "retrieval.interaction",
+     "evaluation.regime"
+    ],
+    "completeness": "task_linked_non_exhaustive"
+   },
+   "facts": [
+    {
+     "predicate": "retrieval.component",
+     "value": "retriever",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "retrieval.interaction",
+     "value": "late interaction",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "evaluation.regime",
+     "value": "zero-shot",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    }
+   ],
+   "tasks": [
+    {
+     "taskId": "v5-colbertv2-task-1",
+     "query": "Which interaction approach does ColBERTv2 use?",
+     "predicate": "retrieval.interaction",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "retrieval.interaction": "late interaction"
+     },
+     "annotationRationale": "ColBERTv2 is a late-interaction retriever."
+    },
+    {
+     "taskId": "v5-colbertv2-task-2",
+     "query": "Which retrieval component supplies ranked passages?",
+     "predicate": "retrieval.component",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "retrieval.component": "retriever"
+     },
+     "annotationRationale": "ColBERTv2 is a late-interaction retriever component."
+    }
+   ]
+  },
+  {
+   "caseId": "v5-flan",
+   "split": "holdout",
+   "title": "The Flan Collection: Designing Data and Methods for Effective Instruction Tuning",
+   "category": "training",
+   "source": {
+    "arxivId": "2301.13688",
+    "arxivVersion": "v2",
+    "absUrl": "https://arxiv.org/abs/2301.13688v2",
+    "pdfUrl": "https://arxiv.org/pdf/2301.13688v2",
+    "paperRevisionDate": null,
+    "repositoryUrl": "https://github.com/google-research/t5x",
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [
+     "abstract",
+     "introduction",
+     "method",
+     "experiments",
+     "appendix"
+    ],
+    "predicates": [
+     "reasoning.trace_type",
+     "evaluation.regime"
+    ],
+    "completeness": "task_linked_non_exhaustive"
+   },
+   "facts": [
+    {
+     "predicate": "reasoning.trace_type",
+     "value": "thought",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "evaluation.regime",
+     "value": "zero-shot",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "evaluation.regime",
+     "value": "few-shot",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    }
+   ],
+   "tasks": [
+    {
+     "taskId": "v5-flan-task-1",
+     "query": "Which reasoning trace type is included in the evaluation suites?",
+     "predicate": "reasoning.trace_type",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "reasoning.trace_type": "thought"
+     },
+     "annotationRationale": "Chain-of-Thought evaluation suites are part of the Flan mix."
+    },
+    {
+     "taskId": "v5-flan-task-2",
+     "query": "What model size was used for the largest Flan experiments?",
+     "predicate": "optimization.optimizer",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "annotationRationale": "Model size is not captured by the supported predicate set."
+    }
+   ]
+  },
+  {
+   "caseId": "v5-atlas",
+   "split": "holdout",
+   "title": "Atlas: Few-shot Learning with Retrieval Augmented Language Models",
+   "category": "retrieval",
+   "source": {
+    "arxivId": "2208.03299",
+    "arxivVersion": "v3",
+    "absUrl": "https://arxiv.org/abs/2208.03299v3",
+    "pdfUrl": "https://arxiv.org/pdf/2208.03299v3",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [
+     "abstract",
+     "introduction",
+     "method",
+     "experiments",
+     "appendix"
+    ],
+    "predicates": [
+     "retrieval.component",
+     "evaluation.regime",
+     "training.stage",
+     "retrieval.retriever",
+     "architecture.formulation",
+     "training.objective"
+    ],
+    "completeness": "task_linked_non_exhaustive"
+   },
+   "facts": [
+    {
+     "predicate": "retrieval.component",
+     "value": "retriever",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "evaluation.regime",
+     "value": "few-shot",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "training.stage",
+     "value": "pretraining",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "training.stage",
+     "value": "fine-tuning",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "retrieval.retriever",
+     "value": "dual-encoder dense retriever",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "architecture.formulation",
+     "value": "text-to-text",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "training.objective",
+     "value": "contrastive learning",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "evaluation.regime",
+     "value": "zero-shot",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    }
+   ],
+   "tasks": [
+    {
+     "taskId": "v5-atlas-task-1",
+     "query": "Which retriever architecture does Atlas use?",
+     "predicate": "retrieval.retriever",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "retrieval.retriever": "dual-encoder dense retriever"
+     },
+     "annotationRationale": "Atlas retrieves with a general-purpose dual-encoder dense retriever (Contriever)."
+    },
+    {
+     "taskId": "v5-atlas-task-2",
+     "query": "Which formulation does Atlas follow for its language model?",
+     "predicate": "architecture.formulation",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "architecture.formulation": "text-to-text"
+     },
+     "annotationRationale": "Atlas follows the text-to-text framework."
+    }
+   ]
+  },
+  {
+   "caseId": "v5-deepseekv3",
+   "split": "holdout",
+   "title": "DeepSeek-V3 Technical Report",
+   "category": "architecture",
+   "source": {
+    "arxivId": "2412.19437",
+    "arxivVersion": "v2",
+    "absUrl": "https://arxiv.org/abs/2412.19437v2",
+    "pdfUrl": "https://arxiv.org/pdf/2412.19437v2",
+    "paperRevisionDate": null,
+    "repositoryUrl": "https://github.com/deepseek-ai/DeepSeek-V3",
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [
+     "abstract",
+     "introduction",
+     "method",
+     "experiments",
+     "appendix"
+    ],
+    "predicates": [
+     "training.algorithm",
+     "training.stage",
+     "architecture.moe",
+     "training.objective",
+     "reasoning.trace_type",
+     "system.parallelism",
+     "evaluation.regime",
+     "evaluation.method"
+    ],
+    "completeness": "task_linked_non_exhaustive"
+   },
+   "facts": [
+    {
+     "predicate": "training.algorithm",
+     "value": "GRPO",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "training.stage",
+     "value": "reward model",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "architecture.moe",
+     "value": "mixture of experts",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "training.stage",
+     "value": "SFT",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "training.stage",
+     "value": "fine-tuning",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "training.stage",
+     "value": "pretraining",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "training.objective",
+     "value": "knowledge distillation",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "reasoning.trace_type",
+     "value": "thought",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "system.parallelism",
+     "value": "data parallelism",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "evaluation.regime",
+     "value": "zero-shot",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "evaluation.method",
+     "value": "pairwise judging",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    }
+   ],
+   "tasks": [
+    {
+     "taskId": "v5-deepseekv3-task-1",
+     "query": "Which reinforcement algorithm is used in DeepSeek-V3 post-training?",
+     "predicate": "training.algorithm",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "training.algorithm": "GRPO"
+     },
+     "annotationRationale": "DeepSeek-V3 post-training RL uses Group Relative Policy Optimization."
+    },
+    {
+     "taskId": "v5-deepseekv3-task-2",
+     "query": "What sparse expert architecture does DeepSeek-V3 use?",
+     "predicate": "architecture.moe",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "architecture.moe": "mixture of experts"
+     },
+     "annotationRationale": "DeepSeek-V3 is a large Mixture-of-Experts model with 671B parameters."
+    }
+   ]
+  },
+  {
+   "caseId": "v5-deepseekr1",
+   "split": "holdout",
+   "title": "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning",
+   "category": "reasoning",
+   "source": {
+    "arxivId": "2501.12948",
+    "arxivVersion": "v2",
+    "absUrl": "https://arxiv.org/abs/2501.12948v2",
+    "pdfUrl": "https://arxiv.org/pdf/2501.12948v2",
+    "paperRevisionDate": null,
+    "repositoryUrl": "https://github.com/deepseek-ai/DeepSeek-R1",
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [
+     "abstract",
+     "introduction",
+     "method",
+     "experiments",
+     "appendix"
+    ],
+    "predicates": [
+     "training.algorithm",
+     "training.stage",
+     "evaluation.regime",
+     "reasoning.trace_type",
+     "architecture.moe",
+     "evaluation.method"
+    ],
+    "completeness": "task_linked_non_exhaustive"
+   },
+   "facts": [
+    {
+     "predicate": "training.algorithm",
+     "value": "GRPO",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "training.stage",
+     "value": "reward model",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "evaluation.regime",
+     "value": "few-shot",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "reasoning.trace_type",
+     "value": "thought",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "architecture.moe",
+     "value": "mixture of experts",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "training.stage",
+     "value": "SFT",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "training.stage",
+     "value": "pretraining",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "evaluation.method",
+     "value": "pairwise judging",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "evaluation.regime",
+     "value": "zero-shot",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    }
+   ],
+   "tasks": [
+    {
+     "taskId": "v5-deepseekr1-task-1",
+     "query": "Which reinforcement algorithm trains the reasoning model?",
+     "predicate": "training.algorithm",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "training.algorithm": "GRPO"
+     },
+     "annotationRationale": "DeepSeek-R1 is trained with GRPO."
+    },
+    {
+     "taskId": "v5-deepseekr1-task-2",
+     "query": "What expert architecture is DeepSeek-R1 built on?",
+     "predicate": "architecture.moe",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "architecture.moe": "mixture of experts"
+     },
+     "annotationRationale": "R1 is built on DeepSeek-V3, a Mixture-of-Experts model."
+    }
+   ]
+  },
+  {
+   "caseId": "v5-medpalm",
+   "split": "holdout",
+   "title": "Large Language Models Encode Clinical Knowledge",
+   "category": "medicine",
+   "source": {
+    "arxivId": "2212.13138",
+    "arxivVersion": "v1",
+    "absUrl": "https://arxiv.org/abs/2212.13138v1",
+    "pdfUrl": "https://arxiv.org/pdf/2212.13138v1",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [
+     "abstract",
+     "introduction",
+     "method",
+     "experiments",
+     "appendix"
+    ],
+    "predicates": [
+     "evaluation.regime",
+     "reasoning.trace_type",
+     "model.formulation",
+     "training.stage"
+    ],
+    "completeness": "task_linked_non_exhaustive"
+   },
+   "facts": [
+    {
+     "predicate": "evaluation.regime",
+     "value": "few-shot",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "reasoning.trace_type",
+     "value": "thought",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "reasoning.trace_type",
+     "value": "intermediate reasoning steps",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "model.formulation",
+     "value": "decoder-only Transformer",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "training.stage",
+     "value": "pretraining",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "evaluation.regime",
+     "value": "zero-shot",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "training.stage",
+     "value": "instruction fine-tuning",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "training.stage",
+     "value": "fine-tuning",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    }
+   ],
+   "tasks": [
+    {
+     "taskId": "v5-medpalm-task-1",
+     "query": "What model formulation underlies the clinical language models studied?",
+     "predicate": "model.formulation",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "model.formulation": "decoder-only Transformer"
+     },
+     "annotationRationale": "PaLM is a densely-activated decoder-only transformer."
+    },
+    {
+     "taskId": "v5-medpalm-task-2",
+     "query": "During which pretraining stage were the largest models trained?",
+     "predicate": "training.stage",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "training.stage": "pretraining"
+     },
+     "annotationRationale": "The largest model used 6144 TPUv4 chips for pretraining."
+    },
+    {
+     "taskId": "v5-medpalm-task-3",
+     "query": "Which clinical dataset was used for MedQA evaluation?",
+     "predicate": "data.training_dataset",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "annotationRationale": "Dataset identities are not captured by the supported predicate set."
+    }
+   ]
+  },
+  {
+   "caseId": "v5-hyenadna",
+   "split": "holdout",
+   "title": "HyenaDNA: Long-Range Genomic Sequence Modeling at Single Nucleotide Resolution",
+   "category": "biology",
+   "source": {
+    "arxivId": "2306.15794",
+    "arxivVersion": "v2",
+    "absUrl": "https://arxiv.org/abs/2306.15794v2",
+    "pdfUrl": "https://arxiv.org/pdf/2306.15794v2",
+    "paperRevisionDate": null,
+    "repositoryUrl": "https://github.com/HantaoShu/HyenaDNA",
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [
+     "abstract",
+     "introduction",
+     "method",
+     "experiments",
+     "appendix"
+    ],
+    "predicates": [
+     "training.stage",
+     "model.formulation",
+     "architecture.operator",
+     "evaluation.regime"
+    ],
+    "completeness": "task_linked_non_exhaustive"
+   },
+   "facts": [
+    {
+     "predicate": "training.stage",
+     "value": "fine-tuning",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "training.stage",
+     "value": "pretraining",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "model.formulation",
+     "value": "decoder-only Transformer",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "architecture.operator",
+     "value": "long convolutions",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "evaluation.regime",
+     "value": "few-shot",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    }
+   ],
+   "tasks": [
+    {
+     "taskId": "v5-hyenadna-task-1",
+     "query": "Which operator does the HyenaDNA block use?",
+     "predicate": "architecture.operator",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "architecture.operator": "long convolutions"
+     },
+     "annotationRationale": "The HyenaDNA block is built from long convolutions with element-wise gating."
+    },
+    {
+     "taskId": "v5-hyenadna-task-2",
+     "query": "What model formulation does HyenaDNA use?",
+     "predicate": "model.formulation",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "model.formulation": "decoder-only Transformer"
+     },
+     "annotationRationale": "HyenaDNA is a decoder-only Hyena architecture pretrained with next-nucleotide prediction."
+    }
+   ]
+  },
+  {
+   "caseId": "v5-dnabert2",
+   "split": "holdout",
+   "title": "DNABERT-2: Efficient Foundation Model and Benchmark For Multi-Species Genome",
+   "category": "biology",
+   "source": {
+    "arxivId": "2306.15006",
+    "arxivVersion": "v2",
+    "absUrl": "https://arxiv.org/abs/2306.15006v2",
+    "pdfUrl": "https://arxiv.org/pdf/2306.15006v2",
+    "paperRevisionDate": null,
+    "repositoryUrl": "https://github.com/MAGICS-LAB/DNABERT_2",
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [
+     "abstract",
+     "introduction",
+     "method",
+     "experiments",
+     "appendix"
+    ],
+    "predicates": [
+     "training.stage",
+     "training.objective",
+     "architecture.attention"
+    ],
+    "completeness": "task_linked_non_exhaustive"
+   },
+   "facts": [
+    {
+     "predicate": "training.stage",
+     "value": "pretraining",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "training.stage",
+     "value": "fine-tuning",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "training.objective",
+     "value": "masked language model",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "architecture.attention",
+     "value": "FlashAttention",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    }
+   ],
+   "tasks": [
+    {
+     "taskId": "v5-dnabert2-task-1",
+     "query": "Which pretraining objective causes information leakage with overlapping k-mer tokenization?",
+     "predicate": "training.objective",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "training.objective": "masked language model"
+     },
+     "annotationRationale": "Overlapping k-mers cause leakage in masked language modeling, motivating the BPE tokenizer."
+    },
+    {
+     "taskId": "v5-dnabert2-task-2",
+     "query": "What vocabulary size does DNABERT-2 use?",
+     "predicate": "optimization.optimizer",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "annotationRationale": "Vocabulary size is not captured by the supported predicate set."
+    }
+   ]
+  },
+  {
+   "caseId": "v5-gw150914",
+   "split": "holdout",
+   "title": "Observation of Gravitational Waves from a Binary Black Hole Merger",
+   "category": "physics",
+   "source": {
+    "arxivId": "1602.03837",
+    "arxivVersion": "v1",
+    "absUrl": "https://arxiv.org/abs/1602.03837v1",
+    "pdfUrl": "https://arxiv.org/pdf/1602.03837v1",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [
+     "abstract",
+     "introduction",
+     "method",
+     "experiments",
+     "appendix"
+    ],
+    "predicates": [],
+    "completeness": "task_linked_non_exhaustive"
+   },
+   "facts": [],
+   "tasks": [
+    {
+     "taskId": "v5-gw150914-task-1",
+     "query": "Which training objective was optimized to detect the gravitational wave signal?",
+     "predicate": "training.objective",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "annotationRationale": "Out-of-domain physics paper with no supported predicate matches; the system must refuse to fabricate scholarly facts rather than answer."
+    }
+   ]
+  },
+  {
+   "caseId": "v5-dpo",
+   "split": "development",
+   "title": "Direct Preference Optimization: Your Language Model is Secretly a Reward Model",
+   "category": "training",
+   "source": {
+    "arxivId": "2305.18290",
+    "arxivVersion": "v3",
+    "absUrl": "https://arxiv.org/abs/2305.18290v3",
+    "pdfUrl": "https://arxiv.org/pdf/2305.18290v3",
+    "paperRevisionDate": null,
+    "repositoryUrl": "https://github.com/eric-mitchell/direct-preference-optimization",
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [
+     "abstract",
+     "introduction",
+     "method",
+     "experiments",
+     "appendix"
+    ],
+    "predicates": [
+     "training.stage",
+     "training.preference_method"
+    ],
+    "completeness": "task_linked_non_exhaustive"
+   },
+   "facts": [
+    {
+     "predicate": "training.stage",
+     "value": "SFT",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "training.stage",
+     "value": "pretraining",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "training.preference_method",
+     "value": "DPO",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    }
+   ],
+   "tasks": [
+    {
+     "taskId": "v5-dpo-task-1",
+     "query": "Which preference optimization method does the paper derive?",
+     "predicate": "training.preference_method",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "training.preference_method": "DPO"
+     },
+     "annotationRationale": "The paper derives Direct Preference Optimization."
+    },
+    {
+     "taskId": "v5-dpo-task-2",
+     "query": "Which optimizer was used for DPO training runs?",
+     "predicate": "optimization.optimizer",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "annotationRationale": "Optimizer details are not captured by the supported predicate set."
+    }
+   ]
+  },
+  {
+   "caseId": "v5-flashattention2",
+   "split": "development",
+   "title": "FlashAttention-2: Faster Attention with Better Parallelism and Work Partitioning",
+   "category": "architecture",
+   "source": {
+    "arxivId": "2307.08691",
+    "arxivVersion": "v1",
+    "absUrl": "https://arxiv.org/abs/2307.08691v1",
+    "pdfUrl": "https://arxiv.org/pdf/2307.08691v1",
+    "paperRevisionDate": null,
+    "repositoryUrl": "https://github.com/Dao-AILab/flash-attention",
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [
+     "abstract",
+     "introduction",
+     "method",
+     "experiments",
+     "appendix"
+    ],
+    "predicates": [
+     "architecture.attention"
+    ],
+    "completeness": "task_linked_non_exhaustive"
+   },
+   "facts": [
+    {
+     "predicate": "architecture.attention",
+     "value": "FlashAttention",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "architecture.attention",
+     "value": "multi-head attention",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    }
+   ],
+   "tasks": [
+    {
+     "taskId": "v5-flashattention2-task-1",
+     "query": "Which attention implementation does the paper introduce?",
+     "predicate": "architecture.attention",
+     "expectedStatus": "CONFLICTING",
+     "expectedAnswer": {
+      "architecture.attention": "FlashAttention"
+     },
+     "annotationRationale": "The paper introduces FlashAttention-2, but extraction surfaces additional attention mentions (multi-head attention baseline plus reference titles for GQA/MQA/exact/linear attention); the system must flag the conflict rather than silently choose."
+    },
+    {
+     "taskId": "v5-flashattention2-task-2",
+     "query": "What learning rate was used for training runs?",
+     "predicate": "optimization.optimizer",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "annotationRationale": "Learning rate is not captured by the supported predicate set."
+    }
+   ]
+  },
+  {
+   "caseId": "v5-zephyr",
+   "split": "development",
+   "title": "Zephyr: Direct Distillation of LM Alignment",
+   "category": "training",
+   "source": {
+    "arxivId": "2310.16944",
+    "arxivVersion": "v1",
+    "absUrl": "https://arxiv.org/abs/2310.16944v1",
+    "pdfUrl": "https://arxiv.org/pdf/2310.16944v1",
+    "paperRevisionDate": null,
+    "repositoryUrl": "https://github.com/HuggingFaceH4/alignment-handbook",
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [
+     "abstract",
+     "introduction",
+     "method",
+     "experiments",
+     "appendix"
+    ],
+    "predicates": [
+     "training.stage",
+     "training.preference_method",
+     "architecture.attention"
+    ],
+    "completeness": "task_linked_non_exhaustive"
+   },
+   "facts": [
+    {
+     "predicate": "training.stage",
+     "value": "SFT",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "training.stage",
+     "value": "fine-tuning",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "training.preference_method",
+     "value": "DPO",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    },
+    {
+     "predicate": "architecture.attention",
+     "value": "FlashAttention",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    }
+   ],
+   "tasks": [
+    {
+     "taskId": "v5-zephyr-task-1",
+     "query": "Which preference optimization method does Zephyr apply?",
+     "predicate": "training.preference_method",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "training.preference_method": "DPO"
+     },
+     "annotationRationale": "Zephyr applies distilled direct preference optimization (dDPO)."
+    },
+    {
+     "taskId": "v5-zephyr-task-2",
+     "query": "What learning rate was used for dDPO training?",
+     "predicate": "optimization.optimizer",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "annotationRationale": "Learning rate is not captured by the supported predicate set."
+    }
+   ]
+  },
+  {
+   "caseId": "v5-santurkar",
+   "split": "development",
+   "title": "Whose Opinions Do Language Models Reflect?",
+   "category": "social-science",
+   "source": {
+    "arxivId": "2303.17548",
+    "arxivVersion": "v1",
+    "absUrl": "https://arxiv.org/abs/2303.17548v1",
+    "pdfUrl": "https://arxiv.org/pdf/2303.17548v1",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [
+     "abstract",
+     "introduction",
+     "method",
+     "experiments",
+     "appendix"
+    ],
+    "predicates": [
+     "training.stage"
+    ],
+    "completeness": "task_linked_non_exhaustive"
+   },
+   "facts": [
+    {
+     "predicate": "training.stage",
+     "value": "fine-tuning",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    }
+   ],
+   "tasks": [
+    {
+     "taskId": "v5-santurkar-task-1",
+     "query": "Does RLHF fine-tuning produce the opinion alignment studied?",
+     "predicate": "training.stage",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "training.stage": "fine-tuning"
+     },
+     "annotationRationale": "The opinion alignment studied comes from RLHF fine-tuned models; the query focuses on the fine-tuning fact."
+    },
+    {
+     "taskId": "v5-santurkar-task-2",
+     "query": "Which optimizer were the audited models trained with?",
+     "predicate": "optimization.optimizer",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "annotationRationale": "Optimizer identities are not captured by the supported predicate set; the system must refuse rather than fabricate an answer."
+    }
+   ]
+  },
+  {
+   "caseId": "v5-gilardi",
+   "split": "development",
+   "title": "ChatGPT Outperforms Crowd-Workers for Text-Annotation Tasks",
+   "category": "social-science",
+   "source": {
+    "arxivId": "2303.15056",
+    "arxivVersion": "v2",
+    "absUrl": "https://arxiv.org/abs/2303.15056v2",
+    "pdfUrl": "https://arxiv.org/pdf/2303.15056v2",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [
+     "abstract",
+     "introduction",
+     "method",
+     "experiments",
+     "appendix"
+    ],
+    "predicates": [
+     "evaluation.regime"
+    ],
+    "completeness": "task_linked_non_exhaustive"
+   },
+   "facts": [
+    {
+     "predicate": "evaluation.regime",
+     "value": "zero-shot",
+     "sourceClass": "PAPER",
+     "locator": "paper evidence"
+    }
+   ],
+   "tasks": [
+    {
+     "taskId": "v5-gilardi-task-1",
+     "query": "In which evaluation regime were the annotation runs performed?",
+     "predicate": "evaluation.regime",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "evaluation.regime": "zero-shot"
+     },
+     "annotationRationale": "ChatGPT annotation accuracy was measured in a zero-shot regime."
+    },
+    {
+     "taskId": "v5-gilardi-task-2",
+     "query": "How many crowd workers participated in the study?",
+     "predicate": "data.training_dataset",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "annotationRationale": "Participant counts are not captured by the supported predicate set."
+    }
+   ]
+  },
+  {
+   "caseId": "v5-aifeynman",
+   "split": "development",
+   "title": "AI Feynman: a Physics-Inspired Method for Symbolic Regression",
+   "category": "physics",
+   "source": {
+    "arxivId": "1905.11481",
+    "arxivVersion": "v2",
+    "absUrl": "https://arxiv.org/abs/1905.11481v2",
+    "pdfUrl": "https://arxiv.org/pdf/1905.11481v2",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [
+     "abstract",
+     "introduction",
+     "method",
+     "experiments",
+     "appendix"
+    ],
+    "predicates": [],
+    "completeness": "task_linked_non_exhaustive"
+   },
+   "facts": [],
+   "tasks": [
+    {
+     "taskId": "v5-aifeynman-task-1",
+     "query": "Which neural architecture does AI Feynman use for symbolic regression?",
+     "predicate": "architecture.formulation",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "annotationRationale": "Out-of-domain physics paper where no supported predicate matches; the system must refuse to fabricate scholarly facts."
+    }
+   ]
+  }
+ ]
+}
