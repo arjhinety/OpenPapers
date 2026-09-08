@@ -6,7 +6,10 @@ Use Node.js 22.5 or newer. Node.js 24 is used by the container image:
 
 ```sh
 npm ci
-npm run lint
+npm run check
+npm run test:e2e
+npm run test:coverage
+npm run test:package
 npm run build
 npm test
 ```

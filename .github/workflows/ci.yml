@@ -24,6 +24,9 @@ jobs:
       - run: npm run check
       - run: npm run test:e2e
       - run: npm pack --dry-run
+      - run: npm run test:package
+      - run: npm run test:coverage
+      - run: npm run eval:fact-schema
       - run: npm audit --audit-level=high
   docker-integration:
     name: Docker integration

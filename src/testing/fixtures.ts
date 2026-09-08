@@ -74,8 +74,8 @@ const referencesOf: Partial<Record<FixtureWorkKey, FixtureWorkKey[]>> = {
 const keyOf = (work: ResearchWork): FixtureWorkKey | undefined => (Object.keys(FIXTURE_WORKS) as FixtureWorkKey[]).find(key => FIXTURE_WORKS[key].paperId === work.paperId);
 
 export interface FixtureProviders {
-  arxiv: { search(query: string, limit?: number): Promise<ResearchWork[]>; searchById(arxivId: string): Promise<ResearchWork | undefined> };
-  crossref: { search(query: string, limit?: number): Promise<ResearchWork[]> };
+  arxiv: { search(query: string, limit?: number): Promise<ResearchWork[]>; searchById(arxivId: string): Promise<ResearchWork[]> };
+  crossref: { search(query: string, limit?: number): Promise<ResearchWork[]>; getByDoi(doi: string): Promise<ResearchWork | undefined> };
   openalex: { search(query: string, limit?: number): Promise<ResearchWork[]>; getReferences(id: string, limit?: number): Promise<ResearchWork[]>; getCitations(id: string, limit?: number): Promise<ResearchWork[]> };
   semanticScholar: { search(query: string, limit?: number): Promise<ResearchWork[]>; getPaper(id: string): Promise<ResearchWork | undefined>; getReferences(id: string, limit?: number): Promise<ResearchWork[]>; getCitations(id: string, limit?: number): Promise<ResearchWork[]>; getRelated(id: string, limit?: number): Promise<ResearchWork[]>; resolveAuthor(id: string): Promise<{ authorId: string; name: string; aliases?: string[]; papers?: { paperId: string }[] } | undefined> };
   github: { searchRepositories(query: string, limit?: number): Promise<Record<string, unknown>[]>; resolveRevision(owner: string, repo: string, ref: string): Promise<string>; listContents(owner: string, repo: string, path: string, ref?: string): Promise<Record<string, unknown>[]>; getContent(owner: string, repo: string, path: string, ref?: string): Promise<Record<string, unknown> | undefined> };
@@ -120,10 +120,13 @@ export function createFixtureProviders(): FixtureProviders {
       searchById: async (arxivId) => {
         const normalized = normalizeArxiv(arxivId);
         const match = FIXTURE_WORK_LIST.find(work => normalizeArxiv(work.arxivId ?? '') === normalized);
-        return match ? arxivView(match) : undefined;
+        return match ? [arxivView(match)] : [];
       },
     },
-    crossref: { search: async (query, limit = 10) => searchCore(FIXTURE_WORK_LIST, query, limit).map(crossrefView) },
+    crossref: {
+      search: async (query, limit = 10) => searchCore(FIXTURE_WORK_LIST, query, limit).map(crossrefView),
+      getByDoi: async (doi) => FIXTURE_WORK_LIST.find(work => normalizeDoi(work.doi ?? '') === normalizeDoi(doi)) ? crossrefView(FIXTURE_WORK_LIST.find(work => normalizeDoi(work.doi ?? '') === normalizeDoi(doi))!) : undefined,
+    },
     openalex: {
       search: async (query, limit = 10) => searchCore(FIXTURE_WORK_LIST, query, limit).map(openalexView),
       getReferences: async (id, limit = 20) => graph(id, 'references').slice(0, limit),

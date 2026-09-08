@@ -73,7 +73,7 @@
     "test:coverage": "npx vitest run --coverage",
     "eval:acquire-real-v5": "node scripts/acquire-real-source-v5.mjs",
     "eval:real-v5-dev": "npm run eval:acquire-real-v5 -- --split=development && npm run build && node --env-file-if-exists=.env evals/runners/run-real-source-v5-wrapper.mjs",
-    "eval:real-v5-holdout": "node --env-file-if-exists=.env evals/runners/run-real-source-v5-wrapper.mjs --split=holdout --allow-holdout",
+    "eval:real-v5-holdout": "npm run build && node --env-file-if-exists=.env evals/runners/run-real-source-v5-wrapper.mjs --split=holdout --allow-holdout",
     "eval:pdf-gold": "node evals/runners/run-pdf-gold-fidelity.mjs",
     "test:package": "node scripts/package-e2e.mjs",
     "eval:scale": "node evals/runners/run-scale-experiment.mjs"
@@ -87,6 +87,8 @@
     "LICENSE.md",
     "CHANGELOG.md",
     "docs",
+    "scripts/parse_pymupdf.py",
+    "scripts/parse_docling.py",
     ".env.example"
   ],
   "dependencies": {

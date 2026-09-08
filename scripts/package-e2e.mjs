@@ -27,6 +27,7 @@ async function runPass({ name, env }) {
     execFileSync('npm', ['install', tarball, '--no-audit', '--no-fund'], { cwd: installDir, encoding: 'utf8', shell: process.platform === 'win32', stdio: ['ignore', 'pipe', 'pipe'] });
     const binPath = join(installDir, 'node_modules', 'openpapers', 'dist', 'mcp', 'server.js');
     if (!existsSync(binPath)) throw new Error('installed package is missing dist/mcp/server.js');
+    for (const script of ['parse_pymupdf.py','parse_docling.py']) if (!existsSync(join(installDir,'node_modules','openpapers','scripts',script))) throw new Error(`installed package is missing scripts/${script}`);
     const dbPath = join(installDir, `research-${name}.sqlite`);
     const child = spawn(process.execPath, [binPath], {
       stdio: ['pipe', 'pipe', 'pipe'],

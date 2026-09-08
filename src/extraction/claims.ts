@@ -11,7 +11,7 @@ const normalize = (value: string): string => value.toLowerCase().replace(/[^a-z0
 export function extractPaperClaims(facts: PaperFact[]): PaperClaim[] {
   return facts.map(fact => {
     const anchor = fact.locator.section ?? fact.locator.equation ?? fact.kind;
-    const claimKey = `${fact.kind}|${normalize(anchor)}`;
+    const claimKey = `${fact.kind}|${normalize(fact.sourceUrl)}|${normalize(anchor)}`;
     const seed = `${claimKey}|${fact.sourceUrl}|${JSON.stringify(fact.locator)}|${fact.text}`;
     const claimId = `claim-${createHash('sha256').update(seed).digest('hex')}`;
     const evidence: Evidence = {evidenceId:`evidence-${claimId.slice(6)}`,sourceId:fact.sourceUrl,authors:[],title:`Extracted ${fact.kind} claim`,identifiers:{},locator:fact.locator,evidenceType:'DERIVED',sourceQuality:'C',evidence:fact.text,citationText:`${fact.sourceUrl}${fact.locator.section ? `#${fact.locator.section}` : ''}`};

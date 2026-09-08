@@ -9,10 +9,11 @@ import { HashEmbeddingProvider, PostgresVectorRetriever } from '../retrieval/vec
 import { registerTools } from './tools.js';
 import { createShutdownController } from './lifecycle.js';
 import { createFixtureProviders, type FixtureProviders } from '../testing/fixtures.js';
+import { createEcosystemProviders } from '../research/ecosystem-providers.js';
 
 export function createMcpServer(research = new ResearchService(), ecosystemDeps?: Parameters<typeof registerTools>[2]): McpServer {
   const server = new McpServer({ name: 'OpenPapers', version: '1.0.0' });
-  registerTools(server, research, ecosystemDeps);
+  registerTools(server, research, {...createEcosystemProviders(), ...ecosystemDeps});
   return server;
 }
 
@@ -54,7 +55,8 @@ async function runHttp(research: ResearchService, ecosystemDeps?: Parameters<typ
     const validateHost = localhostHostValidation();
     const validateOrigin = localhostOriginValidation();
     const http = createHttpServer((req, res) => {
-      if (req.url !== '/mcp' && req.url !== '/mcp/') { res.writeHead(404); res.end('Not found'); return; }
+      if (req.url === '/health') { res.writeHead(200, {'content-type':'application/json'}); res.end('{"status":"ok"}'); return; }
+       if (req.url !== '/mcp' && req.url !== '/mcp/') { res.writeHead(404); res.end('Not found'); return; }
       if (!validateHost(req, res) || !validateOrigin(req, res)) return;
       void nodeHandler(req as any, res);
     });

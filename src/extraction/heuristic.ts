@@ -21,6 +21,6 @@ export function extractPaperFacts(document: ParsedDocument): PaperFact[] {
     const matched = headingKinds.filter(([, pattern]) => pattern.test(section.heading)).map(([kind]) => kind);
     for (const kind of matched) facts.push({kind,text:section.text,sourceUrl:document.url,locator:{section:section.heading,...(section.page === undefined ? {} : {page:section.page}),...(section.pageId === undefined ? {} : {pageId:section.pageId})},confidence:'heuristic'});
   }
-  for (const [index, equation] of (document.equations ?? []).entries()) facts.push({kind:'equation',text:equation,sourceUrl:document.url,locator:{equation:`equation-${index}`},confidence:'heuristic'});
+  for (const [index, equation] of (document.equations ?? []).entries()) { const location=document.equationMetadata?.[index]; facts.push({kind:'equation',text:equation,sourceUrl:document.url,locator:{equation:`equation-${index}`,...(location?.page===undefined?{}:{page:location.page}),...(location?.pageId===undefined?{}:{pageId:location.pageId})},confidence:'heuristic'}); }
   return facts;
 }

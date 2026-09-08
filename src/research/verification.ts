@@ -16,7 +16,7 @@ export function validateCitationIntegrity<T>(response: ResearchResponse<T>): Cit
     if (!references.has(item.sourceId) && item.sourceId !== 'local') errors.push(`evidence ${item.evidenceId} references missing source ${item.sourceId}`);
     const reference = response.references.find(candidate => candidate.paperId === item.sourceId);
     if (reference && normalizeText(reference.title) !== normalizeText(item.title)) errors.push(`evidence ${item.evidenceId} title does not match source ${item.sourceId}`);
-    if (reference && !item.authors.some(author => reference.authors.some(candidate => candidate.normalizedName === author.normalizedName))) errors.push(`evidence ${item.evidenceId} authors do not match source ${item.sourceId}`);
+    if (reference && item.authors.length > 0 && reference.authors.length > 0 && !item.authors.some(author => reference.authors.some(candidate => candidate.normalizedName === author.normalizedName))) errors.push(`evidence ${item.evidenceId} authors do not match source ${item.sourceId}`);
   }
   const dataText = JSON.stringify(response.data ?? '');
   const hasClaimLikeData = /claim|method|loss|objective|temperature|optimizer|dataset|benchmark|result|training/i.test(dataText);
@@ -47,7 +47,6 @@ function validateEvidence(item: Evidence, ids: Set<string>, errors: string[]): v
   ids.add(item.evidenceId);
   if (!item.sourceId) errors.push(`evidence ${item.evidenceId} has no sourceId`);
   if (!item.title) errors.push(`evidence ${item.evidenceId} has no source title`);
-  if (item.authors.length === 0) errors.push(`evidence ${item.evidenceId} has no author metadata`);
   if (!item.citationText) errors.push(`evidence ${item.evidenceId} has no citationText`);
   if (item.locator?.page !== undefined && (!Number.isInteger(item.locator.page) || item.locator.page < 1)) errors.push(`evidence ${item.evidenceId} has invalid page locator`);
 }

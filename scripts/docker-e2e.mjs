@@ -7,8 +7,9 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const PORT = process.env.DOCKER_E2E_PORT ?? '18787';
 const ENDPOINT = `http://127.0.0.1:${PORT}/mcp`;
 const COMMIT = execFileSync('git', ['rev-parse', 'HEAD'], { cwd: root, encoding: 'utf8' }).trim();
+const WORKTREE_DIRTY = execFileSync('git', ['status', '--porcelain'], { cwd: root, encoding: 'utf8' }).trim().length > 0;
 process.env.MCP_ENDPOINT = ENDPOINT;
-process.env.MCP_BENCHMARK_RUNS = process.env.MCP_BENCHMARK_RUNS ?? '10';
+process.env.MCP_BENCHMARK_RUNS = process.env.MCP_BENCHMARK_RUNS ?? '30';
 
 const steps = [];
 const record = (name, status, detail) => { steps.push({ name, status, detail }); console.error(`[${status}] ${name} ${detail ?? ''}`); };
@@ -84,7 +85,7 @@ try {
   rmSync(join(root, '.cache', 'docker-e2e-override.yml'), { force: true });
 }
 
-const result = { schemaVersion: 'openpapers.docker-e2e.v1', kind: 'runtime-docker-e2e', commit: COMMIT, timestamp: new Date().toISOString(), fixtureMode: true, steps, passed: exitCode === 0 };
+const result = { schemaVersion: 'openpapers.docker-e2e.v1', kind: 'runtime-docker-e2e', commit: COMMIT, workingTreeDirty: WORKTREE_DIRTY, timestamp: new Date().toISOString(), fixtureMode: true, steps, passed: exitCode === 0 };
 const output = join(root, 'evals/results', `docker-e2e-${COMMIT.slice(0, 12)}.json`);
 writeFileSync(output, JSON.stringify(result, null, 2) + '\n');
 console.log(JSON.stringify({ output, passed: result.passed, steps: steps.map(step => `${step.name}:${step.status}`) }, null, 2));

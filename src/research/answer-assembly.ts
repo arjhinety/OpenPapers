@@ -4,7 +4,7 @@ import type { ResearchFact, FactValue } from './facts.js';
 import type { ResearchQueryIntent } from './query-intent.js';
 import type { Evidence } from '../models/research.js';
 
-export interface StructuredResearchAnswer { answer:Record<string,string>; status:'SUPPORTED'|'PARTIALLY_SUPPORTED'|'UNKNOWN'|'NOT_REPORTED'; evidence:Evidence[]; }
+export interface StructuredResearchAnswer { answer:Record<string,string|string[]>; status:'SUPPORTED'|'PARTIALLY_SUPPORTED'|'UNKNOWN'|'NOT_REPORTED'; evidence:Evidence[]; }
 export interface FactAnswer { answer:Record<string,FactValue>; status:'SUPPORTED'|'PARTIALLY_SUPPORTED'|'CONFLICTING'|'UNKNOWN'|'NOT_REPORTED'; facts:ResearchFact[]; evidence:Evidence[]; }
 export function assembleExplicitParameterAnswer(requestedFields:string[], parameters:TrainingParameter[], evidenceFor:(parameter:TrainingParameter,index:number)=>Evidence):StructuredResearchAnswer {
   const requested=new Set(requestedFields); const selected=parameters.filter(parameter=>requested.has(parameter.name));

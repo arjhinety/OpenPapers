@@ -11,7 +11,7 @@ function isReportedValue(value: unknown): value is ReportedValue { return typeof
 export function compareRecipeToConfig(recipe:TrainingRecipe, fields:ConfigField[], source:{url:string;commitSha?:string}):ReproducibilityComparison {
   const conflicts:ReproducibilityConflict[]=[]; const matches:ReproducibilityMatch[]=[]; const unavailable:string[]=[]; const evidence:Evidence[]=[];
   for (const field of recipeFields) {
-    const reported=recipe[field]; const code=fields.find(item=>item.name===field);
+    const reported=recipe[field]; const code=fields.find(item=>item.name===field||item.name.split('.').at(-1)===field);
     if (!code) { unavailable.push(String(field)); continue; }
     if (!isReportedValue(reported)) { unavailable.push(String(field)); continue; }
     const paperValue=String(reported.value); const codeValue=code.value.trim(); const codeSource={url:source.url,...(source.commitSha ? {commitSha:source.commitSha} : {}),locator:{repositoryPath:code.name,repositoryLineStart:code.lineStart,repositoryLineEnd:code.lineEnd, ...(source.commitSha ? {commitSha:source.commitSha} : {})}};

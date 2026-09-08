@@ -9,14 +9,14 @@ function assertSafeUrl(value: string): URL {
   if (url.protocol !== 'http:' && url.protocol !== 'https:') throw new Error('unsupported protocol');
   const host = url.hostname.toLowerCase().replace(/^\[|\]$/g, '');
   const ipVersion = isIP(host);
-  const mappedIpv4 = ipVersion === 6 && host.startsWith('::ffff:') ? mappedIPv4Address(host) : undefined;
+  const mappedIpv4 = ipVersion === 6 ? mappedIPv4Address(host) : undefined;
   const ipv4 = mappedIpv4 ?? (ipVersion === 4 ? host : undefined);
   const unsafeIpv4 = Boolean(ipv4 && (ipv4 === '0.0.0.0' || ipv4.startsWith('127.') || ipv4.startsWith('10.') || ipv4.startsWith('169.254.') || ipv4.startsWith('192.168.') || /^172\.(1[6-9]|2\d|3[01])\./.test(ipv4) || ipv4.startsWith('100.64.')));
   const unsafeIpv6 = ipVersion === 6 && (host === '::1' || host === '::' || host.startsWith('fc') || host.startsWith('fd') || host.startsWith('fe80:'));
   if (!host || host === 'localhost' || host.endsWith('.localhost') || host.endsWith('.local') || unsafeIpv4 || unsafeIpv6) throw new Error('unsafe host');
   return url;
 }
-function mappedIPv4Address(host:string):string|undefined { const parts=host.slice('::ffff:'.length).split(':'); if(parts.length!==2)return undefined; const value=parts.map(part=>Number.parseInt(part,16)); return value.every(Number.isInteger) ? `${value[0]!>>8}.${value[0]!&255}.${value[1]!>>8}.${value[1]!&255}` : undefined; }
+function mappedIPv4Address(host:string):string|undefined { const match=host.match(/^::(?:ffff:)?([0-9a-f]{1,4}):([0-9a-f]{1,4})$/i); if(!match)return undefined; const value=match.slice(1).map(part=>Number.parseInt(part!,16)); return value.every(part=>Number.isInteger(part)&&part>=0&&part<=0xffff) ? `${value[0]!>>8}.${value[0]!&255}.${value[1]!>>8}.${value[1]!&255}` : undefined; }
 
 export class PaperAcquirer {
   constructor(private readonly fetcher: typeof fetch = fetch, private readonly options: AcquisitionOptions = {}) {}

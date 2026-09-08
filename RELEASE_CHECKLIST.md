@@ -2,6 +2,10 @@
 
 Use this checklist for a release candidate. Mark items only after running them against the current checkout and record environment-dependent evidence in the release notes.
 
+> **Current checkout status:** this document contains historical gate records for older commits. They are not evidence for the current HEAD. Before release, record `git rev-parse HEAD`, rerun every gate below, and attach artifacts whose filenames include that commit.
+>
+> **Latest local integration run:** `npm run test:docker` and `npm run test:postgres` passed on the current working tree. The Docker artifact is `evals/results/docker-e2e-9e9a505ba78e.json`; it records base HEAD `9e9a505ba78ed0b573f634bd7e37654d92da2b43` and `workingTreeDirty: true`, so a clean release commit must rerun these gates.
+
 ## Automated gates
 
 - [x] `npm ci --no-audit --no-fund`
@@ -57,7 +61,7 @@ Current verification: Compose configuration/build/start passed; all three servic
 
 - [x] Changelog is updated for the current unreleased baseline.
 - [x] Version metadata is consistent across `package.json`, `package-lock.json`, `server.json`, `src/mcp/server.ts`, and the `CHANGELOG.md` head entry (`1.0.0`, Apache-2.0, Node.js >=22.5); enforced by `scripts/check-versions.mjs` in `npm run check`.
-- [x] Git working tree is clean after the release checklist update and commit.
+- [ ] Git working tree is clean after the release checklist update and commit.
 
 ## 1.0.0 release verification (2026-09-05)
 
