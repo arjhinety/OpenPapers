@@ -62,7 +62,7 @@
     "eval:fact-fn-trace": "npm run build && node evals/runners/run-v5-3-fn-trace.mjs",
     "eval:span-recovery": "npm run build && node evals/runners/run-v5-3-1-span-recovery.mjs",
     "eval:holdout": "npm run build && node evals/runners/run-retrieval-holdout.mjs",
-    "test:postgres": "npm run build && node scripts/postgres-integration.mjs",
+    "test:postgres": "node scripts/postgres-e2e.mjs",
     "package:dry-run": "npm pack --dry-run",
     "prepack": "npm run build",
     "eval:live-search": "npm run build && node --env-file-if-exists=.env evals/runners/run-live-search-reliability.mjs",
