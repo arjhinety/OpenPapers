@@ -10,6 +10,8 @@ npm run check
 npm run test:e2e
 npm run test:coverage
 npm run test:package
+npm run test:postgres
+npm run test:docker
 npm run build
 npm test
 ```
