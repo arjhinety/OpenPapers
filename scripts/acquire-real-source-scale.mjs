@@ -1,0 +1,1 @@
+process.env.REAL_SOURCE_DATASET_FILE='evals/datasets/research-scale-v1.json';process.env.REAL_SOURCE_ACQUISITION_OUTPUT='real-source-scale-acquisition-all.json';await import('./acquire-real-source.mjs');

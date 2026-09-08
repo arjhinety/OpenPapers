@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "openpapers.scoped-fact-lopo.v1",
+  "benchmark": "research-facts-v5-development",
+  "commit": "972a15f7268b50d0fa8b308841257cdecb24728d",
+  "timestamp": "2026-09-05T07:28:20.726Z",
+  "method": "diagnostic leave-one-paper-out; no learned or paper-specific rules exist in current extractor",
+  "mean": {
+    "precision": 0.8333333333333334,
+    "recall": 1,
+    "f1": 0.8888888888888888
+  },
+  "perPaper": [
+    {
+      "heldOutPaperId": "1706.03762",
+      "trainingPapers": 5,
+      "tp": 2,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1
+    },
+    {
+      "heldOutPaperId": "1810.04805",
+      "trainingPapers": 5,
+      "tp": 1,
+      "fp": 1,
+      "fn": 0,
+      "precision": 0.5,
+      "recall": 1,
+      "f1": 0.6666666666666666
+    },
+    {
+      "heldOutPaperId": "2106.09685",
+      "trainingPapers": 5,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1
+    },
+    {
+      "heldOutPaperId": "2205.14135",
+      "trainingPapers": 5,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1
+    },
+    {
+      "heldOutPaperId": "2305.14314",
+      "trainingPapers": 5,
+      "tp": 1,
+      "fp": 1,
+      "fn": 0,
+      "precision": 0.5,
+      "recall": 1,
+      "f1": 0.6666666666666666
+    },
+    {
+      "heldOutPaperId": "2305.18290",
+      "trainingPapers": 5,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1
+    }
+  ],
+  "holdout": {
+    "created": false,
+    "usedForTuning": false
+  }
+}

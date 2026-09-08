@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "openpapers.real-source-acquisition.v1",
+  "dataset": "research-real-v5",
+  "split": "development",
+  "metadataOnly": false,
+  "rows": [
+    {
+      "caseId": "v5-dpo",
+      "split": "development",
+      "pdfUrl": "https://arxiv.org/pdf/2305.18290v3",
+      "status": "ACQUIRED",
+      "retrievedAt": "2026-09-06T04:47:48.119Z",
+      "sha256": "92cb3a2b71362acda98a789b03d88688fd33cf5fcf13f81d2b1de30ee7d3b67a",
+      "bytes": 1299212,
+      "path": "C:\\Users\\arro\\Downloads\\OpenPapers\\.cache\\real-source\\v5-dpo-v3.pdf",
+      "error": null
+    },
+    {
+      "caseId": "v5-flashattention2",
+      "split": "development",
+      "pdfUrl": "https://arxiv.org/pdf/2307.08691v1",
+      "status": "ACQUIRED",
+      "retrievedAt": "2026-09-06T04:47:48.489Z",
+      "sha256": "4aa8935dfacaf6ae8c68f772ca92f730154a0dd0e1bceeb59c7bc56c512d5868",
+      "bytes": 1660578,
+      "path": "C:\\Users\\arro\\Downloads\\OpenPapers\\.cache\\real-source\\v5-flashattention2-v1.pdf",
+      "error": null
+    },
+    {
+      "caseId": "v5-zephyr",
+      "split": "development",
+      "pdfUrl": "https://arxiv.org/pdf/2310.16944v1",
+      "status": "ACQUIRED",
+      "retrievedAt": "2026-09-06T04:47:48.866Z",
+      "sha256": "c7667911d13ba72d4ce0c8eb13762cdec72f6034064683dbfc2de944a219b6ba",
+      "bytes": 8682149,
+      "path": "C:\\Users\\arro\\Downloads\\OpenPapers\\.cache\\real-source\\v5-zephyr-v1.pdf",
+      "error": null
+    },
+    {
+      "caseId": "v5-santurkar",
+      "split": "development",
+      "pdfUrl": "https://arxiv.org/pdf/2303.17548v1",
+      "status": "ACQUIRED",
+      "retrievedAt": "2026-09-06T04:47:50.294Z",
+      "sha256": "4e427077216e584b757849409abcc6f1690dfa0df6f85e8d12e8a1356e0d56d0",
+      "bytes": 3819235,
+      "path": "C:\\Users\\arro\\Downloads\\OpenPapers\\.cache\\real-source\\v5-santurkar-v1.pdf",
+      "error": null
+    },
+    {
+      "caseId": "v5-gilardi",
+      "split": "development",
+      "pdfUrl": "https://arxiv.org/pdf/2303.15056v2",
+      "status": "ACQUIRED",
+      "retrievedAt": "2026-09-06T04:47:50.945Z",
+      "sha256": "da6865c3e57e8a956f2aeeadef0c814b2ab4a2db4753ef50037a4074b6e3d26f",
+      "bytes": 180360,
+      "path": "C:\\Users\\arro\\Downloads\\OpenPapers\\.cache\\real-source\\v5-gilardi-v2.pdf",
+      "error": null
+    },
+    {
+      "caseId": "v5-aifeynman",
+      "split": "development",
+      "pdfUrl": "https://arxiv.org/pdf/1905.11481v2",
+      "status": "ACQUIRED",
+      "retrievedAt": "2026-09-06T04:47:50.979Z",
+      "sha256": "bea0a57b25041b2fab181efdf543279de6f7ac88ab3aca2fff92173c56cd801f",
+      "bytes": 2286965,
+      "path": "C:\\Users\\arro\\Downloads\\OpenPapers\\.cache\\real-source\\v5-aifeynman-v2.pdf",
+      "error": null
+    }
+  ]
+}

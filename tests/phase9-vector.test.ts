@@ -24,6 +24,10 @@ describe('vector retrieval interface',()=>{
     await retriever.index([{id:'paper-a',text:'document',metadata:{paperId:'a'}}]);
     expect(await retriever.search('query')).toEqual([{id:'paper-a',score:1,metadata:{paperId:'a'}}]);
   });
+  it('does not apply a bogus zero-dimension filter for bare embedding callbacks', async () => {
+    let dimensions:number|undefined=123; const store={upsertVector:async()=>{},searchVectorsSql:async (_query:number[],_limit:number,_identity?:string,dims?:number)=>{dimensions=dims;return [];},flush:async()=>undefined};
+    const retriever=new PostgresVectorRetriever(store,async()=>[1,0]); await retriever.index([{id:'paper-a',text:'document'}]); await retriever.search('query'); expect(dimensions).toBeUndefined();
+  });
   it('requires the same embedding identity and dimension during SQL search', async () => {
     let request:{identity?:string;dimensions?:number}|undefined;
     const store={upsertVector:async()=>{},searchVectorsSql:async (_query:number[],_limit:number,identity?:string,dimensions?:number)=>{request={identity,dimensions};return [];},flush:async()=>undefined};

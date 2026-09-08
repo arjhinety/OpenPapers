@@ -1,0 +1,554 @@
+{
+  "schemaVersion": "openpapers.evaluation-result.v1",
+  "kind": "offline-baseline",
+  "commit": "972a15f7268b50d0fa8b308841257cdecb24728d",
+  "timestamp": "2026-09-05T07:29:10.871Z",
+  "workingTreeDirty": true,
+  "configuration": {
+    "providerMode": "offline-fixture",
+    "parserMode": "html-fixture",
+    "liveProviders": false
+  },
+  "datasets": {
+    "researchTasks": "research-tasks-v1"
+  },
+  "taskCount": 15,
+  "metrics": {
+    "workAccuracy": 0.5333333333333333,
+    "identifierAccuracy": 0.5333333333333333,
+    "answerCorrectness": 0.4666666666666667,
+    "evidenceSourceAccuracy": 0.8666666666666667,
+    "locatorAccuracy": 1,
+    "supportStatusAccuracy": 0.6,
+    "correctUNKNOWN": 1,
+    "correctNOT_REPORTED": 1,
+    "falseUNKNOWN": 0.26666666666666666,
+    "falseNOT_REPORTED": 0,
+    "fabricatedAnswerRate": 0.06666666666666667,
+    "conflictDetectionPrecision": 1,
+    "conflictDetectionRecall": 1
+  },
+  "abstention": {
+    "expectedUnknown": 3,
+    "expectedNotReported": 3,
+    "actualUnknown": 7,
+    "actualNotReported": 3
+  },
+  "failureCategories": {
+    "extraction failure": 5,
+    "retrieval failure": 7
+  },
+  "rows": [
+    {
+      "taskId": "rt-001",
+      "expectedWork": "2106.09685",
+      "actualWork": "2106.09685",
+      "expectedAnswer": {
+        "optimizer": "AdamW",
+        "learning_rate": "2e-5"
+      },
+      "actualAnswer": {
+        "learning_rate": "2e-5",
+        "optimizer": "AdamW"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "SUPPORTED",
+      "expectedSources": [
+        "paper"
+      ],
+      "actualSources": [
+        "paper"
+      ],
+      "expectedLocators": [
+        {
+          "section": "Training Details"
+        }
+      ],
+      "actualLocators": [
+        {
+          "section": "Training Details"
+        },
+        {
+          "section": "Training Details"
+        }
+      ],
+      "workCorrect": true,
+      "identifierCorrect": true,
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "failureCategory": null
+    },
+    {
+      "taskId": "rt-002",
+      "expectedWork": "1810.04805",
+      "actualWork": "1810.04805",
+      "expectedAnswer": {
+        "batch_size": "32",
+        "epochs": "3"
+      },
+      "actualAnswer": {
+        "epochs": "3"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "PARTIALLY_SUPPORTED",
+      "expectedSources": [
+        "paper"
+      ],
+      "actualSources": [
+        "paper"
+      ],
+      "expectedLocators": [
+        {
+          "section": "Optimization"
+        }
+      ],
+      "actualLocators": [
+        {
+          "section": "Optimization"
+        }
+      ],
+      "workCorrect": true,
+      "identifierCorrect": true,
+      "answerCorrect": false,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": false,
+      "failureCategory": "extraction failure"
+    },
+    {
+      "taskId": "rt-003",
+      "expectedWork": "2305.14314",
+      "actualWork": "2305.14314",
+      "expectedAnswer": {
+        "optimizer": "Adam",
+        "weight_decay": "0.1",
+        "temperature": "2"
+      },
+      "actualAnswer": {
+        "weight_decay": "0.1",
+        "temperature": "2"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "PARTIALLY_SUPPORTED",
+      "expectedSources": [
+        "appendix"
+      ],
+      "actualSources": [
+        "appendix"
+      ],
+      "expectedLocators": [
+        {
+          "section": "Appendix: Training"
+        }
+      ],
+      "actualLocators": [
+        {
+          "section": "Appendix: Training"
+        },
+        {
+          "section": "Appendix: Training"
+        }
+      ],
+      "workCorrect": true,
+      "identifierCorrect": true,
+      "answerCorrect": false,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": false,
+      "failureCategory": "extraction failure"
+    },
+    {
+      "taskId": "rt-004",
+      "expectedWork": "2305.18290",
+      "actualWork": "2305.18290",
+      "expectedAnswer": {
+        "gradient_accumulation": "4",
+        "batch_size": "8"
+      },
+      "actualAnswer": {
+        "batch_size": "8",
+        "gradient_accumulation": "4"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "SUPPORTED",
+      "expectedSources": [
+        "repository_config"
+      ],
+      "actualSources": [
+        "repository_config"
+      ],
+      "expectedLocators": [
+        {
+          "section": "config.yaml"
+        }
+      ],
+      "actualLocators": [
+        {
+          "section": "config.yaml"
+        },
+        {
+          "section": "config.yaml"
+        }
+      ],
+      "workCorrect": true,
+      "identifierCorrect": true,
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "failureCategory": null
+    },
+    {
+      "taskId": "rt-005",
+      "expectedWork": "2310.16944",
+      "actualWork": null,
+      "expectedAnswer": {
+        "objective": "DPO"
+      },
+      "actualAnswer": {},
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "UNKNOWN",
+      "expectedSources": [
+        "paper"
+      ],
+      "actualSources": [
+        "paper"
+      ],
+      "expectedLocators": [
+        {
+          "section": "Recipe"
+        }
+      ],
+      "actualLocators": [],
+      "workCorrect": false,
+      "identifierCorrect": false,
+      "answerCorrect": false,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": false,
+      "failureCategory": "retrieval failure"
+    },
+    {
+      "taskId": "rt-006",
+      "expectedWork": "2002.10957",
+      "actualWork": "2002.10957",
+      "expectedAnswer": {
+        "teacher": "BERT-large",
+        "student": "MiniLM"
+      },
+      "actualAnswer": {},
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "UNKNOWN",
+      "expectedSources": [
+        "paper"
+      ],
+      "actualSources": [
+        "paper"
+      ],
+      "expectedLocators": [
+        {
+          "section": "Distillation"
+        }
+      ],
+      "actualLocators": [],
+      "workCorrect": true,
+      "identifierCorrect": true,
+      "answerCorrect": false,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": false,
+      "failureCategory": "extraction failure"
+    },
+    {
+      "taskId": "rt-007",
+      "expectedWork": "2212.10560",
+      "actualWork": null,
+      "expectedAnswer": {
+        "dataset": "Self-Instruct collection"
+      },
+      "actualAnswer": {},
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "UNKNOWN",
+      "expectedSources": [
+        "paper"
+      ],
+      "actualSources": [
+        "paper"
+      ],
+      "expectedLocators": [
+        {
+          "section": "Dataset"
+        }
+      ],
+      "actualLocators": [],
+      "workCorrect": false,
+      "identifierCorrect": false,
+      "answerCorrect": false,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": false,
+      "failureCategory": "retrieval failure"
+    },
+    {
+      "taskId": "rt-008",
+      "expectedWork": "2302.13971",
+      "actualWork": "2302.13971",
+      "expectedAnswer": {
+        "gpu_count": null
+      },
+      "actualAnswer": {},
+      "expectedStatus": "NOT_REPORTED",
+      "actualStatus": "NOT_REPORTED",
+      "expectedSources": [
+        "paper_review"
+      ],
+      "actualSources": [
+        "paper_review"
+      ],
+      "expectedLocators": [
+        {
+          "section": "Hardware"
+        }
+      ],
+      "actualLocators": [],
+      "workCorrect": true,
+      "identifierCorrect": true,
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "failureCategory": null
+    },
+    {
+      "taskId": "rt-009",
+      "expectedWork": "2401.04088",
+      "actualWork": null,
+      "expectedAnswer": {
+        "optimizer_betas": null
+      },
+      "actualAnswer": {},
+      "expectedStatus": "NOT_REPORTED",
+      "actualStatus": "NOT_REPORTED",
+      "expectedSources": [
+        "paper_review"
+      ],
+      "actualSources": [
+        "paper_review"
+      ],
+      "expectedLocators": [
+        {
+          "section": "Optimization"
+        }
+      ],
+      "actualLocators": [],
+      "workCorrect": false,
+      "identifierCorrect": false,
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "failureCategory": "retrieval failure"
+    },
+    {
+      "taskId": "rt-010",
+      "expectedWork": "2210.11416",
+      "actualWork": null,
+      "expectedAnswer": {
+        "dataset_ratio": null
+      },
+      "actualAnswer": {},
+      "expectedStatus": "NOT_REPORTED",
+      "actualStatus": "NOT_REPORTED",
+      "expectedSources": [
+        "paper_review"
+      ],
+      "actualSources": [
+        "paper_review"
+      ],
+      "expectedLocators": [
+        {
+          "section": "Data"
+        }
+      ],
+      "actualLocators": [],
+      "workCorrect": false,
+      "identifierCorrect": false,
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "failureCategory": "retrieval failure"
+    },
+    {
+      "taskId": "rt-011",
+      "expectedWork": "2305.15334",
+      "actualWork": null,
+      "expectedAnswer": {
+        "gpu_count": null
+      },
+      "actualAnswer": {},
+      "expectedStatus": "UNKNOWN",
+      "actualStatus": "UNKNOWN",
+      "expectedSources": [],
+      "actualSources": [],
+      "expectedLocators": [],
+      "actualLocators": [],
+      "workCorrect": false,
+      "identifierCorrect": false,
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "failureCategory": "retrieval failure"
+    },
+    {
+      "taskId": "rt-012",
+      "expectedWork": "2305.14314",
+      "actualWork": "2305.14314",
+      "expectedAnswer": {
+        "learning_rate": {
+          "paper": "2e-4",
+          "repository_readme": "1e-4"
+        }
+      },
+      "actualAnswer": {
+        "learning_rate": [
+          "2e-4",
+          "1e-4"
+        ]
+      },
+      "expectedStatus": "CONFLICTING",
+      "actualStatus": "CONFLICTING",
+      "expectedSources": [
+        "paper",
+        "README"
+      ],
+      "actualSources": [
+        "paper",
+        "README"
+      ],
+      "expectedLocators": [
+        {
+          "section": "Experiments"
+        },
+        {
+          "section": "README"
+        }
+      ],
+      "actualLocators": [
+        {
+          "section": "Experiments"
+        },
+        {
+          "section": "README"
+        }
+      ],
+      "workCorrect": true,
+      "identifierCorrect": true,
+      "answerCorrect": false,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "failureCategory": "extraction failure"
+    },
+    {
+      "taskId": "rt-013",
+      "expectedWork": "2106.09685",
+      "actualWork": "2106.09685",
+      "expectedAnswer": {
+        "learning_rate": null
+      },
+      "actualAnswer": {
+        "learning_rate": "1e-4"
+      },
+      "expectedStatus": "UNKNOWN",
+      "actualStatus": "UNKNOWN",
+      "expectedSources": [
+        "repository_commit"
+      ],
+      "actualSources": [
+        "repository_config"
+      ],
+      "expectedLocators": [
+        {
+          "section": "current config"
+        }
+      ],
+      "actualLocators": [
+        {
+          "section": "current config"
+        }
+      ],
+      "workCorrect": true,
+      "identifierCorrect": true,
+      "answerCorrect": false,
+      "evidenceSourceCorrect": false,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "failureCategory": "extraction failure"
+    },
+    {
+      "taskId": "rt-014",
+      "expectedWork": "2401.15077",
+      "actualWork": null,
+      "expectedAnswer": {
+        "batch_size": null
+      },
+      "actualAnswer": {},
+      "expectedStatus": "UNKNOWN",
+      "actualStatus": "UNKNOWN",
+      "expectedSources": [
+        "repository_readme"
+      ],
+      "actualSources": [
+        "README"
+      ],
+      "expectedLocators": [
+        {
+          "section": "README"
+        }
+      ],
+      "actualLocators": [],
+      "workCorrect": false,
+      "identifierCorrect": false,
+      "answerCorrect": true,
+      "evidenceSourceCorrect": false,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "failureCategory": "retrieval failure"
+    },
+    {
+      "taskId": "rt-015",
+      "expectedWork": "2212.04356",
+      "actualWork": null,
+      "expectedAnswer": {
+        "precision": "bf16",
+        "training_steps": "10000"
+      },
+      "actualAnswer": {},
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "UNKNOWN",
+      "expectedSources": [
+        "paper"
+      ],
+      "actualSources": [
+        "paper"
+      ],
+      "expectedLocators": [
+        {
+          "section": "Training"
+        }
+      ],
+      "actualLocators": [],
+      "workCorrect": false,
+      "identifierCorrect": false,
+      "answerCorrect": false,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": false,
+      "failureCategory": "retrieval failure"
+    }
+  ]
+}

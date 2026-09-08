@@ -1,0 +1,2812 @@
+{
+ "version": "research-scale-v1",
+ "status": "scale-experiment-no-gold",
+ "annotationPolicy": "Scale experiment corpus auto-selected from the arXiv API across in-domain (cs.LG/CL/CV/DC/IR, stat.ML) and out-of-domain (q-bio, astro-ph, physics.comp-ph, math.DS, econ.GN, cs.CY) categories, recent and older halves. No hand-annotated gold: this dataset measures pipeline yield, identity resolution, answer/refusal behavior, and latency at scale. Candidate-fact precision is estimated by manual audit of a fixed random sample; results are not comparable to the hand-annotated research-real-v1..v5 benchmarks.",
+ "splitPolicy": {
+  "development": "all cases (experiment run, not a frozen benchmark)",
+  "holdout": "none",
+  "holdoutInfluencedTuning": false
+ },
+ "cases": [
+  {
+   "caseId": "scale-2609-04199",
+   "split": "development",
+   "title": "Compile by Training: Turning Natural-Language Specifications into Local Neural Functions",
+   "category": "cs.LG",
+   "published": "2026-09-03T17:59:49Z",
+   "source": {
+    "arxivId": "2609.04199",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.04199",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04199",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-04198",
+   "split": "development",
+   "title": "Clean Engineering, Unstable Measurement: A Preregistered Reliability Failure of Black-Box LLM Observers on Shared Endpoints",
+   "category": "cs.LG",
+   "published": "2026-09-03T17:59:43Z",
+   "source": {
+    "arxivId": "2609.04198",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.04198",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04198",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-04194",
+   "split": "development",
+   "title": "Legibility is Not Interpretability: Comparing Judged and Actual Importance in Chain-Of-Thought Reasoning",
+   "category": "cs.LG",
+   "published": "2026-09-03T17:59:08Z",
+   "source": {
+    "arxivId": "2609.04194",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.04194",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04194",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-04189",
+   "split": "development",
+   "title": "Robust PAC Learning of Concurrent Stochastic Games",
+   "category": "cs.LG",
+   "published": "2026-09-03T17:58:57Z",
+   "source": {
+    "arxivId": "2609.04189",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.04189",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04189",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-04168",
+   "split": "development",
+   "title": "Para-Pipe: Exploiting Hierarchical Operator Parallelism of ML Computational Graphs on SoCs",
+   "category": "cs.LG",
+   "published": "2026-09-03T17:53:44Z",
+   "source": {
+    "arxivId": "2609.04168",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.04168",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04168",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-04165",
+   "split": "development",
+   "title": "Parameterised graph theory for tensor networks: entanglement rerouting, structural simplification, and agnostic tomography",
+   "category": "cs.LG",
+   "published": "2026-09-03T17:50:38Z",
+   "source": {
+    "arxivId": "2609.04165",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.04165",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04165",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-04147",
+   "split": "development",
+   "title": "A Low-Cost, Open Platform for End-to-End Autonomous Driving on a Miniature Ackermann Vehicle",
+   "category": "cs.LG",
+   "published": "2026-09-03T17:40:20Z",
+   "source": {
+    "arxivId": "2609.04147",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.04147",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04147",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-04134",
+   "split": "development",
+   "title": "Prospective Coding Improves Learning in Deep Continuous-Time Recurrent Networks",
+   "category": "cs.LG",
+   "published": "2026-09-03T17:30:11Z",
+   "source": {
+    "arxivId": "2609.04134",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.04134",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04134",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-04113",
+   "split": "development",
+   "title": "Constant regret in general games via higher-order optimism",
+   "category": "cs.LG",
+   "published": "2026-09-03T17:16:13Z",
+   "source": {
+    "arxivId": "2609.04113",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.04113",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04113",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-04108",
+   "split": "development",
+   "title": "Sequential Beats Joint: On the Interplay between On-Policy Distillation and RLVR",
+   "category": "cs.LG",
+   "published": "2026-09-03T17:14:27Z",
+   "source": {
+    "arxivId": "2609.04108",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.04108",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04108",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-04105",
+   "split": "development",
+   "title": "Hardware-Aware FP4 FlashAttention-4",
+   "category": "cs.LG",
+   "published": "2026-09-03T17:12:35Z",
+   "source": {
+    "arxivId": "2609.04105",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.04105",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04105",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-04094",
+   "split": "development",
+   "title": "DRACO: Fine-Grained Credit Assignment with Dynamic Rubrics for Long-Horizon Agent Training",
+   "category": "cs.LG",
+   "published": "2026-09-03T17:02:20Z",
+   "source": {
+    "arxivId": "2609.04094",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.04094",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04094",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-04090",
+   "split": "development",
+   "title": "Conditioning Degenerate Diffusion Models",
+   "category": "cs.LG",
+   "published": "2026-09-03T17:00:44Z",
+   "source": {
+    "arxivId": "2609.04090",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.04090",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04090",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-04066",
+   "split": "development",
+   "title": "Subspace Inference Enables Efficient Active Reward Learning from Preferences",
+   "category": "cs.LG",
+   "published": "2026-09-03T16:39:55Z",
+   "source": {
+    "arxivId": "2609.04066",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.04066",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04066",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-04046",
+   "split": "development",
+   "title": "The Head Complexity of Boolean Functions in Single-Layer Attention",
+   "category": "cs.LG",
+   "published": "2026-09-03T16:22:02Z",
+   "source": {
+    "arxivId": "2609.04046",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.04046",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04046",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-04028",
+   "split": "development",
+   "title": "Influence of Extruded Filament Shape on Buildability in 3D Concrete Printing: A Geometry-Informed Deep Learning-FEM Approach",
+   "category": "cs.LG",
+   "published": "2026-09-03T16:08:19Z",
+   "source": {
+    "arxivId": "2609.04028",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.04028",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04028",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-04197",
+   "split": "development",
+   "title": "ESPO: Error-Structured Prompt Optimization via Diagnose, Diversify, and Stabilize",
+   "category": "cs.CL",
+   "published": "2026-09-03T17:59:37Z",
+   "source": {
+    "arxivId": "2609.04197",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.04197",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04197",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-04180",
+   "split": "development",
+   "title": "Knowledge Acquisition During Pre-training? Large Language Models Learn Better With Auxiliary Views",
+   "category": "cs.CL",
+   "published": "2026-09-03T17:57:02Z",
+   "source": {
+    "arxivId": "2609.04180",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.04180",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04180",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-04173",
+   "split": "development",
+   "title": "Last Translation Benchmark",
+   "category": "cs.CL",
+   "published": "2026-09-03T17:54:45Z",
+   "source": {
+    "arxivId": "2609.04173",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.04173",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04173",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-04172",
+   "split": "development",
+   "title": "Rethinking On-Policy Distillation of Large Language Models II: One Training Example",
+   "category": "cs.CL",
+   "published": "2026-09-03T17:54:38Z",
+   "source": {
+    "arxivId": "2609.04172",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.04172",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04172",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-04148",
+   "split": "development",
+   "title": "Terminal-Universe: Turning Agent Trajectories into Scalable Terminal Environments",
+   "category": "cs.CL",
+   "published": "2026-09-03T17:41:05Z",
+   "source": {
+    "arxivId": "2609.04148",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.04148",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04148",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-04083",
+   "split": "development",
+   "title": "CORE: Improving Compositional Reasoning in MLLM Embedding via Reranker Distillation",
+   "category": "cs.CL",
+   "published": "2026-09-03T16:50:29Z",
+   "source": {
+    "arxivId": "2609.04083",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.04083",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04083",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-04061",
+   "split": "development",
+   "title": "When Models Edit Too Much: On the Fidelity of Minimal Code Edits",
+   "category": "cs.CL",
+   "published": "2026-09-03T16:36:05Z",
+   "source": {
+    "arxivId": "2609.04061",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.04061",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04061",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-04048",
+   "split": "development",
+   "title": "Translation as a Decision Space: A Multi-Agent Perspective on Low-Resource Dialect Generation",
+   "category": "cs.CL",
+   "published": "2026-09-03T16:22:18Z",
+   "source": {
+    "arxivId": "2609.04048",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.04048",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04048",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-04047",
+   "split": "development",
+   "title": "The Dice Roll Method: A Standardized Protocol for Repeated-Query Auditing of Large Language Model Brand Recommendations",
+   "category": "cs.CL",
+   "published": "2026-09-03T16:22:06Z",
+   "source": {
+    "arxivId": "2609.04047",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.04047",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04047",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-04034",
+   "split": "development",
+   "title": "Editable Visual Design",
+   "category": "cs.CL",
+   "published": "2026-09-03T16:10:12Z",
+   "source": {
+    "arxivId": "2609.04034",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.04034",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04034",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-04024",
+   "split": "development",
+   "title": "Instruction Duplication as an Inference-Time Control Primitive",
+   "category": "cs.CL",
+   "published": "2026-09-03T16:05:21Z",
+   "source": {
+    "arxivId": "2609.04024",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.04024",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04024",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-04022",
+   "split": "development",
+   "title": "Representational alignment yields generalizable safety in language models",
+   "category": "cs.CL",
+   "published": "2026-09-03T16:00:16Z",
+   "source": {
+    "arxivId": "2609.04022",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.04022",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04022",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-04203",
+   "split": "development",
+   "title": "Temporal Self-Distillation: Learning Visual State Tracking in Videos Without Supervision",
+   "category": "cs.CV",
+   "published": "2026-09-03T17:59:55Z",
+   "source": {
+    "arxivId": "2609.04203",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.04203",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04203",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-04202",
+   "split": "development",
+   "title": "TokenMatch: 3D Mesh Correspondence Transformer with Curvature-Guided Tokenisation",
+   "category": "cs.CV",
+   "published": "2026-09-03T17:59:55Z",
+   "source": {
+    "arxivId": "2609.04202",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.04202",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04202",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-04201",
+   "split": "development",
+   "title": "Scal3R: Learning Efficient Multi-Relative Pose Query for Scalable Online 3D Reconstruction",
+   "category": "cs.CV",
+   "published": "2026-09-03T17:59:53Z",
+   "source": {
+    "arxivId": "2609.04201",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.04201",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04201",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-04200",
+   "split": "development",
+   "title": "Principia: Relational Physics Tests for Video Models",
+   "category": "cs.CV",
+   "published": "2026-09-03T17:59:50Z",
+   "source": {
+    "arxivId": "2609.04200",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.04200",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04200",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-04196",
+   "split": "development",
+   "title": "Puffin-World: Scaling a Unified Multimodal Model with Native 3D World States",
+   "category": "cs.CV",
+   "published": "2026-09-03T17:59:13Z",
+   "source": {
+    "arxivId": "2609.04196",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.04196",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04196",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-04190",
+   "split": "development",
+   "title": "One Editor, Many Edits: A Unified Training-Free Framework for Diverse Video Editing",
+   "category": "cs.CV",
+   "published": "2026-09-03T17:59:01Z",
+   "source": {
+    "arxivId": "2609.04190",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.04190",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04190",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-04183",
+   "split": "development",
+   "title": "Seeing Before Synthesizing: VLM-Guided Transition Event Discovery for Weakly-Supervised Dense Video Captioning",
+   "category": "cs.CV",
+   "published": "2026-09-03T17:58:02Z",
+   "source": {
+    "arxivId": "2609.04183",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.04183",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04183",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-04174",
+   "split": "development",
+   "title": "Zero-Shot Novel Depth Synthesis Using 3D Foundation Models Scene Representations",
+   "category": "cs.CV",
+   "published": "2026-09-03T17:54:52Z",
+   "source": {
+    "arxivId": "2609.04174",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.04174",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04174",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-03978",
+   "split": "development",
+   "title": "Barnacle: Adaptive Multi-Leader Scheduling for DAG-Based Consensus",
+   "category": "cs.DC",
+   "published": "2026-09-03T15:13:33Z",
+   "source": {
+    "arxivId": "2609.03978",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.03978",
+    "pdfUrl": "https://arxiv.org/pdf/2609.03978",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-03922",
+   "split": "development",
+   "title": "sp-DBA: a general framework for adaptive transform-domain computation",
+   "category": "cs.DC",
+   "published": "2026-09-03T14:38:06Z",
+   "source": {
+    "arxivId": "2609.03922",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.03922",
+    "pdfUrl": "https://arxiv.org/pdf/2609.03922",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-03905",
+   "split": "development",
+   "title": "Every Kernel Is a Join: Automatic Multi-GPU Parallelism for AI Computations in Einsummable",
+   "category": "cs.DC",
+   "published": "2026-09-03T14:24:02Z",
+   "source": {
+    "arxivId": "2609.03905",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.03905",
+    "pdfUrl": "https://arxiv.org/pdf/2609.03905",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-03562",
+   "split": "development",
+   "title": "JuPyLive: Seamless Migration of Jupyter Notebook Resources from Laptop to HPC",
+   "category": "cs.DC",
+   "published": "2026-09-03T09:02:18Z",
+   "source": {
+    "arxivId": "2609.03562",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.03562",
+    "pdfUrl": "https://arxiv.org/pdf/2609.03562",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-03459",
+   "split": "development",
+   "title": "FlowTT: Exploiting Computation Flow Reuse in Irregular Tensor-Train Embedding",
+   "category": "cs.DC",
+   "published": "2026-09-03T07:17:33Z",
+   "source": {
+    "arxivId": "2609.03459",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.03459",
+    "pdfUrl": "https://arxiv.org/pdf/2609.03459",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-03352",
+   "split": "development",
+   "title": "Efficient Constant Optimization for Symbolic Regression with GPU-Accelerated Tree-Based Genetic Programming",
+   "category": "cs.DC",
+   "published": "2026-09-03T04:20:27Z",
+   "source": {
+    "arxivId": "2609.03352",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.03352",
+    "pdfUrl": "https://arxiv.org/pdf/2609.03352",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-03335",
+   "split": "development",
+   "title": "Latency-Aware Orchestration for Multi-Agent LLM Workflows on Heterogeneous GPUs",
+   "category": "cs.DC",
+   "published": "2026-09-03T03:48:39Z",
+   "source": {
+    "arxivId": "2609.03335",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.03335",
+    "pdfUrl": "https://arxiv.org/pdf/2609.03335",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-03318",
+   "split": "development",
+   "title": "Iapetus: Content-Aware Hierarchical Scheduling for Collaborative ViT Inference in LEO Satellite Networks",
+   "category": "cs.DC",
+   "published": "2026-09-03T03:13:09Z",
+   "source": {
+    "arxivId": "2609.03318",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.03318",
+    "pdfUrl": "https://arxiv.org/pdf/2609.03318",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-03971",
+   "split": "development",
+   "title": "The WebKurator.de Platform: Combined Regional and Topical Web Curation",
+   "category": "cs.IR",
+   "published": "2026-09-03T15:08:11Z",
+   "source": {
+    "arxivId": "2609.03971",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.03971",
+    "pdfUrl": "https://arxiv.org/pdf/2609.03971",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-03915",
+   "split": "development",
+   "title": "RuleMem: Active Rule Memory for Long-Term Conversational Agents",
+   "category": "cs.IR",
+   "published": "2026-09-03T14:30:18Z",
+   "source": {
+    "arxivId": "2609.03915",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.03915",
+    "pdfUrl": "https://arxiv.org/pdf/2609.03915",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-03901",
+   "split": "development",
+   "title": "Comparing Retrieval Methods for Academic Advisor Discovery: A Six-Method Study of 768 CS Faculty Profiles Across 9 US Universities",
+   "category": "cs.IR",
+   "published": "2026-09-03T14:19:14Z",
+   "source": {
+    "arxivId": "2609.03901",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.03901",
+    "pdfUrl": "https://arxiv.org/pdf/2609.03901",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-03857",
+   "split": "development",
+   "title": "GRASP: Graph-Retrieval Automated Scoring Pipeline for Label-Free Multi-Topic Essay Grading",
+   "category": "cs.IR",
+   "published": "2026-09-03T13:48:54Z",
+   "source": {
+    "arxivId": "2609.03857",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.03857",
+    "pdfUrl": "https://arxiv.org/pdf/2609.03857",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-03810",
+   "split": "development",
+   "title": "Unified Pitch Graphs for Diagnosing Pitching Strategy",
+   "category": "cs.IR",
+   "published": "2026-09-03T13:14:35Z",
+   "source": {
+    "arxivId": "2609.03810",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.03810",
+    "pdfUrl": "https://arxiv.org/pdf/2609.03810",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-03674",
+   "split": "development",
+   "title": "LLM4AIGQ: LLM-based AI Guidance Query Generation Framework for Multi Interest Mining",
+   "category": "cs.IR",
+   "published": "2026-09-03T11:13:01Z",
+   "source": {
+    "arxivId": "2609.03674",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.03674",
+    "pdfUrl": "https://arxiv.org/pdf/2609.03674",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-03977",
+   "split": "development",
+   "title": "Cooperative Multi-Task Semantic Communication for Joint Classification and Regression Tasks",
+   "category": "stat.ML",
+   "published": "2026-09-03T15:13:25Z",
+   "source": {
+    "arxivId": "2609.03977",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.03977",
+    "pdfUrl": "https://arxiv.org/pdf/2609.03977",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-03858",
+   "split": "development",
+   "title": "High-Dimensional Learning Dynamics of Attention-Indexed Models",
+   "category": "stat.ML",
+   "published": "2026-09-03T13:49:27Z",
+   "source": {
+    "arxivId": "2609.03858",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.03858",
+    "pdfUrl": "https://arxiv.org/pdf/2609.03858",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-03706",
+   "split": "development",
+   "title": "Q-Edge: Symmetry-Reduced Quantum Simulation of Structured Extreme Dependence",
+   "category": "stat.ML",
+   "published": "2026-09-03T11:43:52Z",
+   "source": {
+    "arxivId": "2609.03706",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.03706",
+    "pdfUrl": "https://arxiv.org/pdf/2609.03706",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-03589",
+   "split": "development",
+   "title": "Correlated initialization of deep residual networks",
+   "category": "stat.ML",
+   "published": "2026-09-03T09:35:54Z",
+   "source": {
+    "arxivId": "2609.03589",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.03589",
+    "pdfUrl": "https://arxiv.org/pdf/2609.03589",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-03501",
+   "split": "development",
+   "title": "Towards a Statistical Understanding of Mixture-of-Experts",
+   "category": "stat.ML",
+   "published": "2026-09-03T08:03:16Z",
+   "source": {
+    "arxivId": "2609.03501",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.03501",
+    "pdfUrl": "https://arxiv.org/pdf/2609.03501",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-cond-mat-9703183",
+   "split": "development",
+   "title": "Finite size scaling of the bayesian perceptron",
+   "category": "cs.LG",
+   "published": "1997-03-20T15:54:36Z",
+   "source": {
+    "arxivId": "cond-mat/9703183",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/cond-mat/9703183",
+    "pdfUrl": "https://arxiv.org/pdf/cond-mat/9703183",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-cmp-lg-9712002",
+   "split": "development",
+   "title": "Machine Learning of User Profiles: Representational Issues",
+   "category": "cs.LG",
+   "published": "1997-12-09T15:42:46Z",
+   "source": {
+    "arxivId": "cmp-lg/9712002",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/cmp-lg/9712002",
+    "pdfUrl": "https://arxiv.org/pdf/cmp-lg/9712002",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-cs-9809110",
+   "split": "development",
+   "title": "Similarity-Based Models of Word Cooccurrence Probabilities",
+   "category": "cs.LG",
+   "published": "1998-09-27T18:42:51Z",
+   "source": {
+    "arxivId": "cs/9809110",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/cs/9809110",
+    "pdfUrl": "https://arxiv.org/pdf/cs/9809110",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-cs-9809111",
+   "split": "development",
+   "title": "Evolution of Neural Networks to Play the Game of Dots-and-Boxes",
+   "category": "cs.LG",
+   "published": "1998-09-28T03:48:22Z",
+   "source": {
+    "arxivId": "cs/9809111",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/cs/9809111",
+    "pdfUrl": "https://arxiv.org/pdf/cs/9809111",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-cs-9809122",
+   "split": "development",
+   "title": "Practical algorithms for on-line sampling",
+   "category": "cs.LG",
+   "published": "1998-09-30T03:44:08Z",
+   "source": {
+    "arxivId": "cs/9809122",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/cs/9809122",
+    "pdfUrl": "https://arxiv.org/pdf/cs/9809122",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-cs-9811003",
+   "split": "development",
+   "title": "A Winnow-Based Approach to Context-Sensitive Spelling Correction",
+   "category": "cs.LG",
+   "published": "1998-10-31T19:33:50Z",
+   "source": {
+    "arxivId": "cs/9811003",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/cs/9811003",
+    "pdfUrl": "https://arxiv.org/pdf/cs/9811003",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-cs-9811006",
+   "split": "development",
+   "title": "Machine Learning of Generic and User-Focused Summarization",
+   "category": "cs.LG",
+   "published": "1998-11-02T18:57:23Z",
+   "source": {
+    "arxivId": "cs/9811006",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/cs/9811006",
+    "pdfUrl": "https://arxiv.org/pdf/cs/9811006",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-cs-9811010",
+   "split": "development",
+   "title": "Learning to Resolve Natural Language Ambiguities: A Unified Approach",
+   "category": "cs.LG",
+   "published": "1998-11-03T21:14:32Z",
+   "source": {
+    "arxivId": "cs/9811010",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/cs/9811010",
+    "pdfUrl": "https://arxiv.org/pdf/cs/9811010",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-cs-9812021",
+   "split": "development",
+   "title": "Forgetting Exceptions is Harmful in Language Learning",
+   "category": "cs.LG",
+   "published": "1998-12-22T16:33:19Z",
+   "source": {
+    "arxivId": "cs/9812021",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/cs/9812021",
+    "pdfUrl": "https://arxiv.org/pdf/cs/9812021",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-cs-9901001",
+   "split": "development",
+   "title": "TDLeaf(lambda): Combining Temporal Difference Learning with Game-Tree Search",
+   "category": "cs.LG",
+   "published": "1999-01-05T00:56:54Z",
+   "source": {
+    "arxivId": "cs/9901001",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/cs/9901001",
+    "pdfUrl": "https://arxiv.org/pdf/cs/9901001",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-cmp-lg-9404001",
+   "split": "development",
+   "title": "An Alternative Conception of Tree-Adjoining Derivation",
+   "category": "cs.CL",
+   "published": "1994-04-04T02:59:51Z",
+   "source": {
+    "arxivId": "cmp-lg/9404001",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/cmp-lg/9404001",
+    "pdfUrl": "https://arxiv.org/pdf/cmp-lg/9404001",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-cmp-lg-9404002",
+   "split": "development",
+   "title": "Lessons from a Restricted Turing Test",
+   "category": "cs.CL",
+   "published": "1994-04-04T03:05:08Z",
+   "source": {
+    "arxivId": "cmp-lg/9404002",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/cmp-lg/9404002",
+    "pdfUrl": "https://arxiv.org/pdf/cmp-lg/9404002",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-cmp-lg-9404003",
+   "split": "development",
+   "title": "Restricting the Weak-Generative Capacity of Synchronous Tree-Adjoining Grammars",
+   "category": "cs.CL",
+   "published": "1994-04-04T03:07:42Z",
+   "source": {
+    "arxivId": "cmp-lg/9404003",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/cmp-lg/9404003",
+    "pdfUrl": "https://arxiv.org/pdf/cmp-lg/9404003",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-cmp-lg-9404004",
+   "split": "development",
+   "title": "An Empirically Motivated Reinterpretation of Dependency Grammar",
+   "category": "cs.CL",
+   "published": "1994-04-06T17:44:41Z",
+   "source": {
+    "arxivId": "cmp-lg/9404004",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/cmp-lg/9404004",
+    "pdfUrl": "https://arxiv.org/pdf/cmp-lg/9404004",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-cmp-lg-9404005",
+   "split": "development",
+   "title": "Memoization in Constraint Logic Programming",
+   "category": "cs.CL",
+   "published": "1994-04-11T17:22:40Z",
+   "source": {
+    "arxivId": "cmp-lg/9404005",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/cmp-lg/9404005",
+    "pdfUrl": "https://arxiv.org/pdf/cmp-lg/9404005",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-03521",
+   "split": "development",
+   "title": "The Identification of Biological Stains at Crime Scenes: A Promising Role for Proteomics and Machine Learning",
+   "category": "q-bio.QM",
+   "published": "2026-09-03T08:20:50Z",
+   "source": {
+    "arxivId": "2609.03521",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.03521",
+    "pdfUrl": "https://arxiv.org/pdf/2609.03521",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-02985",
+   "split": "development",
+   "title": "Sparse concept attribution for histomorphological hypothesis generation from whole-slide classifiers",
+   "category": "q-bio.QM",
+   "published": "2026-09-02T14:30:52Z",
+   "source": {
+    "arxivId": "2609.02985",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.02985",
+    "pdfUrl": "https://arxiv.org/pdf/2609.02985",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-02445",
+   "split": "development",
+   "title": "An adaptive time-tree transition kernel for Bayesian phylogenetic inference",
+   "category": "q-bio.QM",
+   "published": "2026-09-02T11:08:34Z",
+   "source": {
+    "arxivId": "2609.02445",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.02445",
+    "pdfUrl": "https://arxiv.org/pdf/2609.02445",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-02963",
+   "split": "development",
+   "title": "SurfSpec: Enhancing Off-Target-Agnostic Specificity by Bounding Pocket-Ligand Geometric Mismatch",
+   "category": "q-bio.QM",
+   "published": "2026-09-02T05:59:12Z",
+   "source": {
+    "arxivId": "2609.02963",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.02963",
+    "pdfUrl": "https://arxiv.org/pdf/2609.02963",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-01434",
+   "split": "development",
+   "title": "Score-Based Generative Data Assimilation for Integrating Aggregated Surveillance Data into Agent-Based Models in Epidemic Tracking",
+   "category": "q-bio.QM",
+   "published": "2026-09-01T15:43:20Z",
+   "source": {
+    "arxivId": "2609.01434",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.01434",
+    "pdfUrl": "https://arxiv.org/pdf/2609.01434",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-01684",
+   "split": "development",
+   "title": "A mechanistic modeling framework to interpret ACTH stimulation tests across HPA axis adaptation states and glucocorticoid feedback dynamics",
+   "category": "q-bio.QM",
+   "published": "2026-09-01T14:36:07Z",
+   "source": {
+    "arxivId": "2609.01684",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.01684",
+    "pdfUrl": "https://arxiv.org/pdf/2609.01684",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-04195",
+   "split": "development",
+   "title": "Axonal delay dispersion decides whether a neuron detects an event or a sequence, and predicts cortical column diameter",
+   "category": "q-bio.NC",
+   "published": "2026-09-03T17:59:08Z",
+   "source": {
+    "arxivId": "2609.04195",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.04195",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04195",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-03987",
+   "split": "development",
+   "title": "High-Order Triadic Functional Connectivity in the Brain and Beyond",
+   "category": "q-bio.NC",
+   "published": "2026-09-03T15:21:18Z",
+   "source": {
+    "arxivId": "2609.03987",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.03987",
+    "pdfUrl": "https://arxiv.org/pdf/2609.03987",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-03883",
+   "split": "development",
+   "title": "Inferring Affective Consciousness in an Artificial Agent: A Case Study",
+   "category": "q-bio.NC",
+   "published": "2026-09-03T14:07:57Z",
+   "source": {
+    "arxivId": "2609.03883",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.03883",
+    "pdfUrl": "https://arxiv.org/pdf/2609.03883",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-04077",
+   "split": "development",
+   "title": "Absolute Motion of the Infrared Counterpart to Sagittarius A* in the Gaia Celestial Reference Frame 3 and Limits on an Intermediate-mass Black Hole Companion",
+   "category": "astro-ph.IM",
+   "published": "2026-09-03T16:46:37Z",
+   "source": {
+    "arxivId": "2609.04077",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.04077",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04077",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-03975",
+   "split": "development",
+   "title": "Detection of hydrocarbons in Titan using high-resolution cross-correlation spectroscopy",
+   "category": "astro-ph.IM",
+   "published": "2026-09-03T15:12:56Z",
+   "source": {
+    "arxivId": "2609.03975",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.03975",
+    "pdfUrl": "https://arxiv.org/pdf/2609.03975",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-03866",
+   "split": "development",
+   "title": "nufftcf: Fast Auto- and Cross-Correlation Function Estimation for Irregularly-Sampled Time Series via the Non-Uniform FFT",
+   "category": "astro-ph.IM",
+   "published": "2026-09-03T13:56:11Z",
+   "source": {
+    "arxivId": "2609.03866",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.03866",
+    "pdfUrl": "https://arxiv.org/pdf/2609.03866",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-03779",
+   "split": "development",
+   "title": "Morphology of Radio Sources in Representation Space",
+   "category": "astro-ph.IM",
+   "published": "2026-09-03T12:54:08Z",
+   "source": {
+    "arxivId": "2609.03779",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.03779",
+    "pdfUrl": "https://arxiv.org/pdf/2609.03779",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-03568",
+   "split": "development",
+   "title": "Effect of stellar spot-only spectral lines in high-resolution transit spectroscopy",
+   "category": "astro-ph.IM",
+   "published": "2026-09-03T09:14:58Z",
+   "source": {
+    "arxivId": "2609.03568",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.03568",
+    "pdfUrl": "https://arxiv.org/pdf/2609.03568",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-04152",
+   "split": "development",
+   "title": "Spectral and Eigenvector Crossovers in Random Mixed Graphs",
+   "category": "physics.comp-ph",
+   "published": "2026-09-03T17:45:03Z",
+   "source": {
+    "arxivId": "2609.04152",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.04152",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04152",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-04037",
+   "split": "development",
+   "title": "Discrete time crystals in disordered anisotropic Heisenberg chains",
+   "category": "physics.comp-ph",
+   "published": "2026-09-03T16:12:09Z",
+   "source": {
+    "arxivId": "2609.04037",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.04037",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04037",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-04008",
+   "split": "development",
+   "title": "Stochastic Operator Inference for reduced-order modeling of capillary wave turbulence using experimental measurements",
+   "category": "physics.comp-ph",
+   "published": "2026-09-03T15:46:26Z",
+   "source": {
+    "arxivId": "2609.04008",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.04008",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04008",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-03876",
+   "split": "development",
+   "title": "Performance of Nanoring-based Transparent Conductors: a Computational Investigation",
+   "category": "physics.comp-ph",
+   "published": "2026-09-03T14:04:59Z",
+   "source": {
+    "arxivId": "2609.03876",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.03876",
+    "pdfUrl": "https://arxiv.org/pdf/2609.03876",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-04153",
+   "split": "development",
+   "title": "Smooth autonomous fast dynamo action on the three-torus",
+   "category": "math.DS",
+   "published": "2026-09-03T17:45:10Z",
+   "source": {
+    "arxivId": "2609.04153",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.04153",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04153",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-04038",
+   "split": "development",
+   "title": "Minimality for noncommutative dynamical systems",
+   "category": "math.DS",
+   "published": "2026-09-03T16:13:48Z",
+   "source": {
+    "arxivId": "2609.04038",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.04038",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04038",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-03965",
+   "split": "development",
+   "title": "The finiteness conjecture for equilibria of electric fields generated by point charges of one sign",
+   "category": "math.DS",
+   "published": "2026-09-03T15:00:22Z",
+   "source": {
+    "arxivId": "2609.03965",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.03965",
+    "pdfUrl": "https://arxiv.org/pdf/2609.03965",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-03896",
+   "split": "development",
+   "title": "The Prime Clockwork: A Dynamic Representation of Modular and Multiplicative Arithmetic",
+   "category": "math.DS",
+   "published": "2026-09-03T14:16:36Z",
+   "source": {
+    "arxivId": "2609.03896",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.03896",
+    "pdfUrl": "https://arxiv.org/pdf/2609.03896",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-02797",
+   "split": "development",
+   "title": "Dutch Books for Language Models",
+   "category": "econ.GN",
+   "published": "2026-09-02T16:31:47Z",
+   "source": {
+    "arxivId": "2609.02797",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.02797",
+    "pdfUrl": "https://arxiv.org/pdf/2609.02797",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-02580",
+   "split": "development",
+   "title": "Competitive Market Behavior of LLMs",
+   "category": "econ.GN",
+   "published": "2026-09-02T13:24:42Z",
+   "source": {
+    "arxivId": "2609.02580",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.02580",
+    "pdfUrl": "https://arxiv.org/pdf/2609.02580",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-02013",
+   "split": "development",
+   "title": "What Would it Cost to End Extreme Poverty?",
+   "category": "econ.GN",
+   "published": "2026-09-02T02:41:48Z",
+   "source": {
+    "arxivId": "2609.02013",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.02013",
+    "pdfUrl": "https://arxiv.org/pdf/2609.02013",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-01263",
+   "split": "development",
+   "title": "AI and the Economy: An Economic Examination of Production, Distribution, Firms, Labor, and Welfare",
+   "category": "econ.GN",
+   "published": "2026-09-01T13:53:19Z",
+   "source": {
+    "arxivId": "2609.01263",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.01263",
+    "pdfUrl": "https://arxiv.org/pdf/2609.01263",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-04125",
+   "split": "development",
+   "title": "Decreasing Digital Distraction in College Students: Associated Online Learning Strategies Identified by Unsupervised Data Mining Approaches",
+   "category": "cs.CY",
+   "published": "2026-09-03T17:25:02Z",
+   "source": {
+    "arxivId": "2609.04125",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.04125",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04125",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-03999",
+   "split": "development",
+   "title": "Shifting from Injection to Interaction: Rethinking Web Security in the Age of LLMs and Beyond",
+   "category": "cs.CY",
+   "published": "2026-09-03T15:39:44Z",
+   "source": {
+    "arxivId": "2609.03999",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.03999",
+    "pdfUrl": "https://arxiv.org/pdf/2609.03999",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-03936",
+   "split": "development",
+   "title": "Making Gender-Inclusive Practices Actionable: Evaluating a Research-Informed Computing Education Toolkit",
+   "category": "cs.CY",
+   "published": "2026-09-03T14:43:51Z",
+   "source": {
+    "arxivId": "2609.03936",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.03936",
+    "pdfUrl": "https://arxiv.org/pdf/2609.03936",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  },
+  {
+   "caseId": "scale-2609-03853",
+   "split": "development",
+   "title": "Bridging Formal and Perceived Fairness: Development of an Interdisciplinary Framework in Algorithmic Decision-Making",
+   "category": "cs.CY",
+   "published": "2026-09-03T13:45:42Z",
+   "source": {
+    "arxivId": "2609.03853",
+    "arxivVersion": "1",
+    "absUrl": "https://arxiv.org/abs/2609.03853",
+    "pdfUrl": "https://arxiv.org/pdf/2609.03853",
+    "paperRevisionDate": null,
+    "repositoryUrl": null,
+    "repositoryCommitSha": null,
+    "repositoryCommitDate": null,
+    "paperSha256": null,
+    "paperSha256Status": "PENDING_ACQUISITION",
+    "artifactPolicy": "cache_only_no_redistribution",
+    "temporalAlignment": "UNKNOWN"
+   },
+   "annotationScope": {
+    "sections": [],
+    "predicates": [],
+    "completeness": "not_applicable_auto_generated"
+   },
+   "facts": [],
+   "tasks": []
+  }
+ ]
+}

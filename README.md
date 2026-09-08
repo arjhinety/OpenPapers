@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/arrogance231/openpapers/actions/workflows/ci.yml"><img src="https://github.com/arrogance231/openpapers/actions/workflows/ci.yml/badge.svg" alt="CI status"></a>
+  <a href="https://github.com/arjhinety/OpenPapers/actions/workflows/ci.yml"><img src="https://github.com/arjhinety/OpenPapers/actions/workflows/ci.yml/badge.svg" alt="CI status"></a>
   <a href="LICENSE.md"><img src="https://img.shields.io/badge/license-Apache--2.0-blue.svg" alt="Apache-2.0 license"></a>
   <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/node-%3E%3D22.5-339933.svg" alt="Node.js 22.5 or newer"></a>
 </p>
@@ -46,7 +46,7 @@ OpenPapers uses each provider for a defined part of the research workflow:
 | --- | --- | --- |
 | [arXiv](https://arxiv.org/) | Preprint search and metadata | Not required |
 | [Crossref](https://www.crossref.org/) | DOI and bibliographic metadata | Not required |
-| [OpenAlex](https://openalex.org/) | Open scholarly metadata and citation relationships | Not required |
+| [OpenAlex](https://openalex.org/) | Open scholarly metadata and citation relationships | Optional email for polite API access |
 | [Semantic Scholar](https://www.semanticscholar.org/) | Paper metadata, authors, references, citations, and recommendations | Optional API key |
 | [GitHub](https://github.com/) | Repository discovery, revisions, contents, and implementation evidence | Optional token; anonymous access is rate-limited |
 | [Hugging Face](https://huggingface.co/) | Model and dataset discovery, cards, revisions, and paper links | Optional token |
@@ -69,7 +69,7 @@ The container image uses Node.js 24. Docker Compose supplies PostgreSQL, pgvecto
 Install the locked dependencies and compile the TypeScript source:
 
 ```sh
-git clone https://github.com/arrogance231/openpapers.git
+git clone https://github.com/arjhinety/OpenPapers.git
 cd openpapers
 npm ci
 npm run build
@@ -129,12 +129,12 @@ See [the installation guide](docs/installation.md) for deployment choices and [t
 
 ## MCP tools
 
-OpenPapers registers 36 bounded tools. The inventory below matches the current server registration:
+OpenPapers registers 37 bounded tools. The inventory below matches the current server registration:
 
 - **Retrieval**: `search_papers`, `get_paper`, `get_bibtex`, `research_method`, `research_topic`
 - **Graphs**: `get_references`, `get_citations`, `get_related_papers`, `resolve_author`
 - **Documents and extraction**: `read_paper`, `search_within_paper`, `extract_paper_facts`, `extract_paper_claims`, `extract_training_parameters`
-- **Verification and reproducibility**: `extract_training_recipe`, `extract_training_recipe_from_url`, `build_research_report`, `compare_paper_to_code`, `compare_papers`, `compare_methods`, `verify_claim`
+- **Verification and reproducibility**: `extract_training_recipe`, `extract_training_recipe_from_url`, `build_research_report`, `compare_paper_to_code`, `compare_papers`, `compare_methods`, `verify_claim`, `reconstruct_research`
 - **Developer ecosystem**: `find_implementations`, `find_models`, `find_datasets`, `find_repository_configs`, `get_repository_config`
 - **Research library**: `create_collection`, `list_collections`, `add_paper_to_collection`, `remove_paper_from_collection`, `delete_collection`, `export_research_pack`, `import_research_pack`, `refresh_collection`, `refresh_paper`, `vector_search`
 
@@ -197,7 +197,9 @@ The documentation index groups guides by task and audience:
 
 ## Project status and roadmap
 
-Version `0.1.0` is the current package baseline. The project prioritizes provenance and citation verification before automatic citation output.
+Version `1.0.0` is the current release baseline. The 1.0 contract: OpenPapers is a provenance-first **infrastructure layer** for discovering works by identifier or exact title, retrieving, extracting, reconciling, and locating evidence from scholarly sources — with explicit refusal instead of fabrication. High-quality open-ended fuzzy scholarly search is explicitly out of the 1.0 contract (measured at ≈0.5 Recall@10); see [known limitations](docs/limitations.md). The project prioritizes provenance and citation verification before automatic citation output.
+
+Quality is gated by a five-level test program (static, offline integration, spawned-process end-to-end, live-provider evaluation, container runtime) with a claims matrix mapping every public claim to recorded evidence; see [the test plan](docs/testing.md). Live-provider metrics are environment-dependent: recorded runs include HTTP 429 rate limits, so exact-title retrieval and identity results are evidence from specific runs, not guarantees. See [known limitations](docs/limitations.md) before relying on fuzzy discovery or live-provider availability.
 
 The [changelog](CHANGELOG.md) records completed work. The [roadmap](docs/roadmap.md) describes citation metadata, source-aware citation output, and deferred retrieval improvements.
 

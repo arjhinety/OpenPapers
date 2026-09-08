@@ -38,6 +38,17 @@ describe('provenance-first recipe behavior', () => {
     expect(result.references[0]?.paperId).toBe(work.paperId);
     expect(await service.db.getGraphEdges('S2-root')).toEqual([expect.objectContaining({targetPaperId:work.paperId,relation:'reference',provider:'semantic_scholar',evidenceId:result.evidence[0]?.evidenceId})]);
   });
+  it('resolves unseen arXiv identifiers through the provider and persists them', async () => {
+    const db=new ResearchDb(':memory:'); const work:ResearchWork={paperId:'resolved',title:'Resolved',authors:[],arxivId:'2501.00001',publicationStatus:'preprint',bibtex:'',sourceProviders:['arxiv'],versions:[]};
+    const arxiv={search:async()=>[],searchById:async(id:string)=>{expect(id).toBe('2501.00001');return [work];}};
+    const service=new ResearchService(db,arxiv as any,{search:async()=>[],getByDoi:async()=>undefined} as any,{search:async()=>[]} as any,{search:async()=>[]} as any);
+    await expect(service.getPaper('arXiv:2501.00001v2')).resolves.toEqual(work); await expect(db.getWork('2501.00001')).resolves.toEqual(work); await db.close();
+  });
+  it('routes graph calls through the stored Semantic Scholar identifier', async () => {
+    const db=new ResearchDb(':memory:'); await db.upsertWork({paperId:'canonical-root',title:'Root',authors:[],semanticScholarId:'S2-root',publicationStatus:'unknown',bibtex:'',sourceProviders:['test'],versions:[]});
+    let requested:string|undefined; const semantic={getReferences:async(id:string)=>{requested=id;return [];},getCitations:async()=>[],getRelated:async()=>[],resolveAuthor:async()=>undefined};
+    await new ResearchService(db,undefined,undefined,undefined,semantic as any).graphAll('canonical-root','reference'); expect(requested).toBe('S2-root'); await db.close();
+  });
   it('resolves graph nodes to existing DOI lineage identities', async () => {
     const db = new ResearchDb(':memory:');
     const existing: ResearchWork = { paperId:'canonical_work', title:'Canonical', authors:[], doi:'10.1000/canonical', publicationStatus:'unknown', bibtex:'', sourceProviders:['crossref'], versions:[] };

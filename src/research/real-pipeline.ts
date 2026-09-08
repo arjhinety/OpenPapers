@@ -30,13 +30,13 @@ export function assembleStructuredAnswer(parameter:string,repository:RepositoryE
 
 export class PinnedRepositoryReader {
   constructor(private readonly github:Pick<GitHubProvider,'listContents'|'getContent'>=new GitHubProvider(), private readonly maxFiles=30, private readonly maxBytes=256_000) {}
-  async read(owner:string,repo:string,commitSha:string):Promise<{evidence:RepositoryEvidence[];manifest:RepositoryManifestEntry[];failures:string[]}> {
+  async read(owner:string,repo:string,commitSha:string):Promise<{evidence:RepositoryEvidence[];manifest:RepositoryManifestEntry[];failures:string[];filesRead:number}> {
     if(!/^[0-9a-f]{40}$/i.test(commitSha))throw new Error('commitSha must be a 40-character SHA');
     const entries:GitHubDirectoryEntry[]=[]; const pending=['']; const visited=new Set<string>();
     while(pending.length&&entries.length<this.maxFiles*4){ const path=pending.shift()!; if(visited.has(path))continue; visited.add(path); const listed=await this.github.listContents(owner,repo,path,commitSha); for(const entry of listed){ if(entry.type==='dir') { if(!ignored.test(`${entry.path}/`))pending.push(entry.path); } else entries.push(entry); if(entries.length>=this.maxFiles*4)break; } }
     const candidates=selectRepositoryCandidates(entries,this.maxFiles); const evidence:RepositoryEvidence[]=[]; const manifest:RepositoryManifestEntry[]=[]; const failures:string[]=[];
     for(const candidate of candidates){ try { const file=await this.github.getContent(owner,repo,candidate.path,commitSha) as GitHubContent|undefined; const content=file ? (file.content && file.encoding==='base64' ? Buffer.from(file.content.replaceAll('\n',''),'base64').toString('utf8') : file.content) : undefined; if(!content||content.length>this.maxBytes){failures.push(`${candidate.path}: unavailable or exceeds byte limit`);continue;} evidence.push(...extractRepositoryEvidence({owner,repo,commitSha,path:candidate.path,content})); manifest.push({owner,repo,commitSha,path:candidate.path,contentSha:createHash('sha256').update(content).digest('hex'),size:Buffer.byteLength(content),retrievedAt:new Date().toISOString(),sourceRoute:`github:contents/${owner}/${repo}@${commitSha}`}); } catch(error){failures.push(`${candidate.path}: ${String(error)}`);} }
-    return {evidence,manifest,failures};
+    return {evidence,manifest,failures,filesRead:candidates.length};
   }
 }
 

@@ -10,7 +10,7 @@ Provider adapters must call this utility rather than applying provider-specific 
 
 ## arXiv
 
-`normalizeArxivId` accepts bare IDs, `arXiv:` prefixes, `abs` and `pdf` URLs, `www` host variants, and revision suffixes such as `v1` and `v7`. Revision suffixes are removed for the work identity: `1706.03762`, `1706.03762v1`, and `1706.03762v7` identify one scholarly work. Provider-specific version metadata belongs in `ResearchWork.versions`; the current arXiv adapter records the latest source URL and submission timestamp without asserting that revisions are separate works.
+`normalizeArxivId` accepts bare IDs, `arXiv:` prefixes, `abs` and `pdf` URLs, `www` host variants, modern IDs, supported legacy category-style IDs such as `cond-mat/9703183`, and revision suffixes such as `v1` and `v7`. Revision suffixes are removed for the work identity: `1706.03762`, `1706.03762v1`, and `1706.03762v7` identify one scholarly work. Provider-specific version metadata belongs in `ResearchWork.versions`; the current arXiv adapter records the latest source URL and submission timestamp without asserting that revisions are separate works.
 
 Invalid arXiv values raise an error and remain provider/input failures rather than being guessed into a work ID.
 
