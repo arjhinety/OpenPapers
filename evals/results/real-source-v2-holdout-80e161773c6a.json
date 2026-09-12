@@ -1,0 +1,356 @@
+{
+  "schemaVersion": "openpapers.real-source-evaluation.v1",
+  "kind": "real-source-holdout",
+  "commit": "80e161773c6a6c6ac5a7b8fde37faedf5c9c6e7a",
+  "dataset": "research-real-v2",
+  "split": "holdout",
+  "holdoutInfluencedTuning": false,
+  "configuration": {
+    "providerMode": "identifier-first-live",
+    "resolutionMode": "known-work",
+    "parserMode": "pymupdf-real-pdf",
+    "liveProviders": true
+  },
+  "taskCount": 5,
+  "metrics": {
+    "workAccuracy": 0,
+    "identifierAccuracy": 0,
+    "answerCorrectness": 0,
+    "evidenceSourceAccuracy": 1,
+    "locatorAccuracy": 0.8,
+    "supportStatusAccuracy": 0.2,
+    "correctUNKNOWN": null,
+    "correctNOT_REPORTED": null,
+    "falseUNKNOWN": 0.8,
+    "falseNOT_REPORTED": 0,
+    "fabricatedAnswerRate": 0,
+    "conflictPrecision": null,
+    "conflictRecall": null,
+    "taskCount": 5,
+    "expectedUnknown": 0,
+    "expectedNotReported": 0,
+    "actualUnknown": 4,
+    "actualNotReported": 0
+  },
+  "failureCategories": {
+    "field extraction failure": 5
+  },
+  "rows": [
+    {
+      "caseId": "v2-ul2",
+      "taskId": "v2-ul2-task",
+      "query": "Which denoising mixture unifies multiple language-learning objectives?",
+      "expectedStatus": "SUPPORTED",
+      "expectedAnswer": {
+        "objective": "mixture of denoisers"
+      },
+      "expectedSourceClass": [
+        "paper"
+      ],
+      "expectedLocator": "paper evidence",
+      "actualStatus": "UNKNOWN",
+      "actualAnswer": {},
+      "actualEvidence": [],
+      "actualSourceClass": [
+        "paper_pdf"
+      ],
+      "actualLocator": {
+        "section": "Implementation Details",
+        "page": 12
+      },
+      "workCorrect": false,
+      "identifierCorrect": false,
+      "answerCorrect": false,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": false,
+      "artifactStatus": "ACQUIRED",
+      "parserMode": "pymupdf-real-pdf",
+      "parserError": null,
+      "providerResolution": {
+        "mode": "known-work",
+        "candidates": 0,
+        "actualWork": null,
+        "providers": [
+          "arxiv"
+        ],
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "repositoryEvidence": {
+        "repository": "google-research/t5x",
+        "commitSha": "2045b332cf19887885a74ef1bd6b2adb2a7ca634",
+        "filesRead": 7,
+        "evidenceCount": 58,
+        "manifest": [
+          {
+            "owner": "google-research",
+            "repo": "t5x",
+            "commitSha": "2045b332cf19887885a74ef1bd6b2adb2a7ca634",
+            "path": "README.md",
+            "contentSha256": "784250dbf112a3e14ac9c18fafbe5abef50ce8ad7129204a5ca6ef75087c0f30",
+            "bytes": 20880,
+            "sourceRoute": "github:contents/google-research/t5x@2045b332cf19887885a74ef1bd6b2adb2a7ca634"
+          },
+          {
+            "owner": "google-research",
+            "repo": "t5x",
+            "commitSha": "2045b332cf19887885a74ef1bd6b2adb2a7ca634",
+            "path": "t5x/notebooks/README.md",
+            "contentSha256": "24474b101be76e970f5e6e4735c058ed87637c7508631b9c005162a135d81b99",
+            "bytes": 2508,
+            "sourceRoute": "github:contents/google-research/t5x@2045b332cf19887885a74ef1bd6b2adb2a7ca634"
+          },
+          {
+            "owner": "google-research",
+            "repo": "t5x",
+            "commitSha": "2045b332cf19887885a74ef1bd6b2adb2a7ca634",
+            "path": "t5x/train_state_test.py",
+            "contentSha256": "823809344202d9578aaece2d61df1e876e59c11dfb1c3a6296a175fe9829bca7",
+            "bytes": 21061,
+            "sourceRoute": "github:contents/google-research/t5x@2045b332cf19887885a74ef1bd6b2adb2a7ca634"
+          },
+          {
+            "owner": "google-research",
+            "repo": "t5x",
+            "commitSha": "2045b332cf19887885a74ef1bd6b2adb2a7ca634",
+            "path": "t5x/train_state.py",
+            "contentSha256": "37169f43bd76d30394c21b8ec8caf96b0a46178457c11cc971b453774fc1280f",
+            "bytes": 11121,
+            "sourceRoute": "github:contents/google-research/t5x@2045b332cf19887885a74ef1bd6b2adb2a7ca634"
+          },
+          {
+            "owner": "google-research",
+            "repo": "t5x",
+            "commitSha": "2045b332cf19887885a74ef1bd6b2adb2a7ca634",
+            "path": "t5x/train.py",
+            "contentSha256": "1c31c08c3d1203e8b8fdcd05af2a42eae349028ac241b6d74b6af8bd18fec515",
+            "bytes": 36991,
+            "sourceRoute": "github:contents/google-research/t5x@2045b332cf19887885a74ef1bd6b2adb2a7ca634"
+          },
+          {
+            "owner": "google-research",
+            "repo": "t5x",
+            "commitSha": "2045b332cf19887885a74ef1bd6b2adb2a7ca634",
+            "path": "t5x/trainer_test.py",
+            "contentSha256": "b99652d14f1cba5b25cd445f22543372ae573685c426fb66326a4f77490bf9a4",
+            "bytes": 36711,
+            "sourceRoute": "github:contents/google-research/t5x@2045b332cf19887885a74ef1bd6b2adb2a7ca634"
+          },
+          {
+            "owner": "google-research",
+            "repo": "t5x",
+            "commitSha": "2045b332cf19887885a74ef1bd6b2adb2a7ca634",
+            "path": "t5x/trainer.py",
+            "contentSha256": "ddeed4bde3c4b9446224b7b57a82100310916fbf84359a325fce058752cedca8",
+            "bytes": 42749,
+            "sourceRoute": "github:contents/google-research/t5x@2045b332cf19887885a74ef1bd6b2adb2a7ca634"
+          }
+        ],
+        "failures": []
+      },
+      "failureCategory": "field extraction failure"
+    },
+    {
+      "caseId": "v2-mistral",
+      "taskId": "v2-mistral-task",
+      "query": "Which two efficiency mechanisms are emphasized in Mistral 7B attention?",
+      "expectedStatus": "SUPPORTED",
+      "expectedAnswer": {
+        "attention": [
+          "grouped-query attention",
+          "sliding-window attention"
+        ]
+      },
+      "expectedSourceClass": [
+        "paper"
+      ],
+      "expectedLocator": "paper evidence",
+      "actualStatus": "SUPPORTED",
+      "actualAnswer": {
+        "attention": "grouped-query attention"
+      },
+      "actualEvidence": [
+        {
+          "evidenceId": "real-paper-v2-mistral-attention-0",
+          "sourceId": "https://arxiv.org/pdf/2310.06825v1",
+          "authors": [],
+          "title": "Mistral 7B",
+          "identifiers": {
+            "arxiv": "2310.06825"
+          },
+          "locator": {
+            "section": "Introduction",
+            "page": 1
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Mistral 7B leverages grouped-query attention (GQA) [1], and sliding window attention (SWA) [6, 3].",
+          "citationText": "https://arxiv.org/pdf/2310.06825v1#Introduction"
+        }
+      ],
+      "actualSourceClass": [
+        "paper_pdf"
+      ],
+      "actualLocator": {
+        "section": "Introduction",
+        "page": 1
+      },
+      "workCorrect": false,
+      "identifierCorrect": false,
+      "answerCorrect": false,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "artifactStatus": "ACQUIRED",
+      "parserMode": "pymupdf-real-pdf",
+      "parserError": null,
+      "providerResolution": {
+        "mode": "known-work",
+        "candidates": 0,
+        "actualWork": null,
+        "providers": [
+          "arxiv"
+        ],
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "repositoryEvidence": null,
+      "failureCategory": "field extraction failure"
+    },
+    {
+      "caseId": "v2-mixtral",
+      "taskId": "v2-mixtral-task",
+      "query": "How many experts are selected per token in Mixtral?",
+      "expectedStatus": "SUPPORTED",
+      "expectedAnswer": {
+        "experts_per_token": 2
+      },
+      "expectedSourceClass": [
+        "paper"
+      ],
+      "expectedLocator": "paper evidence",
+      "actualStatus": "UNKNOWN",
+      "actualAnswer": {},
+      "actualEvidence": [],
+      "actualSourceClass": [
+        "paper_pdf"
+      ],
+      "actualLocator": null,
+      "workCorrect": false,
+      "identifierCorrect": false,
+      "answerCorrect": false,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": false,
+      "supportStatusCorrect": false,
+      "artifactStatus": "ACQUIRED",
+      "parserMode": "pymupdf-real-pdf",
+      "parserError": null,
+      "providerResolution": {
+        "mode": "known-work",
+        "candidates": 0,
+        "actualWork": null,
+        "providers": [
+          "arxiv"
+        ],
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "repositoryEvidence": null,
+      "failureCategory": "field extraction failure"
+    },
+    {
+      "caseId": "v2-qwen",
+      "taskId": "v2-qwen-task",
+      "query": "Which positional encoding is used by Qwen?",
+      "expectedStatus": "SUPPORTED",
+      "expectedAnswer": {
+        "position_encoding": "rotary positional embedding"
+      },
+      "expectedSourceClass": [
+        "paper"
+      ],
+      "expectedLocator": "paper evidence",
+      "actualStatus": "UNKNOWN",
+      "actualAnswer": {},
+      "actualEvidence": [],
+      "actualSourceClass": [
+        "paper_pdf"
+      ],
+      "actualLocator": {
+        "section": "TRAINING",
+        "page": 7
+      },
+      "workCorrect": false,
+      "identifierCorrect": false,
+      "answerCorrect": false,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": false,
+      "artifactStatus": "ACQUIRED",
+      "parserMode": "pymupdf-real-pdf",
+      "parserError": null,
+      "providerResolution": {
+        "mode": "known-work",
+        "candidates": 0,
+        "actualWork": null,
+        "providers": [
+          "arxiv"
+        ],
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "repositoryEvidence": null,
+      "failureCategory": "field extraction failure"
+    },
+    {
+      "caseId": "v2-phi3",
+      "taskId": "v2-phi3-task",
+      "query": "What context-length capability is highlighted for Phi-3?",
+      "expectedStatus": "SUPPORTED",
+      "expectedAnswer": {
+        "context": "long context"
+      },
+      "expectedSourceClass": [
+        "paper"
+      ],
+      "expectedLocator": "paper evidence",
+      "actualStatus": "UNKNOWN",
+      "actualAnswer": {},
+      "actualEvidence": [],
+      "actualSourceClass": [
+        "paper_pdf"
+      ],
+      "actualLocator": {
+        "section": "Academic benchmarks",
+        "page": 4
+      },
+      "workCorrect": false,
+      "identifierCorrect": false,
+      "answerCorrect": false,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": false,
+      "artifactStatus": "ACQUIRED",
+      "parserMode": "pymupdf-real-pdf",
+      "parserError": null,
+      "providerResolution": {
+        "mode": "known-work",
+        "candidates": 0,
+        "actualWork": null,
+        "providers": [
+          "arxiv"
+        ],
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "repositoryEvidence": null,
+      "failureCategory": "field extraction failure"
+    }
+  ]
+}

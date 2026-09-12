@@ -1,0 +1,217 @@
+{
+  "schemaVersion": "openpapers.real-source-acquisition.v1",
+  "dataset": "research-real-v1",
+  "split": "all",
+  "metadataOnly": false,
+  "rows": [
+    {
+      "caseId": "rp-transformer-1706",
+      "split": "development",
+      "pdfUrl": "https://arxiv.org/pdf/1706.03762v1",
+      "status": "ACQUIRED",
+      "retrievedAt": "2026-09-08T07:12:06.794Z",
+      "sha256": "0a9bff1be3575cf9fe26a4a3d3a9175bc791ecec90de8b9deba4cff75d2b9476",
+      "bytes": 2128686,
+      "path": "C:\\Users\\arro\\Downloads\\OpenPapers\\.cache\\real-source\\rp-transformer-1706-v1.pdf",
+      "error": null
+    },
+    {
+      "caseId": "rp-bert-1810",
+      "split": "development",
+      "pdfUrl": "https://arxiv.org/pdf/1810.04805v1",
+      "status": "ACQUIRED",
+      "retrievedAt": "2026-09-08T07:12:07.518Z",
+      "sha256": "58534a3c000cbcc60ed64e999a2d9ed839edc2d9894e4449e9d79e1118b5e5ba",
+      "bytes": 592173,
+      "path": "C:\\Users\\arro\\Downloads\\OpenPapers\\.cache\\real-source\\rp-bert-1810-v1.pdf",
+      "error": null
+    },
+    {
+      "caseId": "rp-t5-1910",
+      "split": "development",
+      "pdfUrl": "https://arxiv.org/pdf/1910.10683v1",
+      "status": "ACQUIRED",
+      "retrievedAt": "2026-09-08T07:12:07.600Z",
+      "sha256": "b41ee513826361ff4d6076ded32e35fa6bc9dea19f6ba2b98feeb1a65c778483",
+      "bytes": 1206605,
+      "path": "C:\\Users\\arro\\Downloads\\OpenPapers\\.cache\\real-source\\rp-t5-1910-v1.pdf",
+      "error": null
+    },
+    {
+      "caseId": "rp-megatron-1909",
+      "split": "development",
+      "pdfUrl": "https://arxiv.org/pdf/1909.08053v1",
+      "status": "ACQUIRED",
+      "retrievedAt": "2026-09-08T07:12:08.153Z",
+      "sha256": "014b8a8d3cec8bee5e371b23e4f49d4e74597641febc36992faf33d8834f8fe2",
+      "bytes": 2984334,
+      "path": "C:\\Users\\arro\\Downloads\\OpenPapers\\.cache\\real-source\\rp-megatron-1909-v1.pdf",
+      "error": null
+    },
+    {
+      "caseId": "rp-zero-1910",
+      "split": "development",
+      "pdfUrl": "https://arxiv.org/pdf/1910.02054v1",
+      "status": "UNAVAILABLE",
+      "retrievedAt": "2026-09-08T07:12:09.010Z",
+      "sha256": null,
+      "bytes": null,
+      "path": null,
+      "error": "Error: HTTP 404"
+    },
+    {
+      "caseId": "rp-scaling-laws-2001",
+      "split": "development",
+      "pdfUrl": "https://arxiv.org/pdf/2001.08361v1",
+      "status": "ACQUIRED",
+      "retrievedAt": "2026-09-08T07:12:09.221Z",
+      "sha256": "a41bd7877fd1a6bcbba096b2619618bd2f90e02488f2365644903eb2f7c6a494",
+      "bytes": 2493004,
+      "path": "C:\\Users\\arro\\Downloads\\OpenPapers\\.cache\\real-source\\rp-scaling-laws-2001-v1.pdf",
+      "error": null
+    },
+    {
+      "caseId": "rp-rag-2005",
+      "split": "development",
+      "pdfUrl": "https://arxiv.org/pdf/2005.11401v1",
+      "status": "ACQUIRED",
+      "retrievedAt": "2026-09-08T07:12:10.809Z",
+      "sha256": "25b55fd0f7c6c91cbe2c88690a33923077103e8f563d154faa1ce11d3527e601",
+      "bytes": 837243,
+      "path": "C:\\Users\\arro\\Downloads\\OpenPapers\\.cache\\real-source\\rp-rag-2005-v1.pdf",
+      "error": null
+    },
+    {
+      "caseId": "rp-gpt3-2005",
+      "split": "development",
+      "pdfUrl": "https://arxiv.org/pdf/2005.14165v1",
+      "status": "ACQUIRED",
+      "retrievedAt": "2026-09-08T07:12:10.926Z",
+      "sha256": "f756a2d3e23c2770a3e8c4354965e98d37411c18aab91556df0c335675dec396",
+      "bytes": 6754784,
+      "path": "C:\\Users\\arro\\Downloads\\OpenPapers\\.cache\\real-source\\rp-gpt3-2005-v1.pdf",
+      "error": null
+    },
+    {
+      "caseId": "rp-lora-2106",
+      "split": "development",
+      "pdfUrl": "https://arxiv.org/pdf/2106.09685v1",
+      "status": "ACQUIRED",
+      "retrievedAt": "2026-09-08T07:12:14.264Z",
+      "sha256": "38a259c1926b724363fcfbd8e5f80fcadf0dd8d9ab6944fea8c00e74fd7590b0",
+      "bytes": 1502998,
+      "path": "C:\\Users\\arro\\Downloads\\OpenPapers\\.cache\\real-source\\rp-lora-2106-v1.pdf",
+      "error": null
+    },
+    {
+      "caseId": "rp-instructgpt-2203",
+      "split": "development",
+      "pdfUrl": "https://arxiv.org/pdf/2203.02155v1",
+      "status": "ACQUIRED",
+      "retrievedAt": "2026-09-08T07:12:14.876Z",
+      "sha256": "c1984bb50a5b90fddb895fdc3a0f72e5bc977148c9f63ef6040cbe7a3e1f0d98",
+      "bytes": 1797405,
+      "path": "C:\\Users\\arro\\Downloads\\OpenPapers\\.cache\\real-source\\rp-instructgpt-2203-v1.pdf",
+      "error": null
+    },
+    {
+      "caseId": "rp-flashattn-2205",
+      "split": "development",
+      "pdfUrl": "https://arxiv.org/pdf/2205.14135v1",
+      "status": "ACQUIRED",
+      "retrievedAt": "2026-09-08T07:12:15.280Z",
+      "sha256": "be21f20c749ba8443988b479bece93617dd37b214ea9099413f951f756d4104f",
+      "bytes": 2004922,
+      "path": "C:\\Users\\arro\\Downloads\\OpenPapers\\.cache\\real-source\\rp-flashattn-2205-v1.pdf",
+      "error": null
+    },
+    {
+      "caseId": "rp-react-2210",
+      "split": "development",
+      "pdfUrl": "https://arxiv.org/pdf/2210.03629v1",
+      "status": "ACQUIRED",
+      "retrievedAt": "2026-09-08T07:12:15.612Z",
+      "sha256": "6ec7c9ba12a5a7462afaaa759b9d4186e522fcb502ef480afd7fa1821960a576",
+      "bytes": 538424,
+      "path": "C:\\Users\\arro\\Downloads\\OpenPapers\\.cache\\real-source\\rp-react-2210-v1.pdf",
+      "error": null
+    },
+    {
+      "caseId": "rp-toolformer-2302",
+      "split": "development",
+      "pdfUrl": "https://arxiv.org/pdf/2302.04761v1",
+      "status": "ACQUIRED",
+      "retrievedAt": "2026-09-08T07:12:15.684Z",
+      "sha256": "6d7483d94653008e40c2058a1c22441c92e3713dae278b6361e8efc447c99522",
+      "bytes": 657966,
+      "path": "C:\\Users\\arro\\Downloads\\OpenPapers\\.cache\\real-source\\rp-toolformer-2302-v1.pdf",
+      "error": null
+    },
+    {
+      "caseId": "rp-llama-2302",
+      "split": "holdout",
+      "pdfUrl": "https://arxiv.org/pdf/2302.13971v1",
+      "status": "ACQUIRED",
+      "retrievedAt": "2026-09-08T07:12:16.031Z",
+      "sha256": "2e663675ae36ad12adb2f5a05281bac2747ecf8d23d92bedd9f937a89fee7136",
+      "bytes": 726566,
+      "path": "C:\\Users\\arro\\Downloads\\OpenPapers\\.cache\\real-source\\rp-llama-2302-v1.pdf",
+      "error": null
+    },
+    {
+      "caseId": "rp-qlora-2305",
+      "split": "holdout",
+      "pdfUrl": "https://arxiv.org/pdf/2305.14314v1",
+      "status": "ACQUIRED",
+      "retrievedAt": "2026-09-08T07:12:16.120Z",
+      "sha256": "33a4e757c19d6ea8d3cca8958fce8fe405e290272e135c99ee66065c775d5bd1",
+      "bytes": 1065470,
+      "path": "C:\\Users\\arro\\Downloads\\OpenPapers\\.cache\\real-source\\rp-qlora-2305-v1.pdf",
+      "error": null
+    },
+    {
+      "caseId": "rp-vllm-2309",
+      "split": "holdout",
+      "pdfUrl": "https://arxiv.org/pdf/2309.06180v1",
+      "status": "ACQUIRED",
+      "retrievedAt": "2026-09-08T07:12:16.450Z",
+      "sha256": "55b3b324d779a67c59dac2519445e3b07c14e6ff5c656fadb47a3d7b5997469e",
+      "bytes": 1459631,
+      "path": "C:\\Users\\arro\\Downloads\\OpenPapers\\.cache\\real-source\\rp-vllm-2309-v1.pdf",
+      "error": null
+    },
+    {
+      "caseId": "rp-llama2-2307",
+      "split": "holdout",
+      "pdfUrl": "https://arxiv.org/pdf/2307.09288v1",
+      "status": "ACQUIRED",
+      "retrievedAt": "2026-09-08T07:12:16.615Z",
+      "sha256": "03c022db7d7ff846e0a1ada4c8be936416f7f7f9c680c64d9494d7b30ebfdd80",
+      "bytes": 13658713,
+      "path": "C:\\Users\\arro\\Downloads\\OpenPapers\\.cache\\real-source\\rp-llama2-2307-v1.pdf",
+      "error": null
+    },
+    {
+      "caseId": "rp-mamba-2312",
+      "split": "holdout",
+      "pdfUrl": "https://arxiv.org/pdf/2312.00752v1",
+      "status": "ACQUIRED",
+      "retrievedAt": "2026-09-08T07:12:23.070Z",
+      "sha256": "83044ebdd02276f922b6d0915a344f0c501fc7c214d1b88622c33971bb149199",
+      "bytes": 1293868,
+      "path": "C:\\Users\\arro\\Downloads\\OpenPapers\\.cache\\real-source\\rp-mamba-2312-v1.pdf",
+      "error": null
+    },
+    {
+      "caseId": "rp-whisper-2212",
+      "split": "holdout",
+      "pdfUrl": "https://arxiv.org/pdf/2212.04356v1",
+      "status": "ACQUIRED",
+      "retrievedAt": "2026-09-08T07:12:23.219Z",
+      "sha256": "6337bde031b2f237547a977b022f831169a7e05b4d9047f29501166d83594566",
+      "bytes": 1008644,
+      "path": "C:\\Users\\arro\\Downloads\\OpenPapers\\.cache\\real-source\\rp-whisper-2212-v1.pdf",
+      "error": null
+    }
+  ]
+}

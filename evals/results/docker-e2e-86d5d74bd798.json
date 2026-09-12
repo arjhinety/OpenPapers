@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "openpapers.docker-e2e.v1",
+  "kind": "runtime-docker-e2e",
+  "commit": "86d5d74bd7984150eb8284bed1627498acf8a445",
+  "workingTreeDirty": false,
+  "timestamp": "2026-09-08T05:45:20.029Z",
+  "fixtureMode": true,
+  "steps": [
+    {
+      "name": "compose up --build --wait",
+      "status": "PASS",
+      "detail": "#20 resolving provenance for metadata file | #20 DONE 0.0s | "
+    },
+    {
+      "name": "endpoint reachable",
+      "status": "PASS"
+    },
+    {
+      "name": "mcp initialize + tools/list",
+      "status": "PASS",
+      "detail": "37 tools, server 1.0.0"
+    },
+    {
+      "name": "tools/call search_papers (fixture providers)",
+      "status": "PASS",
+      "detail": "top work work_c1653fea9d14fa2b"
+    },
+    {
+      "name": "persistence: create_collection",
+      "status": "PASS",
+      "detail": "collection-c386d64b558b4b45e3f31a63"
+    },
+    {
+      "name": "persistence: restart app container",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "persistence: collection survives restart",
+      "status": "PASS"
+    },
+    {
+      "name": "GROBID isalive",
+      "status": "PASS"
+    },
+    {
+      "name": "adversarial MCP smoke",
+      "status": "PASS",
+      "detail": "{\"tools\":37,\"search_results\":1,\"evidence_records\":1,\"canonical_found_in_title_search\":true,\"provider_failures\":[],\"sources_searched\":[\"arxiv\",\"crossref\",\"openalex\",\"semantic_scholar\"]} | "
+    },
+    {
+      "name": "30-run MCP benchmark",
+      "status": "PASS",
+      "detail": "{\"name\":\"tools/list\",\"requests\":30,\"statuses\":[200],\"min_ms\":5.71,\"median_ms\":8.27,\"p95_ms\":11.43,\"max_ms\":13.07} | {\"name\":\"tools/call\",\"requests\":30,\"statuses\":[200],\"min_ms\":4.64,\"median_ms\":6.86,\""
+    },
+    {
+      "name": "benchmark medians",
+      "status": "PASS",
+      "detail": "initialize median 7.27ms, tools/list median 8.27ms, tools/call median 6.86ms"
+    },
+    {
+      "name": "compose down -v",
+      "status": "PASS"
+    }
+  ],
+  "passed": true
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "openpapers.docker-e2e.v1",
+  "kind": "runtime-docker-e2e",
+  "commit": "80e161773c6a6c6ac5a7b8fde37faedf5c9c6e7a",
+  "workingTreeDirty": false,
+  "timestamp": "2026-09-08T06:34:47.552Z",
+  "fixtureMode": true,
+  "steps": [
+    {
+      "name": "compose up --build --wait",
+      "status": "PASS",
+      "detail": "#20 resolving provenance for metadata file | #20 DONE 0.1s | "
+    },
+    {
+      "name": "endpoint reachable",
+      "status": "PASS"
+    },
+    {
+      "name": "mcp initialize + tools/list",
+      "status": "PASS",
+      "detail": "37 tools, server 1.0.0"
+    },
+    {
+      "name": "tools/call search_papers (fixture providers)",
+      "status": "PASS",
+      "detail": "top work work_c1653fea9d14fa2b"
+    },
+    {
+      "name": "persistence: create_collection",
+      "status": "PASS",
+      "detail": "collection-c386d64b558b4b45e3f31a63"
+    },
+    {
+      "name": "persistence: restart app container",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "persistence: collection survives restart",
+      "status": "PASS"
+    },
+    {
+      "name": "GROBID isalive",
+      "status": "PASS"
+    },
+    {
+      "name": "adversarial MCP smoke",
+      "status": "PASS",
+      "detail": "{\"tools\":37,\"search_results\":1,\"evidence_records\":1,\"canonical_found_in_title_search\":true,\"provider_failures\":[],\"sources_searched\":[\"arxiv\",\"crossref\",\"openalex\",\"semantic_scholar\"]} | "
+    },
+    {
+      "name": "30-run MCP benchmark",
+      "status": "PASS",
+      "detail": "{\"name\":\"tools/list\",\"requests\":30,\"statuses\":[200],\"min_ms\":6.28,\"median_ms\":9.84,\"p95_ms\":23.32,\"max_ms\":25.01} | {\"name\":\"tools/call\",\"requests\":30,\"statuses\":[200],\"min_ms\":4.99,\"median_ms\":7.3,\"p"
+    },
+    {
+      "name": "benchmark medians",
+      "status": "PASS",
+      "detail": "initialize median 6.9ms, tools/list median 9.84ms, tools/call median 7.3ms"
+    },
+    {
+      "name": "compose down -v",
+      "status": "PASS"
+    }
+  ],
+  "passed": true
+}

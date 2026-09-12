@@ -1,0 +1,715 @@
+{
+  "schemaVersion": "openpapers.real-source-v3-evaluation.v1",
+  "commit": "80e161773c6a6c6ac5a7b8fde37faedf5c9c6e7a",
+  "dataset": "research-real-v5",
+  "split": "development",
+  "holdoutUsedForTuning": null,
+  "configuration": {
+    "extraction": "query-independent-facts",
+    "intent": "separate-query-intent",
+    "parser": "pymupdf-real-pdf"
+  },
+  "taskCount": 11,
+  "substantiveTaskCount": 5,
+  "factMetrics": {
+    "precision": 0.44,
+    "recall": 1,
+    "valueAccuracy": 1,
+    "locatorAccuracy": 1
+  },
+  "queryMetrics": {
+    "predicateAccuracy": 1
+  },
+  "answerMetrics": {
+    "answerCorrectness": 1,
+    "evidenceSourceAccuracy": 1,
+    "locatorAccuracy": 1,
+    "supportStatusAccuracy": 1,
+    "falseUnknown": 0,
+    "falseNotReported": 0,
+    "fabricatedAnswerRate": 0
+  },
+  "failureCategories": {},
+  "rows": [
+    {
+      "caseId": "v5-dpo",
+      "taskId": "v5-dpo-task-1",
+      "predicate": "training.preference_method",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "training.preference_method": "DPO"
+      },
+      "actualAnswer": {
+        "training.preference_method": "DPO"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "SUPPORTED",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": null,
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "facts": [
+        {
+          "factId": "fact-https://arxiv.org/pdf/2305.18290v3-training.preference_method-DPO",
+          "predicate": "training.preference_method",
+          "value": "DPO",
+          "rawValue": "DPO",
+          "sourceId": "https://arxiv.org/pdf/2305.18290v3",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "Introduction",
+            "page": 1
+          },
+          "rawEvidence": "LG] 29 Jul 2024 Figure 1: DPO optimizes for human preferences while avoiding reinforcement learning.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "unknown",
+          "extractionMethod": "preference method",
+          "supportState": "NORMALIZED_EXPLICIT"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2305.18290v3-training.preference_method-DPO",
+          "sourceId": "https://arxiv.org/pdf/2305.18290v3",
+          "authors": [],
+          "title": "Extracted training.preference_method fact",
+          "identifiers": {},
+          "locator": {
+            "section": "Introduction",
+            "page": 1
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "LG] 29 Jul 2024 Figure 1: DPO optimizes for human preferences while avoiding reinforcement learning.",
+          "citationText": "https://arxiv.org/pdf/2305.18290v3#Introduction"
+        }
+      ],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 7,
+      "factTruePositive": 3,
+      "goldFactCount": 3,
+      "actualFactCount": 7
+    },
+    {
+      "caseId": "v5-dpo",
+      "taskId": "v5-dpo-task-2",
+      "predicate": "optimization.optimizer",
+      "predicateCorrect": true,
+      "expectedAnswer": {},
+      "actualAnswer": {},
+      "expectedStatus": "UNKNOWN",
+      "actualStatus": "UNKNOWN",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": false,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": null,
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "facts": [],
+      "evidence": [],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 7,
+      "factTruePositive": 3,
+      "goldFactCount": 3,
+      "actualFactCount": 7
+    },
+    {
+      "caseId": "v5-flashattention2",
+      "taskId": "v5-flashattention2-task-1",
+      "predicate": "architecture.attention",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "architecture.attention": "FlashAttention"
+      },
+      "actualAnswer": {
+        "architecture.attention": "FlashAttention"
+      },
+      "expectedStatus": "CONFLICTING",
+      "actualStatus": "CONFLICTING",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": null,
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "facts": [
+        {
+          "factId": "fact-https://arxiv.org/pdf/2307.08691v1-architecture.attention-FlashAttention",
+          "predicate": "architecture.attention",
+          "value": "FlashAttention",
+          "rawValue": "FlashAttention",
+          "sourceId": "https://arxiv.org/pdf/2307.08691v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "Introduction",
+            "page": 1
+          },
+          "rawEvidence": "LG] 17 Jul 2023 with no approximation, and as a result FlashAttention has seen wide adoption in large-scale training and inference of Transformers.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "unknown",
+          "extractionMethod": "attention implementation",
+          "supportState": "NORMALIZED_EXPLICIT"
+        },
+        {
+          "factId": "fact-https://arxiv.org/pdf/2307.08691v1-architecture.attention-multi-head attention",
+          "predicate": "architecture.attention",
+          "value": "multi-head attention",
+          "rawValue": "multi-head attention",
+          "sourceId": "https://arxiv.org/pdf/2307.08691v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "O = PV ∈R𝑁×𝑑,",
+            "page": 3
+          },
+          "rawEvidence": "2 For multi-head attention (MHA), this same computation is performed in parallel across many heads, and parallel over the batch dimension (number of input sequences in a batch).",
+          "assertionStatus": "asserted",
+          "experimentalRole": "unknown",
+          "extractionMethod": "attention topology",
+          "supportState": "NORMALIZED_EXPLICIT"
+        },
+        {
+          "factId": "fact-https://arxiv.org/pdf/2307.08691v1-architecture.attention-grouped-query attention",
+          "predicate": "architecture.attention",
+          "value": "grouped-query attention",
+          "rawValue": "grouped-query attention",
+          "sourceId": "https://arxiv.org/pdf/2307.08691v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "18:",
+            "page": 7
+          },
+          "rawEvidence": "Multi-query attention and grouped-query attention.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "unknown",
+          "extractionMethod": "attention topology",
+          "supportState": "NORMALIZED_EXPLICIT"
+        },
+        {
+          "factId": "fact-https://arxiv.org/pdf/2307.08691v1-architecture.attention-multi-query attention",
+          "predicate": "architecture.attention",
+          "value": "multi-query attention",
+          "rawValue": "Multi-query attention",
+          "sourceId": "https://arxiv.org/pdf/2307.08691v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "18:",
+            "page": 7
+          },
+          "rawEvidence": "Multi-query attention and grouped-query attention.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "unknown",
+          "extractionMethod": "attention topology",
+          "supportState": "NORMALIZED_EXPLICIT"
+        },
+        {
+          "factId": "fact-https://arxiv.org/pdf/2307.08691v1-architecture.attention-exact",
+          "predicate": "architecture.attention",
+          "value": "exact",
+          "rawValue": "exact attention",
+          "sourceId": "https://arxiv.org/pdf/2307.08691v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "Attention forward + backward speed (H100 80GB SXM5)",
+            "page": 13
+          },
+          "rawEvidence": "FlashAttention: Fast and memory-efficient exact attention with IO-awareness.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "unknown",
+          "extractionMethod": "attention property",
+          "supportState": "NORMALIZED_EXPLICIT"
+        },
+        {
+          "factId": "fact-https://arxiv.org/pdf/2307.08691v1-architecture.attention-linear attention",
+          "predicate": "architecture.attention",
+          "value": "linear attention",
+          "rawValue": "linear attention",
+          "sourceId": "https://arxiv.org/pdf/2307.08691v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "Attention forward + backward speed (H100 80GB SXM5)",
+            "page": 13
+          },
+          "rawEvidence": "Transformers are RNNs: Fast autoregressive transformers with linear attention.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "unknown",
+          "extractionMethod": "linear attention",
+          "supportState": "NORMALIZED_EXPLICIT"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2307.08691v1-architecture.attention-FlashAttention",
+          "sourceId": "https://arxiv.org/pdf/2307.08691v1",
+          "authors": [],
+          "title": "Extracted architecture.attention fact",
+          "identifiers": {},
+          "locator": {
+            "section": "Introduction",
+            "page": 1
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "LG] 17 Jul 2023 with no approximation, and as a result FlashAttention has seen wide adoption in large-scale training and inference of Transformers.",
+          "citationText": "https://arxiv.org/pdf/2307.08691v1#Introduction"
+        },
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2307.08691v1-architecture.attention-multi-head attention",
+          "sourceId": "https://arxiv.org/pdf/2307.08691v1",
+          "authors": [],
+          "title": "Extracted architecture.attention fact",
+          "identifiers": {},
+          "locator": {
+            "section": "O = PV ∈R𝑁×𝑑,",
+            "page": 3
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "2 For multi-head attention (MHA), this same computation is performed in parallel across many heads, and parallel over the batch dimension (number of input sequences in a batch).",
+          "citationText": "https://arxiv.org/pdf/2307.08691v1#O = PV ∈R𝑁×𝑑,"
+        },
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2307.08691v1-architecture.attention-grouped-query attention",
+          "sourceId": "https://arxiv.org/pdf/2307.08691v1",
+          "authors": [],
+          "title": "Extracted architecture.attention fact",
+          "identifiers": {},
+          "locator": {
+            "section": "18:",
+            "page": 7
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Multi-query attention and grouped-query attention.",
+          "citationText": "https://arxiv.org/pdf/2307.08691v1#18:"
+        },
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2307.08691v1-architecture.attention-multi-query attention",
+          "sourceId": "https://arxiv.org/pdf/2307.08691v1",
+          "authors": [],
+          "title": "Extracted architecture.attention fact",
+          "identifiers": {},
+          "locator": {
+            "section": "18:",
+            "page": 7
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Multi-query attention and grouped-query attention.",
+          "citationText": "https://arxiv.org/pdf/2307.08691v1#18:"
+        },
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2307.08691v1-architecture.attention-exact",
+          "sourceId": "https://arxiv.org/pdf/2307.08691v1",
+          "authors": [],
+          "title": "Extracted architecture.attention fact",
+          "identifiers": {},
+          "locator": {
+            "section": "Attention forward + backward speed (H100 80GB SXM5)",
+            "page": 13
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "FlashAttention: Fast and memory-efficient exact attention with IO-awareness.",
+          "citationText": "https://arxiv.org/pdf/2307.08691v1#Attention forward + backward speed (H100 80GB SXM5)"
+        },
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2307.08691v1-architecture.attention-linear attention",
+          "sourceId": "https://arxiv.org/pdf/2307.08691v1",
+          "authors": [],
+          "title": "Extracted architecture.attention fact",
+          "identifiers": {},
+          "locator": {
+            "section": "Attention forward + backward speed (H100 80GB SXM5)",
+            "page": 13
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Transformers are RNNs: Fast autoregressive transformers with linear attention.",
+          "citationText": "https://arxiv.org/pdf/2307.08691v1#Attention forward + backward speed (H100 80GB SXM5)"
+        }
+      ],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 6,
+      "factTruePositive": 2,
+      "goldFactCount": 2,
+      "actualFactCount": 6
+    },
+    {
+      "caseId": "v5-flashattention2",
+      "taskId": "v5-flashattention2-task-2",
+      "predicate": "optimization.optimizer",
+      "predicateCorrect": true,
+      "expectedAnswer": {},
+      "actualAnswer": {},
+      "expectedStatus": "UNKNOWN",
+      "actualStatus": "UNKNOWN",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": false,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": null,
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "facts": [],
+      "evidence": [],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 6,
+      "factTruePositive": 2,
+      "goldFactCount": 2,
+      "actualFactCount": 6
+    },
+    {
+      "caseId": "v5-zephyr",
+      "taskId": "v5-zephyr-task-1",
+      "predicate": "training.preference_method",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "training.preference_method": "DPO"
+      },
+      "actualAnswer": {
+        "training.preference_method": "DPO"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "SUPPORTED",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": null,
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "facts": [
+        {
+          "factId": "fact-https://arxiv.org/pdf/2310.16944v1-training.preference_method-DPO",
+          "predicate": "training.preference_method",
+          "value": "DPO",
+          "rawValue": "direct preference optimization",
+          "sourceId": "https://arxiv.org/pdf/2310.16944v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "ABSTRACT",
+            "page": 1
+          },
+          "rawEvidence": "Starting from a dataset of outputs ranked by a teacher model, we apply distilled direct preference optimization (dDPO) to learn a chat model with significantly improved intent alignment.",
+          "assertionStatus": "comparison",
+          "experimentalRole": "ours",
+          "extractionMethod": "preference method",
+          "supportState": "NORMALIZED_EXPLICIT"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2310.16944v1-training.preference_method-DPO",
+          "sourceId": "https://arxiv.org/pdf/2310.16944v1",
+          "authors": [],
+          "title": "Extracted training.preference_method fact",
+          "identifiers": {},
+          "locator": {
+            "section": "ABSTRACT",
+            "page": 1
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Starting from a dataset of outputs ranked by a teacher model, we apply distilled direct preference optimization (dDPO) to learn a chat model with significantly improved intent alignment.",
+          "citationText": "https://arxiv.org/pdf/2310.16944v1#ABSTRACT"
+        }
+      ],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 8,
+      "factTruePositive": 4,
+      "goldFactCount": 4,
+      "actualFactCount": 8
+    },
+    {
+      "caseId": "v5-zephyr",
+      "taskId": "v5-zephyr-task-2",
+      "predicate": "optimization.optimizer",
+      "predicateCorrect": true,
+      "expectedAnswer": {},
+      "actualAnswer": {},
+      "expectedStatus": "UNKNOWN",
+      "actualStatus": "UNKNOWN",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": false,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": null,
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "facts": [],
+      "evidence": [],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 8,
+      "factTruePositive": 4,
+      "goldFactCount": 4,
+      "actualFactCount": 8
+    },
+    {
+      "caseId": "v5-santurkar",
+      "taskId": "v5-santurkar-task-1",
+      "predicate": "training.stage",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "training.stage": "fine-tuning"
+      },
+      "actualAnswer": {
+        "training.stage": "fine-tuning"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "SUPPORTED",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": null,
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "facts": [
+        {
+          "factId": "fact-https://arxiv.org/pdf/2303.17548v1-training.stage-fine-tuning",
+          "predicate": "training.stage",
+          "value": "fine-tuning",
+          "rawValue": "fine-tuned",
+          "sourceId": "https://arxiv.org/pdf/2303.17548v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "Limitations",
+            "page": 13
+          },
+          "rawEvidence": "It is an open question whether opinion alignment that is measured through multiple choice will be reflected in the downstream use cases of LMs - for example, will the liberal-leaning opinion alignment of RLHF fine-tuned models appear in a dialogue context or open-ended QA? Some recent works suggest that the group-alignment effects (e.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "unknown",
+          "extractionMethod": "training stage",
+          "supportState": "NORMALIZED_EXPLICIT"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2303.17548v1-training.stage-fine-tuning",
+          "sourceId": "https://arxiv.org/pdf/2303.17548v1",
+          "authors": [],
+          "title": "Extracted training.stage fact",
+          "identifiers": {},
+          "locator": {
+            "section": "Limitations",
+            "page": 13
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "It is an open question whether opinion alignment that is measured through multiple choice will be reflected in the downstream use cases of LMs - for example, will the liberal-leaning opinion alignment of RLHF fine-tuned models appear in a dialogue context or open-ended QA? Some recent works suggest that the group-alignment effects (e.",
+          "citationText": "https://arxiv.org/pdf/2303.17548v1#Limitations"
+        }
+      ],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 3,
+      "factTruePositive": 1,
+      "goldFactCount": 1,
+      "actualFactCount": 3
+    },
+    {
+      "caseId": "v5-santurkar",
+      "taskId": "v5-santurkar-task-2",
+      "predicate": "optimization.optimizer",
+      "predicateCorrect": true,
+      "expectedAnswer": {},
+      "actualAnswer": {},
+      "expectedStatus": "UNKNOWN",
+      "actualStatus": "UNKNOWN",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": false,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": null,
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "facts": [],
+      "evidence": [],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 3,
+      "factTruePositive": 1,
+      "goldFactCount": 1,
+      "actualFactCount": 3
+    },
+    {
+      "caseId": "v5-gilardi",
+      "taskId": "v5-gilardi-task-1",
+      "predicate": "evaluation.regime",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "evaluation.regime": "zero-shot"
+      },
+      "actualAnswer": {
+        "evaluation.regime": "zero-shot"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "SUPPORTED",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": null,
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "facts": [
+        {
+          "factId": "fact-https://arxiv.org/pdf/2303.15056v2-evaluation.regime-zero-shot",
+          "predicate": "evaluation.regime",
+          "value": "zero-shot",
+          "rawValue": "zero-shot",
+          "sourceId": "https://arxiv.org/pdf/2303.15056v2",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "ABSTRACT",
+            "page": 1
+          },
+          "rawEvidence": "Across the four datasets, the zero-shot accuracy of ChatGPT exceeds that of crowd-workers by about 25 percentage points on average, while ChatGPT’s intercoder agreement exceeds that of both crowd-workers and trained annotators for all tasks.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "dataset",
+          "extractionMethod": "evaluation regime",
+          "supportState": "NORMALIZED_EXPLICIT"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2303.15056v2-evaluation.regime-zero-shot",
+          "sourceId": "https://arxiv.org/pdf/2303.15056v2",
+          "authors": [],
+          "title": "Extracted evaluation.regime fact",
+          "identifiers": {},
+          "locator": {
+            "section": "ABSTRACT",
+            "page": 1
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Across the four datasets, the zero-shot accuracy of ChatGPT exceeds that of crowd-workers by about 25 percentage points on average, while ChatGPT’s intercoder agreement exceeds that of both crowd-workers and trained annotators for all tasks.",
+          "citationText": "https://arxiv.org/pdf/2303.15056v2#ABSTRACT"
+        }
+      ],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 1,
+      "factTruePositive": 1,
+      "goldFactCount": 1,
+      "actualFactCount": 1
+    },
+    {
+      "caseId": "v5-gilardi",
+      "taskId": "v5-gilardi-task-2",
+      "predicate": "data.training_dataset",
+      "predicateCorrect": true,
+      "expectedAnswer": {},
+      "actualAnswer": {},
+      "expectedStatus": "UNKNOWN",
+      "actualStatus": "UNKNOWN",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": false,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": null,
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "facts": [],
+      "evidence": [],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 1,
+      "factTruePositive": 1,
+      "goldFactCount": 1,
+      "actualFactCount": 1
+    },
+    {
+      "caseId": "v5-aifeynman",
+      "taskId": "v5-aifeynman-task-1",
+      "predicate": "architecture.formulation",
+      "predicateCorrect": true,
+      "expectedAnswer": {},
+      "actualAnswer": {},
+      "expectedStatus": "UNKNOWN",
+      "actualStatus": "UNKNOWN",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": false,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": null,
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "facts": [],
+      "evidence": [],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 0,
+      "factTruePositive": 0,
+      "goldFactCount": 0,
+      "actualFactCount": 0
+    }
+  ]
+}

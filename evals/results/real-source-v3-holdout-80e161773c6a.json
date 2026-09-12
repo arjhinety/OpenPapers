@@ -1,0 +1,306 @@
+{
+  "schemaVersion": "openpapers.real-source-v3-evaluation.v1",
+  "commit": "80e161773c6a6c6ac5a7b8fde37faedf5c9c6e7a",
+  "dataset": "research-real-v3",
+  "split": "holdout",
+  "holdoutUsedForTuning": false,
+  "configuration": {
+    "extraction": "query-independent-facts",
+    "intent": "separate-query-intent",
+    "parser": "pymupdf-real-pdf"
+  },
+  "taskCount": 4,
+  "substantiveTaskCount": 4,
+  "factMetrics": {
+    "precision": 0.03125,
+    "recall": 0.25,
+    "valueAccuracy": 0.25,
+    "locatorAccuracy": 1
+  },
+  "queryMetrics": {
+    "predicateAccuracy": 1
+  },
+  "answerMetrics": {
+    "answerCorrectness": 0.25,
+    "evidenceSourceAccuracy": 0.75,
+    "locatorAccuracy": 1,
+    "supportStatusAccuracy": 0.5,
+    "falseUnknown": 0.25,
+    "falseNotReported": 0,
+    "fabricatedAnswerRate": 0
+  },
+  "failureCategories": {
+    "fact selection/normalization": 2,
+    "fact extraction failure": 1
+  },
+  "rows": [
+    {
+      "caseId": "v3-bigbird",
+      "taskId": "v3-bigbird-task",
+      "predicate": "architecture.attention",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "architecture.attention": "sparse attention"
+      },
+      "actualAnswer": {
+        "architecture.attention": "sliding-window attention"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "SUPPORTED",
+      "answerCorrect": false,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": null,
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "facts": [
+        {
+          "factId": "fact-https://arxiv.org/pdf/2007.14062v1-architecture.attention-sliding-window attention",
+          "predicate": "architecture.attention",
+          "value": "sliding-window attention",
+          "rawValue": "sliding window attention",
+          "sourceId": "https://arxiv.org/pdf/2007.14062v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "√",
+            "page": 3
+          },
+          "rawEvidence": "(a) random attention with r = 2, (b) sliding window attention with w = 3 (c) global attention with g = 2.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "unknown",
+          "extractionMethod": "attention topology",
+          "supportState": "NORMALIZED_EXPLICIT"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2007.14062v1-architecture.attention-sliding-window attention",
+          "sourceId": "https://arxiv.org/pdf/2007.14062v1",
+          "authors": [],
+          "title": "Extracted architecture.attention fact",
+          "identifiers": {},
+          "locator": {
+            "section": "√",
+            "page": 3
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "(a) random attention with r = 2, (b) sliding window attention with w = 3 (c) global attention with g = 2.",
+          "citationText": "https://arxiv.org/pdf/2007.14062v1#√"
+        }
+      ],
+      "failureCategory": "fact selection/normalization",
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 7,
+      "factTruePositive": 0,
+      "goldFactCount": 1,
+      "actualFactCount": 7
+    },
+    {
+      "caseId": "v3-phi2",
+      "taskId": "v3-phi2-task",
+      "predicate": "training.stage",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "training.stage": "continued pretraining"
+      },
+      "actualAnswer": {},
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "UNKNOWN",
+      "answerCorrect": false,
+      "evidenceSourceCorrect": false,
+      "locatorCorrect": true,
+      "supportStatusCorrect": false,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": null,
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "facts": [],
+      "evidence": [],
+      "failureCategory": "fact extraction failure",
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 0,
+      "factTruePositive": 0,
+      "goldFactCount": 1,
+      "actualFactCount": 0
+    },
+    {
+      "caseId": "v3-qwen2",
+      "taskId": "v3-qwen2-task",
+      "predicate": "architecture.attention",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "architecture.attention": "grouped-query attention"
+      },
+      "actualAnswer": {
+        "architecture.attention": "grouped-query attention"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "CONFLICTING",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": false,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": null,
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "facts": [
+        {
+          "factId": "fact-https://arxiv.org/pdf/2407.10671v1-architecture.attention-grouped-query attention",
+          "predicate": "architecture.attention",
+          "value": "grouped-query attention",
+          "rawValue": "Grouped Query Attention",
+          "sourceId": "https://arxiv.org/pdf/2407.10671v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "QWEN2 DENSE MODEL",
+            "page": 4
+          },
+          "rawEvidence": "Key differences from Qwen are described below: Grouped Query Attention We adopt Grouped Query Attention (GQA, Ainslie et al., 2023) instead of conventional multi-head attention (MHA).",
+          "assertionStatus": "citation",
+          "experimentalRole": "ours",
+          "extractionMethod": "attention topology",
+          "supportState": "NORMALIZED_EXPLICIT"
+        },
+        {
+          "factId": "fact-https://arxiv.org/pdf/2407.10671v1-architecture.attention-multi-head attention",
+          "predicate": "architecture.attention",
+          "value": "multi-head attention",
+          "rawValue": "multi-head attention",
+          "sourceId": "https://arxiv.org/pdf/2407.10671v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "QWEN2 DENSE MODEL",
+            "page": 4
+          },
+          "rawEvidence": "Key differences from Qwen are described below: Grouped Query Attention We adopt Grouped Query Attention (GQA, Ainslie et al., 2023) instead of conventional multi-head attention (MHA).",
+          "assertionStatus": "citation",
+          "experimentalRole": "ours",
+          "extractionMethod": "attention topology",
+          "supportState": "NORMALIZED_EXPLICIT"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2407.10671v1-architecture.attention-grouped-query attention",
+          "sourceId": "https://arxiv.org/pdf/2407.10671v1",
+          "authors": [],
+          "title": "Extracted architecture.attention fact",
+          "identifiers": {},
+          "locator": {
+            "section": "QWEN2 DENSE MODEL",
+            "page": 4
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Key differences from Qwen are described below: Grouped Query Attention We adopt Grouped Query Attention (GQA, Ainslie et al., 2023) instead of conventional multi-head attention (MHA).",
+          "citationText": "https://arxiv.org/pdf/2407.10671v1#QWEN2 DENSE MODEL"
+        },
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2407.10671v1-architecture.attention-multi-head attention",
+          "sourceId": "https://arxiv.org/pdf/2407.10671v1",
+          "authors": [],
+          "title": "Extracted architecture.attention fact",
+          "identifiers": {},
+          "locator": {
+            "section": "QWEN2 DENSE MODEL",
+            "page": 4
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Key differences from Qwen are described below: Grouped Query Attention We adopt Grouped Query Attention (GQA, Ainslie et al., 2023) instead of conventional multi-head attention (MHA).",
+          "citationText": "https://arxiv.org/pdf/2407.10671v1#QWEN2 DENSE MODEL"
+        }
+      ],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 12,
+      "factTruePositive": 1,
+      "goldFactCount": 1,
+      "actualFactCount": 12
+    },
+    {
+      "caseId": "v3-mamba2",
+      "taskId": "v3-mamba2-task",
+      "predicate": "architecture.operator",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "architecture.operator": "state-space model"
+      },
+      "actualAnswer": {
+        "architecture.operator": "long convolutions"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "SUPPORTED",
+      "answerCorrect": false,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": null,
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "facts": [
+        {
+          "factId": "fact-https://arxiv.org/pdf/2405.21060v1-architecture.operator-long convolutions",
+          "predicate": "architecture.operator",
+          "value": "long convolutions",
+          "rawValue": "Long Convolution",
+          "sourceId": "https://arxiv.org/pdf/2405.21060v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "[34]",
+            "page": 38
+          },
+          "rawEvidence": "“Simple Hardware-efficient Long Convolutions for Sequence Modeling”.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "hardware",
+          "extractionMethod": "long convolution operator",
+          "supportState": "NORMALIZED_EXPLICIT"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2405.21060v1-architecture.operator-long convolutions",
+          "sourceId": "https://arxiv.org/pdf/2405.21060v1",
+          "authors": [],
+          "title": "Extracted architecture.operator fact",
+          "identifiers": {},
+          "locator": {
+            "section": "[34]",
+            "page": 38
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "“Simple Hardware-efficient Long Convolutions for Sequence Modeling”.",
+          "citationText": "https://arxiv.org/pdf/2405.21060v1#[34]"
+        }
+      ],
+      "failureCategory": "fact selection/normalization",
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 13,
+      "factTruePositive": 0,
+      "goldFactCount": 1,
+      "actualFactCount": 13
+    }
+  ]
+}

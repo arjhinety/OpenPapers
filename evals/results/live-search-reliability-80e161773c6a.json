@@ -1,0 +1,726 @@
+{
+  "schemaVersion": "openpapers.live-search-reliability.v1",
+  "kind": "live-provider",
+  "commit": "80e161773c6a6c6ac5a7b8fde37faedf5c9c6e7a",
+  "timestamp": "2026-09-08T07:23:39.168Z",
+  "workingTreeDirty": true,
+  "configuration": {
+    "providerMode": "live",
+    "liveProviders": [
+      "arxiv",
+      "crossref",
+      "openalex",
+      "semantic_scholar"
+    ],
+    "limit": 10,
+    "throttleMs": 1100,
+    "networkRegion": "single-region residential network"
+  },
+  "dataset": {
+    "version": "live-search-v1",
+    "cases": 30,
+    "matchRule": "a returned work matches the gold target when its normalized arXiv id or normalized DOI equals the gold identifier"
+  },
+  "thresholds": {
+    "titleExactRecallAt10": 0.9,
+    "identityCorrectRate": 0.95,
+    "zeroResultWithNoFailureReportedRate": 0
+  },
+  "thresholdsMet": {
+    "titleExactRecallAt10": true,
+    "identityCorrectRate": true,
+    "zeroResultWithNoFailureReportedRate": true
+  },
+  "aggregate": {
+    "cases": 30,
+    "liveRecallAt10": 0.6,
+    "titleExactRecallAt10": 1,
+    "titleFuzzyRecallAt10": 0.3333333333333333,
+    "identifierResolutionRate": 0,
+    "identityCorrectRate": 1,
+    "zeroResultWithNoFailureReportedRate": 0,
+    "casesWithProviderFailures": 30,
+    "totalProviderFailures": 46,
+    "medianLatencyMs": 2063,
+    "maxLatencyMs": 5901
+  },
+  "cases": [
+    {
+      "caseId": "le-001",
+      "mode": "title-exact",
+      "query": "Attention Is All You Need",
+      "goldWork": "attention",
+      "returned": 10,
+      "candidates": 27,
+      "goldRank": 1,
+      "foundInTop10": true,
+      "identityCorrect": true,
+      "providerFailures": [
+        "arxiv: Error: arXiv request failed: 429"
+      ],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 5901,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "le-002",
+      "mode": "title-exact",
+      "query": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+      "goldWork": "bert",
+      "returned": 10,
+      "candidates": 28,
+      "goldRank": 1,
+      "foundInTop10": true,
+      "identityCorrect": true,
+      "providerFailures": [
+        "arxiv: Error: arXiv request failed: 429"
+      ],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 2860,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "le-003",
+      "mode": "title-exact",
+      "query": "Language Models are Few-Shot Learners",
+      "goldWork": "gpt3",
+      "returned": 10,
+      "candidates": 26,
+      "goldRank": 1,
+      "foundInTop10": true,
+      "identityCorrect": true,
+      "providerFailures": [
+        "arxiv: Error: arXiv request failed: 429"
+      ],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 2491,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "le-004",
+      "mode": "title-exact",
+      "query": "LLaMA: Open and Efficient Foundation Language Models",
+      "goldWork": "llama",
+      "returned": 10,
+      "candidates": 28,
+      "goldRank": 1,
+      "foundInTop10": true,
+      "identityCorrect": true,
+      "providerFailures": [
+        "arxiv: Error: arXiv request failed: 429"
+      ],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 2138,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "le-005",
+      "mode": "title-exact",
+      "query": "LoRA: Low-Rank Adaptation of Large Language Models",
+      "goldWork": "lora",
+      "returned": 10,
+      "candidates": 29,
+      "goldRank": 1,
+      "foundInTop10": true,
+      "identityCorrect": true,
+      "providerFailures": [
+        "arxiv: Error: arXiv request failed: 429"
+      ],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 1685,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "le-006",
+      "mode": "title-exact",
+      "query": "QLoRA: Efficient Finetuning of Quantized LLMs",
+      "goldWork": "qlora",
+      "returned": 10,
+      "candidates": 27,
+      "goldRank": 1,
+      "foundInTop10": true,
+      "identityCorrect": true,
+      "providerFailures": [
+        "arxiv: Error: arXiv request failed: 429"
+      ],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 2253,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "le-007",
+      "mode": "title-exact",
+      "query": "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness",
+      "goldWork": "flashattention",
+      "returned": 10,
+      "candidates": 19,
+      "goldRank": 1,
+      "foundInTop10": true,
+      "identityCorrect": true,
+      "providerFailures": [
+        "arxiv: Error: arXiv request failed: 429"
+      ],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 1448,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "le-008",
+      "mode": "title-exact",
+      "query": "Direct Preference Optimization: Your Language Model is Secretly a Reward Model",
+      "goldWork": "dpo",
+      "returned": 10,
+      "candidates": 27,
+      "goldRank": 1,
+      "foundInTop10": true,
+      "identityCorrect": true,
+      "providerFailures": [
+        "arxiv: Error: arXiv request failed: 429"
+      ],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 1466,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "le-009",
+      "mode": "title-exact",
+      "query": "ORPO: Monolithic Preference Optimization without Reference Model",
+      "goldWork": "orpo",
+      "returned": 10,
+      "candidates": 27,
+      "goldRank": 1,
+      "foundInTop10": true,
+      "identityCorrect": true,
+      "providerFailures": [
+        "arxiv: Error: arXiv request failed: 429"
+      ],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 2482,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "le-010",
+      "mode": "title-exact",
+      "query": "Toolformer: Language Models Can Teach Themselves to Use Tools",
+      "goldWork": "toolformer",
+      "returned": 10,
+      "candidates": 19,
+      "goldRank": 1,
+      "foundInTop10": true,
+      "identityCorrect": true,
+      "providerFailures": [
+        "arxiv: Error: arXiv request failed: 429",
+        "crossref: Error: invalid Crossref response: item title is missing"
+      ],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 1806,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "le-011",
+      "mode": "title-exact",
+      "query": "Medusa: Simple LLM Inference Acceleration Framework with Multiple Decoding Heads",
+      "goldWork": "medusa",
+      "returned": 10,
+      "candidates": 20,
+      "goldRank": 1,
+      "foundInTop10": true,
+      "identityCorrect": true,
+      "providerFailures": [
+        "arxiv: Error: arXiv request failed: 429"
+      ],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 3803,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "le-012",
+      "mode": "title-exact",
+      "query": "EAGLE: Speculative Sampling Requires Rethinking Feature Uncertainty",
+      "goldWork": "eagle",
+      "returned": 10,
+      "candidates": 24,
+      "goldRank": 1,
+      "foundInTop10": true,
+      "identityCorrect": true,
+      "providerFailures": [
+        "arxiv: Error: arXiv request failed: 429"
+      ],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 1826,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "le-013",
+      "mode": "title-exact",
+      "query": "DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter",
+      "goldWork": "distilbert",
+      "returned": 10,
+      "candidates": 22,
+      "goldRank": 1,
+      "foundInTop10": true,
+      "identityCorrect": true,
+      "providerFailures": [
+        "arxiv: Error: arXiv request failed: 429"
+      ],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 1882,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "le-014",
+      "mode": "title-exact",
+      "query": "Mistral 7B",
+      "goldWork": "mistral",
+      "returned": 10,
+      "candidates": 21,
+      "goldRank": 1,
+      "foundInTop10": true,
+      "identityCorrect": true,
+      "providerFailures": [
+        "arxiv: Error: arXiv request failed: 429"
+      ],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 2260,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "le-015",
+      "mode": "title-exact",
+      "query": "Mixtral of Experts",
+      "goldWork": "mixtral",
+      "returned": 10,
+      "candidates": 27,
+      "goldRank": 1,
+      "foundInTop10": true,
+      "identityCorrect": true,
+      "providerFailures": [
+        "arxiv: Error: arXiv request failed: 429"
+      ],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 1827,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "le-016",
+      "mode": "title-exact",
+      "query": "Gemma: Open Models Based on Gemini Research and Technology",
+      "goldWork": "gemma",
+      "returned": 10,
+      "candidates": 20,
+      "goldRank": 1,
+      "foundInTop10": true,
+      "identityCorrect": true,
+      "providerFailures": [
+        "arxiv: Error: arXiv request failed: 429",
+        "semantic_scholar: Error: HTTP 429: Semantic Scholar rate limit reached"
+      ],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 2673,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "lf-001",
+      "mode": "title-fuzzy",
+      "query": "the transformer architecture for sequence transduction based entirely on attention",
+      "goldWork": "attention",
+      "returned": 10,
+      "candidates": 20,
+      "goldRank": 0,
+      "foundInTop10": false,
+      "identityCorrect": false,
+      "providerFailures": [
+        "arxiv: Error: arXiv request failed: 429",
+        "semantic_scholar: Error: invalid Semantic Scholar response: expected data array"
+      ],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 1807,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "lf-002",
+      "mode": "title-fuzzy",
+      "query": "pretraining deep bidirectional transformers for language understanding",
+      "goldWork": "bert",
+      "returned": 10,
+      "candidates": 29,
+      "goldRank": 0,
+      "foundInTop10": false,
+      "identityCorrect": false,
+      "providerFailures": [
+        "arxiv: Error: arXiv request failed: 429"
+      ],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 2468,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "lf-003",
+      "mode": "title-fuzzy",
+      "query": "language models that learn from a few examples in the prompt",
+      "goldWork": "gpt3",
+      "returned": 10,
+      "candidates": 25,
+      "goldRank": 0,
+      "foundInTop10": false,
+      "identityCorrect": false,
+      "providerFailures": [
+        "arxiv: Error: arXiv request failed: 429"
+      ],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 4475,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "lf-004",
+      "mode": "title-fuzzy",
+      "query": "memory efficient exact attention kernels aware of input output access patterns",
+      "goldWork": "flashattention",
+      "returned": 10,
+      "candidates": 29,
+      "goldRank": 3,
+      "foundInTop10": true,
+      "identityCorrect": true,
+      "providerFailures": [
+        "arxiv: Error: arXiv request failed: 429"
+      ],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 1467,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "lf-005",
+      "mode": "title-fuzzy",
+      "query": "training language models to follow instructions using human feedback data",
+      "goldWork": "instructgpt",
+      "returned": 10,
+      "candidates": 28,
+      "goldRank": 2,
+      "foundInTop10": true,
+      "identityCorrect": true,
+      "providerFailures": [
+        "arxiv: Error: arXiv request failed: 429"
+      ],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 1988,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "lf-006",
+      "mode": "title-fuzzy",
+      "query": "a family of lightweight open weight models released by Google",
+      "goldWork": "gemma",
+      "returned": 10,
+      "candidates": 20,
+      "goldRank": 0,
+      "foundInTop10": false,
+      "identityCorrect": false,
+      "providerFailures": [
+        "arxiv: Error: arXiv request failed: 429",
+        "semantic_scholar: Error: HTTP 429: Semantic Scholar rate limit reached"
+      ],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 2840,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "li-001",
+      "mode": "identifier",
+      "query": "arXiv:2106.09685",
+      "goldWork": "lora",
+      "returned": 10,
+      "candidates": 20,
+      "goldRank": 0,
+      "foundInTop10": false,
+      "identityCorrect": false,
+      "providerFailures": [
+        "arxiv: Error: arXiv request failed: 429",
+        "semantic_scholar: Error: HTTP 429: Semantic Scholar rate limit reached",
+        "arxiv_id_probe: Error: arXiv request failed: 429"
+      ],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 2821,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "li-002",
+      "mode": "identifier",
+      "query": "2305.14314",
+      "goldWork": "qlora",
+      "returned": 10,
+      "candidates": 20,
+      "goldRank": 0,
+      "foundInTop10": false,
+      "identityCorrect": false,
+      "providerFailures": [
+        "arxiv: Error: arXiv request failed: 429",
+        "semantic_scholar: Error: HTTP 429: Semantic Scholar rate limit reached",
+        "arxiv_id_probe: Error: arXiv request failed: 429"
+      ],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 2835,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "li-003",
+      "mode": "identifier",
+      "query": "https://arxiv.org/abs/1706.03762",
+      "goldWork": "attention",
+      "returned": 10,
+      "candidates": 29,
+      "goldRank": 0,
+      "foundInTop10": false,
+      "identityCorrect": false,
+      "providerFailures": [
+        "arxiv: Error: arXiv request failed: 429",
+        "arxiv_id_probe: Error: arXiv request failed: 429"
+      ],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 1763,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "li-004",
+      "mode": "identifier",
+      "query": "10.48550/arXiv.2305.18290",
+      "goldWork": "dpo",
+      "returned": 10,
+      "candidates": 30,
+      "goldRank": 0,
+      "foundInTop10": false,
+      "identityCorrect": false,
+      "providerFailures": [
+        "arxiv: Error: arXiv request failed: 429",
+        "arxiv_id_probe: Error: arXiv request failed: 429"
+      ],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 1752,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "li-005",
+      "mode": "identifier",
+      "query": "doi:10.48550/arXiv.2302.04761",
+      "goldWork": "toolformer",
+      "returned": 10,
+      "candidates": 30,
+      "goldRank": 0,
+      "foundInTop10": false,
+      "identityCorrect": false,
+      "providerFailures": [
+        "arxiv: Error: arXiv request failed: 429",
+        "arxiv_id_probe: Error: arXiv request failed: 429"
+      ],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 1914,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "li-006",
+      "mode": "identifier",
+      "query": "2401.10774",
+      "goldWork": "medusa",
+      "returned": 10,
+      "candidates": 20,
+      "goldRank": 0,
+      "foundInTop10": false,
+      "identityCorrect": false,
+      "providerFailures": [
+        "arxiv: Error: arXiv request failed: 429",
+        "semantic_scholar: Error: invalid Semantic Scholar response: expected data array",
+        "arxiv_id_probe: Error: arXiv request failed: 429"
+      ],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 1732,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "li-007",
+      "mode": "identifier",
+      "query": "https://doi.org/10.48550/arXiv.2401.15077",
+      "goldWork": "eagle",
+      "returned": 10,
+      "candidates": 30,
+      "goldRank": 0,
+      "foundInTop10": false,
+      "identityCorrect": false,
+      "providerFailures": [
+        "arxiv: Error: arXiv request failed: 429",
+        "arxiv_id_probe: Error: arXiv request failed: 429"
+      ],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 1860,
+      "zeroResultSuspicion": false
+    },
+    {
+      "caseId": "li-008",
+      "mode": "identifier",
+      "query": "2210.11416",
+      "goldWork": "flan",
+      "returned": 10,
+      "candidates": 20,
+      "goldRank": 0,
+      "foundInTop10": false,
+      "identityCorrect": false,
+      "providerFailures": [
+        "arxiv: Error: arXiv request failed: 429",
+        "semantic_scholar: Error: invalid Semantic Scholar response: expected data array",
+        "arxiv_id_probe: Error: arXiv request failed: 429"
+      ],
+      "sourcesSearched": [
+        "arxiv",
+        "crossref",
+        "openalex",
+        "semantic_scholar"
+      ],
+      "latencyMs": 2928,
+      "zeroResultSuspicion": false
+    }
+  ],
+  "limitations": "Measured from one network region with anonymous provider access on one timestamp. Ranking metrics describe the top-10 of this run, not a guarantee; see docs/limitations.md."
+}

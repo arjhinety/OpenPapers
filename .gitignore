@@ -10,5 +10,5 @@ data/
 .hermes/
 .cache/real-source/
 coverage/
-evals/results/*.json
+evals/results/scratch/
 .zcode/

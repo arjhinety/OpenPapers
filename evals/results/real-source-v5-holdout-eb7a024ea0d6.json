@@ -1,0 +1,2731 @@
+{
+  "schemaVersion": "openpapers.real-source-v3-evaluation.v1",
+  "commit": "eb7a024ea0d6e51eb5d5f896268ad2b0a5d98bba",
+  "dataset": "research-real-v5",
+  "split": "holdout",
+  "holdoutUsedForTuning": false,
+  "configuration": {
+    "extraction": "query-independent-facts",
+    "intent": "separate-query-intent",
+    "parser": "pymupdf-real-pdf"
+  },
+  "taskCount": 40,
+  "substantiveTaskCount": 28,
+  "factMetrics": {
+    "precision": 0.6199376947040498,
+    "recall": 0.9707317073170731,
+    "valueAccuracy": 0.9707317073170731,
+    "locatorAccuracy": 1
+  },
+  "queryMetrics": {
+    "predicateAccuracy": 1
+  },
+  "answerMetrics": {
+    "answerCorrectness": 1,
+    "evidenceSourceAccuracy": 1,
+    "locatorAccuracy": 1,
+    "supportStatusAccuracy": 0.975,
+    "falseUnknown": 0,
+    "falseNotReported": 0,
+    "fabricatedAnswerRate": 0
+  },
+  "failureCategories": {},
+  "rows": [
+    {
+      "caseId": "v5-distilbert",
+      "taskId": "v5-distilbert-task-1",
+      "predicate": "training.stage",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "training.stage": "pretraining"
+      },
+      "actualAnswer": {
+        "training.stage": "pretraining"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "SUPPORTED",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": "1910.01108",
+        "failures": []
+      },
+      "facts": [
+        {
+          "factId": "fact-https://arxiv.org/pdf/1910.01108v4-training.stage-fine-tuning",
+          "predicate": "training.stage",
+          "value": "fine-tuning",
+          "rawValue": "fine-tuned",
+          "sourceId": "https://arxiv.org/pdf/1910.01108v4",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "Introduction",
+            "page": 1
+          },
+          "rawEvidence": "Our general-purpose pre-trained models can be fine-tuned with good performances on several downstream tasks, keeping the flexibility of larger models.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "ours",
+          "extractionMethod": "training stage",
+          "supportState": "NORMALIZED_EXPLICIT"
+        },
+        {
+          "factId": "fact-https://arxiv.org/pdf/1910.01108v4-training.stage-pretraining",
+          "predicate": "training.stage",
+          "value": "pretraining",
+          "rawValue": "pre-training",
+          "sourceId": "https://arxiv.org/pdf/1910.01108v4",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "-3.69",
+            "page": 4
+          },
+          "rawEvidence": "In this setting, there are thus two successive steps of distillation, one during the pre-training phase and one during the adaptation phase.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "unknown",
+          "extractionMethod": "training stage",
+          "supportState": "NORMALIZED_EXPLICIT"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/1910.01108v4-training.stage-fine-tuning",
+          "sourceId": "https://arxiv.org/pdf/1910.01108v4",
+          "authors": [],
+          "title": "Extracted training.stage fact",
+          "identifiers": {},
+          "locator": {
+            "section": "Introduction",
+            "page": 1
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Our general-purpose pre-trained models can be fine-tuned with good performances on several downstream tasks, keeping the flexibility of larger models.",
+          "citationText": "https://arxiv.org/pdf/1910.01108v4#Introduction"
+        },
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/1910.01108v4-training.stage-pretraining",
+          "sourceId": "https://arxiv.org/pdf/1910.01108v4",
+          "authors": [],
+          "title": "Extracted training.stage fact",
+          "identifiers": {},
+          "locator": {
+            "section": "-3.69",
+            "page": 4
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "In this setting, there are thus two successive steps of distillation, one during the pre-training phase and one during the adaptation phase.",
+          "citationText": "https://arxiv.org/pdf/1910.01108v4#-3.69"
+        }
+      ],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 4,
+      "factTruePositive": 4,
+      "goldFactCount": 4,
+      "actualFactCount": 4
+    },
+    {
+      "caseId": "v5-distilbert",
+      "taskId": "v5-distilbert-task-2",
+      "predicate": "optimization.optimizer",
+      "predicateCorrect": true,
+      "expectedAnswer": {},
+      "actualAnswer": {},
+      "expectedStatus": "UNKNOWN",
+      "actualStatus": "UNKNOWN",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": false,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": "1910.01108",
+        "failures": []
+      },
+      "facts": [],
+      "evidence": [],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 4,
+      "factTruePositive": 4,
+      "goldFactCount": 4,
+      "actualFactCount": 4
+    },
+    {
+      "caseId": "v5-roberta",
+      "taskId": "v5-roberta-task-1",
+      "predicate": "system.parallelism",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "system.parallelism": "data parallelism"
+      },
+      "actualAnswer": {
+        "system.parallelism": "data parallelism"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "SUPPORTED",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": "1907.11692",
+        "failures": []
+      },
+      "facts": [
+        {
+          "factId": "fact-https://arxiv.org/pdf/1907.11692v1-system.parallelism-data parallelism",
+          "predicate": "system.parallelism",
+          "value": "data parallelism",
+          "rawValue": "data parallel",
+          "sourceId": "https://arxiv.org/pdf/1907.11692v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "Table 3: Perplexity on held-out training data (ppl) and",
+            "page": 6
+          },
+          "rawEvidence": "Large batches are also easier to parallelize via distributed data parallel training,8 and in later experiments we train with batches of 8K sequences.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "ours",
+          "extractionMethod": "data parallelism",
+          "supportState": "NORMALIZED_EXPLICIT"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/1907.11692v1-system.parallelism-data parallelism",
+          "sourceId": "https://arxiv.org/pdf/1907.11692v1",
+          "authors": [],
+          "title": "Extracted system.parallelism fact",
+          "identifiers": {},
+          "locator": {
+            "section": "Table 3: Perplexity on held-out training data (ppl) and",
+            "page": 6
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Large batches are also easier to parallelize via distributed data parallel training,8 and in later experiments we train with batches of 8K sequences.",
+          "citationText": "https://arxiv.org/pdf/1907.11692v1#Table 3: Perplexity on held-out training data (ppl) and"
+        }
+      ],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 6,
+      "factTruePositive": 4,
+      "goldFactCount": 4,
+      "actualFactCount": 6
+    },
+    {
+      "caseId": "v5-roberta",
+      "taskId": "v5-roberta-task-2",
+      "predicate": "optimization.optimizer",
+      "predicateCorrect": true,
+      "expectedAnswer": {},
+      "actualAnswer": {},
+      "expectedStatus": "UNKNOWN",
+      "actualStatus": "UNKNOWN",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": false,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": "1907.11692",
+        "failures": []
+      },
+      "facts": [],
+      "evidence": [],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 6,
+      "factTruePositive": 4,
+      "goldFactCount": 4,
+      "actualFactCount": 6
+    },
+    {
+      "caseId": "v5-clip",
+      "taskId": "v5-clip-task-1",
+      "predicate": "model.formulation",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "model.formulation": "multimodal model"
+      },
+      "actualAnswer": {
+        "model.formulation": "multimodal model"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "SUPPORTED",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": "2103.00020",
+        "failures": []
+      },
+      "facts": [
+        {
+          "factId": "fact-https://arxiv.org/pdf/2103.00020v1-model.formulation-multimodal model",
+          "predicate": "model.formulation",
+          "value": "multimodal model",
+          "rawValue": "multimodal",
+          "sourceId": "https://arxiv.org/pdf/2103.00020v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "(2020).",
+            "page": 4
+          },
+          "rawEvidence": "The attention pooling is implemented as a sin-gle layer of “transformer-style” multi-head QKV attention where the query is conditioned on the global average-pooled Learning Transferable Visual Models From Natural Language Supervision 5 # image_encoder - ResNet or Vision Transformer # text_encoder - CBOW or Text Transformer # I[n, h, w, c] - minibatch of aligned images # T[n, l] - minibatch of aligned texts # W_i[d_i, d_e] - learned proj of image to embed # W_t[d_t, d_e] - learned proj of text to embed # t - learned temperature parameter # extract feature representations of each modality I_f = image_encoder(I) #[n, d_i] T_f = text_encoder(T) #[n, d_t] # joint multimodal embedding [n, d_e] I_e = l2_normalize(np.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "unknown",
+          "extractionMethod": "multimodal capability",
+          "supportState": "NORMALIZED_EXPLICIT"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2103.00020v1-model.formulation-multimodal model",
+          "sourceId": "https://arxiv.org/pdf/2103.00020v1",
+          "authors": [],
+          "title": "Extracted model.formulation fact",
+          "identifiers": {},
+          "locator": {
+            "section": "(2020).",
+            "page": 4
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "The attention pooling is implemented as a sin-gle layer of “transformer-style” multi-head QKV attention where the query is conditioned on the global average-pooled Learning Transferable Visual Models From Natural Language Supervision 5 # image_encoder - ResNet or Vision Transformer # text_encoder - CBOW or Text Transformer # I[n, h, w, c] - minibatch of aligned images # T[n, l] - minibatch of aligned texts # W_i[d_i, d_e] - learned proj of image to embed # W_t[d_t, d_e] - learned proj of text to embed # t - learned temperature parameter # extract feature representations of each modality I_f = image_encoder(I) #[n, d_i] T_f = text_encoder(T) #[n, d_t] # joint multimodal embedding [n, d_e] I_e = l2_normalize(np.",
+          "citationText": "https://arxiv.org/pdf/2103.00020v1#(2020)."
+        }
+      ],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 9,
+      "factTruePositive": 6,
+      "goldFactCount": 6,
+      "actualFactCount": 9
+    },
+    {
+      "caseId": "v5-clip",
+      "taskId": "v5-clip-task-2",
+      "predicate": "optimization.optimizer",
+      "predicateCorrect": true,
+      "expectedAnswer": {},
+      "actualAnswer": {},
+      "expectedStatus": "UNKNOWN",
+      "actualStatus": "UNKNOWN",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": false,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": "2103.00020",
+        "failures": []
+      },
+      "facts": [],
+      "evidence": [],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 9,
+      "factTruePositive": 6,
+      "goldFactCount": 6,
+      "actualFactCount": 9
+    },
+    {
+      "caseId": "v5-mqa",
+      "taskId": "v5-mqa-task-1",
+      "predicate": "architecture.attention",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "architecture.attention": "multi-query attention"
+      },
+      "actualAnswer": {
+        "architecture.attention": "multi-query attention"
+      },
+      "expectedStatus": "CONFLICTING",
+      "actualStatus": "CONFLICTING",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": "1911.02150",
+        "failures": []
+      },
+      "facts": [
+        {
+          "factId": "fact-https://arxiv.org/pdf/1911.02150v1-architecture.attention-multi-query attention",
+          "predicate": "architecture.attention",
+          "value": "multi-query attention",
+          "rawValue": "multi-query attention",
+          "sourceId": "https://arxiv.org/pdf/1911.02150v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "Introduction",
+            "page": 1
+          },
+          "rawEvidence": "In the following sections, we will review the multi-head-attention layers used by Transformer, provide a performance analysis, and propose an architectural variation (multi-query attention) which greatly improves inference speed with only minor quality degradation.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "ours",
+          "extractionMethod": "attention topology",
+          "supportState": "NORMALIZED_EXPLICIT"
+        },
+        {
+          "factId": "fact-https://arxiv.org/pdf/1911.02150v1-architecture.attention-multi-head attention",
+          "predicate": "architecture.attention",
+          "value": "multi-head attention",
+          "rawValue": "Multi-head Attention",
+          "sourceId": "https://arxiv.org/pdf/1911.02150v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "Multi-head Attention",
+            "page": 2
+          },
+          "rawEvidence": "The The computation can be expressed as follows: def MultiheadAttention ( x , M, P_q, P_k, P_v, P_o) : \" \" \" Multi-head Attention on one query .",
+          "assertionStatus": "asserted",
+          "experimentalRole": "unknown",
+          "extractionMethod": "attention topology",
+          "supportState": "NORMALIZED_EXPLICIT"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/1911.02150v1-architecture.attention-multi-query attention",
+          "sourceId": "https://arxiv.org/pdf/1911.02150v1",
+          "authors": [],
+          "title": "Extracted architecture.attention fact",
+          "identifiers": {},
+          "locator": {
+            "section": "Introduction",
+            "page": 1
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "In the following sections, we will review the multi-head-attention layers used by Transformer, provide a performance analysis, and propose an architectural variation (multi-query attention) which greatly improves inference speed with only minor quality degradation.",
+          "citationText": "https://arxiv.org/pdf/1911.02150v1#Introduction"
+        },
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/1911.02150v1-architecture.attention-multi-head attention",
+          "sourceId": "https://arxiv.org/pdf/1911.02150v1",
+          "authors": [],
+          "title": "Extracted architecture.attention fact",
+          "identifiers": {},
+          "locator": {
+            "section": "Multi-head Attention",
+            "page": 2
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "The The computation can be expressed as follows: def MultiheadAttention ( x , M, P_q, P_k, P_v, P_o) : \" \" \" Multi-head Attention on one query .",
+          "citationText": "https://arxiv.org/pdf/1911.02150v1#Multi-head Attention"
+        }
+      ],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 2,
+      "factTruePositive": 2,
+      "goldFactCount": 2,
+      "actualFactCount": 2
+    },
+    {
+      "caseId": "v5-gemma2",
+      "taskId": "v5-gemma2-task-1",
+      "predicate": "architecture.attention",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "architecture.attention": "grouped-query attention"
+      },
+      "actualAnswer": {
+        "architecture.attention": "grouped-query attention"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "SUPPORTED",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": "2408.00118",
+        "failures": []
+      },
+      "facts": [
+        {
+          "factId": "fact-https://arxiv.org/pdf/2408.00118v3-architecture.attention-grouped-query attention",
+          "predicate": "architecture.attention",
+          "value": "grouped-query attention",
+          "rawValue": "group-query attention",
+          "sourceId": "https://arxiv.org/pdf/2408.00118v3",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "2024-06-27",
+            "page": 1
+          },
+          "rawEvidence": "In this new version, we apply several known technical modifications to the Transformer architecture, such as interleaving local-global attentions (Beltagy et al., 2020a) and group-query attention (Ainslie et al., 2023).",
+          "assertionStatus": "citation",
+          "experimentalRole": "ours",
+          "extractionMethod": "attention topology",
+          "supportState": "NORMALIZED_EXPLICIT"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2408.00118v3-architecture.attention-grouped-query attention",
+          "sourceId": "https://arxiv.org/pdf/2408.00118v3",
+          "authors": [],
+          "title": "Extracted architecture.attention fact",
+          "identifiers": {},
+          "locator": {
+            "section": "2024-06-27",
+            "page": 1
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "In this new version, we apply several known technical modifications to the Transformer architecture, such as interleaving local-global attentions (Beltagy et al., 2020a) and group-query attention (Ainslie et al., 2023).",
+          "citationText": "https://arxiv.org/pdf/2408.00118v3#2024-06-27"
+        }
+      ],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 12,
+      "factTruePositive": 6,
+      "goldFactCount": 7,
+      "actualFactCount": 12
+    },
+    {
+      "caseId": "v5-gemma2",
+      "taskId": "v5-gemma2-task-2",
+      "predicate": "optimization.optimizer",
+      "predicateCorrect": true,
+      "expectedAnswer": {},
+      "actualAnswer": {},
+      "expectedStatus": "UNKNOWN",
+      "actualStatus": "UNKNOWN",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": false,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": "2408.00118",
+        "failures": []
+      },
+      "facts": [],
+      "evidence": [],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 12,
+      "factTruePositive": 6,
+      "goldFactCount": 7,
+      "actualFactCount": 12
+    },
+    {
+      "caseId": "v5-deepseekmoe",
+      "taskId": "v5-deepseekmoe-task-1",
+      "predicate": "architecture.moe",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "architecture.moe": "mixture of experts"
+      },
+      "actualAnswer": {
+        "architecture.moe": "mixture of experts"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "SUPPORTED",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": "2401.06066",
+        "failures": []
+      },
+      "facts": [
+        {
+          "factId": "fact-https://arxiv.org/pdf/2401.06066v1-architecture.moe-mixture of experts",
+          "predicate": "architecture.moe",
+          "value": "mixture of experts",
+          "rawValue": "Mixture-of-Experts",
+          "sourceId": "https://arxiv.org/pdf/2401.06066v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "BLOOM 3B",
+            "page": 2
+          },
+          "rawEvidence": "Preliminaries: Mixture-of-Experts for Transformers We first introduce a generic MoE architecture commonly used in Transformer language mod-els.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "ours",
+          "extractionMethod": "mixture of experts",
+          "supportState": "NORMALIZED_EXPLICIT"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2401.06066v1-architecture.moe-mixture of experts",
+          "sourceId": "https://arxiv.org/pdf/2401.06066v1",
+          "authors": [],
+          "title": "Extracted architecture.moe fact",
+          "identifiers": {},
+          "locator": {
+            "section": "BLOOM 3B",
+            "page": 2
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Preliminaries: Mixture-of-Experts for Transformers We first introduce a generic MoE architecture commonly used in Transformer language mod-els.",
+          "citationText": "https://arxiv.org/pdf/2401.06066v1#BLOOM 3B"
+        }
+      ],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 12,
+      "factTruePositive": 8,
+      "goldFactCount": 8,
+      "actualFactCount": 12
+    },
+    {
+      "caseId": "v5-deepseekmoe",
+      "taskId": "v5-deepseekmoe-task-2",
+      "predicate": "optimization.optimizer",
+      "predicateCorrect": true,
+      "expectedAnswer": {},
+      "actualAnswer": {},
+      "expectedStatus": "UNKNOWN",
+      "actualStatus": "UNKNOWN",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": false,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": "2401.06066",
+        "failures": []
+      },
+      "facts": [],
+      "evidence": [],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 12,
+      "factTruePositive": 8,
+      "goldFactCount": 8,
+      "actualFactCount": 12
+    },
+    {
+      "caseId": "v5-retnet",
+      "taskId": "v5-retnet-task-1",
+      "predicate": "architecture.attention",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "architecture.attention": "FlashAttention"
+      },
+      "actualAnswer": {
+        "architecture.attention": "FlashAttention"
+      },
+      "expectedStatus": "CONFLICTING",
+      "actualStatus": "CONFLICTING",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": "2307.08621",
+        "failures": []
+      },
+      "facts": [
+        {
+          "factId": "fact-https://arxiv.org/pdf/2307.08621v4-architecture.attention-FlashAttention",
+          "predicate": "architecture.attention",
+          "value": "FlashAttention",
+          "rawValue": "FlashAttention",
+          "sourceId": "https://arxiv.org/pdf/2307.08621v4",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "Introduction",
+            "page": 2
+          },
+          "rawEvidence": "During training, RetNet also achieves 25-50% memory saving and 7× acceleration than standard Transformer and an advantage towards highly-optimized FlashAttention [DFE+22].",
+          "assertionStatus": "asserted",
+          "experimentalRole": "unknown",
+          "extractionMethod": "attention implementation",
+          "supportState": "NORMALIZED_EXPLICIT"
+        },
+        {
+          "factId": "fact-https://arxiv.org/pdf/2307.08621v4-architecture.attention-multi-head attention",
+          "predicate": "architecture.attention",
+          "value": "multi-head attention",
+          "rawValue": "multi-head attention",
+          "sourceId": "https://arxiv.org/pdf/2307.08621v4",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "Introduction",
+            "page": 2
+          },
+          "rawEvidence": "Specifically, we introduce a multi-scale retention mechanism to substitute multi-head attention, which has three computation paradigms, i.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "ours",
+          "extractionMethod": "attention topology",
+          "supportState": "NORMALIZED_EXPLICIT"
+        },
+        {
+          "factId": "fact-https://arxiv.org/pdf/2307.08621v4-architecture.attention-linear attention",
+          "predicate": "architecture.attention",
+          "value": "linear attention",
+          "rawValue": "Linear Attention",
+          "sourceId": "https://arxiv.org/pdf/2307.08621v4",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "S4",
+            "page": 6
+          },
+          "rawEvidence": "Linear Attention The variants typically use various kernels φ(qi)φ(kj)/P|x| n=1 φ(qi)φ(kn) to replace the softmax function.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "unknown",
+          "extractionMethod": "linear attention",
+          "supportState": "NORMALIZED_EXPLICIT"
+        },
+        {
+          "factId": "fact-https://arxiv.org/pdf/2307.08621v4-architecture.attention-exact",
+          "predicate": "architecture.attention",
+          "value": "exact",
+          "rawValue": "exact attention",
+          "sourceId": "https://arxiv.org/pdf/2307.08621v4",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "Conclusion",
+            "page": 11
+          },
+          "rawEvidence": "Flashattention: Fast and memory-efficient exact attention with io-awareness.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "unknown",
+          "extractionMethod": "attention property",
+          "supportState": "NORMALIZED_EXPLICIT"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2307.08621v4-architecture.attention-FlashAttention",
+          "sourceId": "https://arxiv.org/pdf/2307.08621v4",
+          "authors": [],
+          "title": "Extracted architecture.attention fact",
+          "identifiers": {},
+          "locator": {
+            "section": "Introduction",
+            "page": 2
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "During training, RetNet also achieves 25-50% memory saving and 7× acceleration than standard Transformer and an advantage towards highly-optimized FlashAttention [DFE+22].",
+          "citationText": "https://arxiv.org/pdf/2307.08621v4#Introduction"
+        },
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2307.08621v4-architecture.attention-multi-head attention",
+          "sourceId": "https://arxiv.org/pdf/2307.08621v4",
+          "authors": [],
+          "title": "Extracted architecture.attention fact",
+          "identifiers": {},
+          "locator": {
+            "section": "Introduction",
+            "page": 2
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Specifically, we introduce a multi-scale retention mechanism to substitute multi-head attention, which has three computation paradigms, i.",
+          "citationText": "https://arxiv.org/pdf/2307.08621v4#Introduction"
+        },
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2307.08621v4-architecture.attention-linear attention",
+          "sourceId": "https://arxiv.org/pdf/2307.08621v4",
+          "authors": [],
+          "title": "Extracted architecture.attention fact",
+          "identifiers": {},
+          "locator": {
+            "section": "S4",
+            "page": 6
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Linear Attention The variants typically use various kernels φ(qi)φ(kj)/P|x| n=1 φ(qi)φ(kn) to replace the softmax function.",
+          "citationText": "https://arxiv.org/pdf/2307.08621v4#S4"
+        },
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2307.08621v4-architecture.attention-exact",
+          "sourceId": "https://arxiv.org/pdf/2307.08621v4",
+          "authors": [],
+          "title": "Extracted architecture.attention fact",
+          "identifiers": {},
+          "locator": {
+            "section": "Conclusion",
+            "page": 11
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Flashattention: Fast and memory-efficient exact attention with io-awareness.",
+          "citationText": "https://arxiv.org/pdf/2307.08621v4#Conclusion"
+        }
+      ],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 8,
+      "factTruePositive": 2,
+      "goldFactCount": 2,
+      "actualFactCount": 8
+    },
+    {
+      "caseId": "v5-retnet",
+      "taskId": "v5-retnet-task-2",
+      "predicate": "optimization.optimizer",
+      "predicateCorrect": true,
+      "expectedAnswer": {},
+      "actualAnswer": {},
+      "expectedStatus": "UNKNOWN",
+      "actualStatus": "UNKNOWN",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": false,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": "2307.08621",
+        "failures": []
+      },
+      "facts": [],
+      "evidence": [],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 8,
+      "factTruePositive": 2,
+      "goldFactCount": 2,
+      "actualFactCount": 8
+    },
+    {
+      "caseId": "v5-rwkv",
+      "taskId": "v5-rwkv-task-1",
+      "predicate": "architecture.attention",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "architecture.attention": "linear attention"
+      },
+      "actualAnswer": {
+        "architecture.attention": "linear attention"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "CONFLICTING",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": false,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": "2305.13048",
+        "failures": []
+      },
+      "facts": [
+        {
+          "factId": "fact-https://arxiv.org/pdf/2305.13048v2-architecture.attention-linear attention",
+          "predicate": "architecture.attention",
+          "value": "linear attention",
+          "rawValue": "linear attention",
+          "sourceId": "https://arxiv.org/pdf/2305.13048v2",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "MEGA",
+            "page": 2
+          },
+          "rawEvidence": "RWKV reformulates the attention mechanism with a variant of linear attention, replacing traditional dot-product token interaction with more effective channel-directed attention.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "unknown",
+          "extractionMethod": "linear attention",
+          "supportState": "NORMALIZED_EXPLICIT"
+        },
+        {
+          "factId": "fact-https://arxiv.org/pdf/2305.13048v2-architecture.attention-exact",
+          "predicate": "architecture.attention",
+          "value": "exact",
+          "rawValue": "exact attention",
+          "sourceId": "https://arxiv.org/pdf/2305.13048v2",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "11091.",
+            "page": 10
+          },
+          "rawEvidence": "Flashattention: Fast and memory-efficient exact attention with IO-awareness.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "unknown",
+          "extractionMethod": "attention property",
+          "supportState": "NORMALIZED_EXPLICIT"
+        },
+        {
+          "factId": "fact-https://arxiv.org/pdf/2305.13048v2-architecture.attention-FlashAttention",
+          "predicate": "architecture.attention",
+          "value": "FlashAttention",
+          "rawValue": "Flashattention",
+          "sourceId": "https://arxiv.org/pdf/2305.13048v2",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "11091.",
+            "page": 10
+          },
+          "rawEvidence": "Flashattention: Fast and memory-efficient exact attention with IO-awareness.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "unknown",
+          "extractionMethod": "attention implementation",
+          "supportState": "NORMALIZED_EXPLICIT"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2305.13048v2-architecture.attention-linear attention",
+          "sourceId": "https://arxiv.org/pdf/2305.13048v2",
+          "authors": [],
+          "title": "Extracted architecture.attention fact",
+          "identifiers": {},
+          "locator": {
+            "section": "MEGA",
+            "page": 2
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "RWKV reformulates the attention mechanism with a variant of linear attention, replacing traditional dot-product token interaction with more effective channel-directed attention.",
+          "citationText": "https://arxiv.org/pdf/2305.13048v2#MEGA"
+        },
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2305.13048v2-architecture.attention-exact",
+          "sourceId": "https://arxiv.org/pdf/2305.13048v2",
+          "authors": [],
+          "title": "Extracted architecture.attention fact",
+          "identifiers": {},
+          "locator": {
+            "section": "11091.",
+            "page": 10
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Flashattention: Fast and memory-efficient exact attention with IO-awareness.",
+          "citationText": "https://arxiv.org/pdf/2305.13048v2#11091."
+        },
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2305.13048v2-architecture.attention-FlashAttention",
+          "sourceId": "https://arxiv.org/pdf/2305.13048v2",
+          "authors": [],
+          "title": "Extracted architecture.attention fact",
+          "identifiers": {},
+          "locator": {
+            "section": "11091.",
+            "page": 10
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Flashattention: Fast and memory-efficient exact attention with IO-awareness.",
+          "citationText": "https://arxiv.org/pdf/2305.13048v2#11091."
+        }
+      ],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 9,
+      "factTruePositive": 4,
+      "goldFactCount": 4,
+      "actualFactCount": 9
+    },
+    {
+      "caseId": "v5-rwkv",
+      "taskId": "v5-rwkv-task-2",
+      "predicate": "data.training_dataset",
+      "predicateCorrect": true,
+      "expectedAnswer": {},
+      "actualAnswer": {},
+      "expectedStatus": "UNKNOWN",
+      "actualStatus": "UNKNOWN",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": false,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": "2305.13048",
+        "failures": []
+      },
+      "facts": [],
+      "evidence": [],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 9,
+      "factTruePositive": 4,
+      "goldFactCount": 4,
+      "actualFactCount": 9
+    },
+    {
+      "caseId": "v5-reflexion",
+      "taskId": "v5-reflexion-task-1",
+      "predicate": "reasoning.trace_type",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "reasoning.trace_type": "action"
+      },
+      "actualAnswer": {
+        "reasoning.trace_type": "action"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "SUPPORTED",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": "2303.11366",
+        "failures": []
+      },
+      "facts": [
+        {
+          "factId": "fact-https://arxiv.org/pdf/2303.11366v4-reasoning.trace_type-action",
+          "predicate": "reasoning.trace_type",
+          "value": "action",
+          "rawValue": "action",
+          "sourceId": "https://arxiv.org/pdf/2303.11366v4",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "Introduction",
+            "page": 1
+          },
+          "rawEvidence": "We perform experiments on (1) decision-making tasks to test sequential action choices over long trajectories, (2) reasoning tasks to test knowledge-intensive, single-step generation improvement, and (3) programming tasks to teach the agent to effectively use external tools such as compilers and interpreters.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "ours",
+          "extractionMethod": "agent trace element",
+          "supportState": "NORMALIZED_EXPLICIT"
+        },
+        {
+          "factId": "fact-https://arxiv.org/pdf/2303.11366v4-reasoning.trace_type-thought",
+          "predicate": "reasoning.trace_type",
+          "value": "thought",
+          "rawValue": "Thought",
+          "sourceId": "https://arxiv.org/pdf/2303.11366v4",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "Action",
+            "page": 4
+          },
+          "rawEvidence": "We explore various Actor models, including Chain of Thought [26] and ReAct [30].",
+          "assertionStatus": "citation",
+          "experimentalRole": "ours",
+          "extractionMethod": "agent trace element",
+          "supportState": "NORMALIZED_EXPLICIT"
+        },
+        {
+          "factId": "fact-https://arxiv.org/pdf/2303.11366v4-reasoning.trace_type-observation",
+          "predicate": "reasoning.trace_type",
+          "value": "observation",
+          "rawValue": "observations",
+          "sourceId": "https://arxiv.org/pdf/2303.11366v4",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "Action",
+            "page": 4
+          },
+          "rawEvidence": "(b) Reflexion reinforcement algorithm Actor The Actor is built upon a large language model (LLM) that is specifically prompted to generate the necessary text and actions conditioned on the state observations.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "unknown",
+          "extractionMethod": "agent trace element",
+          "supportState": "NORMALIZED_EXPLICIT"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2303.11366v4-reasoning.trace_type-action",
+          "sourceId": "https://arxiv.org/pdf/2303.11366v4",
+          "authors": [],
+          "title": "Extracted reasoning.trace_type fact",
+          "identifiers": {},
+          "locator": {
+            "section": "Introduction",
+            "page": 1
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "We perform experiments on (1) decision-making tasks to test sequential action choices over long trajectories, (2) reasoning tasks to test knowledge-intensive, single-step generation improvement, and (3) programming tasks to teach the agent to effectively use external tools such as compilers and interpreters.",
+          "citationText": "https://arxiv.org/pdf/2303.11366v4#Introduction"
+        },
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2303.11366v4-reasoning.trace_type-thought",
+          "sourceId": "https://arxiv.org/pdf/2303.11366v4",
+          "authors": [],
+          "title": "Extracted reasoning.trace_type fact",
+          "identifiers": {},
+          "locator": {
+            "section": "Action",
+            "page": 4
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "We explore various Actor models, including Chain of Thought [26] and ReAct [30].",
+          "citationText": "https://arxiv.org/pdf/2303.11366v4#Action"
+        },
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2303.11366v4-reasoning.trace_type-observation",
+          "sourceId": "https://arxiv.org/pdf/2303.11366v4",
+          "authors": [],
+          "title": "Extracted reasoning.trace_type fact",
+          "identifiers": {},
+          "locator": {
+            "section": "Action",
+            "page": 4
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "(b) Reflexion reinforcement algorithm Actor The Actor is built upon a large language model (LLM) that is specifically prompted to generate the necessary text and actions conditioned on the state observations.",
+          "citationText": "https://arxiv.org/pdf/2303.11366v4#Action"
+        }
+      ],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 5,
+      "factTruePositive": 3,
+      "goldFactCount": 3,
+      "actualFactCount": 5
+    },
+    {
+      "caseId": "v5-reflexion",
+      "taskId": "v5-reflexion-task-2",
+      "predicate": "reasoning.trace_type",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "reasoning.trace_type": "thought"
+      },
+      "actualAnswer": {
+        "reasoning.trace_type": "thought"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "SUPPORTED",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": "2303.11366",
+        "failures": []
+      },
+      "facts": [
+        {
+          "factId": "fact-https://arxiv.org/pdf/2303.11366v4-reasoning.trace_type-action",
+          "predicate": "reasoning.trace_type",
+          "value": "action",
+          "rawValue": "action",
+          "sourceId": "https://arxiv.org/pdf/2303.11366v4",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "Introduction",
+            "page": 1
+          },
+          "rawEvidence": "We perform experiments on (1) decision-making tasks to test sequential action choices over long trajectories, (2) reasoning tasks to test knowledge-intensive, single-step generation improvement, and (3) programming tasks to teach the agent to effectively use external tools such as compilers and interpreters.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "ours",
+          "extractionMethod": "agent trace element",
+          "supportState": "NORMALIZED_EXPLICIT"
+        },
+        {
+          "factId": "fact-https://arxiv.org/pdf/2303.11366v4-reasoning.trace_type-thought",
+          "predicate": "reasoning.trace_type",
+          "value": "thought",
+          "rawValue": "Thought",
+          "sourceId": "https://arxiv.org/pdf/2303.11366v4",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "Action",
+            "page": 4
+          },
+          "rawEvidence": "We explore various Actor models, including Chain of Thought [26] and ReAct [30].",
+          "assertionStatus": "citation",
+          "experimentalRole": "ours",
+          "extractionMethod": "agent trace element",
+          "supportState": "NORMALIZED_EXPLICIT"
+        },
+        {
+          "factId": "fact-https://arxiv.org/pdf/2303.11366v4-reasoning.trace_type-observation",
+          "predicate": "reasoning.trace_type",
+          "value": "observation",
+          "rawValue": "observations",
+          "sourceId": "https://arxiv.org/pdf/2303.11366v4",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "Action",
+            "page": 4
+          },
+          "rawEvidence": "(b) Reflexion reinforcement algorithm Actor The Actor is built upon a large language model (LLM) that is specifically prompted to generate the necessary text and actions conditioned on the state observations.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "unknown",
+          "extractionMethod": "agent trace element",
+          "supportState": "NORMALIZED_EXPLICIT"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2303.11366v4-reasoning.trace_type-action",
+          "sourceId": "https://arxiv.org/pdf/2303.11366v4",
+          "authors": [],
+          "title": "Extracted reasoning.trace_type fact",
+          "identifiers": {},
+          "locator": {
+            "section": "Introduction",
+            "page": 1
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "We perform experiments on (1) decision-making tasks to test sequential action choices over long trajectories, (2) reasoning tasks to test knowledge-intensive, single-step generation improvement, and (3) programming tasks to teach the agent to effectively use external tools such as compilers and interpreters.",
+          "citationText": "https://arxiv.org/pdf/2303.11366v4#Introduction"
+        },
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2303.11366v4-reasoning.trace_type-thought",
+          "sourceId": "https://arxiv.org/pdf/2303.11366v4",
+          "authors": [],
+          "title": "Extracted reasoning.trace_type fact",
+          "identifiers": {},
+          "locator": {
+            "section": "Action",
+            "page": 4
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "We explore various Actor models, including Chain of Thought [26] and ReAct [30].",
+          "citationText": "https://arxiv.org/pdf/2303.11366v4#Action"
+        },
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2303.11366v4-reasoning.trace_type-observation",
+          "sourceId": "https://arxiv.org/pdf/2303.11366v4",
+          "authors": [],
+          "title": "Extracted reasoning.trace_type fact",
+          "identifiers": {},
+          "locator": {
+            "section": "Action",
+            "page": 4
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "(b) Reflexion reinforcement algorithm Actor The Actor is built upon a large language model (LLM) that is specifically prompted to generate the necessary text and actions conditioned on the state observations.",
+          "citationText": "https://arxiv.org/pdf/2303.11366v4#Action"
+        }
+      ],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 5,
+      "factTruePositive": 3,
+      "goldFactCount": 3,
+      "actualFactCount": 5
+    },
+    {
+      "caseId": "v5-reflexion",
+      "taskId": "v5-reflexion-task-3",
+      "predicate": "reasoning.trace_type",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "reasoning.trace_type": "observation"
+      },
+      "actualAnswer": {
+        "reasoning.trace_type": "observation"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "SUPPORTED",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": "2303.11366",
+        "failures": []
+      },
+      "facts": [
+        {
+          "factId": "fact-https://arxiv.org/pdf/2303.11366v4-reasoning.trace_type-action",
+          "predicate": "reasoning.trace_type",
+          "value": "action",
+          "rawValue": "action",
+          "sourceId": "https://arxiv.org/pdf/2303.11366v4",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "Introduction",
+            "page": 1
+          },
+          "rawEvidence": "We perform experiments on (1) decision-making tasks to test sequential action choices over long trajectories, (2) reasoning tasks to test knowledge-intensive, single-step generation improvement, and (3) programming tasks to teach the agent to effectively use external tools such as compilers and interpreters.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "ours",
+          "extractionMethod": "agent trace element",
+          "supportState": "NORMALIZED_EXPLICIT"
+        },
+        {
+          "factId": "fact-https://arxiv.org/pdf/2303.11366v4-reasoning.trace_type-thought",
+          "predicate": "reasoning.trace_type",
+          "value": "thought",
+          "rawValue": "Thought",
+          "sourceId": "https://arxiv.org/pdf/2303.11366v4",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "Action",
+            "page": 4
+          },
+          "rawEvidence": "We explore various Actor models, including Chain of Thought [26] and ReAct [30].",
+          "assertionStatus": "citation",
+          "experimentalRole": "ours",
+          "extractionMethod": "agent trace element",
+          "supportState": "NORMALIZED_EXPLICIT"
+        },
+        {
+          "factId": "fact-https://arxiv.org/pdf/2303.11366v4-reasoning.trace_type-observation",
+          "predicate": "reasoning.trace_type",
+          "value": "observation",
+          "rawValue": "observations",
+          "sourceId": "https://arxiv.org/pdf/2303.11366v4",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "Action",
+            "page": 4
+          },
+          "rawEvidence": "(b) Reflexion reinforcement algorithm Actor The Actor is built upon a large language model (LLM) that is specifically prompted to generate the necessary text and actions conditioned on the state observations.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "unknown",
+          "extractionMethod": "agent trace element",
+          "supportState": "NORMALIZED_EXPLICIT"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2303.11366v4-reasoning.trace_type-action",
+          "sourceId": "https://arxiv.org/pdf/2303.11366v4",
+          "authors": [],
+          "title": "Extracted reasoning.trace_type fact",
+          "identifiers": {},
+          "locator": {
+            "section": "Introduction",
+            "page": 1
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "We perform experiments on (1) decision-making tasks to test sequential action choices over long trajectories, (2) reasoning tasks to test knowledge-intensive, single-step generation improvement, and (3) programming tasks to teach the agent to effectively use external tools such as compilers and interpreters.",
+          "citationText": "https://arxiv.org/pdf/2303.11366v4#Introduction"
+        },
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2303.11366v4-reasoning.trace_type-thought",
+          "sourceId": "https://arxiv.org/pdf/2303.11366v4",
+          "authors": [],
+          "title": "Extracted reasoning.trace_type fact",
+          "identifiers": {},
+          "locator": {
+            "section": "Action",
+            "page": 4
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "We explore various Actor models, including Chain of Thought [26] and ReAct [30].",
+          "citationText": "https://arxiv.org/pdf/2303.11366v4#Action"
+        },
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2303.11366v4-reasoning.trace_type-observation",
+          "sourceId": "https://arxiv.org/pdf/2303.11366v4",
+          "authors": [],
+          "title": "Extracted reasoning.trace_type fact",
+          "identifiers": {},
+          "locator": {
+            "section": "Action",
+            "page": 4
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "(b) Reflexion reinforcement algorithm Actor The Actor is built upon a large language model (LLM) that is specifically prompted to generate the necessary text and actions conditioned on the state observations.",
+          "citationText": "https://arxiv.org/pdf/2303.11366v4#Action"
+        }
+      ],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 5,
+      "factTruePositive": 3,
+      "goldFactCount": 3,
+      "actualFactCount": 5
+    },
+    {
+      "caseId": "v5-constitutional",
+      "taskId": "v5-constitutional-task-1",
+      "predicate": "reasoning.trace_type",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "reasoning.trace_type": "thought"
+      },
+      "actualAnswer": {
+        "reasoning.trace_type": "thought"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "SUPPORTED",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": "2212.08073",
+        "failures": []
+      },
+      "facts": [
+        {
+          "factId": "fact-https://arxiv.org/pdf/2212.08073v1-reasoning.trace_type-thought",
+          "predicate": "reasoning.trace_type",
+          "value": "thought",
+          "rawValue": "Thought",
+          "sourceId": "https://arxiv.org/pdf/2212.08073v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "Pretrained",
+            "page": 3
+          },
+          "rawEvidence": "Base Constitutional RL (Pareto Improvement) With Chain of Thought Standard",
+          "assertionStatus": "asserted",
+          "experimentalRole": "unknown",
+          "extractionMethod": "agent trace element",
+          "supportState": "NORMALIZED_EXPLICIT"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2212.08073v1-reasoning.trace_type-thought",
+          "sourceId": "https://arxiv.org/pdf/2212.08073v1",
+          "authors": [],
+          "title": "Extracted reasoning.trace_type fact",
+          "identifiers": {},
+          "locator": {
+            "section": "Pretrained",
+            "page": 3
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Base Constitutional RL (Pareto Improvement) With Chain of Thought Standard",
+          "citationText": "https://arxiv.org/pdf/2212.08073v1#Pretrained"
+        }
+      ],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 5,
+      "factTruePositive": 3,
+      "goldFactCount": 3,
+      "actualFactCount": 5
+    },
+    {
+      "caseId": "v5-constitutional",
+      "taskId": "v5-constitutional-task-2",
+      "predicate": "optimization.optimizer",
+      "predicateCorrect": true,
+      "expectedAnswer": {},
+      "actualAnswer": {},
+      "expectedStatus": "UNKNOWN",
+      "actualStatus": "UNKNOWN",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": false,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": "2212.08073",
+        "failures": []
+      },
+      "facts": [],
+      "evidence": [],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 5,
+      "factTruePositive": 3,
+      "goldFactCount": 3,
+      "actualFactCount": 5
+    },
+    {
+      "caseId": "v5-llava",
+      "taskId": "v5-llava-task-1",
+      "predicate": "model.formulation",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "model.formulation": "multimodal model"
+      },
+      "actualAnswer": {
+        "model.formulation": "multimodal model"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "SUPPORTED",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": "2304.08485",
+        "failures": []
+      },
+      "facts": [
+        {
+          "factId": "fact-https://arxiv.org/pdf/2304.08485v2-model.formulation-multimodal model",
+          "predicate": "model.formulation",
+          "value": "multimodal model",
+          "rawValue": "multimodal",
+          "sourceId": "https://arxiv.org/pdf/2304.08485v2",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "Introduction",
+            "page": 1
+          },
+          "rawEvidence": "In this paper, we present visual instruction-tuning, the first attempt to extend instruction-tuning to the language-image multimodal space, to pave the way towards building a general-purpose visual assistant.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "ours",
+          "extractionMethod": "multimodal capability",
+          "supportState": "NORMALIZED_EXPLICIT"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2304.08485v2-model.formulation-multimodal model",
+          "sourceId": "https://arxiv.org/pdf/2304.08485v2",
+          "authors": [],
+          "title": "Extracted model.formulation fact",
+          "identifiers": {},
+          "locator": {
+            "section": "Introduction",
+            "page": 1
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "In this paper, we present visual instruction-tuning, the first attempt to extend instruction-tuning to the language-image multimodal space, to pave the way towards building a general-purpose visual assistant.",
+          "citationText": "https://arxiv.org/pdf/2304.08485v2#Introduction"
+        }
+      ],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 7,
+      "factTruePositive": 3,
+      "goldFactCount": 4,
+      "actualFactCount": 7
+    },
+    {
+      "caseId": "v5-llava",
+      "taskId": "v5-llava-task-2",
+      "predicate": "training.stage",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "training.stage": "pretraining"
+      },
+      "actualAnswer": {
+        "training.stage": "pretraining"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "SUPPORTED",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": "2304.08485",
+        "failures": []
+      },
+      "facts": [
+        {
+          "factId": "fact-https://arxiv.org/pdf/2304.08485v2-training.stage-fine-tuning",
+          "predicate": "training.stage",
+          "value": "fine-tuning",
+          "rawValue": "fine-tuning",
+          "sourceId": "https://arxiv.org/pdf/2304.08485v2",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "Introduction",
+            "page": 1
+          },
+          "rawEvidence": "We develop a large multimodal model (LMM), by connecting the open-set visual encoder of CLIP [40] with the language decoder Vicuna [9], and fine-tuning end-to-end on our generated instructional vision-language data.",
+          "assertionStatus": "citation",
+          "experimentalRole": "ours",
+          "extractionMethod": "training stage",
+          "supportState": "NORMALIZED_EXPLICIT"
+        },
+        {
+          "factId": "fact-https://arxiv.org/pdf/2304.08485v2-training.stage-pretraining",
+          "predicate": "training.stage",
+          "value": "pretraining",
+          "rawValue": "Pre-training",
+          "sourceId": "https://arxiv.org/pdf/2304.08485v2",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "Xsystem-message <STOP>",
+            "page": 5
+          },
+          "rawEvidence": "Stage 1: Pre-training for Feature Alignment.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "unknown",
+          "extractionMethod": "training stage",
+          "supportState": "NORMALIZED_EXPLICIT"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2304.08485v2-training.stage-fine-tuning",
+          "sourceId": "https://arxiv.org/pdf/2304.08485v2",
+          "authors": [],
+          "title": "Extracted training.stage fact",
+          "identifiers": {},
+          "locator": {
+            "section": "Introduction",
+            "page": 1
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "We develop a large multimodal model (LMM), by connecting the open-set visual encoder of CLIP [40] with the language decoder Vicuna [9], and fine-tuning end-to-end on our generated instructional vision-language data.",
+          "citationText": "https://arxiv.org/pdf/2304.08485v2#Introduction"
+        },
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2304.08485v2-training.stage-pretraining",
+          "sourceId": "https://arxiv.org/pdf/2304.08485v2",
+          "authors": [],
+          "title": "Extracted training.stage fact",
+          "identifiers": {},
+          "locator": {
+            "section": "Xsystem-message <STOP>",
+            "page": 5
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Stage 1: Pre-training for Feature Alignment.",
+          "citationText": "https://arxiv.org/pdf/2304.08485v2#Xsystem-message <STOP>"
+        }
+      ],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 7,
+      "factTruePositive": 3,
+      "goldFactCount": 4,
+      "actualFactCount": 7
+    },
+    {
+      "caseId": "v5-colbertv2",
+      "taskId": "v5-colbertv2-task-1",
+      "predicate": "retrieval.interaction",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "retrieval.interaction": "late interaction"
+      },
+      "actualAnswer": {
+        "retrieval.interaction": "late interaction"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "SUPPORTED",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": "2112.01488",
+        "failures": []
+      },
+      "facts": [
+        {
+          "factId": "fact-https://arxiv.org/pdf/2112.01488v3-retrieval.interaction-late interaction",
+          "predicate": "retrieval.interaction",
+          "value": "late interaction",
+          "rawValue": "late interaction",
+          "sourceId": "https://arxiv.org/pdf/2112.01488v3",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "Introduction",
+            "page": 1
+          },
+          "rawEvidence": "An alternative is late interaction, in-troduced in ColBERT (Khattab and Zaharia, 2020), where queries and documents are encoded at a finer-granularity into multi-vector representations, and ∗Equal contribution.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "unknown",
+          "extractionMethod": "retrieval interaction",
+          "supportState": "NORMALIZED_EXPLICIT"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2112.01488v3-retrieval.interaction-late interaction",
+          "sourceId": "https://arxiv.org/pdf/2112.01488v3",
+          "authors": [],
+          "title": "Extracted retrieval.interaction fact",
+          "identifiers": {},
+          "locator": {
+            "section": "Introduction",
+            "page": 1
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "An alternative is late interaction, in-troduced in ColBERT (Khattab and Zaharia, 2020), where queries and documents are encoded at a finer-granularity into multi-vector representations, and ∗Equal contribution.",
+          "citationText": "https://arxiv.org/pdf/2112.01488v3#Introduction"
+        }
+      ],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 7,
+      "factTruePositive": 3,
+      "goldFactCount": 3,
+      "actualFactCount": 7
+    },
+    {
+      "caseId": "v5-colbertv2",
+      "taskId": "v5-colbertv2-task-2",
+      "predicate": "retrieval.component",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "retrieval.component": "retriever"
+      },
+      "actualAnswer": {
+        "retrieval.component": "retriever"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "SUPPORTED",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": "2112.01488",
+        "failures": []
+      },
+      "facts": [
+        {
+          "factId": "fact-https://arxiv.org/pdf/2112.01488v3-retrieval.component-retriever",
+          "predicate": "retrieval.component",
+          "value": "retriever",
+          "rawValue": "retriever",
+          "sourceId": "https://arxiv.org/pdf/2112.01488v3",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "Introduction",
+            "page": 1
+          },
+          "rawEvidence": "We couple those in ColBERTv2,1 a new late-interaction retriever that employs a simple combination of distillation from 1Code, models, and LoTTE data are maintained at https: //github.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "ours",
+          "extractionMethod": "retrieval component",
+          "supportState": "NORMALIZED_EXPLICIT"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2112.01488v3-retrieval.component-retriever",
+          "sourceId": "https://arxiv.org/pdf/2112.01488v3",
+          "authors": [],
+          "title": "Extracted retrieval.component fact",
+          "identifiers": {},
+          "locator": {
+            "section": "Introduction",
+            "page": 1
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "We couple those in ColBERTv2,1 a new late-interaction retriever that employs a simple combination of distillation from 1Code, models, and LoTTE data are maintained at https: //github.",
+          "citationText": "https://arxiv.org/pdf/2112.01488v3#Introduction"
+        }
+      ],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 7,
+      "factTruePositive": 3,
+      "goldFactCount": 3,
+      "actualFactCount": 7
+    },
+    {
+      "caseId": "v5-flan",
+      "taskId": "v5-flan-task-1",
+      "predicate": "reasoning.trace_type",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "reasoning.trace_type": "thought"
+      },
+      "actualAnswer": {
+        "reasoning.trace_type": "thought"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "SUPPORTED",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": "2301.13688",
+        "failures": []
+      },
+      "facts": [
+        {
+          "factId": "fact-https://arxiv.org/pdf/2301.13688v2-reasoning.trace_type-thought",
+          "predicate": "reasoning.trace_type",
+          "value": "thought",
+          "rawValue": "thought",
+          "sourceId": "https://arxiv.org/pdf/2301.13688v2",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "Introduction",
+            "page": 2
+          },
+          "rawEvidence": "In particular, training on a mix of examples templatized with zero-shot, few-shot, and chain-of-thought prompts improves performance in every one of these settings, together.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "unknown",
+          "extractionMethod": "agent trace element",
+          "supportState": "NORMALIZED_EXPLICIT"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2301.13688v2-reasoning.trace_type-thought",
+          "sourceId": "https://arxiv.org/pdf/2301.13688v2",
+          "authors": [],
+          "title": "Extracted reasoning.trace_type fact",
+          "identifiers": {},
+          "locator": {
+            "section": "Introduction",
+            "page": 2
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "In particular, training on a mix of examples templatized with zero-shot, few-shot, and chain-of-thought prompts improves performance in every one of these settings, together.",
+          "citationText": "https://arxiv.org/pdf/2301.13688v2#Introduction"
+        }
+      ],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 7,
+      "factTruePositive": 3,
+      "goldFactCount": 3,
+      "actualFactCount": 7
+    },
+    {
+      "caseId": "v5-flan",
+      "taskId": "v5-flan-task-2",
+      "predicate": "optimization.optimizer",
+      "predicateCorrect": true,
+      "expectedAnswer": {},
+      "actualAnswer": {},
+      "expectedStatus": "UNKNOWN",
+      "actualStatus": "UNKNOWN",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": false,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": "2301.13688",
+        "failures": []
+      },
+      "facts": [],
+      "evidence": [],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 7,
+      "factTruePositive": 3,
+      "goldFactCount": 3,
+      "actualFactCount": 7
+    },
+    {
+      "caseId": "v5-atlas",
+      "taskId": "v5-atlas-task-1",
+      "predicate": "retrieval.retriever",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "retrieval.retriever": "dual-encoder dense retriever"
+      },
+      "actualAnswer": {
+        "retrieval.retriever": "dual-encoder dense retriever"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "SUPPORTED",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": "2208.03299",
+        "failures": []
+      },
+      "facts": [
+        {
+          "factId": "fact-https://arxiv.org/pdf/2208.03299v3-retrieval.retriever-dual-encoder dense retriever",
+          "predicate": "retrieval.retriever",
+          "value": "dual-encoder dense retriever",
+          "rawValue": "Dense passage retriev",
+          "sourceId": "https://arxiv.org/pdf/2208.03299v3",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "2010.57. 18",
+            "page": 22
+          },
+          "rawEvidence": "Dense passage retrieval for open-domain question answering.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "unknown",
+          "extractionMethod": "retriever architecture",
+          "supportState": "NORMALIZED_EXPLICIT"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2208.03299v3-retrieval.retriever-dual-encoder dense retriever",
+          "sourceId": "https://arxiv.org/pdf/2208.03299v3",
+          "authors": [],
+          "title": "Extracted retrieval.retriever fact",
+          "identifiers": {},
+          "locator": {
+            "section": "2010.57. 18",
+            "page": 22
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Dense passage retrieval for open-domain question answering.",
+          "citationText": "https://arxiv.org/pdf/2208.03299v3#2010.57. 18"
+        }
+      ],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 11,
+      "factTruePositive": 8,
+      "goldFactCount": 8,
+      "actualFactCount": 11
+    },
+    {
+      "caseId": "v5-atlas",
+      "taskId": "v5-atlas-task-2",
+      "predicate": "architecture.formulation",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "architecture.formulation": "text-to-text"
+      },
+      "actualAnswer": {
+        "architecture.formulation": "text-to-text"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "SUPPORTED",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": "2208.03299",
+        "failures": []
+      },
+      "facts": [
+        {
+          "factId": "fact-https://arxiv.org/pdf/2208.03299v3-architecture.formulation-text-to-text",
+          "predicate": "architecture.formulation",
+          "value": "text-to-text",
+          "rawValue": "text-to-text",
+          "sourceId": "https://arxiv.org/pdf/2208.03299v3",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "Method",
+            "page": 3
+          },
+          "rawEvidence": "Our approach follows the text-to-text framework (Raffel et al., 2019).",
+          "assertionStatus": "citation",
+          "experimentalRole": "ours",
+          "extractionMethod": "task formulation",
+          "supportState": "NORMALIZED_EXPLICIT"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2208.03299v3-architecture.formulation-text-to-text",
+          "sourceId": "https://arxiv.org/pdf/2208.03299v3",
+          "authors": [],
+          "title": "Extracted architecture.formulation fact",
+          "identifiers": {},
+          "locator": {
+            "section": "Method",
+            "page": 3
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Our approach follows the text-to-text framework (Raffel et al., 2019).",
+          "citationText": "https://arxiv.org/pdf/2208.03299v3#Method"
+        }
+      ],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 11,
+      "factTruePositive": 8,
+      "goldFactCount": 8,
+      "actualFactCount": 11
+    },
+    {
+      "caseId": "v5-deepseekv3",
+      "taskId": "v5-deepseekv3-task-1",
+      "predicate": "training.algorithm",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "training.algorithm": "GRPO"
+      },
+      "actualAnswer": {
+        "training.algorithm": "GRPO"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "SUPPORTED",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": "2412.19437",
+        "failures": []
+      },
+      "facts": [
+        {
+          "factId": "fact-https://arxiv.org/pdf/2412.19437v2-training.algorithm-GRPO",
+          "predicate": "training.algorithm",
+          "value": "GRPO",
+          "rawValue": "Group Relative Policy Optimization",
+          "sourceId": "https://arxiv.org/pdf/2412.19437v2",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "Reward Model",
+            "page": 3
+          },
+          "rawEvidence": "Group Relative Policy Optimization .",
+          "assertionStatus": "asserted",
+          "experimentalRole": "unknown",
+          "extractionMethod": "reinforcement algorithm",
+          "supportState": "NORMALIZED_EXPLICIT"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2412.19437v2-training.algorithm-GRPO",
+          "sourceId": "https://arxiv.org/pdf/2412.19437v2",
+          "authors": [],
+          "title": "Extracted training.algorithm fact",
+          "identifiers": {},
+          "locator": {
+            "section": "Reward Model",
+            "page": 3
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Group Relative Policy Optimization .",
+          "citationText": "https://arxiv.org/pdf/2412.19437v2#Reward Model"
+        }
+      ],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 11,
+      "factTruePositive": 10,
+      "goldFactCount": 11,
+      "actualFactCount": 11
+    },
+    {
+      "caseId": "v5-deepseekv3",
+      "taskId": "v5-deepseekv3-task-2",
+      "predicate": "architecture.moe",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "architecture.moe": "mixture of experts"
+      },
+      "actualAnswer": {
+        "architecture.moe": "mixture of experts"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "SUPPORTED",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": "2412.19437",
+        "failures": []
+      },
+      "facts": [
+        {
+          "factId": "fact-https://arxiv.org/pdf/2412.19437v2-architecture.moe-mixture of experts",
+          "predicate": "architecture.moe",
+          "value": "mixture of experts",
+          "rawValue": "mixture-of-experts",
+          "sourceId": "https://arxiv.org/pdf/2412.19437v2",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "600.",
+            "page": 37
+          },
+          "rawEvidence": "Deepseekmoe: Towards ultimate expert specialization in mixture-of-experts language models.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "unknown",
+          "extractionMethod": "mixture of experts",
+          "supportState": "NORMALIZED_EXPLICIT"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2412.19437v2-architecture.moe-mixture of experts",
+          "sourceId": "https://arxiv.org/pdf/2412.19437v2",
+          "authors": [],
+          "title": "Extracted architecture.moe fact",
+          "identifiers": {},
+          "locator": {
+            "section": "600.",
+            "page": 37
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Deepseekmoe: Towards ultimate expert specialization in mixture-of-experts language models.",
+          "citationText": "https://arxiv.org/pdf/2412.19437v2#600."
+        }
+      ],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 11,
+      "factTruePositive": 10,
+      "goldFactCount": 11,
+      "actualFactCount": 11
+    },
+    {
+      "caseId": "v5-deepseekr1",
+      "taskId": "v5-deepseekr1-task-1",
+      "predicate": "training.algorithm",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "training.algorithm": "GRPO"
+      },
+      "actualAnswer": {
+        "training.algorithm": "GRPO"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "SUPPORTED",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": "2501.12948",
+        "failures": []
+      },
+      "facts": [
+        {
+          "factId": "fact-https://arxiv.org/pdf/2501.12948v2-training.algorithm-GRPO",
+          "predicate": "training.algorithm",
+          "value": "GRPO",
+          "rawValue": "GRPO",
+          "sourceId": "https://arxiv.org/pdf/2501.12948v2",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "(3)",
+            "page": 3
+          },
+          "rawEvidence": "We give a comparison of GRPO and PPO in Supplementary A.",
+          "assertionStatus": "comparison",
+          "experimentalRole": "ours",
+          "extractionMethod": "reinforcement algorithm",
+          "supportState": "NORMALIZED_EXPLICIT"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2501.12948v2-training.algorithm-GRPO",
+          "sourceId": "https://arxiv.org/pdf/2501.12948v2",
+          "authors": [],
+          "title": "Extracted training.algorithm fact",
+          "identifiers": {},
+          "locator": {
+            "section": "(3)",
+            "page": 3
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "We give a comparison of GRPO and PPO in Supplementary A.",
+          "citationText": "https://arxiv.org/pdf/2501.12948v2#(3)"
+        }
+      ],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 16,
+      "factTruePositive": 9,
+      "goldFactCount": 9,
+      "actualFactCount": 16
+    },
+    {
+      "caseId": "v5-deepseekr1",
+      "taskId": "v5-deepseekr1-task-2",
+      "predicate": "architecture.moe",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "architecture.moe": "mixture of experts"
+      },
+      "actualAnswer": {
+        "architecture.moe": "mixture of experts"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "SUPPORTED",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": "2501.12948",
+        "failures": []
+      },
+      "facts": [
+        {
+          "factId": "fact-https://arxiv.org/pdf/2501.12948v2-architecture.moe-mixture of experts",
+          "predicate": "architecture.moe",
+          "value": "mixture of experts",
+          "rawValue": "Mixture-of-Experts",
+          "sourceId": "https://arxiv.org/pdf/2501.12948v2",
+          "sourceClass": "APPENDIX",
+          "locator": {
+            "section": "Appendix",
+            "page": 13
+          },
+          "rawEvidence": "Built on a Mixture-of-Experts (MoE) architecture, DeepSeek V3 has 671 billion total parameters, with 37 billion activated per token, optimizing both efficiency and capability.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "unknown",
+          "extractionMethod": "mixture of experts",
+          "supportState": "NORMALIZED_EXPLICIT"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2501.12948v2-architecture.moe-mixture of experts",
+          "sourceId": "https://arxiv.org/pdf/2501.12948v2",
+          "authors": [],
+          "title": "Extracted architecture.moe fact",
+          "identifiers": {},
+          "locator": {
+            "section": "Appendix",
+            "page": 13
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Built on a Mixture-of-Experts (MoE) architecture, DeepSeek V3 has 671 billion total parameters, with 37 billion activated per token, optimizing both efficiency and capability.",
+          "citationText": "https://arxiv.org/pdf/2501.12948v2#Appendix"
+        }
+      ],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 16,
+      "factTruePositive": 9,
+      "goldFactCount": 9,
+      "actualFactCount": 16
+    },
+    {
+      "caseId": "v5-medpalm",
+      "taskId": "v5-medpalm-task-1",
+      "predicate": "model.formulation",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "model.formulation": "decoder-only Transformer"
+      },
+      "actualAnswer": {
+        "model.formulation": "decoder-only Transformer"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "SUPPORTED",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": "2212.13138",
+        "failures": []
+      },
+      "facts": [
+        {
+          "factId": "fact-https://arxiv.org/pdf/2212.13138v1-model.formulation-decoder-only Transformer",
+          "predicate": "model.formulation",
+          "value": "decoder-only Transformer",
+          "rawValue": "decoder-only transformer",
+          "sourceId": "https://arxiv.org/pdf/2212.13138v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "Models",
+            "page": 10
+          },
+          "rawEvidence": "PaLM Pathways Language Model (PaLM), introduced by [14] is a densely-activated decoder-only transformer language model trained using Pathways [4], a large-scale ML accelerator orchestration system that enables highly efficient training across TPU pods.",
+          "assertionStatus": "citation",
+          "experimentalRole": "hardware",
+          "extractionMethod": "language-model architecture",
+          "supportState": "NORMALIZED_EXPLICIT"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2212.13138v1-model.formulation-decoder-only Transformer",
+          "sourceId": "https://arxiv.org/pdf/2212.13138v1",
+          "authors": [],
+          "title": "Extracted model.formulation fact",
+          "identifiers": {},
+          "locator": {
+            "section": "Models",
+            "page": 10
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "PaLM Pathways Language Model (PaLM), introduced by [14] is a densely-activated decoder-only transformer language model trained using Pathways [4], a large-scale ML accelerator orchestration system that enables highly efficient training across TPU pods.",
+          "citationText": "https://arxiv.org/pdf/2212.13138v1#Models"
+        }
+      ],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 9,
+      "factTruePositive": 8,
+      "goldFactCount": 8,
+      "actualFactCount": 9
+    },
+    {
+      "caseId": "v5-medpalm",
+      "taskId": "v5-medpalm-task-2",
+      "predicate": "training.stage",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "training.stage": "pretraining"
+      },
+      "actualAnswer": {
+        "training.stage": "pretraining"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "SUPPORTED",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": "2212.13138",
+        "failures": []
+      },
+      "facts": [
+        {
+          "factId": "fact-https://arxiv.org/pdf/2212.13138v1-training.stage-pretraining",
+          "predicate": "training.stage",
+          "value": "pretraining",
+          "rawValue": "pretraining",
+          "sourceId": "https://arxiv.org/pdf/2212.13138v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "Models",
+            "page": 10
+          },
+          "rawEvidence": "In this study we considered both the PaLM and Flan-PaLM model variants at three different model sizes: 8B, 62B and 540B, with the largest model using 6144 TPUv4 chips for pretraining.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "ours",
+          "extractionMethod": "training stage",
+          "supportState": "NORMALIZED_EXPLICIT"
+        },
+        {
+          "factId": "fact-https://arxiv.org/pdf/2212.13138v1-training.stage-fine-tuning",
+          "predicate": "training.stage",
+          "value": "fine-tuning",
+          "rawValue": "fine-tuning",
+          "sourceId": "https://arxiv.org/pdf/2212.13138v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "Instruction prompt tuning",
+            "page": 12
+          },
+          "rawEvidence": "In particular, Flan-PaLM demonstrated the benefits of using CoT data in fine-tuning, leading to robust improvements in tasks that required reasoning.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "unknown",
+          "extractionMethod": "training stage",
+          "supportState": "NORMALIZED_EXPLICIT"
+        },
+        {
+          "factId": "fact-https://arxiv.org/pdf/2212.13138v1-training.stage-instruction fine-tuning",
+          "predicate": "training.stage",
+          "value": "instruction fine-tuning",
+          "rawValue": "instruction fine-tuning",
+          "sourceId": "https://arxiv.org/pdf/2212.13138v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "PubMedQA",
+            "page": 15
+          },
+          "rawEvidence": "These results demonstrated the strong benefits of instruction fine-tuning.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "unknown",
+          "extractionMethod": "training stage",
+          "supportState": "NORMALIZED_EXPLICIT"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2212.13138v1-training.stage-pretraining",
+          "sourceId": "https://arxiv.org/pdf/2212.13138v1",
+          "authors": [],
+          "title": "Extracted training.stage fact",
+          "identifiers": {},
+          "locator": {
+            "section": "Models",
+            "page": 10
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "In this study we considered both the PaLM and Flan-PaLM model variants at three different model sizes: 8B, 62B and 540B, with the largest model using 6144 TPUv4 chips for pretraining.",
+          "citationText": "https://arxiv.org/pdf/2212.13138v1#Models"
+        },
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2212.13138v1-training.stage-fine-tuning",
+          "sourceId": "https://arxiv.org/pdf/2212.13138v1",
+          "authors": [],
+          "title": "Extracted training.stage fact",
+          "identifiers": {},
+          "locator": {
+            "section": "Instruction prompt tuning",
+            "page": 12
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "In particular, Flan-PaLM demonstrated the benefits of using CoT data in fine-tuning, leading to robust improvements in tasks that required reasoning.",
+          "citationText": "https://arxiv.org/pdf/2212.13138v1#Instruction prompt tuning"
+        },
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2212.13138v1-training.stage-instruction fine-tuning",
+          "sourceId": "https://arxiv.org/pdf/2212.13138v1",
+          "authors": [],
+          "title": "Extracted training.stage fact",
+          "identifiers": {},
+          "locator": {
+            "section": "PubMedQA",
+            "page": 15
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "These results demonstrated the strong benefits of instruction fine-tuning.",
+          "citationText": "https://arxiv.org/pdf/2212.13138v1#PubMedQA"
+        }
+      ],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 9,
+      "factTruePositive": 8,
+      "goldFactCount": 8,
+      "actualFactCount": 9
+    },
+    {
+      "caseId": "v5-medpalm",
+      "taskId": "v5-medpalm-task-3",
+      "predicate": "data.training_dataset",
+      "predicateCorrect": true,
+      "expectedAnswer": {},
+      "actualAnswer": {},
+      "expectedStatus": "UNKNOWN",
+      "actualStatus": "UNKNOWN",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": false,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": "2212.13138",
+        "failures": []
+      },
+      "facts": [],
+      "evidence": [],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 9,
+      "factTruePositive": 8,
+      "goldFactCount": 8,
+      "actualFactCount": 9
+    },
+    {
+      "caseId": "v5-hyenadna",
+      "taskId": "v5-hyenadna-task-1",
+      "predicate": "architecture.operator",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "architecture.operator": "long convolutions"
+      },
+      "actualAnswer": {
+        "architecture.operator": "long convolutions"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "SUPPORTED",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": "2306.15794",
+        "failures": []
+      },
+      "facts": [
+        {
+          "factId": "fact-https://arxiv.org/pdf/2306.15794v2-architecture.operator-long convolutions",
+          "predicate": "architecture.operator",
+          "value": "long convolutions",
+          "rawValue": "Long Convolution",
+          "sourceId": "https://arxiv.org/pdf/2306.15794v2",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "MLP",
+            "page": 3
+          },
+          "rawEvidence": "HyenaDNA Block xN Long Convolution Elem-wise Gate Dense+Conv Long Convolution Elem-wise Gate Hyena Order-N x Hyena Filters Dense Dense Sine Act x 3 Window Pos Enc Elem-wise Gate Dense+Conv Dense+Conv Dense+Conv Figure 1.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "unknown",
+          "extractionMethod": "long convolution operator",
+          "supportState": "NORMALIZED_EXPLICIT"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2306.15794v2-architecture.operator-long convolutions",
+          "sourceId": "https://arxiv.org/pdf/2306.15794v2",
+          "authors": [],
+          "title": "Extracted architecture.operator fact",
+          "identifiers": {},
+          "locator": {
+            "section": "MLP",
+            "page": 3
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "HyenaDNA Block xN Long Convolution Elem-wise Gate Dense+Conv Long Convolution Elem-wise Gate Hyena Order-N x Hyena Filters Dense Dense Sine Act x 3 Window Pos Enc Elem-wise Gate Dense+Conv Dense+Conv Dense+Conv Figure 1.",
+          "citationText": "https://arxiv.org/pdf/2306.15794v2#MLP"
+        }
+      ],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 8,
+      "factTruePositive": 5,
+      "goldFactCount": 5,
+      "actualFactCount": 8
+    },
+    {
+      "caseId": "v5-hyenadna",
+      "taskId": "v5-hyenadna-task-2",
+      "predicate": "model.formulation",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "model.formulation": "decoder-only Transformer"
+      },
+      "actualAnswer": {
+        "model.formulation": "decoder-only Transformer"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "SUPPORTED",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": "2306.15794",
+        "failures": []
+      },
+      "facts": [
+        {
+          "factId": "fact-https://arxiv.org/pdf/2306.15794v2-model.formulation-decoder-only Transformer",
+          "predicate": "model.formulation",
+          "value": "decoder-only Transformer",
+          "rawValue": "decoder-only",
+          "sourceId": "https://arxiv.org/pdf/2306.15794v2",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "MLP",
+            "page": 3
+          },
+          "rawEvidence": "Full-stack genomics modeling We start with a decoder-only Hyena architecture pretrained using next nucleotide (token) prediction.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "ours",
+          "extractionMethod": "language-model architecture",
+          "supportState": "NORMALIZED_EXPLICIT"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2306.15794v2-model.formulation-decoder-only Transformer",
+          "sourceId": "https://arxiv.org/pdf/2306.15794v2",
+          "authors": [],
+          "title": "Extracted model.formulation fact",
+          "identifiers": {},
+          "locator": {
+            "section": "MLP",
+            "page": 3
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Full-stack genomics modeling We start with a decoder-only Hyena architecture pretrained using next nucleotide (token) prediction.",
+          "citationText": "https://arxiv.org/pdf/2306.15794v2#MLP"
+        }
+      ],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 8,
+      "factTruePositive": 5,
+      "goldFactCount": 5,
+      "actualFactCount": 8
+    },
+    {
+      "caseId": "v5-dnabert2",
+      "taskId": "v5-dnabert2-task-1",
+      "predicate": "training.objective",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "training.objective": "masked language model"
+      },
+      "actualAnswer": {
+        "training.objective": "masked language model"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "SUPPORTED",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": "2306.15006",
+        "failures": []
+      },
+      "facts": [
+        {
+          "factId": "fact-https://arxiv.org/pdf/2306.15006v2-training.objective-masked language model",
+          "predicate": "training.objective",
+          "value": "masked language model",
+          "rawValue": "masked language model",
+          "sourceId": "https://arxiv.org/pdf/2306.15006v2",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "BACKGROUND",
+            "page": 3
+          },
+          "rawEvidence": "Overlapping k-mers tokenization ensures adjacent tokens always overlap by k-1 characters, resulting in significant information leakage in masked language modeling.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "unknown",
+          "extractionMethod": "masked objective",
+          "supportState": "NORMALIZED_EXPLICIT"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2306.15006v2-training.objective-masked language model",
+          "sourceId": "https://arxiv.org/pdf/2306.15006v2",
+          "authors": [],
+          "title": "Extracted training.objective fact",
+          "identifiers": {},
+          "locator": {
+            "section": "BACKGROUND",
+            "page": 3
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Overlapping k-mers tokenization ensures adjacent tokens always overlap by k-1 characters, resulting in significant information leakage in masked language modeling.",
+          "citationText": "https://arxiv.org/pdf/2306.15006v2#BACKGROUND"
+        }
+      ],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 6,
+      "factTruePositive": 4,
+      "goldFactCount": 4,
+      "actualFactCount": 6
+    },
+    {
+      "caseId": "v5-dnabert2",
+      "taskId": "v5-dnabert2-task-2",
+      "predicate": "optimization.optimizer",
+      "predicateCorrect": true,
+      "expectedAnswer": {},
+      "actualAnswer": {},
+      "expectedStatus": "UNKNOWN",
+      "actualStatus": "UNKNOWN",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": false,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": "2306.15006",
+        "failures": []
+      },
+      "facts": [],
+      "evidence": [],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 6,
+      "factTruePositive": 4,
+      "goldFactCount": 4,
+      "actualFactCount": 6
+    },
+    {
+      "caseId": "v5-gw150914",
+      "taskId": "v5-gw150914-task-1",
+      "predicate": "training.objective",
+      "predicateCorrect": true,
+      "expectedAnswer": {},
+      "actualAnswer": {},
+      "expectedStatus": "UNKNOWN",
+      "actualStatus": "UNKNOWN",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": false,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": "1602.03837",
+        "failures": []
+      },
+      "facts": [],
+      "evidence": [],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 1,
+      "factTruePositive": 0,
+      "goldFactCount": 0,
+      "actualFactCount": 1
+    }
+  ]
+}

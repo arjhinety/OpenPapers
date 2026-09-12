@@ -1,0 +1,5638 @@
+{
+ "schemaVersion": "openpapers.scale-experiment.v1",
+ "commit": "80e161773c6a6c6ac5a7b8fde37faedf5c9c6e7a",
+ "dataset": "research-scale-v1",
+ "notes": [
+  "No hand-annotated gold: task gold is auto-generated from extracted candidates, so answer correctness measures pipeline self-consistency, not accuracy.",
+  "Candidate-fact precision is estimated by the manual audit of the seeded 25-candidate sample in auditSample (audit verdict recorded separately in evals/results/scale-experiment-audit.json).",
+  "Out-of-domain categories should yield zero extracted facts; refusal probes must return UNKNOWN with an empty answer.",
+  "Not comparable to hand-annotated research-real-v1..v5 benchmarks."
+ ],
+ "aggregate": {
+  "papersSelected": 100,
+  "acquired": 99,
+  "parseFailures": 0,
+  "identityResolutionRate": 0.26,
+  "papersWithExtractedFacts": 77,
+  "meanFactsPerParsedPaper": 2.272727272727273,
+  "medianPipelineLatencyMs": 2125,
+  "tasksGenerated": 320,
+  "answerAgreementRate": 1,
+  "supportStatusAccuracy": 1,
+  "refusalProbeCount": 160,
+  "refusalProbeCorrect": 160,
+  "fabricatedAnswers": 0,
+  "outOfDomainPapers": 30,
+  "outOfDomainZeroFactRate": 0.2,
+  "perCategory": {
+   "cs.LG": {
+    "papers": 26,
+    "meanFacts": 2.08,
+    "papersWithFacts": 19
+   },
+   "cs.CL": {
+    "papers": 17,
+    "meanFacts": 3.41,
+    "papersWithFacts": 14
+   },
+   "cs.CV": {
+    "papers": 8,
+    "meanFacts": 4.13,
+    "papersWithFacts": 8
+   },
+   "cs.DC": {
+    "papers": 8,
+    "meanFacts": 1.63,
+    "papersWithFacts": 4
+   },
+   "cs.IR": {
+    "papers": 6,
+    "meanFacts": 2.67,
+    "papersWithFacts": 4
+   },
+   "stat.ML": {
+    "papers": 5,
+    "meanFacts": 2,
+    "papersWithFacts": 4
+   },
+   "q-bio.QM": {
+    "papers": 6,
+    "meanFacts": 1.17,
+    "papersWithFacts": 5
+   },
+   "q-bio.NC": {
+    "papers": 3,
+    "meanFacts": 1.33,
+    "papersWithFacts": 2
+   },
+   "astro-ph.IM": {
+    "papers": 5,
+    "meanFacts": 1.6,
+    "papersWithFacts": 5
+   },
+   "physics.comp-ph": {
+    "papers": 4,
+    "meanFacts": 0.75,
+    "papersWithFacts": 3
+   },
+   "math.DS": {
+    "papers": 4,
+    "meanFacts": 0.5,
+    "papersWithFacts": 2
+   },
+   "econ.GN": {
+    "papers": 4,
+    "meanFacts": 2.25,
+    "papersWithFacts": 4
+   },
+   "cs.CY": {
+    "papers": 4,
+    "meanFacts": 2,
+    "papersWithFacts": 3
+   }
+  }
+ },
+ "auditSample": [
+  {
+   "caseId": "scale-2609-04037",
+   "category": "physics.comp-ph",
+   "predicate": "reasoning.trace_type",
+   "value": "observation",
+   "section": "Conclusions",
+   "page": 12,
+   "rawEvidence": "One of our main results is the observation of an intermediate dynamical regime as a func-tion of the rotation-angle error."
+  },
+  {
+   "caseId": "scale-2609-04048",
+   "category": "cs.CL",
+   "predicate": "reasoning.trace_type",
+   "value": "observation",
+   "section": "Sentence-Level Divergence Analysis",
+   "page": 15,
+   "rawEvidence": "These qualitative observations are consistent with the quantitative patterns reported in Section 6, confirming that inter-agent differences reflect structured behavioral variation rather than stochastic decoding noise."
+  },
+  {
+   "caseId": "scale-2609-04083",
+   "category": "cs.CL",
+   "predicate": "training.objective",
+   "value": "contrastive learning",
+   "section": "Yale University",
+   "page": 1,
+   "rawEvidence": "We further introduce a graded evaluation protocol and compare contrastive learning, pairwise CoSENT, and listwise Rank-KL under the same data and tuning budget."
+  },
+  {
+   "caseId": "scale-2609-02580",
+   "category": "econ.GN",
+   "predicate": "reasoning.trace_type",
+   "value": "action",
+   "section": "Market Environment",
+   "page": 3,
+   "rawEvidence": "The central finding of decades of experimental economic research shows that decentralized trading among such privately-informed, self-interested agents drives trans-action prices toward this competitive prediction over repeated 2Although reservation prices bound the range of profitable trans-actions, the trading mechanism imposes no such constraint: agents are free to post and accept offers that y"
+  },
+  {
+   "caseId": "scale-2609-04094",
+   "category": "cs.LG",
+   "predicate": "reasoning.trace_type",
+   "value": "thought",
+   "section": ",→",
+   "page": 29,
+   "rawEvidence": ",→Rubrics measuring what the agent achieved matter more than rubrics measuring how it thought."
+  },
+  {
+   "caseId": "scale-2609-03905",
+   "category": "cs.DC",
+   "predicate": "architecture.attention",
+   "value": "FlashAttention",
+   "section": "EXPERIMENTAL EVALUATION",
+   "page": 9,
+   "rawEvidence": "Concrete operators are high-performance kernels: cuBLAS matrix multiplies, FlashAttention-style attention kernels, and Triton-generated ker-nels for elementwise operations, aggregation, and the decomposi-tion/recomposition of atoms (Section 5."
+  },
+  {
+   "caseId": "scale-2609-02580",
+   "category": "econ.GN",
+   "predicate": "reasoning.trace_type",
+   "value": "observation",
+   "section": "Individual Behavior",
+   "page": 5,
+   "rawEvidence": "Figure 3: The first attempted rent (profit) for agents whose side is first to place an initial order and second (individual observations)."
+  },
+  {
+   "caseId": "scale-2609-04200",
+   "category": "cs.CV",
+   "predicate": "model.formulation",
+   "value": "multimodal model",
+   "section": "Introduction",
+   "page": 2,
+   "rawEvidence": "• A benchmark evaluating six state-of-the-art video generators and four vision-language models reveals that no model achieves a score higher than 0."
+  },
+  {
+   "caseId": "scale-2609-04183",
+   "category": "cs.CV",
+   "predicate": "training.objective",
+   "value": "knowledge distillation",
+   "section": "16536.",
+   "page": 11,
+   "rawEvidence": "Localized symbolic knowledge distillation for visual commonsense models."
+  },
+  {
+   "caseId": "scale-2609-04022",
+   "category": "cs.CL",
+   "predicate": "architecture.moe",
+   "value": "mixture of experts",
+   "section": "DPO",
+   "page": 2,
+   "rawEvidence": "We trained models across different scales and architectures, including Qwen3 family (8B, 14B, and 32B models) to verify scaling and gpt-oss-20b, a mixture-of-experts model from OpenAI, to assess generalizability."
+  },
+  {
+   "caseId": "scale-2609-04173",
+   "category": "cs.CL",
+   "predicate": "reasoning.trace_type",
+   "value": "observation",
+   "section": "Principles of the Last Translation Benchmark",
+   "page": 4,
+   "rawEvidence": "Instead, we proceed inductively from observations about difficulty as experienced by users to hypotheses."
+  },
+  {
+   "caseId": "scale-2609-04147",
+   "category": "cs.LG",
+   "predicate": "reasoning.trace_type",
+   "value": "observation",
+   "section": "IMU 6-DOF",
+   "page": 7,
+   "rawEvidence": "Map registration and route-deviation metric The dataset images are local camera observations, whereas the route is defined on the global map."
+  },
+  {
+   "caseId": "scale-2609-03915",
+   "category": "cs.IR",
+   "predicate": "training.stage",
+   "value": "pretraining",
+   "section": "KDD, 6491–6501. ACM.",
+   "page": 8,
+   "rawEvidence": "REALM: Retrieval-Augmented Language Model Pre-Training."
+  },
+  {
+   "caseId": "scale-2609-03674",
+   "category": "cs.IR",
+   "predicate": "training.stage",
+   "value": "reward model",
+   "section": "(2026).",
+   "page": 10,
+   "rawEvidence": "Direct Preference Optimization: Your Language Model is Secretly a Reward Model."
+  },
+  {
+   "caseId": "scale-2609-04197",
+   "category": "cs.CL",
+   "predicate": "reasoning.trace_type",
+   "value": "observation",
+   "section": "Conclusion",
+   "page": 8,
+   "rawEvidence": "By decomposing optimiza-tion into three principled phases - structured error diagnosis, multi-strategy candidate generation, and bootstrap stability selection - ESPO addresses the fundamental weaknesses of the search paradigm: incomplete error observation, limited diversity, and unreliable selection."
+  },
+  {
+   "caseId": "scale-2609-03810",
+   "category": "cs.IR",
+   "predicate": "reasoning.trace_type",
+   "value": "observation",
+   "section": "(1)",
+   "page": 3,
+   "rawEvidence": "Invalid intermediate observations break the sequence rather than inducing an artificial adjacency."
+  },
+  {
+   "caseId": "scale-2609-04194",
+   "category": "cs.LG",
+   "predicate": "training.stage",
+   "value": "reward model",
+   "section": "MIT",
+   "page": 1,
+   "rawEvidence": "A growing body of work treats them as such, using LLM judges to diagnose errors, evaluate faith-fulness, and provide step-level supervision via process reward models and generative critics."
+  },
+  {
+   "caseId": "scale-2609-04165",
+   "category": "cs.LG",
+   "predicate": "reasoning.trace_type",
+   "value": "observation",
+   "section": "(4.48)",
+   "page": 35,
+   "rawEvidence": "For an MPS on the path 1 -2 -· · · -n, the basic observation is that, after the first i -1 qudits have been disentangled and projected onto |0⟩, the next active block Si = {i, i + 1, ."
+  },
+  {
+   "caseId": "scale-2609-04172",
+   "category": "cs.CL",
+   "predicate": "evaluation.regime",
+   "value": "one-shot",
+   "section": "2026-09-04",
+   "page": 1,
+   "rawEvidence": "7 56 1-Shot 16-Shot Full-Data Validation Accuracy (%) One-Shot OPD V."
+  },
+  {
+   "caseId": "scale-2609-04198",
+   "category": "cs.LG",
+   "predicate": "reasoning.trace_type",
+   "value": "observation",
+   "section": "The audit proposition",
+   "page": 15,
+   "rawEvidence": "Any reproducibility claim whose provenance is \"same model name\" (or even \"same model name and same fingerprint\") has, as its actual scope, the visible API behaviour of that endpoint during that observation window."
+  },
+  {
+   "caseId": "scale-2609-04183",
+   "category": "cs.CV",
+   "predicate": "model.formulation",
+   "value": "multimodal model",
+   "section": "VLM",
+   "page": 1,
+   "rawEvidence": "Building on this goal, we propose Seeing Before Synthesizing (SBS), a framework that employs a Vision-Language Model (VLM) (Li et al., 2023)’s eye into both decisions-whether to introduce a transition and where to place it."
+  },
+  {
+   "caseId": "scale-2609-04203",
+   "category": "cs.CV",
+   "predicate": "training.stage",
+   "value": "fine-tuning",
+   "section": "(4)",
+   "page": 5,
+   "rawEvidence": "We fine-tune LLaVA-OV-2-8B [2] using LoRA [13]."
+  },
+  {
+   "caseId": "scale-2609-04190",
+   "category": "cs.CV",
+   "predicate": "architecture.formulation",
+   "value": "image patches",
+   "section": "(9)",
+   "page": 6,
+   "rawEvidence": "where sim(·, ·) denotes cosine similarity between patch tokens."
+  },
+  {
+   "caseId": "scale-2609-04105",
+   "category": "cs.LG",
+   "predicate": "system.parallelism",
+   "value": "data parallelism",
+   "section": "Final 10B tokens",
+   "page": 50,
+   "rawEvidence": "The FP8-P/V arms use 64-way replicated data parallelism with global batch 64."
+  },
+  {
+   "caseId": "scale-2609-03501",
+   "category": "stat.ML",
+   "predicate": "reasoning.trace_type",
+   "value": "observation",
+   "section": "(3.1)",
+   "page": 15,
+   "rawEvidence": "15 where ˆft S,land ˆft R,m denote the shared and routed experts available after processing the first t observations, respectively."
+  }
+ ],
+ "auditCandidatePoolSize": 225,
+ "rows": [
+  {
+   "caseId": "scale-2609-04199",
+   "category": "cs.LG",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 3,
+   "tasks": [
+    {
+     "taskId": "scale-2609-04199-evaluation.regime",
+     "predicate": "evaluation.regime",
+     "query": "Which evaluation regime is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "evaluation.regime": "one-shot"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "evaluation.regime": "one-shot"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04199-architecture.formulation",
+     "predicate": "architecture.formulation",
+     "query": "Which formulation is used?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "architecture.formulation": "text-to-text"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "architecture.formulation": "text-to-text"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04199-training.stage",
+     "predicate": "training.stage",
+     "query": "Which training stage is described?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "training.stage": "fine-tuning"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "training.stage": "fine-tuning"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04199-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": "work_d1167db1aea49c36",
+   "resolveFailures": [],
+   "latencyMs": 761
+  },
+  {
+   "caseId": "scale-2609-04198",
+   "category": "cs.LG",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 2,
+   "tasks": [
+    {
+     "taskId": "scale-2609-04198-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04198-evaluation.method",
+     "predicate": "evaluation.method",
+     "query": "Which evaluation method is used?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "evaluation.method": "pairwise judging"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "evaluation.method": "pairwise judging"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04198-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04198-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": "work_584f8201da9799af",
+   "resolveFailures": [],
+   "latencyMs": 697
+  },
+  {
+   "caseId": "scale-2609-04194",
+   "category": "cs.LG",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 5,
+   "tasks": [
+    {
+     "taskId": "scale-2609-04194-training.stage",
+     "predicate": "training.stage",
+     "query": "Which training stage is described?",
+     "expectedStatus": "CONFLICTING",
+     "expectedAnswer": {
+      "training.stage": "fine-tuning"
+     },
+     "actualStatus": "CONFLICTING",
+     "actualAnswer": {
+      "training.stage": "fine-tuning"
+     },
+     "answerCorrect": true,
+     "note": "multiple distinct candidates extracted"
+    },
+    {
+     "taskId": "scale-2609-04194-evaluation.method",
+     "predicate": "evaluation.method",
+     "query": "Which evaluation method is used?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "evaluation.method": "pairwise judging"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "evaluation.method": "pairwise judging"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04194-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04194-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": "work_731698bc04326d5f",
+   "resolveFailures": [],
+   "latencyMs": 871
+  },
+  {
+   "caseId": "scale-2609-04189",
+   "category": "cs.LG",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 1,
+   "tasks": [
+    {
+     "taskId": "scale-2609-04189-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "reasoning.trace_type": "action"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "reasoning.trace_type": "action"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04189-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04189-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": "work_219ed345ddee1b64",
+   "resolveFailures": [],
+   "latencyMs": 826
+  },
+  {
+   "caseId": "scale-2609-04168",
+   "category": "cs.LG",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 1,
+   "tasks": [
+    {
+     "taskId": "scale-2609-04168-model.formulation",
+     "predicate": "model.formulation",
+     "query": "Which model formulation is described?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "model.formulation": "decoder-only Transformer"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "model.formulation": "decoder-only Transformer"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04168-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04168-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": "work_08c0082518e47b57",
+   "resolveFailures": [],
+   "latencyMs": 16192
+  },
+  {
+   "caseId": "scale-2609-04165",
+   "category": "cs.LG",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 1,
+   "tasks": [
+    {
+     "taskId": "scale-2609-04165-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04165-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04165-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": "work_fdbab7177291562f",
+   "resolveFailures": [],
+   "latencyMs": 2212
+  },
+  {
+   "caseId": "scale-2609-04147",
+   "category": "cs.LG",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 1,
+   "tasks": [
+    {
+     "taskId": "scale-2609-04147-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04147-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04147-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": "work_c3afc72553d58552",
+   "resolveFailures": [],
+   "latencyMs": 16624
+  },
+  {
+   "caseId": "scale-2609-04134",
+   "category": "cs.LG",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 2,
+   "tasks": [
+    {
+     "taskId": "scale-2609-04134-training.stage",
+     "predicate": "training.stage",
+     "query": "Which training stage is described?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "training.stage": "fine-tuning"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "training.stage": "fine-tuning"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04134-system.zero_stage",
+     "predicate": "system.zero_stage",
+     "query": "Which partitioned state is sharded?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "system.zero_stage": "parameters"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "system.zero_stage": "parameters"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04134-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04134-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": "work_030a952d7cac7f19",
+   "resolveFailures": [],
+   "latencyMs": 796
+  },
+  {
+   "caseId": "scale-2609-04113",
+   "category": "cs.LG",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 1,
+   "tasks": [
+    {
+     "taskId": "scale-2609-04113-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04113-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04113-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": "work_7d15502b3bdba4c5",
+   "resolveFailures": [],
+   "latencyMs": 836
+  },
+  {
+   "caseId": "scale-2609-04108",
+   "category": "cs.LG",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 8,
+   "tasks": [
+    {
+     "taskId": "scale-2609-04108-training.stage",
+     "predicate": "training.stage",
+     "query": "Which training stage is described?",
+     "expectedStatus": "CONFLICTING",
+     "expectedAnswer": {
+      "training.stage": "SFT"
+     },
+     "actualStatus": "CONFLICTING",
+     "actualAnswer": {
+      "training.stage": "SFT"
+     },
+     "answerCorrect": true,
+     "note": "multiple distinct candidates extracted"
+    },
+    {
+     "taskId": "scale-2609-04108-training.algorithm",
+     "predicate": "training.algorithm",
+     "query": "Which reinforcement learning algorithm is used?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "training.algorithm": "GRPO"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "training.algorithm": "GRPO"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04108-training.objective",
+     "predicate": "training.objective",
+     "query": "Which training objective does the paper use?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "training.objective": "knowledge distillation"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "training.objective": "knowledge distillation"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04108-model.formulation",
+     "predicate": "model.formulation",
+     "query": "Which model formulation is described?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "model.formulation": "multimodal model"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "model.formulation": "multimodal model"
+     },
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": "work_c1f409a2681ab693",
+   "resolveFailures": [],
+   "latencyMs": 754
+  },
+  {
+   "caseId": "scale-2609-04105",
+   "category": "cs.LG",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 7,
+   "tasks": [
+    {
+     "taskId": "scale-2609-04105-architecture.attention",
+     "predicate": "architecture.attention",
+     "query": "Which attention mechanism is used?",
+     "expectedStatus": "CONFLICTING",
+     "expectedAnswer": {
+      "architecture.attention": "FlashAttention"
+     },
+     "actualStatus": "CONFLICTING",
+     "actualAnswer": {
+      "architecture.attention": "FlashAttention"
+     },
+     "answerCorrect": true,
+     "note": "multiple distinct candidates extracted"
+    },
+    {
+     "taskId": "scale-2609-04105-system.zero_stage",
+     "predicate": "system.zero_stage",
+     "query": "Which partitioned state is sharded?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "system.zero_stage": "gradients"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "system.zero_stage": "gradients"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04105-training.stage",
+     "predicate": "training.stage",
+     "query": "Which training stage is described?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "training.stage": "pretraining"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "training.stage": "pretraining"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04105-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": "work_a3fda3fdf4bcffb7",
+   "resolveFailures": [],
+   "latencyMs": 6225
+  },
+  {
+   "caseId": "scale-2609-04094",
+   "category": "cs.LG",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 8,
+   "tasks": [
+    {
+     "taskId": "scale-2609-04094-training.stage",
+     "predicate": "training.stage",
+     "query": "Which training stage is described?",
+     "expectedStatus": "CONFLICTING",
+     "expectedAnswer": {
+      "training.stage": "reward model"
+     },
+     "actualStatus": "CONFLICTING",
+     "actualAnswer": {
+      "training.stage": "reward model"
+     },
+     "answerCorrect": true,
+     "note": "multiple distinct candidates extracted"
+    },
+    {
+     "taskId": "scale-2609-04094-training.preference_method",
+     "predicate": "training.preference_method",
+     "query": "Which preference optimization method does the paper apply?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "training.preference_method": "DPO"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "training.preference_method": "DPO"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04094-training.algorithm",
+     "predicate": "training.algorithm",
+     "query": "Which reinforcement learning algorithm is used?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "training.algorithm": "GRPO"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "training.algorithm": "GRPO"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04094-evaluation.regime",
+     "predicate": "evaluation.regime",
+     "query": "Which evaluation regime is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "evaluation.regime": "zero-shot"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "evaluation.regime": "zero-shot"
+     },
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": "work_79a93f856dc0cde2",
+   "resolveFailures": [],
+   "latencyMs": 1776
+  },
+  {
+   "caseId": "scale-2609-04090",
+   "category": "cs.LG",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 0,
+   "tasks": [
+    {
+     "taskId": "scale-2609-04090-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04090-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": "work_bf51ba6a08b89f11",
+   "resolveFailures": [],
+   "latencyMs": 1020
+  },
+  {
+   "caseId": "scale-2609-04066",
+   "category": "cs.LG",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 5,
+   "tasks": [
+    {
+     "taskId": "scale-2609-04066-training.stage",
+     "predicate": "training.stage",
+     "query": "Which training stage is described?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "training.stage": "reward model"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "training.stage": "reward model"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04066-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "CONFLICTING",
+     "expectedAnswer": {
+      "reasoning.trace_type": "action"
+     },
+     "actualStatus": "CONFLICTING",
+     "actualAnswer": {
+      "reasoning.trace_type": "action"
+     },
+     "answerCorrect": true,
+     "note": "multiple distinct candidates extracted"
+    },
+    {
+     "taskId": "scale-2609-04066-model.formulation",
+     "predicate": "model.formulation",
+     "query": "Which model formulation is described?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "model.formulation": "multimodal model"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "model.formulation": "multimodal model"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04066-system.zero_stage",
+     "predicate": "system.zero_stage",
+     "query": "Which partitioned state is sharded?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "system.zero_stage": "parameters"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "system.zero_stage": "parameters"
+     },
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": "work_2570a27959426295",
+   "resolveFailures": [],
+   "latencyMs": 6148
+  },
+  {
+   "caseId": "scale-2609-04046",
+   "category": "cs.LG",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 3,
+   "tasks": [
+    {
+     "taskId": "scale-2609-04046-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04046-architecture.attention",
+     "predicate": "architecture.attention",
+     "query": "Which attention mechanism is used?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "architecture.attention": "multi-head attention"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "architecture.attention": "multi-head attention"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04046-evaluation.method",
+     "predicate": "evaluation.method",
+     "query": "Which evaluation method is used?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "evaluation.method": "pairwise judging"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "evaluation.method": "pairwise judging"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04046-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": "work_dc016179796a56f4",
+   "resolveFailures": [],
+   "latencyMs": 1039
+  },
+  {
+   "caseId": "scale-2609-04028",
+   "category": "cs.LG",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 1,
+   "tasks": [
+    {
+     "taskId": "scale-2609-04028-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04028-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04028-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": "work_8ef2169487590d5a",
+   "resolveFailures": [],
+   "latencyMs": 2441
+  },
+  {
+   "caseId": "scale-2609-04197",
+   "category": "cs.CL",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 4,
+   "tasks": [
+    {
+     "taskId": "scale-2609-04197-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "CONFLICTING",
+     "expectedAnswer": {
+      "reasoning.trace_type": "thought"
+     },
+     "actualStatus": "CONFLICTING",
+     "actualAnswer": {
+      "reasoning.trace_type": "thought"
+     },
+     "answerCorrect": true,
+     "note": "multiple distinct candidates extracted"
+    },
+    {
+     "taskId": "scale-2609-04197-evaluation.regime",
+     "predicate": "evaluation.regime",
+     "query": "Which evaluation regime is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "evaluation.regime": "few-shot"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "evaluation.regime": "few-shot"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04197-training.stage",
+     "predicate": "training.stage",
+     "query": "Which training stage is described?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "training.stage": "pretraining"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "training.stage": "pretraining"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04197-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": "work_6d844945c837c7a3",
+   "resolveFailures": [],
+   "latencyMs": 676
+  },
+  {
+   "caseId": "scale-2609-04180",
+   "category": "cs.CL",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 11,
+   "tasks": [
+    {
+     "taskId": "scale-2609-04180-training.stage",
+     "predicate": "training.stage",
+     "query": "Which training stage is described?",
+     "expectedStatus": "CONFLICTING",
+     "expectedAnswer": {
+      "training.stage": "pretraining"
+     },
+     "actualStatus": "CONFLICTING",
+     "actualAnswer": {
+      "training.stage": "pretraining"
+     },
+     "answerCorrect": true,
+     "note": "multiple distinct candidates extracted"
+    },
+    {
+     "taskId": "scale-2609-04180-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04180-training.preference_method",
+     "predicate": "training.preference_method",
+     "query": "Which preference optimization method does the paper apply?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "training.preference_method": "DPO"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "training.preference_method": "DPO"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04180-evaluation.method",
+     "predicate": "evaluation.method",
+     "query": "Which evaluation method is used?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "evaluation.method": "pairwise judging"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "evaluation.method": "pairwise judging"
+     },
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": "work_3c68baf1a5fd4e8a",
+   "resolveFailures": [],
+   "latencyMs": 1183
+  },
+  {
+   "caseId": "scale-2609-04173",
+   "category": "cs.CL",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 4,
+   "tasks": [
+    {
+     "taskId": "scale-2609-04173-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "CONFLICTING",
+     "expectedAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "actualStatus": "CONFLICTING",
+     "actualAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "answerCorrect": true,
+     "note": "multiple distinct candidates extracted"
+    },
+    {
+     "taskId": "scale-2609-04173-model.formulation",
+     "predicate": "model.formulation",
+     "query": "Which model formulation is described?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "model.formulation": "multimodal model"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "model.formulation": "multimodal model"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04173-evaluation.method",
+     "predicate": "evaluation.method",
+     "query": "Which evaluation method is used?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "evaluation.method": "pairwise judging"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "evaluation.method": "pairwise judging"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04173-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": "work_fd6310988cf5ccd9",
+   "resolveFailures": [],
+   "latencyMs": 1072
+  },
+  {
+   "caseId": "scale-2609-04172",
+   "category": "cs.CL",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 6,
+   "tasks": [
+    {
+     "taskId": "scale-2609-04172-evaluation.regime",
+     "predicate": "evaluation.regime",
+     "query": "Which evaluation regime is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "evaluation.regime": "one-shot"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "evaluation.regime": "one-shot"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04172-training.preference_method",
+     "predicate": "training.preference_method",
+     "query": "Which preference optimization method does the paper apply?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "training.preference_method": "DPO"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "training.preference_method": "DPO"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04172-training.algorithm",
+     "predicate": "training.algorithm",
+     "query": "Which reinforcement learning algorithm is used?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "training.algorithm": "GRPO"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "training.algorithm": "GRPO"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04172-training.stage",
+     "predicate": "training.stage",
+     "query": "Which training stage is described?",
+     "expectedStatus": "CONFLICTING",
+     "expectedAnswer": {
+      "training.stage": "SFT"
+     },
+     "actualStatus": "CONFLICTING",
+     "actualAnswer": {
+      "training.stage": "SFT"
+     },
+     "answerCorrect": true,
+     "note": "multiple distinct candidates extracted"
+    }
+   ],
+   "resolveWork": "work_e9d1b6a5c38e8d51",
+   "resolveFailures": [],
+   "latencyMs": 829
+  },
+  {
+   "caseId": "scale-2609-04148",
+   "category": "cs.CL",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 2,
+   "tasks": [
+    {
+     "taskId": "scale-2609-04148-training.stage",
+     "predicate": "training.stage",
+     "query": "Which training stage is described?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "training.stage": "fine-tuning"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "training.stage": "fine-tuning"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04148-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04148-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04148-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": "work_4a296a5a5c864c00",
+   "resolveFailures": [],
+   "latencyMs": 803
+  },
+  {
+   "caseId": "scale-2609-04083",
+   "category": "cs.CL",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 6,
+   "tasks": [
+    {
+     "taskId": "scale-2609-04083-training.objective",
+     "predicate": "training.objective",
+     "query": "Which training objective does the paper use?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "training.objective": "contrastive learning"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "training.objective": "contrastive learning"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04083-model.formulation",
+     "predicate": "model.formulation",
+     "query": "Which model formulation is described?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "model.formulation": "multimodal model"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "model.formulation": "multimodal model"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04083-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04083-training.stage",
+     "predicate": "training.stage",
+     "query": "Which training stage is described?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "training.stage": "fine-tuning"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "training.stage": "fine-tuning"
+     },
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": "work_3cc00d0bc12eb156",
+   "resolveFailures": [],
+   "latencyMs": 1563
+  },
+  {
+   "caseId": "scale-2609-04061",
+   "category": "cs.CL",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 4,
+   "tasks": [
+    {
+     "taskId": "scale-2609-04061-training.stage",
+     "predicate": "training.stage",
+     "query": "Which training stage is described?",
+     "expectedStatus": "CONFLICTING",
+     "expectedAnswer": {
+      "training.stage": "fine-tuning"
+     },
+     "actualStatus": "CONFLICTING",
+     "actualAnswer": {
+      "training.stage": "fine-tuning"
+     },
+     "answerCorrect": true,
+     "note": "multiple distinct candidates extracted"
+    },
+    {
+     "taskId": "scale-2609-04061-training.preference_method",
+     "predicate": "training.preference_method",
+     "query": "Which preference optimization method does the paper apply?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "training.preference_method": "DPO"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "training.preference_method": "DPO"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04061-training.algorithm",
+     "predicate": "training.algorithm",
+     "query": "Which reinforcement learning algorithm is used?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "training.algorithm": "GRPO"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "training.algorithm": "GRPO"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04061-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": "work_7e8e741b48ab2968",
+   "resolveFailures": [],
+   "latencyMs": 875
+  },
+  {
+   "caseId": "scale-2609-04048",
+   "category": "cs.CL",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 5,
+   "tasks": [
+    {
+     "taskId": "scale-2609-04048-system.zero_stage",
+     "predicate": "system.zero_stage",
+     "query": "Which partitioned state is sharded?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "system.zero_stage": "parameters"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "system.zero_stage": "parameters"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04048-training.stage",
+     "predicate": "training.stage",
+     "query": "Which training stage is described?",
+     "expectedStatus": "CONFLICTING",
+     "expectedAnswer": {
+      "training.stage": "fine-tuning"
+     },
+     "actualStatus": "CONFLICTING",
+     "actualAnswer": {
+      "training.stage": "fine-tuning"
+     },
+     "answerCorrect": true,
+     "note": "multiple distinct candidates extracted"
+    },
+    {
+     "taskId": "scale-2609-04048-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04048-evaluation.regime",
+     "predicate": "evaluation.regime",
+     "query": "Which evaluation regime is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "evaluation.regime": "zero-shot"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "evaluation.regime": "zero-shot"
+     },
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": "work_a0e1f00f1a2046f6",
+   "resolveFailures": [],
+   "latencyMs": 904
+  },
+  {
+   "caseId": "scale-2609-04047",
+   "category": "cs.CL",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 1,
+   "tasks": [
+    {
+     "taskId": "scale-2609-04047-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04047-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04047-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": "work_a01a2c3900ca7d4d",
+   "resolveFailures": [],
+   "latencyMs": 797
+  },
+  {
+   "caseId": "scale-2609-04034",
+   "category": "cs.CL",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 3,
+   "tasks": [
+    {
+     "taskId": "scale-2609-04034-model.formulation",
+     "predicate": "model.formulation",
+     "query": "Which model formulation is described?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "model.formulation": "multimodal model"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "model.formulation": "multimodal model"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04034-training.stage",
+     "predicate": "training.stage",
+     "query": "Which training stage is described?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "training.stage": "fine-tuning"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "training.stage": "fine-tuning"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04034-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "reasoning.trace_type": "thought"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "reasoning.trace_type": "thought"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04034-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": "work_2a885cac6ba5a4e5",
+   "resolveFailures": [],
+   "latencyMs": 2268
+  },
+  {
+   "caseId": "scale-2609-04024",
+   "category": "cs.CL",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 1,
+   "tasks": [
+    {
+     "taskId": "scale-2609-04024-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "reasoning.trace_type": "thought"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "reasoning.trace_type": "thought"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04024-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04024-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 1786
+  },
+  {
+   "caseId": "scale-2609-04022",
+   "category": "cs.CL",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 9,
+   "tasks": [
+    {
+     "taskId": "scale-2609-04022-training.stage",
+     "predicate": "training.stage",
+     "query": "Which training stage is described?",
+     "expectedStatus": "CONFLICTING",
+     "expectedAnswer": {
+      "training.stage": "SFT"
+     },
+     "actualStatus": "CONFLICTING",
+     "actualAnswer": {
+      "training.stage": "SFT"
+     },
+     "answerCorrect": true,
+     "note": "multiple distinct candidates extracted"
+    },
+    {
+     "taskId": "scale-2609-04022-architecture.moe",
+     "predicate": "architecture.moe",
+     "query": "Which sparse expert architecture is used?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "architecture.moe": "mixture of experts"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "architecture.moe": "mixture of experts"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04022-training.preference_method",
+     "predicate": "training.preference_method",
+     "query": "Which preference optimization method does the paper apply?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "training.preference_method": "DPO"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "training.preference_method": "DPO"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04022-model.formulation",
+     "predicate": "model.formulation",
+     "query": "Which model formulation is described?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "model.formulation": "multimodal model"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "model.formulation": "multimodal model"
+     },
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 2154
+  },
+  {
+   "caseId": "scale-2609-04203",
+   "category": "cs.CV",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 5,
+   "tasks": [
+    {
+     "taskId": "scale-2609-04203-training.stage",
+     "predicate": "training.stage",
+     "query": "Which training stage is described?",
+     "expectedStatus": "CONFLICTING",
+     "expectedAnswer": {
+      "training.stage": "reward model"
+     },
+     "actualStatus": "CONFLICTING",
+     "actualAnswer": {
+      "training.stage": "reward model"
+     },
+     "answerCorrect": true,
+     "note": "multiple distinct candidates extracted"
+    },
+    {
+     "taskId": "scale-2609-04203-model.formulation",
+     "predicate": "model.formulation",
+     "query": "Which model formulation is described?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "model.formulation": "multimodal model"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "model.formulation": "multimodal model"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04203-training.objective",
+     "predicate": "training.objective",
+     "query": "Which training objective does the paper use?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "training.objective": "contrastive learning"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "training.objective": "contrastive learning"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04203-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 4454
+  },
+  {
+   "caseId": "scale-2609-04202",
+   "category": "cs.CV",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 6,
+   "tasks": [
+    {
+     "taskId": "scale-2609-04202-training.objective",
+     "predicate": "training.objective",
+     "query": "Which training objective does the paper use?",
+     "expectedStatus": "CONFLICTING",
+     "expectedAnswer": {
+      "training.objective": "masked reconstruction"
+     },
+     "actualStatus": "CONFLICTING",
+     "actualAnswer": {
+      "training.objective": "masked reconstruction"
+     },
+     "answerCorrect": true,
+     "note": "multiple distinct candidates extracted"
+    },
+    {
+     "taskId": "scale-2609-04202-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04202-model.formulation",
+     "predicate": "model.formulation",
+     "query": "Which model formulation is described?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "model.formulation": "multimodal model"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "model.formulation": "multimodal model"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04202-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 4100
+  },
+  {
+   "caseId": "scale-2609-04201",
+   "category": "cs.CV",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 2,
+   "tasks": [
+    {
+     "taskId": "scale-2609-04201-training.stage",
+     "predicate": "training.stage",
+     "query": "Which training stage is described?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "training.stage": "fine-tuning"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "training.stage": "fine-tuning"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04201-model.formulation",
+     "predicate": "model.formulation",
+     "query": "Which model formulation is described?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "model.formulation": "decoder-only Transformer"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "model.formulation": "decoder-only Transformer"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04201-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04201-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 2679
+  },
+  {
+   "caseId": "scale-2609-04200",
+   "category": "cs.CV",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 2,
+   "tasks": [
+    {
+     "taskId": "scale-2609-04200-model.formulation",
+     "predicate": "model.formulation",
+     "query": "Which model formulation is described?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "model.formulation": "multimodal model"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "model.formulation": "multimodal model"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04200-retrieval.component",
+     "predicate": "retrieval.component",
+     "query": "Which retrieval component supplies evidence?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "retrieval.component": "generator"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "retrieval.component": "generator"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04200-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04200-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 2643
+  },
+  {
+   "caseId": "scale-2609-04196",
+   "category": "cs.CV",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 7,
+   "tasks": [
+    {
+     "taskId": "scale-2609-04196-model.formulation",
+     "predicate": "model.formulation",
+     "query": "Which model formulation is described?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "model.formulation": "multimodal model"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "model.formulation": "multimodal model"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04196-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "CONFLICTING",
+     "expectedAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "actualStatus": "CONFLICTING",
+     "actualAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "answerCorrect": true,
+     "note": "multiple distinct candidates extracted"
+    },
+    {
+     "taskId": "scale-2609-04196-system.zero_stage",
+     "predicate": "system.zero_stage",
+     "query": "Which partitioned state is sharded?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "system.zero_stage": "parameters"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "system.zero_stage": "parameters"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04196-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 2360
+  },
+  {
+   "caseId": "scale-2609-04190",
+   "category": "cs.CV",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 2,
+   "tasks": [
+    {
+     "taskId": "scale-2609-04190-model.formulation",
+     "predicate": "model.formulation",
+     "query": "Which model formulation is described?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "model.formulation": "multimodal model"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "model.formulation": "multimodal model"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04190-architecture.formulation",
+     "predicate": "architecture.formulation",
+     "query": "Which formulation is used?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "architecture.formulation": "image patches"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "architecture.formulation": "image patches"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04190-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04190-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 2272
+  },
+  {
+   "caseId": "scale-2609-04183",
+   "category": "cs.CV",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 7,
+   "tasks": [
+    {
+     "taskId": "scale-2609-04183-model.formulation",
+     "predicate": "model.formulation",
+     "query": "Which model formulation is described?",
+     "expectedStatus": "CONFLICTING",
+     "expectedAnswer": {
+      "model.formulation": "multimodal model"
+     },
+     "actualStatus": "CONFLICTING",
+     "actualAnswer": {
+      "model.formulation": "multimodal model"
+     },
+     "answerCorrect": true,
+     "note": "multiple distinct candidates extracted"
+    },
+    {
+     "taskId": "scale-2609-04183-training.stage",
+     "predicate": "training.stage",
+     "query": "Which training stage is described?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "training.stage": "pretraining"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "training.stage": "pretraining"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04183-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04183-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 2645
+  },
+  {
+   "caseId": "scale-2609-04174",
+   "category": "cs.CV",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 2,
+   "tasks": [
+    {
+     "taskId": "scale-2609-04174-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04174-architecture.formulation",
+     "predicate": "architecture.formulation",
+     "query": "Which formulation is used?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "architecture.formulation": "image patches"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "architecture.formulation": "image patches"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04174-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04174-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 4360
+  },
+  {
+   "caseId": "scale-2609-03978",
+   "category": "cs.DC",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 0,
+   "tasks": [
+    {
+     "taskId": "scale-2609-03978-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03978-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 1869
+  },
+  {
+   "caseId": "scale-2609-03922",
+   "category": "cs.DC",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 0,
+   "tasks": [
+    {
+     "taskId": "scale-2609-03922-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03922-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 5316
+  },
+  {
+   "caseId": "scale-2609-03905",
+   "category": "cs.DC",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 5,
+   "tasks": [
+    {
+     "taskId": "scale-2609-03905-architecture.attention",
+     "predicate": "architecture.attention",
+     "query": "Which attention mechanism is used?",
+     "expectedStatus": "CONFLICTING",
+     "expectedAnswer": {
+      "architecture.attention": "grouped-query attention"
+     },
+     "actualStatus": "CONFLICTING",
+     "actualAnswer": {
+      "architecture.attention": "grouped-query attention"
+     },
+     "answerCorrect": true,
+     "note": "multiple distinct candidates extracted"
+    },
+    {
+     "taskId": "scale-2609-03905-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03905-system.parallelism",
+     "predicate": "system.parallelism",
+     "query": "Which parallelism strategy is used?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "system.parallelism": "data parallelism"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "system.parallelism": "data parallelism"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03905-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 1845
+  },
+  {
+   "caseId": "scale-2609-03562",
+   "category": "cs.DC",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 0,
+   "tasks": [
+    {
+     "taskId": "scale-2609-03562-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03562-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 1806
+  },
+  {
+   "caseId": "scale-2609-03459",
+   "category": "cs.DC",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 2,
+   "tasks": [
+    {
+     "taskId": "scale-2609-03459-architecture.attention",
+     "predicate": "architecture.attention",
+     "query": "Which attention mechanism is used?",
+     "expectedStatus": "CONFLICTING",
+     "expectedAnswer": {
+      "architecture.attention": "FlashAttention"
+     },
+     "actualStatus": "CONFLICTING",
+     "actualAnswer": {
+      "architecture.attention": "FlashAttention"
+     },
+     "answerCorrect": true,
+     "note": "multiple distinct candidates extracted"
+    },
+    {
+     "taskId": "scale-2609-03459-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03459-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 2593
+  },
+  {
+   "caseId": "scale-2609-03352",
+   "category": "cs.DC",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 1,
+   "tasks": [
+    {
+     "taskId": "scale-2609-03352-training.stage",
+     "predicate": "training.stage",
+     "query": "Which training stage is described?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "training.stage": "fine-tuning"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "training.stage": "fine-tuning"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03352-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03352-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 2208
+  },
+  {
+   "caseId": "scale-2609-03335",
+   "category": "cs.DC",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 0,
+   "tasks": [
+    {
+     "taskId": "scale-2609-03335-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03335-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 1853
+  },
+  {
+   "caseId": "scale-2609-03318",
+   "category": "cs.DC",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 5,
+   "tasks": [
+    {
+     "taskId": "scale-2609-03318-training.stage",
+     "predicate": "training.stage",
+     "query": "Which training stage is described?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "training.stage": "fine-tuning"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "training.stage": "fine-tuning"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03318-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "CONFLICTING",
+     "expectedAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "actualStatus": "CONFLICTING",
+     "actualAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "answerCorrect": true,
+     "note": "multiple distinct candidates extracted"
+    },
+    {
+     "taskId": "scale-2609-03318-architecture.moe",
+     "predicate": "architecture.moe",
+     "query": "Which sparse expert architecture is used?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "architecture.moe": "mixture of experts"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "architecture.moe": "mixture of experts"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03318-model.formulation",
+     "predicate": "model.formulation",
+     "query": "Which model formulation is described?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "model.formulation": "multimodal model"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "model.formulation": "multimodal model"
+     },
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 3020
+  },
+  {
+   "caseId": "scale-2609-03971",
+   "category": "cs.IR",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 0,
+   "tasks": [
+    {
+     "taskId": "scale-2609-03971-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03971-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 1809
+  },
+  {
+   "caseId": "scale-2609-03915",
+   "category": "cs.IR",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 3,
+   "tasks": [
+    {
+     "taskId": "scale-2609-03915-retrieval.component",
+     "predicate": "retrieval.component",
+     "query": "Which retrieval component supplies evidence?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "retrieval.component": "retriever"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "retrieval.component": "retriever"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03915-training.stage",
+     "predicate": "training.stage",
+     "query": "Which training stage is described?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "training.stage": "pretraining"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "training.stage": "pretraining"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03915-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "reasoning.trace_type": "thought"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "reasoning.trace_type": "thought"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03915-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 1835
+  },
+  {
+   "caseId": "scale-2609-03901",
+   "category": "cs.IR",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 4,
+   "tasks": [
+    {
+     "taskId": "scale-2609-03901-evaluation.regime",
+     "predicate": "evaluation.regime",
+     "query": "Which evaluation regime is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "evaluation.regime": "zero-shot"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "evaluation.regime": "zero-shot"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03901-evaluation.method",
+     "predicate": "evaluation.method",
+     "query": "Which evaluation method is used?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "evaluation.method": "pairwise judging"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "evaluation.method": "pairwise judging"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03901-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03901-retrieval.retriever",
+     "predicate": "retrieval.retriever",
+     "query": "Which retriever architecture is used?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "retrieval.retriever": "dual-encoder dense retriever"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "retrieval.retriever": "dual-encoder dense retriever"
+     },
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 1860
+  },
+  {
+   "caseId": "scale-2609-03857",
+   "category": "cs.IR",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 0,
+   "tasks": [
+    {
+     "taskId": "scale-2609-03857-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03857-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 2463
+  },
+  {
+   "caseId": "scale-2609-03810",
+   "category": "cs.IR",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 1,
+   "tasks": [
+    {
+     "taskId": "scale-2609-03810-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03810-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03810-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 2063
+  },
+  {
+   "caseId": "scale-2609-03674",
+   "category": "cs.IR",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 8,
+   "tasks": [
+    {
+     "taskId": "scale-2609-03674-training.stage",
+     "predicate": "training.stage",
+     "query": "Which training stage is described?",
+     "expectedStatus": "CONFLICTING",
+     "expectedAnswer": {
+      "training.stage": "SFT"
+     },
+     "actualStatus": "CONFLICTING",
+     "actualAnswer": {
+      "training.stage": "SFT"
+     },
+     "answerCorrect": true,
+     "note": "multiple distinct candidates extracted"
+    },
+    {
+     "taskId": "scale-2609-03674-training.preference_method",
+     "predicate": "training.preference_method",
+     "query": "Which preference optimization method does the paper apply?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "training.preference_method": "DPO"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "training.preference_method": "DPO"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03674-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "reasoning.trace_type": "thought"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "reasoning.trace_type": "thought"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03674-training.algorithm",
+     "predicate": "training.algorithm",
+     "query": "Which reinforcement learning algorithm is used?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "training.algorithm": "GRPO"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "training.algorithm": "GRPO"
+     },
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 1883
+  },
+  {
+   "caseId": "scale-2609-03977",
+   "category": "stat.ML",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 2,
+   "tasks": [
+    {
+     "taskId": "scale-2609-03977-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03977-model.formulation",
+     "predicate": "model.formulation",
+     "query": "Which model formulation is described?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "model.formulation": "multimodal model"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "model.formulation": "multimodal model"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03977-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03977-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 1726
+  },
+  {
+   "caseId": "scale-2609-03858",
+   "category": "stat.ML",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 3,
+   "tasks": [
+    {
+     "taskId": "scale-2609-03858-architecture.attention",
+     "predicate": "architecture.attention",
+     "query": "Which attention mechanism is used?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "architecture.attention": "multi-head attention"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "architecture.attention": "multi-head attention"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03858-training.stage",
+     "predicate": "training.stage",
+     "query": "Which training stage is described?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "training.stage": "pretraining"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "training.stage": "pretraining"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03858-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03858-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 2376
+  },
+  {
+   "caseId": "scale-2609-03706",
+   "category": "stat.ML",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 2,
+   "tasks": [
+    {
+     "taskId": "scale-2609-03706-model.formulation",
+     "predicate": "model.formulation",
+     "query": "Which model formulation is described?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "model.formulation": "multimodal model"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "model.formulation": "multimodal model"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03706-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03706-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03706-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 4924
+  },
+  {
+   "caseId": "scale-2609-03589",
+   "category": "stat.ML",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 0,
+   "tasks": [
+    {
+     "taskId": "scale-2609-03589-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03589-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 2125
+  },
+  {
+   "caseId": "scale-2609-03501",
+   "category": "stat.ML",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 3,
+   "tasks": [
+    {
+     "taskId": "scale-2609-03501-architecture.moe",
+     "predicate": "architecture.moe",
+     "query": "Which sparse expert architecture is used?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "architecture.moe": "mixture of experts"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "architecture.moe": "mixture of experts"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03501-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03501-evaluation.regime",
+     "predicate": "evaluation.regime",
+     "query": "Which evaluation regime is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "evaluation.regime": "few-shot"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "evaluation.regime": "few-shot"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03501-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 2423
+  },
+  {
+   "caseId": "scale-cond-mat-9703183",
+   "category": "cs.LG",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 0,
+   "tasks": [
+    {
+     "taskId": "scale-cond-mat-9703183-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-cond-mat-9703183-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 2535
+  },
+  {
+   "caseId": "scale-cmp-lg-9712002",
+   "category": "cs.LG",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 0,
+   "tasks": [
+    {
+     "taskId": "scale-cmp-lg-9712002-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-cmp-lg-9712002-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "Error: invalid arXiv identifier: cmp-lg/9712002"
+   ],
+   "latencyMs": 232
+  },
+  {
+   "caseId": "scale-cs-9809110",
+   "category": "cs.LG",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 0,
+   "tasks": [
+    {
+     "taskId": "scale-cs-9809110-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-cs-9809110-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 2028
+  },
+  {
+   "caseId": "scale-cs-9809111",
+   "category": "cs.LG",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 0,
+   "tasks": [
+    {
+     "taskId": "scale-cs-9809111-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-cs-9809111-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 2212
+  },
+  {
+   "caseId": "scale-cs-9809122",
+   "category": "cs.LG",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 1,
+   "tasks": [
+    {
+     "taskId": "scale-cs-9809122-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-cs-9809122-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-cs-9809122-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 1771
+  },
+  {
+   "caseId": "scale-cs-9811003",
+   "category": "cs.LG",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 1,
+   "tasks": [
+    {
+     "taskId": "scale-cs-9811003-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-cs-9811003-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-cs-9811003-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 1888
+  },
+  {
+   "caseId": "scale-cs-9811006",
+   "category": "cs.LG",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 0,
+   "tasks": [
+    {
+     "taskId": "scale-cs-9811006-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-cs-9811006-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 1802
+  },
+  {
+   "caseId": "scale-cs-9811010",
+   "category": "cs.LG",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 1,
+   "tasks": [
+    {
+     "taskId": "scale-cs-9811010-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-cs-9811010-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-cs-9811010-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 1977
+  },
+  {
+   "caseId": "scale-cs-9812021",
+   "category": "cs.LG",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 0,
+   "tasks": [
+    {
+     "taskId": "scale-cs-9812021-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-cs-9812021-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 3093
+  },
+  {
+   "caseId": "scale-cs-9901001",
+   "category": "cs.LG",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 2,
+   "tasks": [
+    {
+     "taskId": "scale-cs-9901001-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "CONFLICTING",
+     "expectedAnswer": {
+      "reasoning.trace_type": "action"
+     },
+     "actualStatus": "CONFLICTING",
+     "actualAnswer": {
+      "reasoning.trace_type": "action"
+     },
+     "answerCorrect": true,
+     "note": "multiple distinct candidates extracted"
+    },
+    {
+     "taskId": "scale-cs-9901001-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-cs-9901001-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 2383
+  },
+  {
+   "caseId": "scale-cmp-lg-9404001",
+   "category": "cs.CL",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 0,
+   "tasks": [
+    {
+     "taskId": "scale-cmp-lg-9404001-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-cmp-lg-9404001-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "Error: invalid arXiv identifier: cmp-lg/9404001"
+   ],
+   "latencyMs": 434
+  },
+  {
+   "caseId": "scale-cmp-lg-9404002",
+   "category": "cs.CL",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 1,
+   "tasks": [
+    {
+     "taskId": "scale-cmp-lg-9404002-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-cmp-lg-9404002-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-cmp-lg-9404002-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "Error: invalid arXiv identifier: cmp-lg/9404002"
+   ],
+   "latencyMs": 342
+  },
+  {
+   "caseId": "scale-cmp-lg-9404003",
+   "category": "cs.CL",
+   "inDomain": true,
+   "artifactStatus": "UNAVAILABLE",
+   "parseError": null,
+   "factCount": 0,
+   "tasks": [
+    {
+     "taskId": "scale-cmp-lg-9404003-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-cmp-lg-9404003-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "Error: invalid arXiv identifier: cmp-lg/9404003"
+   ],
+   "latencyMs": 0
+  },
+  {
+   "caseId": "scale-cmp-lg-9404004",
+   "category": "cs.CL",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 1,
+   "tasks": [
+    {
+     "taskId": "scale-cmp-lg-9404004-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-cmp-lg-9404004-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-cmp-lg-9404004-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "Error: invalid arXiv identifier: cmp-lg/9404004"
+   ],
+   "latencyMs": 263
+  },
+  {
+   "caseId": "scale-cmp-lg-9404005",
+   "category": "cs.CL",
+   "inDomain": true,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 0,
+   "tasks": [
+    {
+     "taskId": "scale-cmp-lg-9404005-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-cmp-lg-9404005-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "Error: invalid arXiv identifier: cmp-lg/9404005"
+   ],
+   "latencyMs": 302
+  },
+  {
+   "caseId": "scale-2609-03521",
+   "category": "q-bio.QM",
+   "inDomain": false,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 0,
+   "tasks": [
+    {
+     "taskId": "scale-2609-03521-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03521-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 3386
+  },
+  {
+   "caseId": "scale-2609-02985",
+   "category": "q-bio.QM",
+   "inDomain": false,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 1,
+   "tasks": [
+    {
+     "taskId": "scale-2609-02985-model.formulation",
+     "predicate": "model.formulation",
+     "query": "Which model formulation is described?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "model.formulation": "multimodal model"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "model.formulation": "multimodal model"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-02985-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-02985-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 3239
+  },
+  {
+   "caseId": "scale-2609-02445",
+   "category": "q-bio.QM",
+   "inDomain": false,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 2,
+   "tasks": [
+    {
+     "taskId": "scale-2609-02445-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-02445-model.formulation",
+     "predicate": "model.formulation",
+     "query": "Which model formulation is described?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "model.formulation": "multimodal model"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "model.formulation": "multimodal model"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-02445-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-02445-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 2622
+  },
+  {
+   "caseId": "scale-2609-02963",
+   "category": "q-bio.QM",
+   "inDomain": false,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 2,
+   "tasks": [
+    {
+     "taskId": "scale-2609-02963-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-02963-model.formulation",
+     "predicate": "model.formulation",
+     "query": "Which model formulation is described?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "model.formulation": "multimodal model"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "model.formulation": "multimodal model"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-02963-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-02963-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 3624
+  },
+  {
+   "caseId": "scale-2609-01434",
+   "category": "q-bio.QM",
+   "inDomain": false,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 1,
+   "tasks": [
+    {
+     "taskId": "scale-2609-01434-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-01434-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-01434-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 2315
+  },
+  {
+   "caseId": "scale-2609-01684",
+   "category": "q-bio.QM",
+   "inDomain": false,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 1,
+   "tasks": [
+    {
+     "taskId": "scale-2609-01684-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-01684-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-01684-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 2279
+  },
+  {
+   "caseId": "scale-2609-04195",
+   "category": "q-bio.NC",
+   "inDomain": false,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 1,
+   "tasks": [
+    {
+     "taskId": "scale-2609-04195-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04195-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04195-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 2699
+  },
+  {
+   "caseId": "scale-2609-03987",
+   "category": "q-bio.NC",
+   "inDomain": false,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 0,
+   "tasks": [
+    {
+     "taskId": "scale-2609-03987-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03987-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 2228
+  },
+  {
+   "caseId": "scale-2609-03883",
+   "category": "q-bio.NC",
+   "inDomain": false,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 3,
+   "tasks": [
+    {
+     "taskId": "scale-2609-03883-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "CONFLICTING",
+     "expectedAnswer": {
+      "reasoning.trace_type": "thought"
+     },
+     "actualStatus": "CONFLICTING",
+     "actualAnswer": {
+      "reasoning.trace_type": "thought"
+     },
+     "answerCorrect": true,
+     "note": "multiple distinct candidates extracted"
+    },
+    {
+     "taskId": "scale-2609-03883-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03883-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 1819
+  },
+  {
+   "caseId": "scale-2609-04077",
+   "category": "astro-ph.IM",
+   "inDomain": false,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 1,
+   "tasks": [
+    {
+     "taskId": "scale-2609-04077-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04077-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04077-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 5581
+  },
+  {
+   "caseId": "scale-2609-03975",
+   "category": "astro-ph.IM",
+   "inDomain": false,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 1,
+   "tasks": [
+    {
+     "taskId": "scale-2609-03975-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03975-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03975-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 4265
+  },
+  {
+   "caseId": "scale-2609-03866",
+   "category": "astro-ph.IM",
+   "inDomain": false,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 1,
+   "tasks": [
+    {
+     "taskId": "scale-2609-03866-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03866-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03866-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 2707
+  },
+  {
+   "caseId": "scale-2609-03779",
+   "category": "astro-ph.IM",
+   "inDomain": false,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 4,
+   "tasks": [
+    {
+     "taskId": "scale-2609-03779-model.formulation",
+     "predicate": "model.formulation",
+     "query": "Which model formulation is described?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "model.formulation": "multimodal model"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "model.formulation": "multimodal model"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03779-training.stage",
+     "predicate": "training.stage",
+     "query": "Which training stage is described?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "training.stage": "fine-tuning"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "training.stage": "fine-tuning"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03779-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03779-training.objective",
+     "predicate": "training.objective",
+     "query": "Which training objective does the paper use?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "training.objective": "contrastive learning"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "training.objective": "contrastive learning"
+     },
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 3135
+  },
+  {
+   "caseId": "scale-2609-03568",
+   "category": "astro-ph.IM",
+   "inDomain": false,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 1,
+   "tasks": [
+    {
+     "taskId": "scale-2609-03568-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03568-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03568-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 1994
+  },
+  {
+   "caseId": "scale-2609-04152",
+   "category": "physics.comp-ph",
+   "inDomain": false,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 1,
+   "tasks": [
+    {
+     "taskId": "scale-2609-04152-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04152-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04152-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 15067
+  },
+  {
+   "caseId": "scale-2609-04037",
+   "category": "physics.comp-ph",
+   "inDomain": false,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 1,
+   "tasks": [
+    {
+     "taskId": "scale-2609-04037-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04037-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04037-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 17955
+  },
+  {
+   "caseId": "scale-2609-04008",
+   "category": "physics.comp-ph",
+   "inDomain": false,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 1,
+   "tasks": [
+    {
+     "taskId": "scale-2609-04008-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04008-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04008-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 2887
+  },
+  {
+   "caseId": "scale-2609-03876",
+   "category": "physics.comp-ph",
+   "inDomain": false,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 0,
+   "tasks": [
+    {
+     "taskId": "scale-2609-03876-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03876-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 3477
+  },
+  {
+   "caseId": "scale-2609-04153",
+   "category": "math.DS",
+   "inDomain": false,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 1,
+   "tasks": [
+    {
+     "taskId": "scale-2609-04153-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04153-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04153-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 2141
+  },
+  {
+   "caseId": "scale-2609-04038",
+   "category": "math.DS",
+   "inDomain": false,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 0,
+   "tasks": [
+    {
+     "taskId": "scale-2609-04038-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04038-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 1878
+  },
+  {
+   "caseId": "scale-2609-03965",
+   "category": "math.DS",
+   "inDomain": false,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 0,
+   "tasks": [
+    {
+     "taskId": "scale-2609-03965-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03965-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 1893
+  },
+  {
+   "caseId": "scale-2609-03896",
+   "category": "math.DS",
+   "inDomain": false,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 1,
+   "tasks": [
+    {
+     "taskId": "scale-2609-03896-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03896-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03896-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 1786
+  },
+  {
+   "caseId": "scale-2609-02797",
+   "category": "econ.GN",
+   "inDomain": false,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 3,
+   "tasks": [
+    {
+     "taskId": "scale-2609-02797-training.stage",
+     "predicate": "training.stage",
+     "query": "Which training stage is described?",
+     "expectedStatus": "CONFLICTING",
+     "expectedAnswer": {
+      "training.stage": "pretraining"
+     },
+     "actualStatus": "CONFLICTING",
+     "actualAnswer": {
+      "training.stage": "pretraining"
+     },
+     "answerCorrect": true,
+     "note": "multiple distinct candidates extracted"
+    },
+    {
+     "taskId": "scale-2609-02797-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-02797-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-02797-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 1760
+  },
+  {
+   "caseId": "scale-2609-02580",
+   "category": "econ.GN",
+   "inDomain": false,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 2,
+   "tasks": [
+    {
+     "taskId": "scale-2609-02580-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "CONFLICTING",
+     "expectedAnswer": {
+      "reasoning.trace_type": "action"
+     },
+     "actualStatus": "CONFLICTING",
+     "actualAnswer": {
+      "reasoning.trace_type": "action"
+     },
+     "answerCorrect": true,
+     "note": "multiple distinct candidates extracted"
+    },
+    {
+     "taskId": "scale-2609-02580-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-02580-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 1858
+  },
+  {
+   "caseId": "scale-2609-02013",
+   "category": "econ.GN",
+   "inDomain": false,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 2,
+   "tasks": [
+    {
+     "taskId": "scale-2609-02013-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-02013-system.zero_stage",
+     "predicate": "system.zero_stage",
+     "query": "Which partitioned state is sharded?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "system.zero_stage": "parameters"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "system.zero_stage": "parameters"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-02013-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-02013-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 2572
+  },
+  {
+   "caseId": "scale-2609-01263",
+   "category": "econ.GN",
+   "inDomain": false,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 2,
+   "tasks": [
+    {
+     "taskId": "scale-2609-01263-model.formulation",
+     "predicate": "model.formulation",
+     "query": "Which model formulation is described?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "model.formulation": "multimodal model"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "model.formulation": "multimodal model"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-01263-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-01263-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-01263-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 3998
+  },
+  {
+   "caseId": "scale-2609-04125",
+   "category": "cs.CY",
+   "inDomain": false,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 1,
+   "tasks": [
+    {
+     "taskId": "scale-2609-04125-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04125-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-04125-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 2411
+  },
+  {
+   "caseId": "scale-2609-03999",
+   "category": "cs.CY",
+   "inDomain": false,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 6,
+   "tasks": [
+    {
+     "taskId": "scale-2609-03999-training.stage",
+     "predicate": "training.stage",
+     "query": "Which training stage is described?",
+     "expectedStatus": "CONFLICTING",
+     "expectedAnswer": {
+      "training.stage": "fine-tuning"
+     },
+     "actualStatus": "CONFLICTING",
+     "actualAnswer": {
+      "training.stage": "fine-tuning"
+     },
+     "answerCorrect": true,
+     "note": "multiple distinct candidates extracted"
+    },
+    {
+     "taskId": "scale-2609-03999-architecture.moe",
+     "predicate": "architecture.moe",
+     "query": "Which sparse expert architecture is used?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "architecture.moe": "mixture of experts"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "architecture.moe": "mixture of experts"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03999-training.preference_method",
+     "predicate": "training.preference_method",
+     "query": "Which preference optimization method does the paper apply?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "training.preference_method": "DPO"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "training.preference_method": "DPO"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03999-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 3210
+  },
+  {
+   "caseId": "scale-2609-03936",
+   "category": "cs.CY",
+   "inDomain": false,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 1,
+   "tasks": [
+    {
+     "taskId": "scale-2609-03936-reasoning.trace_type",
+     "predicate": "reasoning.trace_type",
+     "query": "Which reasoning trace element is reported?",
+     "expectedStatus": "SUPPORTED",
+     "expectedAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "actualStatus": "SUPPORTED",
+     "actualAnswer": {
+      "reasoning.trace_type": "observation"
+     },
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03936-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03936-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 1798
+  },
+  {
+   "caseId": "scale-2609-03853",
+   "category": "cs.CY",
+   "inDomain": false,
+   "artifactStatus": "ACQUIRED",
+   "parseError": null,
+   "factCount": 0,
+   "tasks": [
+    {
+     "taskId": "scale-2609-03853-probe-optimization.optimizer",
+     "predicate": "optimization.optimizer",
+     "query": "Which optimizer does the paper use?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    },
+    {
+     "taskId": "scale-2609-03853-probe-data.training_dataset",
+     "predicate": "data.training_dataset",
+     "query": "Which training dataset was used?",
+     "expectedStatus": "UNKNOWN",
+     "expectedAnswer": {},
+     "actualStatus": "UNKNOWN",
+     "actualAnswer": {},
+     "answerCorrect": true
+    }
+   ],
+   "resolveWork": null,
+   "resolveFailures": [
+    "arxiv: Error: arXiv request failed: 429"
+   ],
+   "latencyMs": 1801
+  }
+ ]
+}

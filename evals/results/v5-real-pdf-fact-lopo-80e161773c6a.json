@@ -1,0 +1,85 @@
+{
+  "schemaVersion": "openpapers.real-pdf-fact-lopo.v1",
+  "benchmark": "research-facts-v5-2-development",
+  "commit": "80e161773c6a6c6ac5a7b8fde37faedf5c9c6e7a",
+  "timestamp": "2026-09-08T07:21:41.502Z",
+  "method": "leave-one-paper-out diagnostic over actual parsed PDFs; extractor has no learned paper-specific parameters",
+  "mean": {
+    "candidateRecall": 0.8333333333333334,
+    "precision": 0.8333333333333334,
+    "recall": 0.8333333333333334,
+    "f1": 0.8333333333333334
+  },
+  "perPaper": [
+    {
+      "heldOutPaperId": "1706.03762",
+      "parseSuccess": true,
+      "candidateRecall": 1,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1,
+      "tp": 2,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "heldOutPaperId": "1810.04805",
+      "parseSuccess": true,
+      "candidateRecall": 0,
+      "precision": 0,
+      "recall": 0,
+      "f1": 0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 1
+    },
+    {
+      "heldOutPaperId": "2106.09685",
+      "parseSuccess": true,
+      "candidateRecall": 1,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "heldOutPaperId": "2205.14135",
+      "parseSuccess": true,
+      "candidateRecall": 1,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "heldOutPaperId": "2305.14314",
+      "parseSuccess": true,
+      "candidateRecall": 1,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "heldOutPaperId": "2305.18290",
+      "parseSuccess": true,
+      "candidateRecall": 1,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    }
+  ],
+  "holdout": {
+    "created": false,
+    "usedForTuning": false
+  }
+}

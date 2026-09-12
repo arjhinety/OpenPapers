@@ -1,0 +1,626 @@
+{
+  "schemaVersion": "openpapers.real-source-evaluation.v1",
+  "kind": "real-source-holdout",
+  "commit": "80e161773c6a6c6ac5a7b8fde37faedf5c9c6e7a",
+  "dataset": "research-real-v1",
+  "split": "holdout",
+  "holdoutInfluencedTuning": false,
+  "configuration": {
+    "providerMode": "identifier-first-live",
+    "resolutionMode": "known-work",
+    "parserMode": "pymupdf-real-pdf",
+    "liveProviders": true
+  },
+  "taskCount": 6,
+  "metrics": {
+    "workAccuracy": 0.16666666666666666,
+    "identifierAccuracy": 0.16666666666666666,
+    "answerCorrectness": 0.5,
+    "evidenceSourceAccuracy": 0.5,
+    "locatorAccuracy": 1,
+    "supportStatusAccuracy": 0.3333333333333333,
+    "correctUNKNOWN": 1,
+    "correctNOT_REPORTED": 0,
+    "falseUNKNOWN": 0.6666666666666666,
+    "falseNOT_REPORTED": 0,
+    "fabricatedAnswerRate": 0,
+    "conflictPrecision": null,
+    "conflictRecall": null,
+    "taskCount": 6,
+    "expectedUnknown": 2,
+    "expectedNotReported": 1,
+    "actualUnknown": 6,
+    "actualNotReported": 0
+  },
+  "failureCategories": {
+    "field extraction failure": 3
+  },
+  "rows": [
+    {
+      "caseId": "rp-llama-2302",
+      "taskId": "real-llama-gpu-abstain",
+      "query": "What GPU count was reported for LLaMA pre-training?",
+      "expectedStatus": "NOT_REPORTED",
+      "expectedAnswer": {
+        "gpu_count": null
+      },
+      "expectedSourceClass": [
+        "paper_review"
+      ],
+      "expectedLocator": "section 2.2 Training details",
+      "actualStatus": "UNKNOWN",
+      "actualAnswer": {},
+      "actualEvidence": [],
+      "actualSourceClass": [
+        "paper_pdf"
+      ],
+      "actualLocator": {
+        "section": "Optimizer",
+        "page": 3
+      },
+      "workCorrect": false,
+      "identifierCorrect": false,
+      "answerCorrect": true,
+      "evidenceSourceCorrect": false,
+      "locatorCorrect": true,
+      "supportStatusCorrect": false,
+      "artifactStatus": "ACQUIRED",
+      "parserMode": "pymupdf-real-pdf",
+      "parserError": null,
+      "providerResolution": {
+        "mode": "known-work",
+        "candidates": 0,
+        "actualWork": null,
+        "providers": [
+          "arxiv"
+        ],
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "repositoryEvidence": {
+        "repository": "meta-llama/llama",
+        "commitSha": "689c7f261b9c5514636ecc3c5fefefcbb3e6eed7",
+        "filesRead": 3,
+        "evidenceCount": 3,
+        "manifest": [
+          {
+            "owner": "meta-llama",
+            "repo": "llama",
+            "commitSha": "689c7f261b9c5514636ecc3c5fefefcbb3e6eed7",
+            "path": "README.md",
+            "contentSha256": "1256609c6ae78ecda5c2d98cf17d28de5018427bbc602caaa51bf280ee2273ea",
+            "bytes": 8694,
+            "sourceRoute": "github:contents/meta-llama/llama@689c7f261b9c5514636ecc3c5fefefcbb3e6eed7"
+          },
+          {
+            "owner": "meta-llama",
+            "repo": "llama",
+            "commitSha": "689c7f261b9c5514636ecc3c5fefefcbb3e6eed7",
+            "path": "download.sh",
+            "contentSha256": "fb8e6a3cede28d5fc8616e5779c37f20a2ebeecf7c6762daaadc479e0923b611",
+            "bytes": 2544,
+            "sourceRoute": "github:contents/meta-llama/llama@689c7f261b9c5514636ecc3c5fefefcbb3e6eed7"
+          },
+          {
+            "owner": "meta-llama",
+            "repo": "llama",
+            "commitSha": "689c7f261b9c5514636ecc3c5fefefcbb3e6eed7",
+            "path": "MODEL_CARD.md",
+            "contentSha256": "442c51972233f13b644d8d5eaffd42e74b5bc3d2864ff52a00fbd788f4bee74a",
+            "bytes": 7613,
+            "sourceRoute": "github:contents/meta-llama/llama@689c7f261b9c5514636ecc3c5fefefcbb3e6eed7"
+          }
+        ],
+        "failures": []
+      },
+      "failureCategory": null
+    },
+    {
+      "caseId": "rp-qlora-2305",
+      "taskId": "real-qlora-nf4",
+      "query": "Which 4-bit data type does QLoRA introduce?",
+      "expectedStatus": "SUPPORTED",
+      "expectedAnswer": {
+        "datatype": "NF4"
+      },
+      "expectedSourceClass": [
+        "paper"
+      ],
+      "expectedLocator": "section 4.1 NF4",
+      "actualStatus": "UNKNOWN",
+      "actualAnswer": {},
+      "actualEvidence": [],
+      "actualSourceClass": [
+        "paper_pdf"
+      ],
+      "actualLocator": {
+        "section": "Parameter Efficient Finetuning (PEFT) method, most of the memory footprint for LLM finetuning",
+        "page": 4
+      },
+      "workCorrect": false,
+      "identifierCorrect": false,
+      "answerCorrect": false,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": false,
+      "artifactStatus": "ACQUIRED",
+      "parserMode": "pymupdf-real-pdf",
+      "parserError": null,
+      "providerResolution": {
+        "mode": "known-work",
+        "candidates": 0,
+        "actualWork": null,
+        "providers": [
+          "arxiv"
+        ],
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "repositoryEvidence": {
+        "repository": "artidoro/qlora",
+        "commitSha": "7f4e95a68dc076bea9b3a413d2b512eca6d004e5",
+        "filesRead": 8,
+        "evidenceCount": 32,
+        "manifest": [
+          {
+            "owner": "artidoro",
+            "repo": "qlora",
+            "commitSha": "7f4e95a68dc076bea9b3a413d2b512eca6d004e5",
+            "path": "README.md",
+            "contentSha256": "f9205f6b2572f81b8919f523176315207806357482049c96fd6471c1c6b17472",
+            "bytes": 10938,
+            "sourceRoute": "github:contents/artidoro/qlora@7f4e95a68dc076bea9b3a413d2b512eca6d004e5"
+          },
+          {
+            "owner": "artidoro",
+            "repo": "qlora",
+            "commitSha": "7f4e95a68dc076bea9b3a413d2b512eca6d004e5",
+            "path": "scripts/finetune_guanaco_13b.sh",
+            "contentSha256": "b3adb28d44c8132ec45ee5f57899f9074946e6dc8fac7344a26a3eec6b243f78",
+            "bytes": 1139,
+            "sourceRoute": "github:contents/artidoro/qlora@7f4e95a68dc076bea9b3a413d2b512eca6d004e5"
+          },
+          {
+            "owner": "artidoro",
+            "repo": "qlora",
+            "commitSha": "7f4e95a68dc076bea9b3a413d2b512eca6d004e5",
+            "path": "scripts/finetune_guanaco_33b.sh",
+            "contentSha256": "35a634a5ff57cc1c94d698f1eb2a3fd0361ca38b34f128ec0fc678c606a2016f",
+            "bytes": 1139,
+            "sourceRoute": "github:contents/artidoro/qlora@7f4e95a68dc076bea9b3a413d2b512eca6d004e5"
+          },
+          {
+            "owner": "artidoro",
+            "repo": "qlora",
+            "commitSha": "7f4e95a68dc076bea9b3a413d2b512eca6d004e5",
+            "path": "scripts/finetune_guanaco_65b.sh",
+            "contentSha256": "97c541a865435768848c54661d12327a7537af218b2541f17c409d10bfb8de31",
+            "bytes": 1138,
+            "sourceRoute": "github:contents/artidoro/qlora@7f4e95a68dc076bea9b3a413d2b512eca6d004e5"
+          },
+          {
+            "owner": "artidoro",
+            "repo": "qlora",
+            "commitSha": "7f4e95a68dc076bea9b3a413d2b512eca6d004e5",
+            "path": "scripts/finetune_guanaco_7b.sh",
+            "contentSha256": "70e6cb93fd161cfc0136b0bb72a2d8fd249068611cc7ac88e4058a57d0f9f5e9",
+            "bytes": 1136,
+            "sourceRoute": "github:contents/artidoro/qlora@7f4e95a68dc076bea9b3a413d2b512eca6d004e5"
+          },
+          {
+            "owner": "artidoro",
+            "repo": "qlora",
+            "commitSha": "7f4e95a68dc076bea9b3a413d2b512eca6d004e5",
+            "path": "scripts/finetune_llama2_guanaco_7b.sh",
+            "contentSha256": "39f74153413ea47d8fa05039ecdef7b5610aaff7c1a0a2c42e101a5593fadeaa",
+            "bytes": 1167,
+            "sourceRoute": "github:contents/artidoro/qlora@7f4e95a68dc076bea9b3a413d2b512eca6d004e5"
+          },
+          {
+            "owner": "artidoro",
+            "repo": "qlora",
+            "commitSha": "7f4e95a68dc076bea9b3a413d2b512eca6d004e5",
+            "path": "scripts/finetune.sh",
+            "contentSha256": "6390826d55885e54020bc8842fbe6e35451b40a9038759572dda696440d7cd34",
+            "bytes": 655,
+            "sourceRoute": "github:contents/artidoro/qlora@7f4e95a68dc076bea9b3a413d2b512eca6d004e5"
+          },
+          {
+            "owner": "artidoro",
+            "repo": "qlora",
+            "commitSha": "7f4e95a68dc076bea9b3a413d2b512eca6d004e5",
+            "path": "scripts/generate.sh",
+            "contentSha256": "8e32f75f338592a1b6daffdbd1ff1c34ce330e1b870a181e8479b6067d585f2e",
+            "bytes": 390,
+            "sourceRoute": "github:contents/artidoro/qlora@7f4e95a68dc076bea9b3a413d2b512eca6d004e5"
+          }
+        ],
+        "failures": []
+      },
+      "failureCategory": "field extraction failure"
+    },
+    {
+      "caseId": "rp-vllm-2309",
+      "taskId": "real-vllm-memory",
+      "query": "What memory structure does PagedAttention manage?",
+      "expectedStatus": "SUPPORTED",
+      "expectedAnswer": {
+        "structure": "KV cache"
+      },
+      "expectedSourceClass": [
+        "paper"
+      ],
+      "expectedLocator": "section 3 PagedAttention",
+      "actualStatus": "UNKNOWN",
+      "actualAnswer": {},
+      "actualEvidence": [],
+      "actualSourceClass": [
+        "paper_pdf"
+      ],
+      "actualLocator": {
+        "section": "22). 183–198.",
+        "page": 14
+      },
+      "workCorrect": true,
+      "identifierCorrect": true,
+      "answerCorrect": false,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": false,
+      "artifactStatus": "ACQUIRED",
+      "parserMode": "pymupdf-real-pdf",
+      "parserError": null,
+      "providerResolution": {
+        "mode": "known-work",
+        "candidates": 1,
+        "actualWork": "2309.06180",
+        "providers": [
+          "arxiv"
+        ],
+        "failures": []
+      },
+      "repositoryEvidence": {
+        "repository": "vllm-project/vllm",
+        "commitSha": "d9e2b5238d4a42341db3374226890a801357c646",
+        "filesRead": 9,
+        "evidenceCount": 0,
+        "manifest": [
+          {
+            "owner": "vllm-project",
+            "repo": "vllm",
+            "commitSha": "d9e2b5238d4a42341db3374226890a801357c646",
+            "path": "benchmarks/README.md",
+            "contentSha256": "99700771ddb4628923387240f3ce0ac365c87f5697ee766bcb0af670782eee6d",
+            "bytes": 1028,
+            "sourceRoute": "github:contents/vllm-project/vllm@d9e2b5238d4a42341db3374226890a801357c646"
+          },
+          {
+            "owner": "vllm-project",
+            "repo": "vllm",
+            "commitSha": "d9e2b5238d4a42341db3374226890a801357c646",
+            "path": "docs/README.md",
+            "contentSha256": "87681113461ee55490fa6337c0a28ca9c5fb7b9e5bc75e767a71ddf57c9677d4",
+            "bytes": 4508,
+            "sourceRoute": "github:contents/vllm-project/vllm@d9e2b5238d4a42341db3374226890a801357c646"
+          },
+          {
+            "owner": "vllm-project",
+            "repo": "vllm",
+            "commitSha": "d9e2b5238d4a42341db3374226890a801357c646",
+            "path": "README.md",
+            "contentSha256": "8d2e7cd8d120bcd91ddfa85ef957f7246021b4a3f46f2e1f4ccf084ec6c20026",
+            "bytes": 5708,
+            "sourceRoute": "github:contents/vllm-project/vllm@d9e2b5238d4a42341db3374226890a801357c646"
+          },
+          {
+            "owner": "vllm-project",
+            "repo": "vllm",
+            "commitSha": "d9e2b5238d4a42341db3374226890a801357c646",
+            "path": ".gemini/config.yaml",
+            "contentSha256": "388f62ac8ee08ede98b418b5edce2fb2cde285daf6bac5d13b904fd7bcf9f8f5",
+            "bytes": 298,
+            "sourceRoute": "github:contents/vllm-project/vllm@d9e2b5238d4a42341db3374226890a801357c646"
+          },
+          {
+            "owner": "vllm-project",
+            "repo": "vllm",
+            "commitSha": "d9e2b5238d4a42341db3374226890a801357c646",
+            "path": "benchmarks/kv_cache_watermark.sh",
+            "contentSha256": "cd215078804475be181a66181cd524649754f5da12b36b07239082b3ea35fc88",
+            "bytes": 8870,
+            "sourceRoute": "github:contents/vllm-project/vllm@d9e2b5238d4a42341db3374226890a801357c646"
+          },
+          {
+            "owner": "vllm-project",
+            "repo": "vllm",
+            "commitSha": "d9e2b5238d4a42341db3374226890a801357c646",
+            "path": "benchmarks/run_structured_output_benchmark.sh",
+            "contentSha256": "aedf0e48f6b3e5f96e671658baa32e57c49d5bf4e82de406bedb7b6cb9de0a87",
+            "bytes": 3819,
+            "sourceRoute": "github:contents/vllm-project/vllm@d9e2b5238d4a42341db3374226890a801357c646"
+          },
+          {
+            "owner": "vllm-project",
+            "repo": "vllm",
+            "commitSha": "d9e2b5238d4a42341db3374226890a801357c646",
+            "path": "build_rust.sh",
+            "contentSha256": "284b1145e1c8de84e560eaf822b8fa4297b450152776a26b8727f398ab9f49b9",
+            "bytes": 1016,
+            "sourceRoute": "github:contents/vllm-project/vllm@d9e2b5238d4a42341db3374226890a801357c646"
+          },
+          {
+            "owner": "vllm-project",
+            "repo": "vllm",
+            "commitSha": "d9e2b5238d4a42341db3374226890a801357c646",
+            "path": "build_vllm_ppc64le.sh",
+            "contentSha256": "e908000150e8fcf9957fc0470c5f22f6287cd786dff5739b6c7472171dddc7a3",
+            "bytes": 7378,
+            "sourceRoute": "github:contents/vllm-project/vllm@d9e2b5238d4a42341db3374226890a801357c646"
+          },
+          {
+            "owner": "vllm-project",
+            "repo": "vllm",
+            "commitSha": "d9e2b5238d4a42341db3374226890a801357c646",
+            "path": "docs/pre_run_check.sh",
+            "contentSha256": "b8a6c900275e5975d0e0ca403a96164c23b82057354b885902395c426b6c7fa8",
+            "bytes": 4066,
+            "sourceRoute": "github:contents/vllm-project/vllm@d9e2b5238d4a42341db3374226890a801357c646"
+          }
+        ],
+        "failures": []
+      },
+      "failureCategory": "field extraction failure"
+    },
+    {
+      "caseId": "rp-llama2-2307",
+      "taskId": "real-llama2-gpu-unknown",
+      "query": "What exact GPU count is publication-era evidence for Llama 2 training in this repository revision?",
+      "expectedStatus": "UNKNOWN",
+      "expectedAnswer": {
+        "gpu_count": null
+      },
+      "expectedSourceClass": [
+        "repository_commit"
+      ],
+      "expectedLocator": "repository history relative to 2023-07-18",
+      "actualStatus": "UNKNOWN",
+      "actualAnswer": {},
+      "actualEvidence": [],
+      "actualSourceClass": [
+        "paper_pdf"
+      ],
+      "actualLocator": {
+        "section": "Training Details",
+        "page": 5
+      },
+      "workCorrect": false,
+      "identifierCorrect": false,
+      "answerCorrect": true,
+      "evidenceSourceCorrect": false,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "artifactStatus": "ACQUIRED",
+      "parserMode": "pymupdf-real-pdf",
+      "parserError": null,
+      "providerResolution": {
+        "mode": "known-work",
+        "candidates": 0,
+        "actualWork": null,
+        "providers": [
+          "arxiv"
+        ],
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "repositoryEvidence": {
+        "repository": "meta-llama/llama",
+        "commitSha": "689c7f261b9c5514636ecc3c5fefefcbb3e6eed7",
+        "filesRead": 3,
+        "evidenceCount": 3,
+        "manifest": [
+          {
+            "owner": "meta-llama",
+            "repo": "llama",
+            "commitSha": "689c7f261b9c5514636ecc3c5fefefcbb3e6eed7",
+            "path": "README.md",
+            "contentSha256": "1256609c6ae78ecda5c2d98cf17d28de5018427bbc602caaa51bf280ee2273ea",
+            "bytes": 8694,
+            "sourceRoute": "github:contents/meta-llama/llama@689c7f261b9c5514636ecc3c5fefefcbb3e6eed7"
+          },
+          {
+            "owner": "meta-llama",
+            "repo": "llama",
+            "commitSha": "689c7f261b9c5514636ecc3c5fefefcbb3e6eed7",
+            "path": "download.sh",
+            "contentSha256": "fb8e6a3cede28d5fc8616e5779c37f20a2ebeecf7c6762daaadc479e0923b611",
+            "bytes": 2544,
+            "sourceRoute": "github:contents/meta-llama/llama@689c7f261b9c5514636ecc3c5fefefcbb3e6eed7"
+          },
+          {
+            "owner": "meta-llama",
+            "repo": "llama",
+            "commitSha": "689c7f261b9c5514636ecc3c5fefefcbb3e6eed7",
+            "path": "MODEL_CARD.md",
+            "contentSha256": "442c51972233f13b644d8d5eaffd42e74b5bc3d2864ff52a00fbd788f4bee74a",
+            "bytes": 7613,
+            "sourceRoute": "github:contents/meta-llama/llama@689c7f261b9c5514636ecc3c5fefefcbb3e6eed7"
+          }
+        ],
+        "failures": []
+      },
+      "failureCategory": null
+    },
+    {
+      "caseId": "rp-mamba-2312",
+      "taskId": "real-mamba-complexity",
+      "query": "What sequence-length scaling does the paper claim for its selective state space layer?",
+      "expectedStatus": "SUPPORTED",
+      "expectedAnswer": {
+        "complexity": "linear"
+      },
+      "expectedSourceClass": [
+        "paper"
+      ],
+      "expectedLocator": "abstract",
+      "actualStatus": "UNKNOWN",
+      "actualAnswer": {},
+      "actualEvidence": [],
+      "actualSourceClass": [
+        "paper_pdf"
+      ],
+      "actualLocator": {
+        "section": "Scaling: Model Size",
+        "page": 12
+      },
+      "workCorrect": false,
+      "identifierCorrect": false,
+      "answerCorrect": false,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": false,
+      "artifactStatus": "ACQUIRED",
+      "parserMode": "pymupdf-real-pdf",
+      "parserError": null,
+      "providerResolution": {
+        "mode": "known-work",
+        "candidates": 0,
+        "actualWork": null,
+        "providers": [
+          "arxiv"
+        ],
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "repositoryEvidence": {
+        "repository": "state-spaces/mamba",
+        "commitSha": "e9594ce1c732d97440f0332fdc43170a2294dbfa",
+        "filesRead": 5,
+        "evidenceCount": 9,
+        "manifest": [
+          {
+            "owner": "state-spaces",
+            "repo": "mamba",
+            "commitSha": "e9594ce1c732d97440f0332fdc43170a2294dbfa",
+            "path": "README.md",
+            "contentSha256": "46f3e7412d724fb9bedba32130b73df53625483ece8df92d29146e690434acb9",
+            "bytes": 14833,
+            "sourceRoute": "github:contents/state-spaces/mamba@e9594ce1c732d97440f0332fdc43170a2294dbfa"
+          },
+          {
+            "owner": "state-spaces",
+            "repo": "mamba",
+            "commitSha": "e9594ce1c732d97440f0332fdc43170a2294dbfa",
+            "path": ".github/scripts/build.sh",
+            "contentSha256": "4ad2314a24ad79ff6b4b08d5b14a4aea54627b6e4ae0e049be5174863838f5c2",
+            "bytes": 1218,
+            "sourceRoute": "github:contents/state-spaces/mamba@e9594ce1c732d97440f0332fdc43170a2294dbfa"
+          },
+          {
+            "owner": "state-spaces",
+            "repo": "mamba",
+            "commitSha": "e9594ce1c732d97440f0332fdc43170a2294dbfa",
+            "path": ".github/scripts/check_for_ngc_images.sh",
+            "contentSha256": "7606490984b6cc3fd1b22d2fc6a152efe07a0524bcd9a83f73b2b36d9e1283e6",
+            "bytes": 2269,
+            "sourceRoute": "github:contents/state-spaces/mamba@e9594ce1c732d97440f0332fdc43170a2294dbfa"
+          },
+          {
+            "owner": "state-spaces",
+            "repo": "mamba",
+            "commitSha": "e9594ce1c732d97440f0332fdc43170a2294dbfa",
+            "path": ".github/scripts/check_for_releases.sh",
+            "contentSha256": "ff11fc6975fe3661ed62de84c3c52e8ceff9b7e6cefecf1609b2f18ec464657e",
+            "bytes": 595,
+            "sourceRoute": "github:contents/state-spaces/mamba@e9594ce1c732d97440f0332fdc43170a2294dbfa"
+          },
+          {
+            "owner": "state-spaces",
+            "repo": "mamba",
+            "commitSha": "e9594ce1c732d97440f0332fdc43170a2294dbfa",
+            "path": ".github/scripts/test.sh",
+            "contentSha256": "29305d261ca3135019c36478b179979861c12f8a073550daa41eaf98dbf90b4f",
+            "bytes": 114,
+            "sourceRoute": "github:contents/state-spaces/mamba@e9594ce1c732d97440f0332fdc43170a2294dbfa"
+          }
+        ],
+        "failures": []
+      },
+      "failureCategory": "field extraction failure"
+    },
+    {
+      "caseId": "rp-whisper-2212",
+      "taskId": "real-whisper-precision",
+      "query": "What precision was used for every training stage?",
+      "expectedStatus": "UNKNOWN",
+      "expectedAnswer": {
+        "precision": null
+      },
+      "expectedSourceClass": [
+        "paper_review"
+      ],
+      "expectedLocator": "training implementation scope",
+      "actualStatus": "UNKNOWN",
+      "actualAnswer": {},
+      "actualEvidence": [],
+      "actualSourceClass": [
+        "paper_pdf"
+      ],
+      "actualLocator": {
+        "section": "CRIBE",
+        "page": 4
+      },
+      "workCorrect": false,
+      "identifierCorrect": false,
+      "answerCorrect": true,
+      "evidenceSourceCorrect": false,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "artifactStatus": "ACQUIRED",
+      "parserMode": "pymupdf-real-pdf",
+      "parserError": null,
+      "providerResolution": {
+        "mode": "known-work",
+        "candidates": 0,
+        "actualWork": null,
+        "providers": [
+          "arxiv"
+        ],
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "repositoryEvidence": {
+        "repository": "openai/whisper",
+        "commitSha": "86098128c0b4f24f0e2aa2994de830614b474227",
+        "filesRead": 2,
+        "evidenceCount": 0,
+        "manifest": [
+          {
+            "owner": "openai",
+            "repo": "whisper",
+            "commitSha": "86098128c0b4f24f0e2aa2994de830614b474227",
+            "path": "README.md",
+            "contentSha256": "38c180c2a8d8ba628a3e131ad42bf06c8a51bb681efb30fbe28d5a0f4b65f288",
+            "bytes": 8246,
+            "sourceRoute": "github:contents/openai/whisper@86098128c0b4f24f0e2aa2994de830614b474227"
+          },
+          {
+            "owner": "openai",
+            "repo": "whisper",
+            "commitSha": "86098128c0b4f24f0e2aa2994de830614b474227",
+            "path": "model-card.md",
+            "contentSha256": "3c2dc15e0c4bf2f1067db8530b1ecd6675abb431c4bc09fad3bc4453434f3333",
+            "bytes": 7307,
+            "sourceRoute": "github:contents/openai/whisper@86098128c0b4f24f0e2aa2994de830614b474227"
+          }
+        ],
+        "failures": []
+      },
+      "failureCategory": null
+    }
+  ]
+}

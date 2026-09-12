@@ -1,0 +1,1001 @@
+{
+  "schemaVersion": "openpapers.real-source-v3-evaluation.v1",
+  "commit": "80e161773c6a6c6ac5a7b8fde37faedf5c9c6e7a",
+  "dataset": "research-real-v4",
+  "split": "development",
+  "holdoutUsedForTuning": null,
+  "configuration": {
+    "extraction": "query-independent-facts",
+    "intent": "separate-query-intent",
+    "parser": "pymupdf-real-pdf"
+  },
+  "taskCount": 9,
+  "substantiveTaskCount": 9,
+  "factMetrics": {
+    "precision": 0.13793103448275862,
+    "recall": 0.8888888888888888,
+    "valueAccuracy": 0.8888888888888888,
+    "locatorAccuracy": 1
+  },
+  "queryMetrics": {
+    "predicateAccuracy": 1
+  },
+  "answerMetrics": {
+    "answerCorrectness": 0.7777777777777778,
+    "evidenceSourceAccuracy": 1,
+    "locatorAccuracy": 1,
+    "supportStatusAccuracy": 0.2222222222222222,
+    "falseUnknown": 0,
+    "falseNotReported": 0,
+    "fabricatedAnswerRate": 0
+  },
+  "failureCategories": {
+    "fact selection/normalization": 2
+  },
+  "rows": [
+    {
+      "caseId": "v4-rag",
+      "taskId": "v4-rag-task",
+      "predicate": "retrieval.component",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "retrieval.component": "retriever"
+      },
+      "actualAnswer": {
+        "retrieval.component": "retriever"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "CONFLICTING",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": false,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": null,
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "facts": [
+        {
+          "factId": "fact-https://arxiv.org/pdf/2005.11401v1-retrieval.component-retriever",
+          "predicate": "retrieval.component",
+          "value": "retriever",
+          "rawValue": "Retriever",
+          "sourceId": "https://arxiv.org/pdf/2005.11401v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "MIPS",
+            "page": 2
+          },
+          "rawEvidence": "(y) Question Answering: Answer Generation Retriever pη (Non-Parametric) z4 z3 z2 z1 d(z) Jeopardy Question Generation: Answer Query Figure 1: An overview of retrieval-augmented generation (RAG).",
+          "assertionStatus": "asserted",
+          "experimentalRole": "unknown",
+          "extractionMethod": "retrieval component",
+          "supportState": "NORMALIZED_EXPLICIT"
+        },
+        {
+          "factId": "fact-https://arxiv.org/pdf/2005.11401v1-retrieval.component-generator",
+          "predicate": "retrieval.component",
+          "value": "generator",
+          "rawValue": "Generator",
+          "sourceId": "https://arxiv.org/pdf/2005.11401v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "MIPS",
+            "page": 2
+          },
+          "rawEvidence": "We combine a pre-trained re-triever (Query Encoder + Document Index) with a pre-trained encoder-decoder (Generator) and fine-tune end-to-end.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "ours",
+          "extractionMethod": "generation component",
+          "supportState": "NORMALIZED_EXPLICIT"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2005.11401v1-retrieval.component-retriever",
+          "sourceId": "https://arxiv.org/pdf/2005.11401v1",
+          "authors": [],
+          "title": "Extracted retrieval.component fact",
+          "identifiers": {},
+          "locator": {
+            "section": "MIPS",
+            "page": 2
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "(y) Question Answering: Answer Generation Retriever pη (Non-Parametric) z4 z3 z2 z1 d(z) Jeopardy Question Generation: Answer Query Figure 1: An overview of retrieval-augmented generation (RAG).",
+          "citationText": "https://arxiv.org/pdf/2005.11401v1#MIPS"
+        },
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2005.11401v1-retrieval.component-generator",
+          "sourceId": "https://arxiv.org/pdf/2005.11401v1",
+          "authors": [],
+          "title": "Extracted retrieval.component fact",
+          "identifiers": {},
+          "locator": {
+            "section": "MIPS",
+            "page": 2
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "We combine a pre-trained re-triever (Query Encoder + Document Index) with a pre-trained encoder-decoder (Generator) and fine-tune end-to-end.",
+          "citationText": "https://arxiv.org/pdf/2005.11401v1#MIPS"
+        }
+      ],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 6,
+      "factTruePositive": 1,
+      "goldFactCount": 1,
+      "actualFactCount": 6
+    },
+    {
+      "caseId": "v4-cot",
+      "taskId": "v4-cot-task",
+      "predicate": "reasoning.trace_type",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "reasoning.trace_type": "thought"
+      },
+      "actualAnswer": {
+        "reasoning.trace_type": "thought"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "CONFLICTING",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": false,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": null,
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "facts": [
+        {
+          "factId": "fact-https://arxiv.org/pdf/2201.11903v1-reasoning.trace_type-thought",
+          "predicate": "reasoning.trace_type",
+          "value": "thought",
+          "rawValue": "thought",
+          "sourceId": "https://arxiv.org/pdf/2201.11903v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "…",
+            "page": 1
+          },
+          "rawEvidence": "Chain of thought (highlighted) facilitates multistep rea-soning in large language models.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "unknown",
+          "extractionMethod": "agent trace element",
+          "supportState": "NORMALIZED_EXPLICIT"
+        },
+        {
+          "factId": "fact-https://arxiv.org/pdf/2201.11903v1-reasoning.trace_type-intermediate reasoning steps",
+          "predicate": "reasoning.trace_type",
+          "value": "intermediate reasoning steps",
+          "rawValue": "intermediate steps",
+          "sourceId": "https://arxiv.org/pdf/2201.11903v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "…",
+            "page": 1
+          },
+          "rawEvidence": "The intuition is that a chain of thought allows language models to decompose a multi-step problem into intermediate steps that are solved individually, instead of arXiv:2201.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "unknown",
+          "extractionMethod": "reasoning trace",
+          "supportState": "NORMALIZED_EXPLICIT"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2201.11903v1-reasoning.trace_type-thought",
+          "sourceId": "https://arxiv.org/pdf/2201.11903v1",
+          "authors": [],
+          "title": "Extracted reasoning.trace_type fact",
+          "identifiers": {},
+          "locator": {
+            "section": "…",
+            "page": 1
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Chain of thought (highlighted) facilitates multistep rea-soning in large language models.",
+          "citationText": "https://arxiv.org/pdf/2201.11903v1#…"
+        },
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2201.11903v1-reasoning.trace_type-intermediate reasoning steps",
+          "sourceId": "https://arxiv.org/pdf/2201.11903v1",
+          "authors": [],
+          "title": "Extracted reasoning.trace_type fact",
+          "identifiers": {},
+          "locator": {
+            "section": "…",
+            "page": 1
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "The intuition is that a chain of thought allows language models to decompose a multi-step problem into intermediate steps that are solved individually, instead of arXiv:2201.",
+          "citationText": "https://arxiv.org/pdf/2201.11903v1#…"
+        }
+      ],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 5,
+      "factTruePositive": 1,
+      "goldFactCount": 1,
+      "actualFactCount": 5
+    },
+    {
+      "caseId": "v4-selfconsistency",
+      "taskId": "v4-selfconsistency-task",
+      "predicate": "reasoning.trace_type",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "reasoning.trace_type": "thought"
+      },
+      "actualAnswer": {
+        "reasoning.trace_type": "thought"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "CONFLICTING",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": false,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": null,
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "facts": [
+        {
+          "factId": "fact-https://arxiv.org/pdf/2203.11171v1-reasoning.trace_type-thought",
+          "predicate": "reasoning.trace_type",
+          "value": "thought",
+          "rawValue": "thought",
+          "sourceId": "https://arxiv.org/pdf/2203.11171v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "Introduction",
+            "page": 1
+          },
+          "rawEvidence": "In response, Wei et al. (2022) have proposed chain of thought prompting, which prompts language models to generate a series of short sentences that mimic the reasoning process a person might employ.",
+          "assertionStatus": "citation",
+          "experimentalRole": "ours",
+          "extractionMethod": "agent trace element",
+          "supportState": "NORMALIZED_EXPLICIT"
+        },
+        {
+          "factId": "fact-https://arxiv.org/pdf/2203.11171v1-reasoning.trace_type-intermediate reasoning steps",
+          "predicate": "reasoning.trace_type",
+          "value": "intermediate reasoning steps",
+          "rawValue": "reasoning steps",
+          "sourceId": "https://arxiv.org/pdf/2203.11171v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "Self-Consistency over Diverse Reasoning Paths",
+            "page": 2
+          },
+          "rawEvidence": "Since language models are not perfect reasoners, the model might also produce an incorrect reasoning path or make a mistake in one of the reasoning steps (e.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "unknown",
+          "extractionMethod": "reasoning trace",
+          "supportState": "NORMALIZED_EXPLICIT"
+        },
+        {
+          "factId": "fact-https://arxiv.org/pdf/2203.11171v1-reasoning.trace_type-observation",
+          "predicate": "reasoning.trace_type",
+          "value": "observation",
+          "rawValue": "observation",
+          "sourceId": "https://arxiv.org/pdf/2203.11171v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "18.",
+            "page": 3
+          },
+          "rawEvidence": "2 Self-consistency leverages the following crucial observation about the nature of chain of thought prompting for reasoning tasks: generating a chain of thought is optional and is not considered as part of the evaluation metric-only the final answer matters.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "unknown",
+          "extractionMethod": "agent trace element",
+          "supportState": "NORMALIZED_EXPLICIT"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2203.11171v1-reasoning.trace_type-thought",
+          "sourceId": "https://arxiv.org/pdf/2203.11171v1",
+          "authors": [],
+          "title": "Extracted reasoning.trace_type fact",
+          "identifiers": {},
+          "locator": {
+            "section": "Introduction",
+            "page": 1
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "In response, Wei et al. (2022) have proposed chain of thought prompting, which prompts language models to generate a series of short sentences that mimic the reasoning process a person might employ.",
+          "citationText": "https://arxiv.org/pdf/2203.11171v1#Introduction"
+        },
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2203.11171v1-reasoning.trace_type-intermediate reasoning steps",
+          "sourceId": "https://arxiv.org/pdf/2203.11171v1",
+          "authors": [],
+          "title": "Extracted reasoning.trace_type fact",
+          "identifiers": {},
+          "locator": {
+            "section": "Self-Consistency over Diverse Reasoning Paths",
+            "page": 2
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Since language models are not perfect reasoners, the model might also produce an incorrect reasoning path or make a mistake in one of the reasoning steps (e.",
+          "citationText": "https://arxiv.org/pdf/2203.11171v1#Self-Consistency over Diverse Reasoning Paths"
+        },
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2203.11171v1-reasoning.trace_type-observation",
+          "sourceId": "https://arxiv.org/pdf/2203.11171v1",
+          "authors": [],
+          "title": "Extracted reasoning.trace_type fact",
+          "identifiers": {},
+          "locator": {
+            "section": "18.",
+            "page": 3
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "2 Self-consistency leverages the following crucial observation about the nature of chain of thought prompting for reasoning tasks: generating a chain of thought is optional and is not considered as part of the evaluation metric-only the final answer matters.",
+          "citationText": "https://arxiv.org/pdf/2203.11171v1#18."
+        }
+      ],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 6,
+      "factTruePositive": 1,
+      "goldFactCount": 1,
+      "actualFactCount": 6
+    },
+    {
+      "caseId": "v4-react",
+      "taskId": "v4-react-task",
+      "predicate": "reasoning.trace_type",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "reasoning.trace_type": "action"
+      },
+      "actualAnswer": {
+        "reasoning.trace_type": "action"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "SUPPORTED",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": null,
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "facts": [
+        {
+          "factId": "fact-https://arxiv.org/pdf/2210.03629v1-reasoning.trace_type-thought",
+          "predicate": "reasoning.trace_type",
+          "value": "thought",
+          "rawValue": "thought",
+          "sourceId": "https://arxiv.org/pdf/2210.03629v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "ABSTRACT",
+            "page": 1
+          },
+          "rawEvidence": "chain-of-thought prompting) and acting (e.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "unknown",
+          "extractionMethod": "agent trace element",
+          "supportState": "NORMALIZED_EXPLICIT"
+        },
+        {
+          "factId": "fact-https://arxiv.org/pdf/2210.03629v1-reasoning.trace_type-action",
+          "predicate": "reasoning.trace_type",
+          "value": "action",
+          "rawValue": "action",
+          "sourceId": "https://arxiv.org/pdf/2210.03629v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "ABSTRACT",
+            "page": 1
+          },
+          "rawEvidence": "In this paper, we explore the use of LLMs to generate both reasoning traces and task-specific actions in an interleaved manner, allowing for greater synergy between the two: reasoning traces help the model induce, track, and update action plans as well as handle exceptions, while actions allow it to interface with and gather additional information from external sources such as knowledge bases or environments.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "ours",
+          "extractionMethod": "agent trace element",
+          "supportState": "NORMALIZED_EXPLICIT"
+        },
+        {
+          "factId": "fact-https://arxiv.org/pdf/2210.03629v1-reasoning.trace_type-observation",
+          "predicate": "reasoning.trace_type",
+          "value": "observation",
+          "rawValue": "observation",
+          "sourceId": "https://arxiv.org/pdf/2210.03629v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "REAC T: SYNERGIZING REASONING + ACTING",
+            "page": 3
+          },
+          "rawEvidence": "At time step t, an agent receives an observation ot ∈O from the environment and takes an action at ∈A following some policy π(at|ct), where ct = (o1, a1, · · · , ot-1, at-1, ot) is the context to the agent.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "unknown",
+          "extractionMethod": "agent trace element",
+          "supportState": "NORMALIZED_EXPLICIT"
+        },
+        {
+          "factId": "fact-https://arxiv.org/pdf/2210.03629v1-reasoning.trace_type-intermediate reasoning steps",
+          "predicate": "reasoning.trace_type",
+          "value": "intermediate reasoning steps",
+          "rawValue": "reasoning steps",
+          "sourceId": "https://arxiv.org/pdf/2210.03629v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "28%",
+            "page": 6
+          },
+          "rawEvidence": "• While interleaving reasoning, action and observation steps improves ReAct’s groundedness and trustworthiness, such a structural constraint also reduces its flexibility in formulating reasoning steps, leading to more reasoning error rate than CoT.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "unknown",
+          "extractionMethod": "reasoning trace",
+          "supportState": "NORMALIZED_EXPLICIT"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2210.03629v1-reasoning.trace_type-thought",
+          "sourceId": "https://arxiv.org/pdf/2210.03629v1",
+          "authors": [],
+          "title": "Extracted reasoning.trace_type fact",
+          "identifiers": {},
+          "locator": {
+            "section": "ABSTRACT",
+            "page": 1
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "chain-of-thought prompting) and acting (e.",
+          "citationText": "https://arxiv.org/pdf/2210.03629v1#ABSTRACT"
+        },
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2210.03629v1-reasoning.trace_type-action",
+          "sourceId": "https://arxiv.org/pdf/2210.03629v1",
+          "authors": [],
+          "title": "Extracted reasoning.trace_type fact",
+          "identifiers": {},
+          "locator": {
+            "section": "ABSTRACT",
+            "page": 1
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "In this paper, we explore the use of LLMs to generate both reasoning traces and task-specific actions in an interleaved manner, allowing for greater synergy between the two: reasoning traces help the model induce, track, and update action plans as well as handle exceptions, while actions allow it to interface with and gather additional information from external sources such as knowledge bases or environments.",
+          "citationText": "https://arxiv.org/pdf/2210.03629v1#ABSTRACT"
+        },
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2210.03629v1-reasoning.trace_type-observation",
+          "sourceId": "https://arxiv.org/pdf/2210.03629v1",
+          "authors": [],
+          "title": "Extracted reasoning.trace_type fact",
+          "identifiers": {},
+          "locator": {
+            "section": "REAC T: SYNERGIZING REASONING + ACTING",
+            "page": 3
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "At time step t, an agent receives an observation ot ∈O from the environment and takes an action at ∈A following some policy π(at|ct), where ct = (o1, a1, · · · , ot-1, at-1, ot) is the context to the agent.",
+          "citationText": "https://arxiv.org/pdf/2210.03629v1#REAC T: SYNERGIZING REASONING + ACTING"
+        },
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2210.03629v1-reasoning.trace_type-intermediate reasoning steps",
+          "sourceId": "https://arxiv.org/pdf/2210.03629v1",
+          "authors": [],
+          "title": "Extracted reasoning.trace_type fact",
+          "identifiers": {},
+          "locator": {
+            "section": "28%",
+            "page": 6
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "• While interleaving reasoning, action and observation steps improves ReAct’s groundedness and trustworthiness, such a structural constraint also reduces its flexibility in formulating reasoning steps, leading to more reasoning error rate than CoT.",
+          "citationText": "https://arxiv.org/pdf/2210.03629v1#28%"
+        }
+      ],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 8,
+      "factTruePositive": 1,
+      "goldFactCount": 1,
+      "actualFactCount": 8
+    },
+    {
+      "caseId": "v4-tot",
+      "taskId": "v4-tot-task",
+      "predicate": "reasoning.trace_type",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "reasoning.trace_type": "thought"
+      },
+      "actualAnswer": {
+        "reasoning.trace_type": "intermediate reasoning steps"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "CONFLICTING",
+      "answerCorrect": false,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": false,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": null,
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "facts": [
+        {
+          "factId": "fact-https://arxiv.org/pdf/2305.10601v1-reasoning.trace_type-intermediate reasoning steps",
+          "predicate": "reasoning.trace_type",
+          "value": "intermediate reasoning steps",
+          "rawValue": "intermediate step",
+          "sourceId": "https://arxiv.org/pdf/2305.10601v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "Chain-of-thought (CoT) prompting [35] was proposed to address cases where the mapping of",
+            "page": 3
+          },
+          "rawEvidence": "The key idea is to introduce a chain of thoughts z1, · · · , zn to bridge x and y, where each zi is a coherent language sequence that serves as a meaningful intermediate step toward problem solving (e.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "unknown",
+          "extractionMethod": "reasoning trace",
+          "supportState": "NORMALIZED_EXPLICIT"
+        },
+        {
+          "factId": "fact-https://arxiv.org/pdf/2305.10601v1-reasoning.trace_type-thought",
+          "predicate": "reasoning.trace_type",
+          "value": "thought",
+          "rawValue": "thought",
+          "sourceId": "https://arxiv.org/pdf/2305.10601v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "∼",
+            "page": 3
+          },
+          "rawEvidence": "Similar to the thought generator, we consider two strategies to evaluate states either independently or together: (a) Value each state independently: V (pθ, S)(s) ∼pvalue θ (v|s) ∀s ∈S, where a value prompt reasons about the state s to generate a scalar value v (e.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "ours",
+          "extractionMethod": "agent trace element",
+          "supportState": "NORMALIZED_EXPLICIT"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2305.10601v1-reasoning.trace_type-intermediate reasoning steps",
+          "sourceId": "https://arxiv.org/pdf/2305.10601v1",
+          "authors": [],
+          "title": "Extracted reasoning.trace_type fact",
+          "identifiers": {},
+          "locator": {
+            "section": "Chain-of-thought (CoT) prompting [35] was proposed to address cases where the mapping of",
+            "page": 3
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "The key idea is to introduce a chain of thoughts z1, · · · , zn to bridge x and y, where each zi is a coherent language sequence that serves as a meaningful intermediate step toward problem solving (e.",
+          "citationText": "https://arxiv.org/pdf/2305.10601v1#Chain-of-thought (CoT) prompting [35] was proposed to address cases where the mapping of"
+        },
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2305.10601v1-reasoning.trace_type-thought",
+          "sourceId": "https://arxiv.org/pdf/2305.10601v1",
+          "authors": [],
+          "title": "Extracted reasoning.trace_type fact",
+          "identifiers": {},
+          "locator": {
+            "section": "∼",
+            "page": 3
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Similar to the thought generator, we consider two strategies to evaluate states either independently or together: (a) Value each state independently: V (pθ, S)(s) ∼pvalue θ (v|s) ∀s ∈S, where a value prompt reasons about the state s to generate a scalar value v (e.",
+          "citationText": "https://arxiv.org/pdf/2305.10601v1#∼"
+        }
+      ],
+      "failureCategory": "fact selection/normalization",
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 5,
+      "factTruePositive": 1,
+      "goldFactCount": 1,
+      "actualFactCount": 5
+    },
+    {
+      "caseId": "v4-qlora",
+      "taskId": "v4-qlora-task",
+      "predicate": "training.stage",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "training.stage": "instruction fine-tuning"
+      },
+      "actualAnswer": {
+        "training.stage": "instruction fine-tuning"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "CONFLICTING",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": false,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": null,
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "facts": [
+        {
+          "factId": "fact-https://arxiv.org/pdf/2305.14314v1-training.stage-instruction fine-tuning",
+          "predicate": "training.stage",
+          "value": "instruction fine-tuning",
+          "rawValue": "instruction finetuning",
+          "sourceId": "https://arxiv.org/pdf/2305.14314v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "Pushing the Chatbot State-of-the-art with QLoRA",
+            "page": 7
+          },
+          "rawEvidence": "Having established that 4-bit QLORA matches 16-bit performance across scales, tasks, and datasets we conduct an in-depth study of instruction finetuning up to the largest open-source language models available for research.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "ours",
+          "extractionMethod": "training stage",
+          "supportState": "NORMALIZED_EXPLICIT"
+        },
+        {
+          "factId": "fact-https://arxiv.org/pdf/2305.14314v1-training.stage-fine-tuning",
+          "predicate": "training.stage",
+          "value": "fine-tuning",
+          "rawValue": "fine-tuning",
+          "sourceId": "https://arxiv.org/pdf/2305.14314v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "Experimental setup",
+            "page": 8
+          },
+          "rawEvidence": "Vicuna does full fine-tuning of LLaMA 13B on proprietary user-shared conversations from ShareGPT and is thus the result of distillation from OpenAI GPT models.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "unknown",
+          "extractionMethod": "training stage",
+          "supportState": "NORMALIZED_EXPLICIT"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2305.14314v1-training.stage-instruction fine-tuning",
+          "sourceId": "https://arxiv.org/pdf/2305.14314v1",
+          "authors": [],
+          "title": "Extracted training.stage fact",
+          "identifiers": {},
+          "locator": {
+            "section": "Pushing the Chatbot State-of-the-art with QLoRA",
+            "page": 7
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Having established that 4-bit QLORA matches 16-bit performance across scales, tasks, and datasets we conduct an in-depth study of instruction finetuning up to the largest open-source language models available for research.",
+          "citationText": "https://arxiv.org/pdf/2305.14314v1#Pushing the Chatbot State-of-the-art with QLoRA"
+        },
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2305.14314v1-training.stage-fine-tuning",
+          "sourceId": "https://arxiv.org/pdf/2305.14314v1",
+          "authors": [],
+          "title": "Extracted training.stage fact",
+          "identifiers": {},
+          "locator": {
+            "section": "Experimental setup",
+            "page": 8
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Vicuna does full fine-tuning of LLaMA 13B on proprietary user-shared conversations from ShareGPT and is thus the result of distillation from OpenAI GPT models.",
+          "citationText": "https://arxiv.org/pdf/2305.14314v1#Experimental setup"
+        }
+      ],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 6,
+      "factTruePositive": 1,
+      "goldFactCount": 1,
+      "actualFactCount": 6
+    },
+    {
+      "caseId": "v4-olmo",
+      "taskId": "v4-olmo-task",
+      "predicate": "training.stage",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "training.stage": "pretraining"
+      },
+      "actualAnswer": {
+        "training.stage": "pretraining"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "CONFLICTING",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": false,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": null,
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "facts": [
+        {
+          "factId": "fact-https://arxiv.org/pdf/2402.00838v1-training.stage-pretraining",
+          "predicate": "training.stage",
+          "value": "pretraining",
+          "rawValue": "pretraining",
+          "sourceId": "https://arxiv.org/pdf/2402.00838v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "Introduction",
+            "page": 2
+          },
+          "rawEvidence": "Recently, due to large-scale pretraining and human annotation for alignment, they have become commercially valuable (OpenAI, 2023).",
+          "assertionStatus": "asserted",
+          "experimentalRole": "unknown",
+          "extractionMethod": "training stage",
+          "supportState": "NORMALIZED_EXPLICIT"
+        },
+        {
+          "factId": "fact-https://arxiv.org/pdf/2402.00838v1-training.stage-fine-tuning",
+          "predicate": "training.stage",
+          "value": "fine-tuning",
+          "rawValue": "fine-tuned",
+          "sourceId": "https://arxiv.org/pdf/2402.00838v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "URL",
+            "page": 17
+          },
+          "rawEvidence": "Llama 2: Open foundation and fine-tuned chat models, 2023b.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "unknown",
+          "extractionMethod": "training stage",
+          "supportState": "NORMALIZED_EXPLICIT"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2402.00838v1-training.stage-pretraining",
+          "sourceId": "https://arxiv.org/pdf/2402.00838v1",
+          "authors": [],
+          "title": "Extracted training.stage fact",
+          "identifiers": {},
+          "locator": {
+            "section": "Introduction",
+            "page": 2
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Recently, due to large-scale pretraining and human annotation for alignment, they have become commercially valuable (OpenAI, 2023).",
+          "citationText": "https://arxiv.org/pdf/2402.00838v1#Introduction"
+        },
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2402.00838v1-training.stage-fine-tuning",
+          "sourceId": "https://arxiv.org/pdf/2402.00838v1",
+          "authors": [],
+          "title": "Extracted training.stage fact",
+          "identifiers": {},
+          "locator": {
+            "section": "URL",
+            "page": 17
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Llama 2: Open foundation and fine-tuned chat models, 2023b.",
+          "citationText": "https://arxiv.org/pdf/2402.00838v1#URL"
+        }
+      ],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 8,
+      "factTruePositive": 1,
+      "goldFactCount": 1,
+      "actualFactCount": 8
+    },
+    {
+      "caseId": "v4-gemma",
+      "taskId": "v4-gemma-task",
+      "predicate": "model.formulation",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "model.formulation": "decoder-only Transformer"
+      },
+      "actualAnswer": {
+        "model.formulation": "multimodal model"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "SUPPORTED",
+      "answerCorrect": false,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": null,
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "facts": [
+        {
+          "factId": "fact-https://arxiv.org/pdf/2403.08295v1-model.formulation-multimodal model",
+          "predicate": "model.formulation",
+          "value": "multimodal model",
+          "rawValue": "multimodal",
+          "sourceId": "https://arxiv.org/pdf/2403.08295v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "URL",
+            "page": 13
+          },
+          "rawEvidence": "Gemini: A family of highly capable multimodal models, 2023.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "unknown",
+          "extractionMethod": "multimodal capability",
+          "supportState": "NORMALIZED_EXPLICIT"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2403.08295v1-model.formulation-multimodal model",
+          "sourceId": "https://arxiv.org/pdf/2403.08295v1",
+          "authors": [],
+          "title": "Extracted model.formulation fact",
+          "identifiers": {},
+          "locator": {
+            "section": "URL",
+            "page": 13
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Gemini: A family of highly capable multimodal models, 2023.",
+          "citationText": "https://arxiv.org/pdf/2403.08295v1#URL"
+        }
+      ],
+      "failureCategory": "fact selection/normalization",
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 11,
+      "factTruePositive": 0,
+      "goldFactCount": 1,
+      "actualFactCount": 11
+    },
+    {
+      "caseId": "v4-knowledge",
+      "taskId": "v4-knowledge-task",
+      "predicate": "training.stage",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "training.stage": "pretraining"
+      },
+      "actualAnswer": {
+        "training.stage": "pretraining"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "CONFLICTING",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": false,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": null,
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "facts": [
+        {
+          "factId": "fact-https://arxiv.org/pdf/2406.11813v1-training.stage-pretraining",
+          "predicate": "training.stage",
+          "value": "pretraining",
+          "rawValue": "pretraining",
+          "sourceId": "https://arxiv.org/pdf/2406.11813v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "3KT",
+            "page": 1
+          },
+          "rawEvidence": "com Abstract Despite the recent observation that large language models (LLMs) can store sub-stantial factual knowledge, there is a limited understanding of the mechanisms of how they acquire factual knowledge through pretraining.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "unknown",
+          "extractionMethod": "training stage",
+          "supportState": "NORMALIZED_EXPLICIT"
+        },
+        {
+          "factId": "fact-https://arxiv.org/pdf/2406.11813v1-training.stage-fine-tuning",
+          "predicate": "training.stage",
+          "value": "fine-tuning",
+          "rawValue": "fine-tuning",
+          "sourceId": "https://arxiv.org/pdf/2406.11813v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "Acknowledgments",
+            "page": 10
+          },
+          "rawEvidence": "Investigating learning dynamics of bert fine-tuning.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "unknown",
+          "extractionMethod": "training stage",
+          "supportState": "NORMALIZED_EXPLICIT"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2406.11813v1-training.stage-pretraining",
+          "sourceId": "https://arxiv.org/pdf/2406.11813v1",
+          "authors": [],
+          "title": "Extracted training.stage fact",
+          "identifiers": {},
+          "locator": {
+            "section": "3KT",
+            "page": 1
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "com Abstract Despite the recent observation that large language models (LLMs) can store sub-stantial factual knowledge, there is a limited understanding of the mechanisms of how they acquire factual knowledge through pretraining.",
+          "citationText": "https://arxiv.org/pdf/2406.11813v1#3KT"
+        },
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2406.11813v1-training.stage-fine-tuning",
+          "sourceId": "https://arxiv.org/pdf/2406.11813v1",
+          "authors": [],
+          "title": "Extracted training.stage fact",
+          "identifiers": {},
+          "locator": {
+            "section": "Acknowledgments",
+            "page": 10
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Investigating learning dynamics of bert fine-tuning.",
+          "citationText": "https://arxiv.org/pdf/2406.11813v1#Acknowledgments"
+        }
+      ],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 3,
+      "factTruePositive": 1,
+      "goldFactCount": 1,
+      "actualFactCount": 3
+    }
+  ]
+}

@@ -1,0 +1,221 @@
+{
+  "schemaVersion": "openpapers.pdf-evaluation-result.v1",
+  "kind": "offline-structural-fixture",
+  "commit": "80e161773c6a6c6ac5a7b8fde37faedf5c9c6e7a",
+  "dataset": "pdf-v1",
+  "parserModes": [
+    "grobid-tei-fixture",
+    "pymupdf:NOT_CONFIGURED",
+    "docling:NOT_CONFIGURED"
+  ],
+  "metrics": {
+    "corpusSize": 5,
+    "parseSuccess": 1,
+    "titleRecovery": 1,
+    "sectionHeadingRecovery": 1,
+    "pageMapping": 1,
+    "referenceDetection": 1,
+    "appendixDetection": 1,
+    "warningDetection": 1,
+    "equationRecovery": 1,
+    "tableRecovery": 1
+  },
+  "failureCategories": {},
+  "rows": [
+    {
+      "id": "pdf-standard",
+      "parser": "grobid-tei-fixture",
+      "expected": {
+        "sections": [
+          "Introduction",
+          "Methods"
+        ],
+        "pages": [
+          1
+        ],
+        "references": 1,
+        "appendices": 0
+      },
+      "actual": {
+        "title": "Standard Paper",
+        "sections": [
+          "Introduction",
+          "Methods"
+        ],
+        "pages": [
+          1
+        ],
+        "references": 1,
+        "appendices": 0,
+        "equations": 0,
+        "tables": 0,
+        "warnings": 0
+      },
+      "checks": {
+        "title": true,
+        "sections": true,
+        "pages": true,
+        "references": true,
+        "appendices": true,
+        "equations": true,
+        "tables": true,
+        "warnings": true
+      },
+      "success": true,
+      "failureCategories": []
+    },
+    {
+      "id": "pdf-appendix",
+      "parser": "grobid-tei-fixture",
+      "expected": {
+        "sections": [
+          "Results",
+          "Appendix A"
+        ],
+        "pages": [],
+        "references": 0,
+        "appendices": 1
+      },
+      "actual": {
+        "title": "Appendix Paper",
+        "sections": [
+          "Results",
+          "Appendix A"
+        ],
+        "pages": [],
+        "references": 0,
+        "appendices": 1,
+        "equations": 0,
+        "tables": 0,
+        "warnings": 0
+      },
+      "checks": {
+        "title": true,
+        "sections": true,
+        "pages": true,
+        "references": true,
+        "appendices": true,
+        "equations": true,
+        "tables": true,
+        "warnings": true
+      },
+      "success": true,
+      "failureCategories": []
+    },
+    {
+      "id": "pdf-equation-table",
+      "parser": "grobid-tei-fixture",
+      "expected": {
+        "sections": [
+          "Experiments"
+        ],
+        "pages": [
+          4
+        ],
+        "references": 1,
+        "appendices": 0,
+        "equations": 1,
+        "tables": 1
+      },
+      "actual": {
+        "title": "Equation Table Paper",
+        "sections": [
+          "Experiments"
+        ],
+        "pages": [
+          4
+        ],
+        "references": 1,
+        "appendices": 0,
+        "equations": 1,
+        "tables": 1,
+        "warnings": 0
+      },
+      "checks": {
+        "title": true,
+        "sections": true,
+        "pages": true,
+        "references": true,
+        "appendices": true,
+        "equations": true,
+        "tables": true,
+        "warnings": true
+      },
+      "success": true,
+      "failureCategories": []
+    },
+    {
+      "id": "pdf-namespaced",
+      "parser": "grobid-tei-fixture",
+      "expected": {
+        "sections": [
+          "Method"
+        ],
+        "pages": [],
+        "references": 0,
+        "appendices": 0
+      },
+      "actual": {
+        "title": "Namespaced Paper",
+        "sections": [
+          "Method"
+        ],
+        "pages": [],
+        "references": 0,
+        "appendices": 0,
+        "equations": 0,
+        "tables": 0,
+        "warnings": 0
+      },
+      "checks": {
+        "title": true,
+        "sections": true,
+        "pages": true,
+        "references": true,
+        "appendices": true,
+        "equations": true,
+        "tables": true,
+        "warnings": true
+      },
+      "success": true,
+      "failureCategories": []
+    },
+    {
+      "id": "pdf-unresolved-citation",
+      "parser": "grobid-tei-fixture",
+      "expected": {
+        "sections": [
+          "Discussion"
+        ],
+        "pages": [],
+        "references": 0,
+        "appendices": 0,
+        "warnings": 1
+      },
+      "actual": {
+        "title": "Unresolved Citation Paper",
+        "sections": [
+          "Discussion"
+        ],
+        "pages": [],
+        "references": 0,
+        "appendices": 0,
+        "equations": 0,
+        "tables": 0,
+        "warnings": 1
+      },
+      "checks": {
+        "title": true,
+        "sections": true,
+        "pages": true,
+        "references": true,
+        "appendices": true,
+        "equations": true,
+        "tables": true,
+        "warnings": true
+      },
+      "success": true,
+      "failureCategories": []
+    }
+  ]
+}

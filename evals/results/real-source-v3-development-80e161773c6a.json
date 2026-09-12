@@ -1,0 +1,1105 @@
+{
+  "schemaVersion": "openpapers.real-source-v3-evaluation.v1",
+  "commit": "80e161773c6a6c6ac5a7b8fde37faedf5c9c6e7a",
+  "dataset": "research-real-v3",
+  "split": "development",
+  "holdoutUsedForTuning": null,
+  "configuration": {
+    "extraction": "query-independent-facts",
+    "intent": "separate-query-intent",
+    "parser": "pymupdf-real-pdf"
+  },
+  "taskCount": 12,
+  "substantiveTaskCount": 12,
+  "factMetrics": {
+    "precision": 0.125,
+    "recall": 0.9166666666666666,
+    "valueAccuracy": 0.9166666666666666,
+    "locatorAccuracy": 1
+  },
+  "queryMetrics": {
+    "predicateAccuracy": 1
+  },
+  "answerMetrics": {
+    "answerCorrectness": 0.9166666666666666,
+    "evidenceSourceAccuracy": 0.9166666666666666,
+    "locatorAccuracy": 1,
+    "supportStatusAccuracy": 0.75,
+    "falseUnknown": 0.08333333333333333,
+    "falseNotReported": 0,
+    "fabricatedAnswerRate": 0
+  },
+  "failureCategories": {
+    "fact selection/normalization": 1
+  },
+  "rows": [
+    {
+      "caseId": "v3-transformer-xl",
+      "taskId": "v3-transformer-xl-task",
+      "predicate": "architecture.recurrence",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "architecture.recurrence": "segment-level recurrence"
+      },
+      "actualAnswer": {
+        "architecture.recurrence": "segment-level recurrence"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "SUPPORTED",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": null,
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "facts": [
+        {
+          "factId": "fact-https://arxiv.org/pdf/1901.02860v1-architecture.recurrence-segment-level recurrence",
+          "predicate": "architecture.recurrence",
+          "value": "segment-level recurrence",
+          "rawValue": "recurrence mechanism",
+          "sourceId": "https://arxiv.org/pdf/1901.02860v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "SEGMENT-LEVEL RECURRENCE WITH STATE REUSE",
+            "page": 3
+          },
+          "rawEvidence": "To address the limitations of using a fixed-length context, we propose to introduce a recurrence mechanism to the Transformer architecture.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "ours",
+          "extractionMethod": "recurrent memory",
+          "supportState": "NORMALIZED_EXPLICIT"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/1901.02860v1-architecture.recurrence-segment-level recurrence",
+          "sourceId": "https://arxiv.org/pdf/1901.02860v1",
+          "authors": [],
+          "title": "Extracted architecture.recurrence fact",
+          "identifiers": {},
+          "locator": {
+            "section": "SEGMENT-LEVEL RECURRENCE WITH STATE REUSE",
+            "page": 3
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "To address the limitations of using a fixed-length context, we propose to introduce a recurrence mechanism to the Transformer architecture.",
+          "citationText": "https://arxiv.org/pdf/1901.02860v1#SEGMENT-LEVEL RECURRENCE WITH STATE REUSE"
+        }
+      ],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 1,
+      "factTruePositive": 1,
+      "goldFactCount": 1,
+      "actualFactCount": 1
+    },
+    {
+      "caseId": "v3-electra",
+      "taskId": "v3-electra-task",
+      "predicate": "training.objective",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "training.objective": "replaced token detection"
+      },
+      "actualAnswer": {
+        "training.objective": "replaced token detection"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "SUPPORTED",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": null,
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "facts": [
+        {
+          "factId": "fact-https://arxiv.org/pdf/2003.10555v1-training.objective-replaced token detection",
+          "predicate": "training.objective",
+          "value": "replaced token detection",
+          "rawValue": "replaced token detection",
+          "sourceId": "https://arxiv.org/pdf/2003.10555v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "ABSTRACT",
+            "page": 1
+          },
+          "rawEvidence": "As an alternative, we propose a more sample-efficient pre-training task called replaced token detection.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "ours",
+          "extractionMethod": "discriminator objective",
+          "supportState": "NORMALIZED_EXPLICIT"
+        },
+        {
+          "factId": "fact-https://arxiv.org/pdf/2003.10555v1-training.objective-masked language model",
+          "predicate": "training.objective",
+          "value": "masked language model",
+          "rawValue": "Masked language model",
+          "sourceId": "https://arxiv.org/pdf/2003.10555v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "ABSTRACT",
+            "page": 1
+          },
+          "rawEvidence": "",
+          "assertionStatus": "asserted",
+          "experimentalRole": "unknown",
+          "extractionMethod": "masked objective",
+          "supportState": "NORMALIZED_EXPLICIT"
+        },
+        {
+          "factId": "fact-https://arxiv.org/pdf/2003.10555v1-training.objective-contrastive learning",
+          "predicate": "training.objective",
+          "value": "contrastive learning",
+          "rawValue": "Contrastive Learning",
+          "sourceId": "https://arxiv.org/pdf/2003.10555v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "Published as a conference paper at ICLR 2020",
+            "page": 10
+          },
+          "rawEvidence": "Contrastive Learning Broadly, contrastive learning methods distinguish observed data points from fictitious negative samples.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "unknown",
+          "extractionMethod": "contrastive objective",
+          "supportState": "NORMALIZED_EXPLICIT"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2003.10555v1-training.objective-replaced token detection",
+          "sourceId": "https://arxiv.org/pdf/2003.10555v1",
+          "authors": [],
+          "title": "Extracted training.objective fact",
+          "identifiers": {},
+          "locator": {
+            "section": "ABSTRACT",
+            "page": 1
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "As an alternative, we propose a more sample-efficient pre-training task called replaced token detection.",
+          "citationText": "https://arxiv.org/pdf/2003.10555v1#ABSTRACT"
+        },
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2003.10555v1-training.objective-masked language model",
+          "sourceId": "https://arxiv.org/pdf/2003.10555v1",
+          "authors": [],
+          "title": "Extracted training.objective fact",
+          "identifiers": {},
+          "locator": {
+            "section": "ABSTRACT",
+            "page": 1
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "",
+          "citationText": "https://arxiv.org/pdf/2003.10555v1#ABSTRACT"
+        },
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2003.10555v1-training.objective-contrastive learning",
+          "sourceId": "https://arxiv.org/pdf/2003.10555v1",
+          "authors": [],
+          "title": "Extracted training.objective fact",
+          "identifiers": {},
+          "locator": {
+            "section": "Published as a conference paper at ICLR 2020",
+            "page": 10
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Contrastive Learning Broadly, contrastive learning methods distinguish observed data points from fictitious negative samples.",
+          "citationText": "https://arxiv.org/pdf/2003.10555v1#Published as a conference paper at ICLR 2020"
+        }
+      ],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 5,
+      "factTruePositive": 1,
+      "goldFactCount": 1,
+      "actualFactCount": 5
+    },
+    {
+      "caseId": "v3-linformer",
+      "taskId": "v3-linformer-task",
+      "predicate": "architecture.attention",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "architecture.attention": "linear attention"
+      },
+      "actualAnswer": {},
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "UNKNOWN",
+      "answerCorrect": false,
+      "evidenceSourceCorrect": false,
+      "locatorCorrect": true,
+      "supportStatusCorrect": false,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": null,
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "facts": [],
+      "evidence": [],
+      "failureCategory": "fact selection/normalization",
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 3,
+      "factTruePositive": 0,
+      "goldFactCount": 1,
+      "actualFactCount": 3
+    },
+    {
+      "caseId": "v3-swin",
+      "taskId": "v3-swin-task",
+      "predicate": "architecture.attention",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "architecture.attention": "shifted-window attention"
+      },
+      "actualAnswer": {
+        "architecture.attention": "shifted-window attention"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "SUPPORTED",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": null,
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "facts": [
+        {
+          "factId": "fact-https://arxiv.org/pdf/2103.14030v1-architecture.attention-shifted-window attention",
+          "predicate": "architecture.attention",
+          "value": "shifted-window attention",
+          "rawValue": "shifted window",
+          "sourceId": "https://arxiv.org/pdf/2103.14030v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "Patch Partition",
+            "page": 4
+          },
+          "rawEvidence": "W-MSA and SW-MSA are multi-head self attention modules with regular and shifted windowing configurations, respectively.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "unknown",
+          "extractionMethod": "windowed attention",
+          "supportState": "NORMALIZED_EXPLICIT"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2103.14030v1-architecture.attention-shifted-window attention",
+          "sourceId": "https://arxiv.org/pdf/2103.14030v1",
+          "authors": [],
+          "title": "Extracted architecture.attention fact",
+          "identifiers": {},
+          "locator": {
+            "section": "Patch Partition",
+            "page": 4
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "W-MSA and SW-MSA are multi-head self attention modules with regular and shifted windowing configurations, respectively.",
+          "citationText": "https://arxiv.org/pdf/2103.14030v1#Patch Partition"
+        }
+      ],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 5,
+      "factTruePositive": 1,
+      "goldFactCount": 1,
+      "actualFactCount": 5
+    },
+    {
+      "caseId": "v3-vit",
+      "taskId": "v3-vit-task",
+      "predicate": "architecture.formulation",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "architecture.formulation": "image patches"
+      },
+      "actualAnswer": {
+        "architecture.formulation": "image patches"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "SUPPORTED",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": null,
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "facts": [
+        {
+          "factId": "fact-https://arxiv.org/pdf/2010.11929v1-architecture.formulation-image patches",
+          "predicate": "architecture.formulation",
+          "value": "image patches",
+          "rawValue": "image patches",
+          "sourceId": "https://arxiv.org/pdf/2010.11929v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "ABSTRACT",
+            "page": 1
+          },
+          "rawEvidence": "We show that this reliance on CNNs is not necessary and a pure transformer applied directly to sequences of image patches can perform very well on image classification tasks.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "ours",
+          "extractionMethod": "vision token formulation",
+          "supportState": "NORMALIZED_EXPLICIT"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2010.11929v1-architecture.formulation-image patches",
+          "sourceId": "https://arxiv.org/pdf/2010.11929v1",
+          "authors": [],
+          "title": "Extracted architecture.formulation fact",
+          "identifiers": {},
+          "locator": {
+            "section": "ABSTRACT",
+            "page": 1
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "We show that this reliance on CNNs is not necessary and a pure transformer applied directly to sequences of image patches can perform very well on image classification tasks.",
+          "citationText": "https://arxiv.org/pdf/2010.11929v1#ABSTRACT"
+        }
+      ],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 6,
+      "factTruePositive": 1,
+      "goldFactCount": 1,
+      "actualFactCount": 6
+    },
+    {
+      "caseId": "v3-mae",
+      "taskId": "v3-mae-task",
+      "predicate": "training.objective",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "training.objective": "masked reconstruction"
+      },
+      "actualAnswer": {
+        "training.objective": "masked reconstruction"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "SUPPORTED",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": null,
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "facts": [
+        {
+          "factId": "fact-https://arxiv.org/pdf/2111.06377v1-training.objective-masked reconstruction",
+          "predicate": "training.objective",
+          "value": "masked reconstruction",
+          "rawValue": "masked autoencoding",
+          "sourceId": "https://arxiv.org/pdf/2111.06377v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "....",
+            "page": 1
+          },
+          "rawEvidence": "We ask: what makes masked autoencoding different between vision and language? We attempt to answer this question from the following perspectives: (i) Until recently, architectures were different.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "ours",
+          "extractionMethod": "masked reconstruction objective",
+          "supportState": "NORMALIZED_EXPLICIT"
+        },
+        {
+          "factId": "fact-https://arxiv.org/pdf/2111.06377v1-training.objective-masked language model",
+          "predicate": "training.objective",
+          "value": "masked language model",
+          "rawValue": "Masked language model",
+          "sourceId": "https://arxiv.org/pdf/2111.06377v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "....",
+            "page": 1
+          },
+          "rawEvidence": "Related Work Masked language modeling and its autoregressive coun-terparts, e.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "unknown",
+          "extractionMethod": "masked objective",
+          "supportState": "NORMALIZED_EXPLICIT"
+        },
+        {
+          "factId": "fact-https://arxiv.org/pdf/2111.06377v1-training.objective-contrastive learning",
+          "predicate": "training.objective",
+          "value": "contrastive learning",
+          "rawValue": "contrastive learning",
+          "sourceId": "https://arxiv.org/pdf/2111.06377v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "29.3 4.1×",
+            "page": 5
+          },
+          "rawEvidence": "This behavior is unlike contrastive learning methods, e.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "unknown",
+          "extractionMethod": "contrastive objective",
+          "supportState": "NORMALIZED_EXPLICIT"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2111.06377v1-training.objective-masked reconstruction",
+          "sourceId": "https://arxiv.org/pdf/2111.06377v1",
+          "authors": [],
+          "title": "Extracted training.objective fact",
+          "identifiers": {},
+          "locator": {
+            "section": "....",
+            "page": 1
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "We ask: what makes masked autoencoding different between vision and language? We attempt to answer this question from the following perspectives: (i) Until recently, architectures were different.",
+          "citationText": "https://arxiv.org/pdf/2111.06377v1#...."
+        },
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2111.06377v1-training.objective-masked language model",
+          "sourceId": "https://arxiv.org/pdf/2111.06377v1",
+          "authors": [],
+          "title": "Extracted training.objective fact",
+          "identifiers": {},
+          "locator": {
+            "section": "....",
+            "page": 1
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Related Work Masked language modeling and its autoregressive coun-terparts, e.",
+          "citationText": "https://arxiv.org/pdf/2111.06377v1#...."
+        },
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2111.06377v1-training.objective-contrastive learning",
+          "sourceId": "https://arxiv.org/pdf/2111.06377v1",
+          "authors": [],
+          "title": "Extracted training.objective fact",
+          "identifiers": {},
+          "locator": {
+            "section": "29.3 4.1×",
+            "page": 5
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "This behavior is unlike contrastive learning methods, e.",
+          "citationText": "https://arxiv.org/pdf/2111.06377v1#29.3 4.1×"
+        }
+      ],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 7,
+      "factTruePositive": 1,
+      "goldFactCount": 1,
+      "actualFactCount": 7
+    },
+    {
+      "caseId": "v3-opt",
+      "taskId": "v3-opt-task",
+      "predicate": "model.formulation",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "model.formulation": "decoder-only Transformer"
+      },
+      "actualAnswer": {
+        "model.formulation": "decoder-only Transformer"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "SUPPORTED",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": null,
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "facts": [
+        {
+          "factId": "fact-https://arxiv.org/pdf/2205.01068v1-model.formulation-decoder-only Transformer",
+          "predicate": "model.formulation",
+          "value": "decoder-only Transformer",
+          "rawValue": "decoder-only",
+          "sourceId": "https://arxiv.org/pdf/2205.01068v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "Introduction",
+            "page": 1
+          },
+          "rawEvidence": "In this technical report, we present Open Pre-trained Transformers (OPT), a suite of decoder-only pre-trained transformers ranging from 125M to 175B parameters, which we aim to fully and responsibly share with interested researchers.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "ours",
+          "extractionMethod": "language-model architecture",
+          "supportState": "NORMALIZED_EXPLICIT"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2205.01068v1-model.formulation-decoder-only Transformer",
+          "sourceId": "https://arxiv.org/pdf/2205.01068v1",
+          "authors": [],
+          "title": "Extracted model.formulation fact",
+          "identifiers": {},
+          "locator": {
+            "section": "Introduction",
+            "page": 1
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "In this technical report, we present Open Pre-trained Transformers (OPT), a suite of decoder-only pre-trained transformers ranging from 125M to 175B parameters, which we aim to fully and responsibly share with interested researchers.",
+          "citationText": "https://arxiv.org/pdf/2205.01068v1#Introduction"
+        }
+      ],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 9,
+      "factTruePositive": 1,
+      "goldFactCount": 1,
+      "actualFactCount": 9
+    },
+    {
+      "caseId": "v3-flan",
+      "taskId": "v3-flan-task",
+      "predicate": "training.stage",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "training.stage": "instruction fine-tuning"
+      },
+      "actualAnswer": {
+        "training.stage": "instruction fine-tuning"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "CONFLICTING",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": false,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": null,
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "facts": [
+        {
+          "factId": "fact-https://arxiv.org/pdf/2210.11416v1-training.stage-instruction fine-tuning",
+          "predicate": "training.stage",
+          "value": "instruction fine-tuning",
+          "rawValue": "Instruction finetuning",
+          "sourceId": "https://arxiv.org/pdf/2210.11416v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "-320.4F",
+            "page": 1
+          },
+          "rawEvidence": "Instruction finetuning Chain-of-thought finetuning Inference: generalization to unseen tasks Multi-task instruction finetuning (1.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "unknown",
+          "extractionMethod": "training stage",
+          "supportState": "NORMALIZED_EXPLICIT"
+        },
+        {
+          "factId": "fact-https://arxiv.org/pdf/2210.11416v1-training.stage-pretraining",
+          "predicate": "training.stage",
+          "value": "pretraining",
+          "rawValue": "pre-training",
+          "sourceId": "https://arxiv.org/pdf/2210.11416v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "Finetuning procedure",
+            "page": 4
+          },
+          "rawEvidence": "2% of the pre-training compute to instruction-finetune Flan-PaLM 540B (approximately 512 v4 TPU chips for 37 hours).",
+          "assertionStatus": "asserted",
+          "experimentalRole": "hardware",
+          "extractionMethod": "training stage",
+          "supportState": "NORMALIZED_EXPLICIT"
+        },
+        {
+          "factId": "fact-https://arxiv.org/pdf/2210.11416v1-training.stage-fine-tuning",
+          "predicate": "training.stage",
+          "value": "fine-tuning",
+          "rawValue": "fine tuned",
+          "sourceId": "https://arxiv.org/pdf/2210.11416v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "E.1",
+            "page": 41
+          },
+          "rawEvidence": "Model Stats For each size PaLM model, we fine tuned an equivalent version of Flan.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "ours",
+          "extractionMethod": "training stage",
+          "supportState": "NORMALIZED_EXPLICIT"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2210.11416v1-training.stage-instruction fine-tuning",
+          "sourceId": "https://arxiv.org/pdf/2210.11416v1",
+          "authors": [],
+          "title": "Extracted training.stage fact",
+          "identifiers": {},
+          "locator": {
+            "section": "-320.4F",
+            "page": 1
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Instruction finetuning Chain-of-thought finetuning Inference: generalization to unseen tasks Multi-task instruction finetuning (1.",
+          "citationText": "https://arxiv.org/pdf/2210.11416v1#-320.4F"
+        },
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2210.11416v1-training.stage-pretraining",
+          "sourceId": "https://arxiv.org/pdf/2210.11416v1",
+          "authors": [],
+          "title": "Extracted training.stage fact",
+          "identifiers": {},
+          "locator": {
+            "section": "Finetuning procedure",
+            "page": 4
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "2% of the pre-training compute to instruction-finetune Flan-PaLM 540B (approximately 512 v4 TPU chips for 37 hours).",
+          "citationText": "https://arxiv.org/pdf/2210.11416v1#Finetuning procedure"
+        },
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2210.11416v1-training.stage-fine-tuning",
+          "sourceId": "https://arxiv.org/pdf/2210.11416v1",
+          "authors": [],
+          "title": "Extracted training.stage fact",
+          "identifiers": {},
+          "locator": {
+            "section": "E.1",
+            "page": 41
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Model Stats For each size PaLM model, we fine tuned an equivalent version of Flan.",
+          "citationText": "https://arxiv.org/pdf/2210.11416v1#E.1"
+        }
+      ],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 12,
+      "factTruePositive": 1,
+      "goldFactCount": 1,
+      "actualFactCount": 12
+    },
+    {
+      "caseId": "v3-gpt4",
+      "taskId": "v3-gpt4-task",
+      "predicate": "model.formulation",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "model.formulation": "multimodal model"
+      },
+      "actualAnswer": {
+        "model.formulation": "multimodal model"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "SUPPORTED",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": null,
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "facts": [
+        {
+          "factId": "fact-https://arxiv.org/pdf/2303.08774v1-model.formulation-multimodal model",
+          "predicate": "model.formulation",
+          "value": "multimodal model",
+          "rawValue": "multimodal",
+          "sourceId": "https://arxiv.org/pdf/2303.08774v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "Introduction",
+            "page": 1
+          },
+          "rawEvidence": "This technical report presents GPT-4, a large multimodal model capable of processing image and text inputs and producing text outputs.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "hardware",
+          "extractionMethod": "multimodal capability",
+          "supportState": "NORMALIZED_EXPLICIT"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2303.08774v1-model.formulation-multimodal model",
+          "sourceId": "https://arxiv.org/pdf/2303.08774v1",
+          "authors": [],
+          "title": "Extracted model.formulation fact",
+          "identifiers": {},
+          "locator": {
+            "section": "Introduction",
+            "page": 1
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "This technical report presents GPT-4, a large multimodal model capable of processing image and text inputs and producing text outputs.",
+          "citationText": "https://arxiv.org/pdf/2303.08774v1#Introduction"
+        }
+      ],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 11,
+      "factTruePositive": 1,
+      "goldFactCount": 1,
+      "actualFactCount": 11
+    },
+    {
+      "caseId": "v3-mtbench",
+      "taskId": "v3-mtbench-task",
+      "predicate": "evaluation.method",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "evaluation.method": "pairwise judging"
+      },
+      "actualAnswer": {
+        "evaluation.method": "pairwise judging"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "SUPPORTED",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": null,
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "facts": [
+        {
+          "factId": "fact-https://arxiv.org/pdf/2306.05685v1-evaluation.method-pairwise judging",
+          "predicate": "evaluation.method",
+          "value": "pairwise judging",
+          "rawValue": "LLM-as-a-judge",
+          "sourceId": "https://arxiv.org/pdf/2306.05685v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "MBZUAI",
+            "page": 1
+          },
+          "rawEvidence": "We examine the usage and limitations of LLM-as-a-judge, such as position and verbosity biases and limited reasoning ability, and propose solutions to migrate some of them.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "ours",
+          "extractionMethod": "evaluation method",
+          "supportState": "NORMALIZED_EXPLICIT"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2306.05685v1-evaluation.method-pairwise judging",
+          "sourceId": "https://arxiv.org/pdf/2306.05685v1",
+          "authors": [],
+          "title": "Extracted evaluation.method fact",
+          "identifiers": {},
+          "locator": {
+            "section": "MBZUAI",
+            "page": 1
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "We examine the usage and limitations of LLM-as-a-judge, such as position and verbosity biases and limited reasoning ability, and propose solutions to migrate some of them.",
+          "citationText": "https://arxiv.org/pdf/2306.05685v1#MBZUAI"
+        }
+      ],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 5,
+      "factTruePositive": 1,
+      "goldFactCount": 1,
+      "actualFactCount": 5
+    },
+    {
+      "caseId": "v3-deepseekv2",
+      "taskId": "v3-deepseekv2-task",
+      "predicate": "architecture.moe",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "architecture.moe": "mixture of experts"
+      },
+      "actualAnswer": {
+        "architecture.moe": "mixture of experts"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "SUPPORTED",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": null,
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "facts": [
+        {
+          "factId": "fact-https://arxiv.org/pdf/2405.04434v1-architecture.moe-mixture of experts",
+          "predicate": "architecture.moe",
+          "value": "mixture of experts",
+          "rawValue": "mixture-of-experts",
+          "sourceId": "https://arxiv.org/pdf/2405.04434v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "600.",
+            "page": 22
+          },
+          "rawEvidence": "Deepseekmoe: Towards ultimate expert specialization in mixture-of-experts language models.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "unknown",
+          "extractionMethod": "mixture of experts",
+          "supportState": "NORMALIZED_EXPLICIT"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2405.04434v1-architecture.moe-mixture of experts",
+          "sourceId": "https://arxiv.org/pdf/2405.04434v1",
+          "authors": [],
+          "title": "Extracted architecture.moe fact",
+          "identifiers": {},
+          "locator": {
+            "section": "600.",
+            "page": 22
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Deepseekmoe: Towards ultimate expert specialization in mixture-of-experts language models.",
+          "citationText": "https://arxiv.org/pdf/2405.04434v1#600."
+        }
+      ],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 13,
+      "factTruePositive": 1,
+      "goldFactCount": 1,
+      "actualFactCount": 13
+    },
+    {
+      "caseId": "v3-gemma",
+      "taskId": "v3-gemma-task",
+      "predicate": "training.stage",
+      "predicateCorrect": true,
+      "expectedAnswer": {
+        "training.stage": "fine-tuning"
+      },
+      "actualAnswer": {
+        "training.stage": "fine-tuning"
+      },
+      "expectedStatus": "SUPPORTED",
+      "actualStatus": "CONFLICTING",
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": false,
+      "providerResolution": {
+        "mode": "known-work",
+        "actualWork": null,
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "facts": [
+        {
+          "factId": "fact-https://arxiv.org/pdf/2403.08295v1-training.stage-fine-tuning",
+          "predicate": "training.stage",
+          "value": "fine-tuning",
+          "rawValue": "fine-tuned",
+          "sourceId": "https://arxiv.org/pdf/2403.08295v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "2024-02-21",
+            "page": 1
+          },
+          "rawEvidence": "We release two sizes of models (2 billion and 7 billion parameters), and provide both pretrained and fine-tuned checkpoints.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "ours",
+          "extractionMethod": "training stage",
+          "supportState": "NORMALIZED_EXPLICIT"
+        },
+        {
+          "factId": "fact-https://arxiv.org/pdf/2403.08295v1-training.stage-pretraining",
+          "predicate": "training.stage",
+          "value": "pretraining",
+          "rawValue": "pretraining",
+          "sourceId": "https://arxiv.org/pdf/2403.08295v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "Question Answering",
+            "page": 2
+          },
+          "rawEvidence": "In this technical report, we provide a detailed overview of the model architecture, training in-frastructure, and pretraining and fine-tuning recipes for Gemma, followed by thorough eval-uations of all checkpoints across a wide-variety of quantitative and qualitative benchmarks, as well as both standard academic benchmarks and human-preference evaluations.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "ours",
+          "extractionMethod": "training stage",
+          "supportState": "NORMALIZED_EXPLICIT"
+        },
+        {
+          "factId": "fact-https://arxiv.org/pdf/2403.08295v1-training.stage-SFT",
+          "predicate": "training.stage",
+          "value": "SFT",
+          "rawValue": "supervised fine-tuning",
+          "sourceId": "https://arxiv.org/pdf/2403.08295v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "Gemma: Open Models Based on Gemini Research and Technology",
+            "page": 4
+          },
+          "rawEvidence": "Instruction Tuning We finetune Gemma 2B and 7B with supervised fine-tuning (SFT) on a mix of text-only, English-only synthetic and human-generated prompt-response pairs and reinforcement learning from human feedback (RLHF) with the reward model trained on labelled English-only preference data and the policy based on a set of high-quality prompts.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "ours",
+          "extractionMethod": "training stage",
+          "supportState": "NORMALIZED_EXPLICIT"
+        },
+        {
+          "factId": "fact-https://arxiv.org/pdf/2403.08295v1-training.stage-reward model",
+          "predicate": "training.stage",
+          "value": "reward model",
+          "rawValue": "reward model",
+          "sourceId": "https://arxiv.org/pdf/2403.08295v1",
+          "sourceClass": "PAPER",
+          "locator": {
+            "section": "Gemma: Open Models Based on Gemini Research and Technology",
+            "page": 4
+          },
+          "rawEvidence": "Instruction Tuning We finetune Gemma 2B and 7B with supervised fine-tuning (SFT) on a mix of text-only, English-only synthetic and human-generated prompt-response pairs and reinforcement learning from human feedback (RLHF) with the reward model trained on labelled English-only preference data and the policy based on a set of high-quality prompts.",
+          "assertionStatus": "asserted",
+          "experimentalRole": "ours",
+          "extractionMethod": "training stage",
+          "supportState": "NORMALIZED_EXPLICIT"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2403.08295v1-training.stage-fine-tuning",
+          "sourceId": "https://arxiv.org/pdf/2403.08295v1",
+          "authors": [],
+          "title": "Extracted training.stage fact",
+          "identifiers": {},
+          "locator": {
+            "section": "2024-02-21",
+            "page": 1
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "We release two sizes of models (2 billion and 7 billion parameters), and provide both pretrained and fine-tuned checkpoints.",
+          "citationText": "https://arxiv.org/pdf/2403.08295v1#2024-02-21"
+        },
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2403.08295v1-training.stage-pretraining",
+          "sourceId": "https://arxiv.org/pdf/2403.08295v1",
+          "authors": [],
+          "title": "Extracted training.stage fact",
+          "identifiers": {},
+          "locator": {
+            "section": "Question Answering",
+            "page": 2
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "In this technical report, we provide a detailed overview of the model architecture, training in-frastructure, and pretraining and fine-tuning recipes for Gemma, followed by thorough eval-uations of all checkpoints across a wide-variety of quantitative and qualitative benchmarks, as well as both standard academic benchmarks and human-preference evaluations.",
+          "citationText": "https://arxiv.org/pdf/2403.08295v1#Question Answering"
+        },
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2403.08295v1-training.stage-SFT",
+          "sourceId": "https://arxiv.org/pdf/2403.08295v1",
+          "authors": [],
+          "title": "Extracted training.stage fact",
+          "identifiers": {},
+          "locator": {
+            "section": "Gemma: Open Models Based on Gemini Research and Technology",
+            "page": 4
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Instruction Tuning We finetune Gemma 2B and 7B with supervised fine-tuning (SFT) on a mix of text-only, English-only synthetic and human-generated prompt-response pairs and reinforcement learning from human feedback (RLHF) with the reward model trained on labelled English-only preference data and the policy based on a set of high-quality prompts.",
+          "citationText": "https://arxiv.org/pdf/2403.08295v1#Gemma: Open Models Based on Gemini Research and Technology"
+        },
+        {
+          "evidenceId": "fact-https://arxiv.org/pdf/2403.08295v1-training.stage-reward model",
+          "sourceId": "https://arxiv.org/pdf/2403.08295v1",
+          "authors": [],
+          "title": "Extracted training.stage fact",
+          "identifiers": {},
+          "locator": {
+            "section": "Gemma: Open Models Based on Gemini Research and Technology",
+            "page": 4
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Instruction Tuning We finetune Gemma 2B and 7B with supervised fine-tuning (SFT) on a mix of text-only, English-only synthetic and human-generated prompt-response pairs and reinforcement learning from human feedback (RLHF) with the reward model trained on labelled English-only preference data and the policy based on a set of high-quality prompts.",
+          "citationText": "https://arxiv.org/pdf/2403.08295v1#Gemma: Open Models Based on Gemini Research and Technology"
+        }
+      ],
+      "failureCategory": null,
+      "artifactStatus": "ACQUIRED",
+      "parserError": null,
+      "factCount": 11,
+      "factTruePositive": 1,
+      "goldFactCount": 1,
+      "actualFactCount": 11
+    }
+  ]
+}

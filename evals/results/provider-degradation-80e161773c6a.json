@@ -1,0 +1,116 @@
+{
+  "schemaVersion": "openpapers.provider-degradation-result.v1",
+  "kind": "offline-injected-failure",
+  "commit": "80e161773c6a6c6ac5a7b8fde37faedf5c9c6e7a",
+  "scenarios": 6,
+  "coveredProviders": [
+    "openalex",
+    "semantic_scholar",
+    "crossref",
+    "arxiv"
+  ],
+  "excludedProviders": [
+    "github",
+    "huggingface"
+  ],
+  "metrics": {
+    "transparentFailureRate": 1,
+    "successfulEvidenceRetainedRate": 1,
+    "falseAbsenceRate": 0,
+    "allDownReturnsNoResult": 1
+  },
+  "rows": [
+    {
+      "scenario": "openalex-down",
+      "down": [
+        "openalex"
+      ],
+      "returned": 1,
+      "providerFailures": [
+        "openalex: Error: openalex unavailable"
+      ],
+      "successfulEvidence": 1,
+      "transparent": true,
+      "falseAbsence": false,
+      "allDownUncertainty": false
+    },
+    {
+      "scenario": "semantic_scholar-down",
+      "down": [
+        "semantic_scholar"
+      ],
+      "returned": 1,
+      "providerFailures": [
+        "semantic_scholar: Error: semantic_scholar unavailable"
+      ],
+      "successfulEvidence": 1,
+      "transparent": true,
+      "falseAbsence": false,
+      "allDownUncertainty": false
+    },
+    {
+      "scenario": "crossref-down",
+      "down": [
+        "crossref"
+      ],
+      "returned": 1,
+      "providerFailures": [
+        "crossref: Error: crossref unavailable"
+      ],
+      "successfulEvidence": 1,
+      "transparent": true,
+      "falseAbsence": false,
+      "allDownUncertainty": false
+    },
+    {
+      "scenario": "arxiv-down",
+      "down": [
+        "arxiv"
+      ],
+      "returned": 1,
+      "providerFailures": [
+        "arxiv: Error: arxiv unavailable"
+      ],
+      "successfulEvidence": 1,
+      "transparent": true,
+      "falseAbsence": false,
+      "allDownUncertainty": false
+    },
+    {
+      "scenario": "openalex-semantic-down",
+      "down": [
+        "openalex",
+        "semantic_scholar"
+      ],
+      "returned": 1,
+      "providerFailures": [
+        "openalex: Error: openalex unavailable",
+        "semantic_scholar: Error: semantic_scholar unavailable"
+      ],
+      "successfulEvidence": 1,
+      "transparent": true,
+      "falseAbsence": false,
+      "allDownUncertainty": false
+    },
+    {
+      "scenario": "all-scholarly-down",
+      "down": [
+        "openalex",
+        "semantic_scholar",
+        "crossref",
+        "arxiv"
+      ],
+      "returned": 0,
+      "providerFailures": [
+        "arxiv: Error: arxiv unavailable",
+        "crossref: Error: crossref unavailable",
+        "openalex: Error: openalex unavailable",
+        "semantic_scholar: Error: semantic_scholar unavailable"
+      ],
+      "successfulEvidence": 0,
+      "transparent": true,
+      "falseAbsence": false,
+      "allDownUncertainty": true
+    }
+  ]
+}

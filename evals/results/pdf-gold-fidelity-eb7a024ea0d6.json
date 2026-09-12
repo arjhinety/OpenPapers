@@ -1,0 +1,738 @@
+{
+ "schemaVersion": "openpapers.pdf-gold-fidelity.v1",
+ "commit": "eb7a024ea0d6e51eb5d5f896268ad2b0a5d98bba",
+ "goldSet": "pdf-gold-v1",
+ "paperCount": 26,
+ "grobidUrl": "http://127.0.0.1:8070",
+ "notes": [
+  "Gold title/authors/abstract come from versioned arXiv abstract pages (independent of both parsers).",
+  "The shipped PyMuPDF pipeline (scripts/parse_pymupdf.py) does not attempt title or author extraction (titleAttempted/authorExtracted=false); its title metrics are recorded as 0, not as extraction failures.",
+  "Abstract is scored as token-F1 against gold for GROBID, and as first-page token coverage for the PyMuPDF pipeline because the shipped parser does not segment the abstract.",
+  "Section headings and reference counts are descriptive cross-parser statistics, not gold-scored."
+ ],
+ "aggregate": {
+  "grobid": {
+   "titleExactRate": 0,
+   "meanTitleTokenF1": 0,
+   "meanAuthorRecall": 0,
+   "meanAuthorPrecision": null,
+   "meanAbstractTokenF1": 0,
+   "meanAbstractFirstPageTokenRecall": null,
+   "errors": 26
+  },
+  "pymupdf": {
+   "titleExactRate": 0,
+   "meanTitleTokenF1": 0,
+   "meanAuthorRecall": null,
+   "meanAuthorPrecision": null,
+   "meanAbstractTokenF1": null,
+   "meanAbstractFirstPageTokenRecall": 0.9426659115672897,
+   "meanSectionHeadingOverlapWithGrobid": 0,
+   "errors": 0
+  }
+ },
+ "rows": [
+  {
+   "caseId": "v5-distilbert",
+   "grobid": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "authorRecall": 0,
+    "authorPrecision": null,
+    "abstractTokenF1": 0,
+    "referenceCount": 0,
+    "sectionCount": 0,
+    "headerError": "TypeError: fetch failed",
+    "fullTextError": "TypeError: fetch failed"
+   },
+   "pymupdf": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "titleAttempted": false,
+    "abstractFirstPageTokenRecall": 0.9831932773109243,
+    "authorExtracted": false,
+    "pageCount": 5,
+    "sectionCount": 21,
+    "sectionHeadingOverlapWithGrobid": 0,
+    "error": null
+   },
+   "goldPageCountIndependent": null,
+   "latencyMs": 336
+  },
+  {
+   "caseId": "v5-roberta",
+   "grobid": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "authorRecall": 0,
+    "authorPrecision": null,
+    "abstractTokenF1": 0,
+    "referenceCount": 0,
+    "sectionCount": 0,
+    "headerError": "TypeError: fetch failed",
+    "fullTextError": "TypeError: fetch failed"
+   },
+   "pymupdf": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "titleAttempted": false,
+    "abstractFirstPageTokenRecall": 0.9069767441860465,
+    "authorExtracted": false,
+    "pageCount": 13,
+    "sectionCount": 104,
+    "sectionHeadingOverlapWithGrobid": 0,
+    "error": null
+   },
+   "goldPageCountIndependent": null,
+   "latencyMs": 285
+  },
+  {
+   "caseId": "v5-clip",
+   "grobid": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "authorRecall": 0,
+    "authorPrecision": null,
+    "abstractTokenF1": 0,
+    "referenceCount": 0,
+    "sectionCount": 0,
+    "headerError": "TypeError: fetch failed",
+    "fullTextError": "TypeError: fetch failed"
+   },
+   "pymupdf": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "titleAttempted": false,
+    "abstractFirstPageTokenRecall": 0.8941176470588236,
+    "authorExtracted": false,
+    "pageCount": 48,
+    "sectionCount": 338,
+    "sectionHeadingOverlapWithGrobid": 0,
+    "error": null
+   },
+   "goldPageCountIndependent": null,
+   "latencyMs": 858
+  },
+  {
+   "caseId": "v5-mqa",
+   "grobid": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "authorRecall": 0,
+    "authorPrecision": null,
+    "abstractTokenF1": 0,
+    "referenceCount": 0,
+    "sectionCount": 0,
+    "headerError": "TypeError: fetch failed",
+    "fullTextError": "TypeError: fetch failed"
+   },
+   "pymupdf": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "titleAttempted": false,
+    "abstractFirstPageTokenRecall": 0.9767441860465116,
+    "authorExtracted": false,
+    "pageCount": 9,
+    "sectionCount": 39,
+    "sectionHeadingOverlapWithGrobid": 0,
+    "error": null
+   },
+   "goldPageCountIndependent": null,
+   "latencyMs": 245
+  },
+  {
+   "caseId": "v5-gemma2",
+   "grobid": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "authorRecall": 0,
+    "authorPrecision": null,
+    "abstractTokenF1": 0,
+    "referenceCount": 0,
+    "sectionCount": 0,
+    "headerError": "TypeError: fetch failed",
+    "fullTextError": "TypeError: fetch failed"
+   },
+   "pymupdf": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "titleAttempted": false,
+    "abstractFirstPageTokenRecall": 0.9848484848484849,
+    "authorExtracted": false,
+    "pageCount": 21,
+    "sectionCount": 186,
+    "sectionHeadingOverlapWithGrobid": 0,
+    "error": null
+   },
+   "goldPageCountIndependent": null,
+   "latencyMs": 363
+  },
+  {
+   "caseId": "v5-deepseekmoe",
+   "grobid": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "authorRecall": 0,
+    "authorPrecision": null,
+    "abstractTokenF1": 0,
+    "referenceCount": 0,
+    "sectionCount": 0,
+    "headerError": "TypeError: fetch failed",
+    "fullTextError": "TypeError: fetch failed"
+   },
+   "pymupdf": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "titleAttempted": false,
+    "abstractFirstPageTokenRecall": 0.993103448275862,
+    "authorExtracted": false,
+    "pageCount": 33,
+    "sectionCount": 198,
+    "sectionHeadingOverlapWithGrobid": 0,
+    "error": null
+   },
+   "goldPageCountIndependent": null,
+   "latencyMs": 373
+  },
+  {
+   "caseId": "v5-retnet",
+   "grobid": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "authorRecall": 0,
+    "authorPrecision": null,
+    "abstractTokenF1": 0,
+    "referenceCount": 0,
+    "sectionCount": 0,
+    "headerError": "TypeError: fetch failed",
+    "fullTextError": "TypeError: fetch failed"
+   },
+   "pymupdf": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "titleAttempted": false,
+    "abstractFirstPageTokenRecall": 0.9126984126984127,
+    "authorExtracted": false,
+    "pageCount": 14,
+    "sectionCount": 88,
+    "sectionHeadingOverlapWithGrobid": 0,
+    "error": null
+   },
+   "goldPageCountIndependent": null,
+   "latencyMs": 291
+  },
+  {
+   "caseId": "v5-rwkv",
+   "grobid": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "authorRecall": 0,
+    "authorPrecision": null,
+    "abstractTokenF1": 0,
+    "referenceCount": 0,
+    "sectionCount": 0,
+    "headerError": "TypeError: fetch failed",
+    "fullTextError": "TypeError: fetch failed"
+   },
+   "pymupdf": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "titleAttempted": false,
+    "abstractFirstPageTokenRecall": 0.9426229508196722,
+    "authorExtracted": false,
+    "pageCount": 30,
+    "sectionCount": 160,
+    "sectionHeadingOverlapWithGrobid": 0,
+    "error": null
+   },
+   "goldPageCountIndependent": null,
+   "latencyMs": 548
+  },
+  {
+   "caseId": "v5-reflexion",
+   "grobid": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "authorRecall": 0,
+    "authorPrecision": null,
+    "abstractTokenF1": 0,
+    "referenceCount": 0,
+    "sectionCount": 0,
+    "headerError": "TypeError: fetch failed",
+    "fullTextError": "TypeError: fetch failed"
+   },
+   "pymupdf": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "titleAttempted": false,
+    "abstractFirstPageTokenRecall": 0.9784172661870504,
+    "authorExtracted": false,
+    "pageCount": 19,
+    "sectionCount": 65,
+    "sectionHeadingOverlapWithGrobid": 0,
+    "error": null
+   },
+   "goldPageCountIndependent": null,
+   "latencyMs": 351
+  },
+  {
+   "caseId": "v5-constitutional",
+   "grobid": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "authorRecall": 0,
+    "authorPrecision": null,
+    "abstractTokenF1": 0,
+    "referenceCount": 0,
+    "sectionCount": 0,
+    "headerError": "TypeError: fetch failed",
+    "fullTextError": "TypeError: fetch failed"
+   },
+   "pymupdf": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "titleAttempted": false,
+    "abstractFirstPageTokenRecall": 0.9761904761904762,
+    "authorExtracted": false,
+    "pageCount": 34,
+    "sectionCount": 104,
+    "sectionHeadingOverlapWithGrobid": 0,
+    "error": null
+   },
+   "goldPageCountIndependent": null,
+   "latencyMs": 497
+  },
+  {
+   "caseId": "v5-llava",
+   "grobid": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "authorRecall": 0,
+    "authorPrecision": null,
+    "abstractTokenF1": 0,
+    "referenceCount": 0,
+    "sectionCount": 0,
+    "headerError": "TypeError: fetch failed",
+    "fullTextError": "TypeError: fetch failed"
+   },
+   "pymupdf": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "titleAttempted": false,
+    "abstractFirstPageTokenRecall": 0.8359375,
+    "authorExtracted": false,
+    "pageCount": 25,
+    "sectionCount": 71,
+    "sectionHeadingOverlapWithGrobid": 0,
+    "error": null
+   },
+   "goldPageCountIndependent": null,
+   "latencyMs": 779
+  },
+  {
+   "caseId": "v5-colbertv2",
+   "grobid": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "authorRecall": 0,
+    "authorPrecision": null,
+    "abstractTokenF1": 0,
+    "referenceCount": 0,
+    "sectionCount": 0,
+    "headerError": "TypeError: fetch failed",
+    "fullTextError": "TypeError: fetch failed"
+   },
+   "pymupdf": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "titleAttempted": false,
+    "abstractFirstPageTokenRecall": 0.96875,
+    "authorExtracted": false,
+    "pageCount": 20,
+    "sectionCount": 82,
+    "sectionHeadingOverlapWithGrobid": 0,
+    "error": null
+   },
+   "goldPageCountIndependent": null,
+   "latencyMs": 390
+  },
+  {
+   "caseId": "v5-flan",
+   "grobid": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "authorRecall": 0,
+    "authorPrecision": null,
+    "abstractTokenF1": 0,
+    "referenceCount": 0,
+    "sectionCount": 0,
+    "headerError": "TypeError: fetch failed",
+    "fullTextError": "TypeError: fetch failed"
+   },
+   "pymupdf": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "titleAttempted": false,
+    "abstractFirstPageTokenRecall": 0.8709677419354839,
+    "authorExtracted": false,
+    "pageCount": 22,
+    "sectionCount": 86,
+    "sectionHeadingOverlapWithGrobid": 0,
+    "error": null
+   },
+   "goldPageCountIndependent": null,
+   "latencyMs": 374
+  },
+  {
+   "caseId": "v5-atlas",
+   "grobid": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "authorRecall": 0,
+    "authorPrecision": null,
+    "abstractTokenF1": 0,
+    "referenceCount": 0,
+    "sectionCount": 0,
+    "headerError": "TypeError: fetch failed",
+    "fullTextError": "TypeError: fetch failed"
+   },
+   "pymupdf": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "titleAttempted": false,
+    "abstractFirstPageTokenRecall": 1,
+    "authorExtracted": false,
+    "pageCount": 33,
+    "sectionCount": 140,
+    "sectionHeadingOverlapWithGrobid": 0,
+    "error": null
+   },
+   "goldPageCountIndependent": null,
+   "latencyMs": 462
+  },
+  {
+   "caseId": "v5-deepseekv3",
+   "grobid": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "authorRecall": 0,
+    "authorPrecision": null,
+    "abstractTokenF1": 0,
+    "referenceCount": 0,
+    "sectionCount": 0,
+    "headerError": "TypeError: fetch failed",
+    "fullTextError": "TypeError: fetch failed"
+   },
+   "pymupdf": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "titleAttempted": false,
+    "abstractFirstPageTokenRecall": 0.9185185185185185,
+    "authorExtracted": false,
+    "pageCount": 53,
+    "sectionCount": 212,
+    "sectionHeadingOverlapWithGrobid": 0,
+    "error": null
+   },
+   "goldPageCountIndependent": null,
+   "latencyMs": 578
+  },
+  {
+   "caseId": "v5-deepseekr1",
+   "grobid": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "authorRecall": 0,
+    "authorPrecision": null,
+    "abstractTokenF1": 0,
+    "referenceCount": 0,
+    "sectionCount": 0,
+    "headerError": "TypeError: fetch failed",
+    "fullTextError": "TypeError: fetch failed"
+   },
+   "pymupdf": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "titleAttempted": false,
+    "abstractFirstPageTokenRecall": 0.9736842105263158,
+    "authorExtracted": false,
+    "pageCount": 86,
+    "sectionCount": 224,
+    "sectionHeadingOverlapWithGrobid": 0,
+    "error": null
+   },
+   "goldPageCountIndependent": null,
+   "latencyMs": 704
+  },
+  {
+   "caseId": "v5-medpalm",
+   "grobid": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "authorRecall": 0,
+    "authorPrecision": null,
+    "abstractTokenF1": 0,
+    "referenceCount": 0,
+    "sectionCount": 0,
+    "headerError": "TypeError: fetch failed",
+    "fullTextError": "TypeError: fetch failed"
+   },
+   "pymupdf": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "titleAttempted": false,
+    "abstractFirstPageTokenRecall": 0.9948979591836735,
+    "authorExtracted": false,
+    "pageCount": 44,
+    "sectionCount": 256,
+    "sectionHeadingOverlapWithGrobid": 0,
+    "error": null
+   },
+   "goldPageCountIndependent": null,
+   "latencyMs": 525
+  },
+  {
+   "caseId": "v5-hyenadna",
+   "grobid": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "authorRecall": 0,
+    "authorPrecision": null,
+    "abstractTokenF1": 0,
+    "referenceCount": 0,
+    "sectionCount": 0,
+    "headerError": "TypeError: fetch failed",
+    "fullTextError": "TypeError: fetch failed"
+   },
+   "pymupdf": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "titleAttempted": false,
+    "abstractFirstPageTokenRecall": 0.9530516431924883,
+    "authorExtracted": false,
+    "pageCount": 25,
+    "sectionCount": 123,
+    "sectionHeadingOverlapWithGrobid": 0,
+    "error": null
+   },
+   "goldPageCountIndependent": null,
+   "latencyMs": 630
+  },
+  {
+   "caseId": "v5-dnabert2",
+   "grobid": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "authorRecall": 0,
+    "authorPrecision": null,
+    "abstractTokenF1": 0,
+    "referenceCount": 0,
+    "sectionCount": 0,
+    "headerError": "TypeError: fetch failed",
+    "fullTextError": "TypeError: fetch failed"
+   },
+   "pymupdf": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "titleAttempted": false,
+    "abstractFirstPageTokenRecall": 0.9715909090909091,
+    "authorExtracted": false,
+    "pageCount": 23,
+    "sectionCount": 142,
+    "sectionHeadingOverlapWithGrobid": 0,
+    "error": null
+   },
+   "goldPageCountIndependent": null,
+   "latencyMs": 374
+  },
+  {
+   "caseId": "v5-gw150914",
+   "grobid": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "authorRecall": 0,
+    "authorPrecision": null,
+    "abstractTokenF1": 0,
+    "referenceCount": 0,
+    "sectionCount": 0,
+    "headerError": "TypeError: fetch failed",
+    "fullTextError": "TypeError: fetch failed"
+   },
+   "pymupdf": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "titleAttempted": false,
+    "abstractFirstPageTokenRecall": 0.8527131782945736,
+    "authorExtracted": false,
+    "pageCount": 16,
+    "sectionCount": 101,
+    "sectionHeadingOverlapWithGrobid": 0,
+    "error": null
+   },
+   "goldPageCountIndependent": null,
+   "latencyMs": 426
+  },
+  {
+   "caseId": "v5-dpo",
+   "grobid": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "authorRecall": 0,
+    "authorPrecision": null,
+    "abstractTokenF1": 0,
+    "referenceCount": 0,
+    "sectionCount": 0,
+    "headerError": "TypeError: fetch failed",
+    "fullTextError": "TypeError: fetch failed"
+   },
+   "pymupdf": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "titleAttempted": false,
+    "abstractFirstPageTokenRecall": 0.9937888198757764,
+    "authorExtracted": false,
+    "pageCount": 27,
+    "sectionCount": 210,
+    "sectionHeadingOverlapWithGrobid": 0,
+    "error": null
+   },
+   "goldPageCountIndependent": null,
+   "latencyMs": 501
+  },
+  {
+   "caseId": "v5-flashattention2",
+   "grobid": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "authorRecall": 0,
+    "authorPrecision": null,
+    "abstractTokenF1": 0,
+    "referenceCount": 0,
+    "sectionCount": 0,
+    "headerError": "TypeError: fetch failed",
+    "fullTextError": "TypeError: fetch failed"
+   },
+   "pymupdf": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "titleAttempted": false,
+    "abstractFirstPageTokenRecall": 0.9885714285714285,
+    "authorExtracted": false,
+    "pageCount": 14,
+    "sectionCount": 90,
+    "sectionHeadingOverlapWithGrobid": 0,
+    "error": null
+   },
+   "goldPageCountIndependent": null,
+   "latencyMs": 1224
+  },
+  {
+   "caseId": "v5-zephyr",
+   "grobid": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "authorRecall": 0,
+    "authorPrecision": null,
+    "abstractTokenF1": 0,
+    "referenceCount": 0,
+    "sectionCount": 0,
+    "headerError": "TypeError: fetch failed",
+    "fullTextError": "TypeError: fetch failed"
+   },
+   "pymupdf": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "titleAttempted": false,
+    "abstractFirstPageTokenRecall": 0.9024390243902439,
+    "authorExtracted": false,
+    "pageCount": 14,
+    "sectionCount": 72,
+    "sectionHeadingOverlapWithGrobid": 0,
+    "error": null
+   },
+   "goldPageCountIndependent": null,
+   "latencyMs": 644
+  },
+  {
+   "caseId": "v5-santurkar",
+   "grobid": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "authorRecall": 0,
+    "authorPrecision": null,
+    "abstractTokenF1": 0,
+    "referenceCount": 0,
+    "sectionCount": 0,
+    "headerError": "TypeError: fetch failed",
+    "fullTextError": "TypeError: fetch failed"
+   },
+   "pymupdf": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "titleAttempted": false,
+    "abstractFirstPageTokenRecall": 0.8759124087591241,
+    "authorExtracted": false,
+    "pageCount": 43,
+    "sectionCount": 164,
+    "sectionHeadingOverlapWithGrobid": 0,
+    "error": null
+   },
+   "goldPageCountIndependent": null,
+   "latencyMs": 1200
+  },
+  {
+   "caseId": "v5-gilardi",
+   "grobid": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "authorRecall": 0,
+    "authorPrecision": null,
+    "abstractTokenF1": 0,
+    "referenceCount": 0,
+    "sectionCount": 0,
+    "headerError": "TypeError: fetch failed",
+    "fullTextError": "TypeError: fetch failed"
+   },
+   "pymupdf": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "titleAttempted": false,
+    "abstractFirstPageTokenRecall": 0.93,
+    "authorExtracted": false,
+    "pageCount": 13,
+    "sectionCount": 38,
+    "sectionHeadingOverlapWithGrobid": 0,
+    "error": null
+   },
+   "goldPageCountIndependent": null,
+   "latencyMs": 253
+  },
+  {
+   "caseId": "v5-aifeynman",
+   "grobid": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "authorRecall": 0,
+    "authorPrecision": null,
+    "abstractTokenF1": 0,
+    "referenceCount": 0,
+    "sectionCount": 0,
+    "headerError": "TypeError: fetch failed",
+    "fullTextError": "TypeError: fetch failed"
+   },
+   "pymupdf": {
+    "titleExact": false,
+    "titleTokenF1": 0,
+    "titleAttempted": false,
+    "abstractFirstPageTokenRecall": 0.9295774647887324,
+    "authorExtracted": false,
+    "pageCount": 15,
+    "sectionCount": 286,
+    "sectionHeadingOverlapWithGrobid": 0,
+    "error": null
+   },
+   "goldPageCountIndependent": null,
+   "latencyMs": 402
+  }
+ ]
+}

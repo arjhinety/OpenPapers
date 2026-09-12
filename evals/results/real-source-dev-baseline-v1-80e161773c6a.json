@@ -1,0 +1,1560 @@
+{
+  "schemaVersion": "openpapers.real-source-evaluation.v1",
+  "kind": "real-source-development",
+  "commit": "80e161773c6a6c6ac5a7b8fde37faedf5c9c6e7a",
+  "dataset": "research-real-v1",
+  "split": "development",
+  "holdoutInfluencedTuning": null,
+  "configuration": {
+    "providerMode": "identifier-first-live",
+    "resolutionMode": "known-work",
+    "parserMode": "pymupdf-real-pdf",
+    "liveProviders": true
+  },
+  "taskCount": 13,
+  "metrics": {
+    "workAccuracy": 0,
+    "identifierAccuracy": 0,
+    "answerCorrectness": 0.5384615384615384,
+    "evidenceSourceAccuracy": 0.7692307692307693,
+    "locatorAccuracy": 0.8461538461538461,
+    "supportStatusAccuracy": 0.6153846153846154,
+    "correctUNKNOWN": 1,
+    "correctNOT_REPORTED": 0,
+    "falseUNKNOWN": 0.38461538461538464,
+    "falseNOT_REPORTED": 0,
+    "fabricatedAnswerRate": 0,
+    "conflictPrecision": null,
+    "conflictRecall": null,
+    "taskCount": 13,
+    "expectedUnknown": 1,
+    "expectedNotReported": 1,
+    "actualUnknown": 6,
+    "actualNotReported": 0
+  },
+  "failureCategories": {
+    "field extraction failure": 5,
+    "pdf acquisition unavailable": 1
+  },
+  "rows": [
+    {
+      "caseId": "rp-transformer-1706",
+      "taskId": "real-transformer-optimizer",
+      "query": "What optimizer was used to train the Transformer base model?",
+      "expectedStatus": "SUPPORTED",
+      "expectedAnswer": {
+        "optimizer": "Adam"
+      },
+      "expectedSourceClass": [
+        "paper"
+      ],
+      "expectedLocator": "section 5.3 Optimizer",
+      "actualStatus": "UNKNOWN",
+      "actualAnswer": {},
+      "actualEvidence": [],
+      "actualSourceClass": [
+        "paper_pdf"
+      ],
+      "actualLocator": null,
+      "workCorrect": false,
+      "identifierCorrect": false,
+      "answerCorrect": false,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": false,
+      "supportStatusCorrect": false,
+      "artifactStatus": "ACQUIRED",
+      "parserMode": "pymupdf-real-pdf",
+      "parserError": null,
+      "providerResolution": {
+        "mode": "known-work",
+        "candidates": 0,
+        "actualWork": null,
+        "providers": [
+          "arxiv"
+        ],
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "repositoryEvidence": {
+        "repository": "harvardnlp/annotated-transformer",
+        "commitSha": "debc9fd747bb2123160a98046ad1c2d4da44a567",
+        "filesRead": 1,
+        "evidenceCount": 0,
+        "manifest": [
+          {
+            "owner": "harvardnlp",
+            "repo": "annotated-transformer",
+            "commitSha": "debc9fd747bb2123160a98046ad1c2d4da44a567",
+            "path": "README.md",
+            "contentSha256": "f253666294cb24b5888f1cb0ced0b5a68f769ac89cae7774a944050d0d1a27d3",
+            "bytes": 2925,
+            "sourceRoute": "github:contents/harvardnlp/annotated-transformer@debc9fd747bb2123160a98046ad1c2d4da44a567"
+          }
+        ],
+        "failures": []
+      },
+      "failureCategory": "field extraction failure"
+    },
+    {
+      "caseId": "rp-bert-1810",
+      "taskId": "real-bert-objective",
+      "query": "Which two self-supervised objectives were used during BERT pre-training?",
+      "expectedStatus": "SUPPORTED",
+      "expectedAnswer": {
+        "objectives": [
+          "masked language model",
+          "next sentence prediction"
+        ]
+      },
+      "expectedSourceClass": [
+        "paper"
+      ],
+      "expectedLocator": "section 3.1 Pre-training BERT",
+      "actualStatus": "SUPPORTED",
+      "actualAnswer": {
+        "objectives": [
+          "masked language model",
+          "next sentence prediction"
+        ]
+      },
+      "actualEvidence": [
+        {
+          "evidenceId": "real-paper-rp-bert-1810-objectives-0",
+          "sourceId": "https://arxiv.org/pdf/1810.04805v1",
+          "authors": [],
+          "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+          "identifiers": {
+            "arxiv": "1810.04805"
+          },
+          "locator": {
+            "section": "Introduction",
+            "page": 1
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "The masked language model randomly masks some of the tokens from the input, and the objective is to predict the original vocabulary id of the masked word based only on its context.",
+          "citationText": "https://arxiv.org/pdf/1810.04805v1#Introduction"
+        },
+        {
+          "evidenceId": "real-paper-rp-bert-1810-objectives-1",
+          "sourceId": "https://arxiv.org/pdf/1810.04805v1",
+          "authors": [],
+          "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+          "identifiers": {
+            "arxiv": "1810.04805"
+          },
+          "locator": {
+            "section": "Table 5: Ablation over the pre-training tasks using the",
+            "page": 11
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "“No NSP” is trained without the next sentence prediction task.",
+          "citationText": "https://arxiv.org/pdf/1810.04805v1#Table 5: Ablation over the pre-training tasks using the"
+        }
+      ],
+      "actualSourceClass": [
+        "paper_pdf"
+      ],
+      "actualLocator": {
+        "section": "Pre-training Procedure",
+        "page": 5
+      },
+      "workCorrect": false,
+      "identifierCorrect": false,
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "artifactStatus": "ACQUIRED",
+      "parserMode": "pymupdf-real-pdf",
+      "parserError": null,
+      "providerResolution": {
+        "mode": "known-work",
+        "candidates": 0,
+        "actualWork": null,
+        "providers": [
+          "arxiv"
+        ],
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "repositoryEvidence": {
+        "repository": "google-research/bert",
+        "commitSha": "eedf5716ce1268e56f0a50264a88cafad334ac61",
+        "filesRead": 1,
+        "evidenceCount": 22,
+        "manifest": [
+          {
+            "owner": "google-research",
+            "repo": "bert",
+            "commitSha": "eedf5716ce1268e56f0a50264a88cafad334ac61",
+            "path": "README.md",
+            "contentSha256": "43b560935cfaef7427ae15d5c2c089b46d857e9e51fce5f20c93a9a74f99b756",
+            "bytes": 50519,
+            "sourceRoute": "github:contents/google-research/bert@eedf5716ce1268e56f0a50264a88cafad334ac61"
+          }
+        ],
+        "failures": []
+      },
+      "failureCategory": null
+    },
+    {
+      "caseId": "rp-t5-1910",
+      "taskId": "real-t5-format",
+      "query": "How does T5 frame different NLP tasks?",
+      "expectedStatus": "SUPPORTED",
+      "expectedAnswer": {
+        "formulation": "text-to-text"
+      },
+      "expectedSourceClass": [
+        "paper"
+      ],
+      "expectedLocator": "section 2.1 Text-to-Text Framework",
+      "actualStatus": "SUPPORTED",
+      "actualAnswer": {
+        "formulation": "text-to-text"
+      },
+      "actualEvidence": [
+        {
+          "evidenceId": "real-paper-rp-t5-1910-formulation-0",
+          "sourceId": "https://arxiv.org/pdf/1910.10683v1",
+          "authors": [],
+          "title": "Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer",
+          "identifiers": {
+            "arxiv": "1910.10683"
+          },
+          "locator": {
+            "section": "B",
+            "page": 43
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Converting WNLI to our text-to-text format Note that as discussed in Section 2.",
+          "citationText": "https://arxiv.org/pdf/1910.10683v1#B"
+        }
+      ],
+      "actualSourceClass": [
+        "paper_pdf"
+      ],
+      "actualLocator": {
+        "section": "Training",
+        "page": 9
+      },
+      "workCorrect": false,
+      "identifierCorrect": false,
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "artifactStatus": "ACQUIRED",
+      "parserMode": "pymupdf-real-pdf",
+      "parserError": null,
+      "providerResolution": {
+        "mode": "known-work",
+        "candidates": 0,
+        "actualWork": null,
+        "providers": [
+          "arxiv"
+        ],
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "repositoryEvidence": {
+        "repository": "google-research/text-to-text-transfer-transformer",
+        "commitSha": "6819e989bb733171706b9228d05468a4230e14c0",
+        "filesRead": 3,
+        "evidenceCount": 1,
+        "manifest": [
+          {
+            "owner": "google-research",
+            "repo": "text-to-text-transfer-transformer",
+            "commitSha": "6819e989bb733171706b9228d05468a4230e14c0",
+            "path": "README.md",
+            "contentSha256": "ff7e0c3f7dff5f72368641aa615bb245e444692b1061fb2b32c5d26d44939df2",
+            "bytes": 24168,
+            "sourceRoute": "github:contents/google-research/text-to-text-transfer-transformer@6819e989bb733171706b9228d05468a4230e14c0"
+          },
+          {
+            "owner": "google-research",
+            "repo": "text-to-text-transfer-transformer",
+            "commitSha": "6819e989bb733171706b9228d05468a4230e14c0",
+            "path": "t5/models/gin/objectives/README",
+            "contentSha256": "d6bec89673a172c2c58fb89a46fbf2d4eda6cb1195b74d657b8d5a01fef19b55",
+            "bytes": 1550,
+            "sourceRoute": "github:contents/google-research/text-to-text-transfer-transformer@6819e989bb733171706b9228d05468a4230e14c0"
+          },
+          {
+            "owner": "google-research",
+            "repo": "text-to-text-transfer-transformer",
+            "commitSha": "6819e989bb733171706b9228d05468a4230e14c0",
+            "path": ".github/ISSUE_TEMPLATE/config.yaml",
+            "contentSha256": "1f103c6a9dd07cd13a9a6f17ace6b813f47747eb9cb7e00488cb2073caaf91bb",
+            "bytes": 28,
+            "sourceRoute": "github:contents/google-research/text-to-text-transfer-transformer@6819e989bb733171706b9228d05468a4230e14c0"
+          }
+        ],
+        "failures": []
+      },
+      "failureCategory": null
+    },
+    {
+      "caseId": "rp-megatron-1909",
+      "taskId": "real-megatron-parallel",
+      "query": "Which parallelism dimension is central to Megatron-LM's model-parallel approach?",
+      "expectedStatus": "SUPPORTED",
+      "expectedAnswer": {
+        "parallelism": "tensor model parallelism"
+      },
+      "expectedSourceClass": [
+        "paper"
+      ],
+      "expectedLocator": "section 2.2 Intra-layer Model Parallelism",
+      "actualStatus": "SUPPORTED",
+      "actualAnswer": {
+        "parallelism": "tensor model parallelism"
+      },
+      "actualEvidence": [
+        {
+          "evidenceId": "real-paper-rp-megatron-1909-parallelism-0",
+          "sourceId": "https://arxiv.org/pdf/1909.08053v1",
+          "authors": [],
+          "title": "Megatron-LM: Training Multi-Billion Parameter Language Models Using Model Parallelism",
+          "identifiers": {
+            "arxiv": "1909.08053"
+          },
+          "locator": {
+            "section": "ABSTRACT",
+            "page": 1
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "In this work, we implement a simple, efﬁcient intra-layer model parallel approach that enables training state of the art transformer language models with billions of parameters.",
+          "citationText": "https://arxiv.org/pdf/1909.08053v1#ABSTRACT"
+        },
+        {
+          "evidenceId": "real-paper-rp-megatron-1909-parallelism-1",
+          "sourceId": "https://arxiv.org/pdf/1909.08053v1",
+          "authors": [],
+          "title": "Megatron-LM: Training Multi-Billion Parameter Language Models Using Model Parallelism",
+          "identifiers": {
+            "arxiv": "1909.08053"
+          },
+          "locator": {
+            "section": "(3)",
+            "page": 4
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "It does not require a compiler, and is orthogonal and complementary to the pipeline model parallelism advocated by approaches such as (Huang et al.",
+          "citationText": "https://arxiv.org/pdf/1909.08053v1#(3)"
+        },
+        {
+          "evidenceId": "real-paper-rp-megatron-1909-parallelism-2",
+          "sourceId": "https://arxiv.org/pdf/1909.08053v1",
+          "authors": [],
+          "title": "Megatron-LM: Training Multi-Billion Parameter Language Models Using Model Parallelism",
+          "identifiers": {
+            "arxiv": "1909.08053"
+          },
+          "locator": {
+            "section": "Model and Data Parallelism",
+            "page": 8
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Throughout this section, we will showcase weak scaling with respect to the model parameters for both model parallel and model+data parallel cases.",
+          "citationText": "https://arxiv.org/pdf/1909.08053v1#Model and Data Parallelism"
+        }
+      ],
+      "actualSourceClass": [
+        "paper_pdf"
+      ],
+      "actualLocator": {
+        "section": "Training Optimization and Hyperparameters",
+        "page": 6
+      },
+      "workCorrect": false,
+      "identifierCorrect": false,
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "artifactStatus": "ACQUIRED",
+      "parserMode": "pymupdf-real-pdf",
+      "parserError": null,
+      "providerResolution": {
+        "mode": "known-work",
+        "candidates": 0,
+        "actualWork": null,
+        "providers": [
+          "arxiv"
+        ],
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "repositoryEvidence": {
+        "repository": "NVIDIA/Megatron-LM",
+        "commitSha": "91149c04c9aed830353be7795ec7d58461b8828a",
+        "filesRead": 13,
+        "evidenceCount": 5,
+        "manifest": [
+          {
+            "owner": "NVIDIA",
+            "repo": "Megatron-LM",
+            "commitSha": "91149c04c9aed830353be7795ec7d58461b8828a",
+            "path": ".github/scripts/readme.sh",
+            "contentSha256": "7ee24cd3cf8d3b21af649ada4600d09d0895227e1fbb7642281670f6cc9425f4",
+            "bytes": 6442,
+            "sourceRoute": "github:contents/NVIDIA/Megatron-LM@91149c04c9aed830353be7795ec7d58461b8828a"
+          },
+          {
+            "owner": "NVIDIA",
+            "repo": "Megatron-LM",
+            "commitSha": "91149c04c9aed830353be7795ec7d58461b8828a",
+            "path": "README.md",
+            "contentSha256": "483569c743375fce1cc1b7f08009ec3a333f583696de5230e32f1e53026ac68c",
+            "bytes": 10387,
+            "sourceRoute": "github:contents/NVIDIA/Megatron-LM@91149c04c9aed830353be7795ec7d58461b8828a"
+          },
+          {
+            "owner": "NVIDIA",
+            "repo": "Megatron-LM",
+            "commitSha": "91149c04c9aed830353be7795ec7d58461b8828a",
+            "path": "tests/README.md",
+            "contentSha256": "9640b67eb79f2c766342353a7e33e9b5593cf6f61faa45025d0f28f14dd341f9",
+            "bytes": 1054,
+            "sourceRoute": "github:contents/NVIDIA/Megatron-LM@91149c04c9aed830353be7795ec7d58461b8828a"
+          },
+          {
+            "owner": "NVIDIA",
+            "repo": "Megatron-LM",
+            "commitSha": "91149c04c9aed830353be7795ec7d58461b8828a",
+            "path": ".github/ISSUE_TEMPLATE/config.yml",
+            "contentSha256": "a0adec10c3e2c09efb3f1a70798bd487937d322285014f522f6a73e8e2ad9123",
+            "bytes": 29,
+            "sourceRoute": "github:contents/NVIDIA/Megatron-LM@91149c04c9aed830353be7795ec7d58461b8828a"
+          },
+          {
+            "owner": "NVIDIA",
+            "repo": "Megatron-LM",
+            "commitSha": "91149c04c9aed830353be7795ec7d58461b8828a",
+            "path": ".github/scripts/test_approve_test_queue.sh",
+            "contentSha256": "bfd544915628749bd0bc246f033fa5ba84fb10b8d7da900b2052ccc49a0b9cfd",
+            "bytes": 2060,
+            "sourceRoute": "github:contents/NVIDIA/Megatron-LM@91149c04c9aed830353be7795ec7d58461b8828a"
+          },
+          {
+            "owner": "NVIDIA",
+            "repo": "Megatron-LM",
+            "commitSha": "91149c04c9aed830353be7795ec7d58461b8828a",
+            "path": ".github/scripts/test_cache_keys.sh",
+            "contentSha256": "a17c6a457a81e98d91cdb2940dd76c0599063b30940bcbb002db5420c3c7535e",
+            "bytes": 2159,
+            "sourceRoute": "github:contents/NVIDIA/Megatron-LM@91149c04c9aed830353be7795ec7d58461b8828a"
+          },
+          {
+            "owner": "NVIDIA",
+            "repo": "Megatron-LM",
+            "commitSha": "91149c04c9aed830353be7795ec7d58461b8828a",
+            "path": "tools/autoformat.sh",
+            "contentSha256": "fa7900094cdcf6385984e36c24b996775b441935893df46e5747a597c4283aaa",
+            "bytes": 1560,
+            "sourceRoute": "github:contents/NVIDIA/Megatron-LM@91149c04c9aed830353be7795ec7d58461b8828a"
+          },
+          {
+            "owner": "NVIDIA",
+            "repo": "Megatron-LM",
+            "commitSha": "91149c04c9aed830353be7795ec7d58461b8828a",
+            "path": "tools/bisect.sh",
+            "contentSha256": "cb5ca943e826fe551209e9bd8ab5d55bde4dd9b9b795ce315fd93cc22f73b876",
+            "bytes": 2580,
+            "sourceRoute": "github:contents/NVIDIA/Megatron-LM@91149c04c9aed830353be7795ec7d58461b8828a"
+          },
+          {
+            "owner": "NVIDIA",
+            "repo": "Megatron-LM",
+            "commitSha": "91149c04c9aed830353be7795ec7d58461b8828a",
+            "path": "tools/copyright.sh",
+            "contentSha256": "de1a4cf02a2fe8fcfaab4e0473f5da5bf59095c154b24623d08513509294af5c",
+            "bytes": 863,
+            "sourceRoute": "github:contents/NVIDIA/Megatron-LM@91149c04c9aed830353be7795ec7d58461b8828a"
+          },
+          {
+            "owner": "NVIDIA",
+            "repo": "Megatron-LM",
+            "commitSha": "91149c04c9aed830353be7795ec7d58461b8828a",
+            "path": "tools/upgrade_dependencies.sh",
+            "contentSha256": "d4cea9d67dca0c5813c05fbf97d52a18271f8c369d248c286e4e00d60f12e64b",
+            "bytes": 1161,
+            "sourceRoute": "github:contents/NVIDIA/Megatron-LM@91149c04c9aed830353be7795ec7d58461b8828a"
+          },
+          {
+            "owner": "NVIDIA",
+            "repo": "Megatron-LM",
+            "commitSha": "91149c04c9aed830353be7795ec7d58461b8828a",
+            "path": "tools/wait_daemon.sh",
+            "contentSha256": "f87c4c16804b86e8555ef06b6cb0c3c9377a99972e956166affbcf359a9c214c",
+            "bytes": 552,
+            "sourceRoute": "github:contents/NVIDIA/Megatron-LM@91149c04c9aed830353be7795ec7d58461b8828a"
+          },
+          {
+            "owner": "NVIDIA",
+            "repo": "Megatron-LM",
+            "commitSha": "91149c04c9aed830353be7795ec7d58461b8828a",
+            "path": "tasks/finetune_utils.py",
+            "contentSha256": "f29122f7e3498ee5bf41297867093efa73d586e77fa3a5c73fc878ae11e70d77",
+            "bytes": 12576,
+            "sourceRoute": "github:contents/NVIDIA/Megatron-LM@91149c04c9aed830353be7795ec7d58461b8828a"
+          },
+          {
+            "owner": "NVIDIA",
+            "repo": "Megatron-LM",
+            "commitSha": "91149c04c9aed830353be7795ec7d58461b8828a",
+            "path": "train_rl.py",
+            "contentSha256": "9255bc0bd0048d2a5bb04414008665799004f61cbf5bd0bc121da027076b2c0f",
+            "bytes": 16121,
+            "sourceRoute": "github:contents/NVIDIA/Megatron-LM@91149c04c9aed830353be7795ec7d58461b8828a"
+          }
+        ],
+        "failures": []
+      },
+      "failureCategory": null
+    },
+    {
+      "caseId": "rp-zero-1910",
+      "taskId": "real-zero-stages",
+      "query": "What does ZeRO partition across data-parallel processes?",
+      "expectedStatus": "SUPPORTED",
+      "expectedAnswer": {
+        "partitioned_state": "optimizer states, gradients, and parameters"
+      },
+      "expectedSourceClass": [
+        "paper"
+      ],
+      "expectedLocator": "section 2 ZeRO Overview",
+      "actualStatus": "UNKNOWN",
+      "actualAnswer": {},
+      "actualEvidence": [],
+      "actualSourceClass": [],
+      "actualLocator": null,
+      "workCorrect": false,
+      "identifierCorrect": false,
+      "answerCorrect": false,
+      "evidenceSourceCorrect": false,
+      "locatorCorrect": false,
+      "supportStatusCorrect": false,
+      "artifactStatus": "UNAVAILABLE",
+      "parserMode": "not_configured",
+      "parserError": null,
+      "providerResolution": {
+        "mode": "known-work",
+        "candidates": 0,
+        "actualWork": null,
+        "providers": [
+          "arxiv"
+        ],
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "repositoryEvidence": {
+        "repository": "microsoft/DeepSpeed",
+        "commitSha": "05daf0598b1657da832288f5e89d9e22a9a92ee5",
+        "filesRead": 8,
+        "evidenceCount": 3,
+        "manifest": [
+          {
+            "owner": "microsoft",
+            "repo": "DeepSpeed",
+            "commitSha": "05daf0598b1657da832288f5e89d9e22a9a92ee5",
+            "path": "azure/README.md",
+            "contentSha256": "fffb816597f717d7125952316f51e7a47b644e6417fedd5927a6b54724b744ba",
+            "bytes": 283,
+            "sourceRoute": "github:contents/microsoft/DeepSpeed@05daf0598b1657da832288f5e89d9e22a9a92ee5"
+          },
+          {
+            "owner": "microsoft",
+            "repo": "DeepSpeed",
+            "commitSha": "05daf0598b1657da832288f5e89d9e22a9a92ee5",
+            "path": "benchmarks/README.md",
+            "contentSha256": "cc375ab907c9bf6067e570e8784110c9c90e18b9944e49c0adda852085df7697",
+            "bytes": 340,
+            "sourceRoute": "github:contents/microsoft/DeepSpeed@05daf0598b1657da832288f5e89d9e22a9a92ee5"
+          },
+          {
+            "owner": "microsoft",
+            "repo": "DeepSpeed",
+            "commitSha": "05daf0598b1657da832288f5e89d9e22a9a92ee5",
+            "path": "blogs/README.md",
+            "contentSha256": "a05facbd5d179065fd9270ed9edbb2d3b6f889adc25f957d65b11e165fab9372",
+            "bytes": 37,
+            "sourceRoute": "github:contents/microsoft/DeepSpeed@05daf0598b1657da832288f5e89d9e22a9a92ee5"
+          },
+          {
+            "owner": "microsoft",
+            "repo": "DeepSpeed",
+            "commitSha": "05daf0598b1657da832288f5e89d9e22a9a92ee5",
+            "path": "docs/README.md",
+            "contentSha256": "7020ff19c868457f134e6f16fb84077bbf43ffc83266acb2df18a3937fece738",
+            "bytes": 2963,
+            "sourceRoute": "github:contents/microsoft/DeepSpeed@05daf0598b1657da832288f5e89d9e22a9a92ee5"
+          },
+          {
+            "owner": "microsoft",
+            "repo": "DeepSpeed",
+            "commitSha": "05daf0598b1657da832288f5e89d9e22a9a92ee5",
+            "path": "examples/README.md",
+            "contentSha256": "4d898cef896442ec5040008fa80a157f4a5556643f2189758f238556d8318494",
+            "bytes": 604,
+            "sourceRoute": "github:contents/microsoft/DeepSpeed@05daf0598b1657da832288f5e89d9e22a9a92ee5"
+          },
+          {
+            "owner": "microsoft",
+            "repo": "DeepSpeed",
+            "commitSha": "05daf0598b1657da832288f5e89d9e22a9a92ee5",
+            "path": "README.md",
+            "contentSha256": "d206dd2d2ed67d0b39a60dc18161fb66c6e290ac4f05e6ed9a0467e5b80b75a2",
+            "bytes": 32934,
+            "sourceRoute": "github:contents/microsoft/DeepSpeed@05daf0598b1657da832288f5e89d9e22a9a92ee5"
+          },
+          {
+            "owner": "microsoft",
+            "repo": "DeepSpeed",
+            "commitSha": "05daf0598b1657da832288f5e89d9e22a9a92ee5",
+            "path": "install.sh",
+            "contentSha256": "20182d8cb4b81713139c46e024fc1c03a643b16b3fed1dab511edf10d8a49c9d",
+            "bytes": 4277,
+            "sourceRoute": "github:contents/microsoft/DeepSpeed@05daf0598b1657da832288f5e89d9e22a9a92ee5"
+          },
+          {
+            "owner": "microsoft",
+            "repo": "DeepSpeed",
+            "commitSha": "05daf0598b1657da832288f5e89d9e22a9a92ee5",
+            "path": "release/release.sh",
+            "contentSha256": "d769d6b947178ca250702e42891244407f287c4ab8d443bbc383b1f9a8c70b41",
+            "bytes": 1211,
+            "sourceRoute": "github:contents/microsoft/DeepSpeed@05daf0598b1657da832288f5e89d9e22a9a92ee5"
+          }
+        ],
+        "failures": []
+      },
+      "failureCategory": "pdf acquisition unavailable"
+    },
+    {
+      "caseId": "rp-scaling-laws-2001",
+      "taskId": "real-scaling-gpu-count",
+      "query": "What GPU count did the paper report for every experiment?",
+      "expectedStatus": "NOT_REPORTED",
+      "expectedAnswer": {
+        "gpu_count": null
+      },
+      "expectedSourceClass": [
+        "paper_review"
+      ],
+      "expectedLocator": "experiments and methods scope",
+      "actualStatus": "UNKNOWN",
+      "actualAnswer": {},
+      "actualEvidence": [],
+      "actualSourceClass": [
+        "paper_pdf"
+      ],
+      "actualLocator": {
+        "section": "Training Procedures",
+        "page": 7
+      },
+      "workCorrect": false,
+      "identifierCorrect": false,
+      "answerCorrect": true,
+      "evidenceSourceCorrect": false,
+      "locatorCorrect": true,
+      "supportStatusCorrect": false,
+      "artifactStatus": "ACQUIRED",
+      "parserMode": "pymupdf-real-pdf",
+      "parserError": null,
+      "providerResolution": {
+        "mode": "known-work",
+        "candidates": 0,
+        "actualWork": null,
+        "providers": [
+          "arxiv"
+        ],
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "repositoryEvidence": null,
+      "failureCategory": null
+    },
+    {
+      "caseId": "rp-rag-2005",
+      "taskId": "real-rag-components",
+      "query": "Which two components make up the RAG model?",
+      "expectedStatus": "SUPPORTED",
+      "expectedAnswer": {
+        "components": [
+          "retriever",
+          "generator"
+        ]
+      },
+      "expectedSourceClass": [
+        "paper"
+      ],
+      "expectedLocator": "section 2 Methods",
+      "actualStatus": "UNKNOWN",
+      "actualAnswer": {},
+      "actualEvidence": [],
+      "actualSourceClass": [
+        "paper_pdf"
+      ],
+      "actualLocator": {
+        "section": "P18-1082.",
+        "page": 12
+      },
+      "workCorrect": false,
+      "identifierCorrect": false,
+      "answerCorrect": false,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": false,
+      "artifactStatus": "ACQUIRED",
+      "parserMode": "pymupdf-real-pdf",
+      "parserError": null,
+      "providerResolution": {
+        "mode": "known-work",
+        "candidates": 0,
+        "actualWork": null,
+        "providers": [
+          "arxiv"
+        ],
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "repositoryEvidence": null,
+      "failureCategory": "field extraction failure"
+    },
+    {
+      "caseId": "rp-gpt3-2005",
+      "taskId": "real-gpt3-regimes",
+      "query": "Which evaluation regimes does GPT-3 compare?",
+      "expectedStatus": "SUPPORTED",
+      "expectedAnswer": {
+        "regimes": [
+          "zero-shot",
+          "one-shot",
+          "few-shot"
+        ]
+      },
+      "expectedSourceClass": [
+        "paper"
+      ],
+      "expectedLocator": "abstract and section 1",
+      "actualStatus": "SUPPORTED",
+      "actualAnswer": {
+        "regimes": [
+          "zero-shot",
+          "one-shot",
+          "few-shot"
+        ]
+      },
+      "actualEvidence": [
+        {
+          "evidenceId": "real-paper-rp-gpt3-2005-regimes-0",
+          "sourceId": "https://arxiv.org/pdf/2005.14165v1",
+          "authors": [],
+          "title": "Language Models are Few-Shot Learners",
+          "identifiers": {
+            "arxiv": "2005.14165"
+          },
+          "locator": {
+            "section": "2019.",
+            "page": 66
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "SummAE: Zero-shot abstractive text summarization using length-agnostic auto-encoders.",
+          "citationText": "https://arxiv.org/pdf/2005.14165v1#2019."
+        },
+        {
+          "evidenceId": "real-paper-rp-gpt3-2005-regimes-1",
+          "sourceId": "https://arxiv.org/pdf/2005.14165v1",
+          "authors": [],
+          "title": "Language Models are Few-Shot Learners",
+          "identifiers": {
+            "arxiv": "2005.14165"
+          },
+          "locator": {
+            "section": "2016.",
+            "page": 70
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Matching Networks for One Shot Learning.",
+          "citationText": "https://arxiv.org/pdf/2005.14165v1#2016."
+        },
+        {
+          "evidenceId": "real-paper-rp-gpt3-2005-regimes-2",
+          "sourceId": "https://arxiv.org/pdf/2005.14165v1",
+          "authors": [],
+          "title": "Language Models are Few-Shot Learners",
+          "identifiers": {
+            "arxiv": "2005.14165"
+          },
+          "locator": {
+            "section": "2016.",
+            "page": 70
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Exploiting cloze questions for few-shot text classiﬁcation and natural language inference.",
+          "citationText": "https://arxiv.org/pdf/2005.14165v1#2016."
+        }
+      ],
+      "actualSourceClass": [
+        "paper_pdf"
+      ],
+      "actualLocator": {
+        "section": "P",
+        "page": 36
+      },
+      "workCorrect": false,
+      "identifierCorrect": false,
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "artifactStatus": "ACQUIRED",
+      "parserMode": "pymupdf-real-pdf",
+      "parserError": null,
+      "providerResolution": {
+        "mode": "known-work",
+        "candidates": 0,
+        "actualWork": null,
+        "providers": [
+          "arxiv"
+        ],
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "repositoryEvidence": null,
+      "failureCategory": null
+    },
+    {
+      "caseId": "rp-lora-2106",
+      "taskId": "real-lora-rank",
+      "query": "What low-rank adaptation parameter controls the update rank?",
+      "expectedStatus": "SUPPORTED",
+      "expectedAnswer": {
+        "parameter": "r"
+      },
+      "expectedSourceClass": [
+        "paper"
+      ],
+      "expectedLocator": "section 4 LoRA",
+      "actualStatus": "UNKNOWN",
+      "actualAnswer": {},
+      "actualEvidence": [],
+      "actualSourceClass": [
+        "paper_pdf"
+      ],
+      "actualLocator": {
+        "section": "Performance on GPT-3",
+        "page": 5
+      },
+      "workCorrect": false,
+      "identifierCorrect": false,
+      "answerCorrect": false,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": false,
+      "artifactStatus": "ACQUIRED",
+      "parserMode": "pymupdf-real-pdf",
+      "parserError": null,
+      "providerResolution": {
+        "mode": "known-work",
+        "candidates": 0,
+        "actualWork": null,
+        "providers": [
+          "arxiv"
+        ],
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "repositoryEvidence": {
+        "repository": "microsoft/LoRA",
+        "commitSha": "c4593f060e6a368d7bb5af5273b8e42810cdef90",
+        "filesRead": 30,
+        "evidenceCount": 84,
+        "manifest": [
+          {
+            "owner": "microsoft",
+            "repo": "LoRA",
+            "commitSha": "c4593f060e6a368d7bb5af5273b8e42810cdef90",
+            "path": "examples/NLG/eval/README.md",
+            "contentSha256": "da0f9d889c270119739c361cbc94dc49c46d5eea5b3ab4715acf9a88e2f513d6",
+            "bytes": 285,
+            "sourceRoute": "github:contents/microsoft/LoRA@c4593f060e6a368d7bb5af5273b8e42810cdef90"
+          },
+          {
+            "owner": "microsoft",
+            "repo": "LoRA",
+            "commitSha": "c4593f060e6a368d7bb5af5273b8e42810cdef90",
+            "path": "examples/NLG/README.md",
+            "contentSha256": "976a1622752156f6af99fcddd0e6f28983f9ce9bdb34fa39a39a268efc154bec",
+            "bytes": 5560,
+            "sourceRoute": "github:contents/microsoft/LoRA@c4593f060e6a368d7bb5af5273b8e42810cdef90"
+          },
+          {
+            "owner": "microsoft",
+            "repo": "LoRA",
+            "commitSha": "c4593f060e6a368d7bb5af5273b8e42810cdef90",
+            "path": "examples/NLU/docs/README.md",
+            "contentSha256": "13b1490422275b620ccc83388ae109460eb325d5fc2e321d2db313b4ec83f36e",
+            "bytes": 11749,
+            "sourceRoute": "github:contents/microsoft/LoRA@c4593f060e6a368d7bb5af5273b8e42810cdef90"
+          },
+          {
+            "owner": "microsoft",
+            "repo": "LoRA",
+            "commitSha": "c4593f060e6a368d7bb5af5273b8e42810cdef90",
+            "path": "examples/NLU/examples/README.md",
+            "contentSha256": "840ddb0ab0beee14b8f1b8107cf1ba5612a920467001628c4805231213b589a2",
+            "bytes": 12357,
+            "sourceRoute": "github:contents/microsoft/LoRA@c4593f060e6a368d7bb5af5273b8e42810cdef90"
+          },
+          {
+            "owner": "microsoft",
+            "repo": "LoRA",
+            "commitSha": "c4593f060e6a368d7bb5af5273b8e42810cdef90",
+            "path": "examples/NLU/model_cards/README.md",
+            "contentSha256": "a811dbef14bdc0dbe9add1049c87a71c86f2c096f3ea4affccd23dd015582152",
+            "bytes": 1241,
+            "sourceRoute": "github:contents/microsoft/LoRA@c4593f060e6a368d7bb5af5273b8e42810cdef90"
+          },
+          {
+            "owner": "microsoft",
+            "repo": "LoRA",
+            "commitSha": "c4593f060e6a368d7bb5af5273b8e42810cdef90",
+            "path": "examples/NLU/notebooks/README.md",
+            "contentSha256": "b230bcfd27acb11d9d600b1bc92a75a76fa34ef6c74859dac2f66c9a8597adf3",
+            "bytes": 5695,
+            "sourceRoute": "github:contents/microsoft/LoRA@c4593f060e6a368d7bb5af5273b8e42810cdef90"
+          },
+          {
+            "owner": "microsoft",
+            "repo": "LoRA",
+            "commitSha": "c4593f060e6a368d7bb5af5273b8e42810cdef90",
+            "path": "examples/NLU/README.md",
+            "contentSha256": "7078c0ae9e286295cfc83a8862992fd62d7ae134a455b67044e2ab350b1d6407",
+            "bytes": 5750,
+            "sourceRoute": "github:contents/microsoft/LoRA@c4593f060e6a368d7bb5af5273b8e42810cdef90"
+          },
+          {
+            "owner": "microsoft",
+            "repo": "LoRA",
+            "commitSha": "c4593f060e6a368d7bb5af5273b8e42810cdef90",
+            "path": "README.md",
+            "contentSha256": "ce0b726fedd1198ebd841093b53ff5490672ffb2264479d8be044b5826a791c6",
+            "bytes": 14379,
+            "sourceRoute": "github:contents/microsoft/LoRA@c4593f060e6a368d7bb5af5273b8e42810cdef90"
+          },
+          {
+            "owner": "microsoft",
+            "repo": "LoRA",
+            "commitSha": "c4593f060e6a368d7bb5af5273b8e42810cdef90",
+            "path": "examples/NLG/vocab/config.json",
+            "contentSha256": "ef1a44d889ad1a0acc7731c78134f1b87d2d222f110e97dd10fd4117331caf22",
+            "bytes": 718,
+            "sourceRoute": "github:contents/microsoft/LoRA@c4593f060e6a368d7bb5af5273b8e42810cdef90"
+          },
+          {
+            "owner": "microsoft",
+            "repo": "LoRA",
+            "commitSha": "c4593f060e6a368d7bb5af5273b8e42810cdef90",
+            "path": "examples/NLG/create_datasets.sh",
+            "contentSha256": "1d5e6097cf8ba2067f6be815f49fb9eda36b009d95b13760f852fceabc959b37",
+            "bytes": 2251,
+            "sourceRoute": "github:contents/microsoft/LoRA@c4593f060e6a368d7bb5af5273b8e42810cdef90"
+          },
+          {
+            "owner": "microsoft",
+            "repo": "LoRA",
+            "commitSha": "c4593f060e6a368d7bb5af5273b8e42810cdef90",
+            "path": "examples/NLG/download_pretrained_checkpoints.sh",
+            "contentSha256": "892b03676807fc98e8ea6063540b0cf411a929bb77ebbbdc6bb4af8d170cbc69",
+            "bytes": 403,
+            "sourceRoute": "github:contents/microsoft/LoRA@c4593f060e6a368d7bb5af5273b8e42810cdef90"
+          },
+          {
+            "owner": "microsoft",
+            "repo": "LoRA",
+            "commitSha": "c4593f060e6a368d7bb5af5273b8e42810cdef90",
+            "path": "examples/NLG/eval/download_evalscript.sh",
+            "contentSha256": "c1349cf424bed8086ebb5ebfac3d6d48ae1cb7d99e24bdeb789dc0454f1604fb",
+            "bytes": 431,
+            "sourceRoute": "github:contents/microsoft/LoRA@c4593f060e6a368d7bb5af5273b8e42810cdef90"
+          },
+          {
+            "owner": "microsoft",
+            "repo": "LoRA",
+            "commitSha": "c4593f060e6a368d7bb5af5273b8e42810cdef90",
+            "path": "examples/NLU/adapter_houlsby_roberta_large_mnli.sh",
+            "contentSha256": "bc83ab43cfc6827c6cc140b55f43aabc21f339986b3d5efd0bdd13d3f8b7ca61",
+            "bytes": 793,
+            "sourceRoute": "github:contents/microsoft/LoRA@c4593f060e6a368d7bb5af5273b8e42810cdef90"
+          },
+          {
+            "owner": "microsoft",
+            "repo": "LoRA",
+            "commitSha": "c4593f060e6a368d7bb5af5273b8e42810cdef90",
+            "path": "examples/NLU/adapter_pfeiffer_roberta_large_mnli.sh",
+            "contentSha256": "29ea2d033a1370d245d997029d30c23b7f6a49f04081c2f993ec42ba185ed33b",
+            "bytes": 795,
+            "sourceRoute": "github:contents/microsoft/LoRA@c4593f060e6a368d7bb5af5273b8e42810cdef90"
+          },
+          {
+            "owner": "microsoft",
+            "repo": "LoRA",
+            "commitSha": "c4593f060e6a368d7bb5af5273b8e42810cdef90",
+            "path": "examples/NLU/deberta_v2_xxlarge_cola.sh",
+            "contentSha256": "9d8c54561550d993d335e759cfe51f22e02564fab624ef52bbb469dbd8ebac83",
+            "bytes": 850,
+            "sourceRoute": "github:contents/microsoft/LoRA@c4593f060e6a368d7bb5af5273b8e42810cdef90"
+          },
+          {
+            "owner": "microsoft",
+            "repo": "LoRA",
+            "commitSha": "c4593f060e6a368d7bb5af5273b8e42810cdef90",
+            "path": "examples/NLU/deberta_v2_xxlarge_mnli.sh",
+            "contentSha256": "e2cbe3d99610539612709a40d15e881f6321c5e9b776f38c5da7eb593c4ce357",
+            "bytes": 852,
+            "sourceRoute": "github:contents/microsoft/LoRA@c4593f060e6a368d7bb5af5273b8e42810cdef90"
+          },
+          {
+            "owner": "microsoft",
+            "repo": "LoRA",
+            "commitSha": "c4593f060e6a368d7bb5af5273b8e42810cdef90",
+            "path": "examples/NLU/deberta_v2_xxlarge_mrpc.sh",
+            "contentSha256": "1558caf864c28b948760deb71c00a2b41e31e69244c81f8e98dd8e2651e8335b",
+            "bytes": 893,
+            "sourceRoute": "github:contents/microsoft/LoRA@c4593f060e6a368d7bb5af5273b8e42810cdef90"
+          },
+          {
+            "owner": "microsoft",
+            "repo": "LoRA",
+            "commitSha": "c4593f060e6a368d7bb5af5273b8e42810cdef90",
+            "path": "examples/NLU/deberta_v2_xxlarge_qnli.sh",
+            "contentSha256": "8c6f8723c1fb02e283eda7f462f96a32aaa35af1bbeb046991e6323685b7e723",
+            "bytes": 853,
+            "sourceRoute": "github:contents/microsoft/LoRA@c4593f060e6a368d7bb5af5273b8e42810cdef90"
+          },
+          {
+            "owner": "microsoft",
+            "repo": "LoRA",
+            "commitSha": "c4593f060e6a368d7bb5af5273b8e42810cdef90",
+            "path": "examples/NLU/deberta_v2_xxlarge_qqp.sh",
+            "contentSha256": "134b7c3053f02093417da88620a6ccbd7f1665f53ca319219734274ea608d3bd",
+            "bytes": 854,
+            "sourceRoute": "github:contents/microsoft/LoRA@c4593f060e6a368d7bb5af5273b8e42810cdef90"
+          },
+          {
+            "owner": "microsoft",
+            "repo": "LoRA",
+            "commitSha": "c4593f060e6a368d7bb5af5273b8e42810cdef90",
+            "path": "examples/NLU/deberta_v2_xxlarge_rte.sh",
+            "contentSha256": "2272af10e72151fc27a7fff9ccdfed6f7126b5a3d282fb3db2d52f78077976b6",
+            "bytes": 893,
+            "sourceRoute": "github:contents/microsoft/LoRA@c4593f060e6a368d7bb5af5273b8e42810cdef90"
+          },
+          {
+            "owner": "microsoft",
+            "repo": "LoRA",
+            "commitSha": "c4593f060e6a368d7bb5af5273b8e42810cdef90",
+            "path": "examples/NLU/deberta_v2_xxlarge_sst2.sh",
+            "contentSha256": "cfc9d60eee5860c1e7873b503449c488f9e1ed99b7a858f509f7ab8fb80b32b3",
+            "bytes": 853,
+            "sourceRoute": "github:contents/microsoft/LoRA@c4593f060e6a368d7bb5af5273b8e42810cdef90"
+          },
+          {
+            "owner": "microsoft",
+            "repo": "LoRA",
+            "commitSha": "c4593f060e6a368d7bb5af5273b8e42810cdef90",
+            "path": "examples/NLU/deberta_v2_xxlarge_stsb.sh",
+            "contentSha256": "300f93d35e4ea90e98d6161f29599f75a78df5ba8590331a9a5bd0118c0895d6",
+            "bytes": 893,
+            "sourceRoute": "github:contents/microsoft/LoRA@c4593f060e6a368d7bb5af5273b8e42810cdef90"
+          },
+          {
+            "owner": "microsoft",
+            "repo": "LoRA",
+            "commitSha": "c4593f060e6a368d7bb5af5273b8e42810cdef90",
+            "path": "examples/NLU/mnli.cutoff.sh",
+            "contentSha256": "410907ea3f09fe8a0d47a191a43c77318ed631e51400df7684dd76b6212b49ee",
+            "bytes": 895,
+            "sourceRoute": "github:contents/microsoft/LoRA@c4593f060e6a368d7bb5af5273b8e42810cdef90"
+          },
+          {
+            "owner": "microsoft",
+            "repo": "LoRA",
+            "commitSha": "c4593f060e6a368d7bb5af5273b8e42810cdef90",
+            "path": "examples/NLU/mnli.rdrop.sh",
+            "contentSha256": "deed4bec850b5b57692537da122cb74501b903005eedb4aa862660a7924676b7",
+            "bytes": 874,
+            "sourceRoute": "github:contents/microsoft/LoRA@c4593f060e6a368d7bb5af5273b8e42810cdef90"
+          },
+          {
+            "owner": "microsoft",
+            "repo": "LoRA",
+            "commitSha": "c4593f060e6a368d7bb5af5273b8e42810cdef90",
+            "path": "examples/NLU/roberta_base_cola.sh",
+            "contentSha256": "9c08e2316fb68c886f862c3daaaf508770424dd964d105d1157be513e9c20c37",
+            "bytes": 738,
+            "sourceRoute": "github:contents/microsoft/LoRA@c4593f060e6a368d7bb5af5273b8e42810cdef90"
+          },
+          {
+            "owner": "microsoft",
+            "repo": "LoRA",
+            "commitSha": "c4593f060e6a368d7bb5af5273b8e42810cdef90",
+            "path": "examples/NLU/roberta_base_mnli.sh",
+            "contentSha256": "0891221fbaf9e991b48035f2f2c523ce3b85f4a58e0accbba00e33b4f7f756b2",
+            "bytes": 738,
+            "sourceRoute": "github:contents/microsoft/LoRA@c4593f060e6a368d7bb5af5273b8e42810cdef90"
+          },
+          {
+            "owner": "microsoft",
+            "repo": "LoRA",
+            "commitSha": "c4593f060e6a368d7bb5af5273b8e42810cdef90",
+            "path": "examples/NLU/roberta_base_mrpc.sh",
+            "contentSha256": "634fee6cdb3939bec7a0651da9cfed696b458c7675612e1b909353a6a941edd9",
+            "bytes": 781,
+            "sourceRoute": "github:contents/microsoft/LoRA@c4593f060e6a368d7bb5af5273b8e42810cdef90"
+          },
+          {
+            "owner": "microsoft",
+            "repo": "LoRA",
+            "commitSha": "c4593f060e6a368d7bb5af5273b8e42810cdef90",
+            "path": "examples/NLU/roberta_base_qnli.sh",
+            "contentSha256": "8b68dc425a012d890775dd8d8e6e7621a89f15f53a74e92baa1a65819a590a60",
+            "bytes": 738,
+            "sourceRoute": "github:contents/microsoft/LoRA@c4593f060e6a368d7bb5af5273b8e42810cdef90"
+          },
+          {
+            "owner": "microsoft",
+            "repo": "LoRA",
+            "commitSha": "c4593f060e6a368d7bb5af5273b8e42810cdef90",
+            "path": "examples/NLU/roberta_base_qqp.sh",
+            "contentSha256": "44b9afedce87bad335a3bf1e01f7114b4d98bb856e983fe1ea6611d1f0abb96a",
+            "bytes": 736,
+            "sourceRoute": "github:contents/microsoft/LoRA@c4593f060e6a368d7bb5af5273b8e42810cdef90"
+          },
+          {
+            "owner": "microsoft",
+            "repo": "LoRA",
+            "commitSha": "c4593f060e6a368d7bb5af5273b8e42810cdef90",
+            "path": "examples/NLU/roberta_base_rte.sh",
+            "contentSha256": "cabb723574693e733f7bdcc60de96eb569b70f9dd75f195dda0ea232cd3a9e10",
+            "bytes": 779,
+            "sourceRoute": "github:contents/microsoft/LoRA@c4593f060e6a368d7bb5af5273b8e42810cdef90"
+          }
+        ],
+        "failures": []
+      },
+      "failureCategory": "field extraction failure"
+    },
+    {
+      "caseId": "rp-instructgpt-2203",
+      "taskId": "real-instructgpt-stages",
+      "query": "What three stages are described in the InstructGPT training procedure?",
+      "expectedStatus": "SUPPORTED",
+      "expectedAnswer": {
+        "stages": [
+          "SFT",
+          "reward model",
+          "PPO"
+        ]
+      },
+      "expectedSourceClass": [
+        "paper"
+      ],
+      "expectedLocator": "section 2.1 Training procedure",
+      "actualStatus": "SUPPORTED",
+      "actualAnswer": {
+        "stages": [
+          "PPO",
+          "SFT",
+          "reward model"
+        ]
+      },
+      "actualEvidence": [
+        {
+          "evidenceId": "real-paper-rp-instructgpt-2203-stages-0",
+          "sourceId": "https://arxiv.org/pdf/2203.02155v1",
+          "authors": [],
+          "title": "Training language models to follow instructions with human feedback",
+          "identifiers": {
+            "arxiv": "2203.02155"
+          },
+          "locator": {
+            "section": "60 F",
+            "page": 61
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Model samples In this section, we provide some additional samples from both the 175B GPT-3 and 175B InstructGPT (PPO-ptx) models.",
+          "citationText": "https://arxiv.org/pdf/2203.02155v1#60 F"
+        },
+        {
+          "evidenceId": "real-paper-rp-instructgpt-2203-stages-1",
+          "sourceId": "https://arxiv.org/pdf/2203.02155v1",
+          "authors": [],
+          "title": "Training language models to follow instructions with human feedback",
+          "identifiers": {
+            "arxiv": "2203.02155"
+          },
+          "locator": {
+            "section": "SFT",
+            "page": 60
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Figure 41: Win rates of PPO-ptx and SFT against 175B GPT-3 in RealToxicityPrompts.",
+          "citationText": "https://arxiv.org/pdf/2203.02155v1#SFT"
+        },
+        {
+          "evidenceId": "real-paper-rp-instructgpt-2203-stages-2",
+          "sourceId": "https://arxiv.org/pdf/2203.02155v1",
+          "authors": [],
+          "title": "Training language models to follow instructions with human feedback",
+          "identifiers": {
+            "arxiv": "2203.02155"
+          },
+          "locator": {
+            "section": "E.6",
+            "page": 53
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "The pretrained GPT model is used as the KL reward model, in these experiments.",
+          "citationText": "https://arxiv.org/pdf/2203.02155v1#E.6"
+        }
+      ],
+      "actualSourceClass": [
+        "paper_pdf"
+      ],
+      "actualLocator": {
+        "section": "Models",
+        "page": 8
+      },
+      "workCorrect": false,
+      "identifierCorrect": false,
+      "answerCorrect": false,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "artifactStatus": "ACQUIRED",
+      "parserMode": "pymupdf-real-pdf",
+      "parserError": null,
+      "providerResolution": {
+        "mode": "known-work",
+        "candidates": 0,
+        "actualWork": null,
+        "providers": [
+          "arxiv"
+        ],
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "repositoryEvidence": null,
+      "failureCategory": "field extraction failure"
+    },
+    {
+      "caseId": "rp-flashattn-2205",
+      "taskId": "real-flashattn-exact",
+      "query": "Is FlashAttention an exact or approximate attention algorithm?",
+      "expectedStatus": "SUPPORTED",
+      "expectedAnswer": {
+        "attention": "exact"
+      },
+      "expectedSourceClass": [
+        "paper"
+      ],
+      "expectedLocator": "abstract",
+      "actualStatus": "SUPPORTED",
+      "actualAnswer": {
+        "attention": "exact"
+      },
+      "actualEvidence": [
+        {
+          "evidenceId": "real-paper-rp-flashattn-2205-attention-0",
+          "sourceId": "https://arxiv.org/pdf/2205.14135v1",
+          "authors": [],
+          "title": "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness",
+          "identifiers": {
+            "arxiv": "2205.14135"
+          },
+          "locator": {
+            "section": "-",
+            "page": 31
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "FlashAttention",
+          "citationText": "https://arxiv.org/pdf/2205.14135v1#-"
+        },
+        {
+          "evidenceId": "real-paper-rp-flashattn-2205-attention-1",
+          "sourceId": "https://arxiv.org/pdf/2205.14135v1",
+          "authors": [],
+          "title": "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness",
+          "identifiers": {
+            "arxiv": "2205.14135"
+          },
+          "locator": {
+            "section": "E.5",
+            "page": 27
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Baselines We compare against reference implementations for exact attention from PyTorch/HuggingFace and Megatron, approximate attention, and sparse attention.",
+          "citationText": "https://arxiv.org/pdf/2205.14135v1#E.5"
+        }
+      ],
+      "actualSourceClass": [
+        "paper_pdf"
+      ],
+      "actualLocator": {
+        "section": "HBM",
+        "page": 6
+      },
+      "workCorrect": false,
+      "identifierCorrect": false,
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "artifactStatus": "ACQUIRED",
+      "parserMode": "pymupdf-real-pdf",
+      "parserError": null,
+      "providerResolution": {
+        "mode": "known-work",
+        "candidates": 0,
+        "actualWork": null,
+        "providers": [
+          "arxiv"
+        ],
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "repositoryEvidence": {
+        "repository": "Dao-AILab/flash-attention",
+        "commitSha": "ce088ab9ce0fc0434dcd8afa0a791da9fcc3a820",
+        "filesRead": 1,
+        "evidenceCount": 0,
+        "manifest": [
+          {
+            "owner": "Dao-AILab",
+            "repo": "flash-attention",
+            "commitSha": "ce088ab9ce0fc0434dcd8afa0a791da9fcc3a820",
+            "path": "README.md",
+            "contentSha256": "7bcb7ca466dcb819822003c5c15a8124e4866f4d446a5c60382615128c81c3a6",
+            "bytes": 24629,
+            "sourceRoute": "github:contents/Dao-AILab/flash-attention@ce088ab9ce0fc0434dcd8afa0a791da9fcc3a820"
+          }
+        ],
+        "failures": []
+      },
+      "failureCategory": null
+    },
+    {
+      "caseId": "rp-react-2210",
+      "taskId": "real-react-trace",
+      "query": "What three event types alternate in a ReAct trajectory?",
+      "expectedStatus": "SUPPORTED",
+      "expectedAnswer": {
+        "trace": [
+          "thought",
+          "action",
+          "observation"
+        ]
+      },
+      "expectedSourceClass": [
+        "paper"
+      ],
+      "expectedLocator": "section 3 ReAct",
+      "actualStatus": "SUPPORTED",
+      "actualAnswer": {
+        "trace": "intermediate reasoning steps"
+      },
+      "actualEvidence": [
+        {
+          "evidenceId": "real-paper-rp-react-2210-trace-0",
+          "sourceId": "https://arxiv.org/pdf/2210.03629v1",
+          "authors": [],
+          "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+          "identifiers": {
+            "arxiv": "2210.03629"
+          },
+          "locator": {
+            "section": "1909)",
+            "page": 31
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Failure: Label ambiguity ReAct Question: What nationality is the man who developed the dictator game? Thought 1: I need to search dictator game, find the man who developed it, then find his nationality.",
+          "citationText": "https://arxiv.org/pdf/2210.03629v1#1909)"
+        },
+        {
+          "evidenceId": "real-paper-rp-react-2210-trace-1",
+          "sourceId": "https://arxiv.org/pdf/2210.03629v1",
+          "authors": [],
+          "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+          "identifiers": {
+            "arxiv": "2210.03629"
+          },
+          "locator": {
+            "section": "1909)",
+            "page": 31
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Action 1: Search[dictator game] Observation 1: The dictator game is a popular experimental instrument in social psychology and economics.",
+          "citationText": "https://arxiv.org/pdf/2210.03629v1#1909)"
+        },
+        {
+          "evidenceId": "real-paper-rp-react-2210-trace-2",
+          "sourceId": "https://arxiv.org/pdf/2210.03629v1",
+          "authors": [],
+          "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+          "identifiers": {
+            "arxiv": "2210.03629"
+          },
+          "locator": {
+            "section": "1909)",
+            "page": 31
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Action 1: Search[dictator game] Observation 1: The dictator game is a popular experimental instrument in social psychology and economics.",
+          "citationText": "https://arxiv.org/pdf/2210.03629v1#1909)"
+        },
+        {
+          "evidenceId": "real-paper-rp-react-2210-trace-3",
+          "sourceId": "https://arxiv.org/pdf/2210.03629v1",
+          "authors": [],
+          "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+          "identifiers": {
+            "arxiv": "2210.03629"
+          },
+          "locator": {
+            "section": "28%",
+            "page": 6
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "• While interleaving reasoning, action and observation steps improves ReAct’s groundedness and trustworthiness, such a structural constraint also reduces its ﬂexibility in formulating reasoning steps, leading to more reasoning error rate than CoT.",
+          "citationText": "https://arxiv.org/pdf/2210.03629v1#28%"
+        }
+      ],
+      "actualSourceClass": [
+        "paper_pdf"
+      ],
+      "actualLocator": {
+        "section": "HOTPOTQA FINETUNING DETAILS",
+        "page": 31
+      },
+      "workCorrect": false,
+      "identifierCorrect": false,
+      "answerCorrect": false,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "artifactStatus": "ACQUIRED",
+      "parserMode": "pymupdf-real-pdf",
+      "parserError": null,
+      "providerResolution": {
+        "mode": "known-work",
+        "candidates": 0,
+        "actualWork": null,
+        "providers": [
+          "arxiv"
+        ],
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "repositoryEvidence": {
+        "repository": "ysymyth/ReAct",
+        "commitSha": "6bdb3a1fd38b8188fc7ba4102969fe483df8fdc9",
+        "filesRead": 1,
+        "evidenceCount": 1,
+        "manifest": [
+          {
+            "owner": "ysymyth",
+            "repo": "ReAct",
+            "commitSha": "6bdb3a1fd38b8188fc7ba4102969fe483df8fdc9",
+            "path": "README.md",
+            "contentSha256": "bdc517929b01acf7ba60a4a91693a9bb30e0b165824704088936959c0ad81d79",
+            "bytes": 1808,
+            "sourceRoute": "github:contents/ysymyth/ReAct@6bdb3a1fd38b8188fc7ba4102969fe483df8fdc9"
+          }
+        ],
+        "failures": []
+      },
+      "failureCategory": "field extraction failure"
+    },
+    {
+      "caseId": "rp-toolformer-2302",
+      "taskId": "real-toolformer-abstain",
+      "query": "Does the paper report the exact API-call filtering threshold for every tool?",
+      "expectedStatus": "UNKNOWN",
+      "expectedAnswer": {
+        "threshold": null
+      },
+      "expectedSourceClass": [
+        "paper_review"
+      ],
+      "expectedLocator": "tool-use filtering scope",
+      "actualStatus": "UNKNOWN",
+      "actualAnswer": {},
+      "actualEvidence": [],
+      "actualSourceClass": [
+        "paper_pdf"
+      ],
+      "actualLocator": {
+        "section": "P",
+        "page": 5
+      },
+      "workCorrect": false,
+      "identifierCorrect": false,
+      "answerCorrect": true,
+      "evidenceSourceCorrect": false,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "artifactStatus": "ACQUIRED",
+      "parserMode": "pymupdf-real-pdf",
+      "parserError": null,
+      "providerResolution": {
+        "mode": "known-work",
+        "candidates": 0,
+        "actualWork": null,
+        "providers": [
+          "arxiv"
+        ],
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "repositoryEvidence": null,
+      "failureCategory": null
+    }
+  ]
+}

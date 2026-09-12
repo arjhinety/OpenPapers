@@ -1,0 +1,1787 @@
+{
+  "schemaVersion": "openpapers.real-source-evaluation.v1",
+  "kind": "real-source-development",
+  "commit": "80e161773c6a6c6ac5a7b8fde37faedf5c9c6e7a",
+  "dataset": "research-real-v2",
+  "split": "development",
+  "holdoutInfluencedTuning": null,
+  "configuration": {
+    "providerMode": "identifier-first-live",
+    "resolutionMode": "known-work",
+    "parserMode": "pymupdf-real-pdf",
+    "liveProviders": true
+  },
+  "taskCount": 15,
+  "metrics": {
+    "workAccuracy": 0,
+    "identifierAccuracy": 0,
+    "answerCorrectness": 1,
+    "evidenceSourceAccuracy": 1,
+    "locatorAccuracy": 1,
+    "supportStatusAccuracy": 1,
+    "correctUNKNOWN": null,
+    "correctNOT_REPORTED": null,
+    "falseUNKNOWN": 0,
+    "falseNOT_REPORTED": 0,
+    "fabricatedAnswerRate": 0,
+    "conflictPrecision": null,
+    "conflictRecall": null,
+    "taskCount": 15,
+    "expectedUnknown": 0,
+    "expectedNotReported": 0,
+    "actualUnknown": 0,
+    "actualNotReported": 0
+  },
+  "failureCategories": {},
+  "rows": [
+    {
+      "caseId": "v2-bart",
+      "taskId": "v2-bart-task",
+      "query": "Which corruption objective is used during pretraining?",
+      "expectedStatus": "SUPPORTED",
+      "expectedAnswer": {
+        "objective": "text infilling"
+      },
+      "expectedSourceClass": [
+        "paper"
+      ],
+      "expectedLocator": "paper evidence",
+      "actualStatus": "SUPPORTED",
+      "actualAnswer": {
+        "objective": "text infilling"
+      },
+      "actualEvidence": [
+        {
+          "evidenceId": "real-paper-v2-bart-objective-0",
+          "sourceId": "https://arxiv.org/pdf/1910.13461v1",
+          "authors": [],
+          "title": "BART: Denoising Sequence-to-Sequence Pre-training for Natural Language Generation, Translation, and Comprehension",
+          "identifiers": {
+            "arxiv": "1910.13461"
+          },
+          "locator": {
+            "section": "Experimental Setup",
+            "page": 5
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Based on the results in Section §4, we use a combination of text inﬁlling and sentence permutation.",
+          "citationText": "https://arxiv.org/pdf/1910.13461v1#Experimental Setup"
+        }
+      ],
+      "actualSourceClass": [
+        "paper_pdf"
+      ],
+      "actualLocator": {
+        "section": "Experimental Setup",
+        "page": 5
+      },
+      "workCorrect": false,
+      "identifierCorrect": false,
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "artifactStatus": "ACQUIRED",
+      "parserMode": "pymupdf-real-pdf",
+      "parserError": null,
+      "providerResolution": {
+        "mode": "known-work",
+        "candidates": 0,
+        "actualWork": null,
+        "providers": [
+          "arxiv"
+        ],
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "repositoryEvidence": {
+        "repository": "facebookresearch/fairseq",
+        "commitSha": "3d262bb25690e4eb2e7d3c1309b1e9c406ca4b99",
+        "filesRead": 7,
+        "evidenceCount": 29,
+        "manifest": [
+          {
+            "owner": "facebookresearch",
+            "repo": "fairseq",
+            "commitSha": "3d262bb25690e4eb2e7d3c1309b1e9c406ca4b99",
+            "path": "README.md",
+            "contentSha256": "198e3311a3a538cac678243de53b379a8bf160800d1ab8e7cdaefb971d83bc9e",
+            "bytes": 17398,
+            "sourceRoute": "github:contents/facebookresearch/fairseq@3d262bb25690e4eb2e7d3c1309b1e9c406ca4b99"
+          },
+          {
+            "owner": "facebookresearch",
+            "repo": "fairseq",
+            "commitSha": "3d262bb25690e4eb2e7d3c1309b1e9c406ca4b99",
+            "path": "scripts/compound_split_bleu.sh",
+            "contentSha256": "c228b2237549d5322af4da4bb8bbb279f75f8e38bc0a734778e15a85d3f9c2ec",
+            "bytes": 439,
+            "sourceRoute": "github:contents/facebookresearch/fairseq@3d262bb25690e4eb2e7d3c1309b1e9c406ca4b99"
+          },
+          {
+            "owner": "facebookresearch",
+            "repo": "fairseq",
+            "commitSha": "3d262bb25690e4eb2e7d3c1309b1e9c406ca4b99",
+            "path": "scripts/sacrebleu.sh",
+            "contentSha256": "9202e2f1ca8b789b34a2dc565b12ef4309b0d3b91f5ccebf8b42ea435e4efbbb",
+            "bytes": 486,
+            "sourceRoute": "github:contents/facebookresearch/fairseq@3d262bb25690e4eb2e7d3c1309b1e9c406ca4b99"
+          },
+          {
+            "owner": "facebookresearch",
+            "repo": "fairseq",
+            "commitSha": "3d262bb25690e4eb2e7d3c1309b1e9c406ca4b99",
+            "path": "scripts/test_fsdp.sh",
+            "contentSha256": "9a699540daa83bf739c56c430b0638fad7743ff72bf17bd371e4468a8f375de1",
+            "bytes": 1257,
+            "sourceRoute": "github:contents/facebookresearch/fairseq@3d262bb25690e4eb2e7d3c1309b1e9c406ca4b99"
+          },
+          {
+            "owner": "facebookresearch",
+            "repo": "fairseq",
+            "commitSha": "3d262bb25690e4eb2e7d3c1309b1e9c406ca4b99",
+            "path": "fairseq_cli/train.py",
+            "contentSha256": "de3a85e3493e2cd410a7dd65b4b064aaa155fb304bb6efc53caebf0a545c092a",
+            "bytes": 20723,
+            "sourceRoute": "github:contents/facebookresearch/fairseq@3d262bb25690e4eb2e7d3c1309b1e9c406ca4b99"
+          },
+          {
+            "owner": "facebookresearch",
+            "repo": "fairseq",
+            "commitSha": "3d262bb25690e4eb2e7d3c1309b1e9c406ca4b99",
+            "path": "fairseq/trainer.py",
+            "contentSha256": "37e4cc71f99215aa7271dc4c0acb714fb3569f8bc162ffe61d0b8d91af87326d",
+            "bytes": 66710,
+            "sourceRoute": "github:contents/facebookresearch/fairseq@3d262bb25690e4eb2e7d3c1309b1e9c406ca4b99"
+          },
+          {
+            "owner": "facebookresearch",
+            "repo": "fairseq",
+            "commitSha": "3d262bb25690e4eb2e7d3c1309b1e9c406ca4b99",
+            "path": "train.py",
+            "contentSha256": "1249c9cb4c430163f755ae1f03a8a1fb1acf8ae3f890edd53e31f0aecd9bfafc",
+            "bytes": 366,
+            "sourceRoute": "github:contents/facebookresearch/fairseq@3d262bb25690e4eb2e7d3c1309b1e9c406ca4b99"
+          }
+        ],
+        "failures": []
+      },
+      "failureCategory": null
+    },
+    {
+      "caseId": "v2-simcse",
+      "taskId": "v2-simcse-task",
+      "query": "What learning signal trains SimCSE representations?",
+      "expectedStatus": "SUPPORTED",
+      "expectedAnswer": {
+        "objective": "contrastive learning"
+      },
+      "expectedSourceClass": [
+        "paper"
+      ],
+      "expectedLocator": "paper evidence",
+      "actualStatus": "SUPPORTED",
+      "actualAnswer": {
+        "objective": "contrastive learning"
+      },
+      "actualEvidence": [
+        {
+          "evidenceId": "real-paper-v2-simcse-objective-0",
+          "sourceId": "https://arxiv.org/pdf/2104.08821v1",
+          "authors": [],
+          "title": "SimCSE: Simple Contrastive Learning of Sentence Embeddings",
+          "identifiers": {
+            "arxiv": "2104.08821"
+          },
+          "locator": {
+            "section": "393.",
+            "page": 11
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "A simple framework for contrastive learning of visual representations.",
+          "citationText": "https://arxiv.org/pdf/2104.08821v1#393."
+        }
+      ],
+      "actualSourceClass": [
+        "paper_pdf"
+      ],
+      "actualLocator": {
+        "section": "A",
+        "page": 14
+      },
+      "workCorrect": false,
+      "identifierCorrect": false,
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "artifactStatus": "ACQUIRED",
+      "parserMode": "pymupdf-real-pdf",
+      "parserError": null,
+      "providerResolution": {
+        "mode": "known-work",
+        "candidates": 0,
+        "actualWork": null,
+        "providers": [
+          "arxiv"
+        ],
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "repositoryEvidence": null,
+      "failureCategory": null
+    },
+    {
+      "caseId": "v2-switch",
+      "taskId": "v2-switch-task",
+      "query": "How does Switch distribute tokens among experts?",
+      "expectedStatus": "SUPPORTED",
+      "expectedAnswer": {
+        "architecture": "sparse mixture of experts"
+      },
+      "expectedSourceClass": [
+        "paper"
+      ],
+      "expectedLocator": "paper evidence",
+      "actualStatus": "SUPPORTED",
+      "actualAnswer": {
+        "architecture": "sparse mixture of experts"
+      },
+      "actualEvidence": [
+        {
+          "evidenceId": "real-paper-v2-switch-architecture-0",
+          "sourceId": "https://arxiv.org/pdf/2101.03961v1",
+          "authors": [],
+          "title": "Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity",
+          "identifiers": {
+            "arxiv": "2101.03961"
+          },
+          "locator": {
+            "section": "2019.",
+            "page": 23
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Outrageously large neural networks: The sparsely-gated mixture-of-experts layer.",
+          "citationText": "https://arxiv.org/pdf/2101.03961v1#2019."
+        }
+      ],
+      "actualSourceClass": [
+        "paper_pdf"
+      ],
+      "actualLocator": {
+        "section": "2019.",
+        "page": 23
+      },
+      "workCorrect": false,
+      "identifierCorrect": false,
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "artifactStatus": "ACQUIRED",
+      "parserMode": "pymupdf-real-pdf",
+      "parserError": null,
+      "providerResolution": {
+        "mode": "known-work",
+        "candidates": 0,
+        "actualWork": null,
+        "providers": [
+          "arxiv"
+        ],
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "repositoryEvidence": null,
+      "failureCategory": null
+    },
+    {
+      "caseId": "v2-palm",
+      "taskId": "v2-palm-task",
+      "query": "What parallel computation approach is used to train PaLM?",
+      "expectedStatus": "SUPPORTED",
+      "expectedAnswer": {
+        "parallelism": "data parallelism"
+      },
+      "expectedSourceClass": [
+        "paper"
+      ],
+      "expectedLocator": "paper evidence",
+      "actualStatus": "SUPPORTED",
+      "actualAnswer": {
+        "parallelism": "data parallelism"
+      },
+      "actualEvidence": [
+        {
+          "evidenceId": "real-paper-v2-palm-parallelism-0",
+          "sourceId": "https://arxiv.org/pdf/2204.02311v1",
+          "authors": [],
+          "title": "PaLM: Scaling Language Modeling with Pathways",
+          "identifiers": {
+            "arxiv": "2204.02311"
+          },
+          "locator": {
+            "section": "62 A",
+            "page": 63
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Preparation Wrote the initial proposal: Sharan Narang, Alexander Spiridonov, Noah Fiedel, Noam Shazeer, David Luan Model architecture and optimizer selection: Noam Shazeer, Yi Tay, Sharan Narang, Rewon Child, Aakanksha Chowdhery Model scaling validation: Aakanksha Chowdhery, Noam Shazeer, Rewon Child Low-precision ﬁnetuning and inference: Shivani Agrawal, Reiner Pope Training strategy and eﬃciency: Noam Shazeer, Aakanksha Chowdhery, James Bradbury, Zongwei Zhou, Anselm Levskaya, Reiner Pope Pod-level Data Parallelism Aakanksha Chowdhery, Paul Barham, Sasha Tsvyashchenko, Parker Schuh T5X Model Parallelism and Flaxformer Adam Roberts, Hyung Won Chung, Anselm Levskaya, James Bradbury, Mark Omernick, Brennan Saeta Deterministic data pipeline: Gaurav Mishra, Adam Roberts, Noam Shazeer, Maarten Bosma Eﬃcient Checkpointing: Sasha Tsvyashchenko, Paul Barham, Hyeontaek Lim Pathways system: Aakanksha Chowdhery, Paul Barham, Hyeontaek Lim, Thanunalayan Sankaranayana Pillai, Michael Isard, Ryan Sepassi, Sanjay Ghemawat, JeﬀDean Dataset and Vocabulary development: Maarten Bosma, Rewon Child, Andrew Dai, Sharan Narang, Noah Fiedel Model Training Large-scale Training: Aakanksha Chowdhery, Jacob Devlin, Sharan Narang Large-scale Training includes in-ﬂight debugging of training instability issues, architecture and optimizer improvements, training strategy improvements, and resolving infrastructure bottlenecks.",
+          "citationText": "https://arxiv.org/pdf/2204.02311v1#62 A"
+        }
+      ],
+      "actualSourceClass": [
+        "paper_pdf"
+      ],
+      "actualLocator": {
+        "section": "Training Setup",
+        "page": 10
+      },
+      "workCorrect": false,
+      "identifierCorrect": false,
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "artifactStatus": "ACQUIRED",
+      "parserMode": "pymupdf-real-pdf",
+      "parserError": null,
+      "providerResolution": {
+        "mode": "known-work",
+        "candidates": 0,
+        "actualWork": null,
+        "providers": [
+          "arxiv"
+        ],
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "repositoryEvidence": {
+        "repository": "google-research/t5x",
+        "commitSha": "2045b332cf19887885a74ef1bd6b2adb2a7ca634",
+        "filesRead": 7,
+        "evidenceCount": 58,
+        "manifest": [
+          {
+            "owner": "google-research",
+            "repo": "t5x",
+            "commitSha": "2045b332cf19887885a74ef1bd6b2adb2a7ca634",
+            "path": "README.md",
+            "contentSha256": "784250dbf112a3e14ac9c18fafbe5abef50ce8ad7129204a5ca6ef75087c0f30",
+            "bytes": 20880,
+            "sourceRoute": "github:contents/google-research/t5x@2045b332cf19887885a74ef1bd6b2adb2a7ca634"
+          },
+          {
+            "owner": "google-research",
+            "repo": "t5x",
+            "commitSha": "2045b332cf19887885a74ef1bd6b2adb2a7ca634",
+            "path": "t5x/notebooks/README.md",
+            "contentSha256": "24474b101be76e970f5e6e4735c058ed87637c7508631b9c005162a135d81b99",
+            "bytes": 2508,
+            "sourceRoute": "github:contents/google-research/t5x@2045b332cf19887885a74ef1bd6b2adb2a7ca634"
+          },
+          {
+            "owner": "google-research",
+            "repo": "t5x",
+            "commitSha": "2045b332cf19887885a74ef1bd6b2adb2a7ca634",
+            "path": "t5x/train_state_test.py",
+            "contentSha256": "823809344202d9578aaece2d61df1e876e59c11dfb1c3a6296a175fe9829bca7",
+            "bytes": 21061,
+            "sourceRoute": "github:contents/google-research/t5x@2045b332cf19887885a74ef1bd6b2adb2a7ca634"
+          },
+          {
+            "owner": "google-research",
+            "repo": "t5x",
+            "commitSha": "2045b332cf19887885a74ef1bd6b2adb2a7ca634",
+            "path": "t5x/train_state.py",
+            "contentSha256": "37169f43bd76d30394c21b8ec8caf96b0a46178457c11cc971b453774fc1280f",
+            "bytes": 11121,
+            "sourceRoute": "github:contents/google-research/t5x@2045b332cf19887885a74ef1bd6b2adb2a7ca634"
+          },
+          {
+            "owner": "google-research",
+            "repo": "t5x",
+            "commitSha": "2045b332cf19887885a74ef1bd6b2adb2a7ca634",
+            "path": "t5x/train.py",
+            "contentSha256": "1c31c08c3d1203e8b8fdcd05af2a42eae349028ac241b6d74b6af8bd18fec515",
+            "bytes": 36991,
+            "sourceRoute": "github:contents/google-research/t5x@2045b332cf19887885a74ef1bd6b2adb2a7ca634"
+          },
+          {
+            "owner": "google-research",
+            "repo": "t5x",
+            "commitSha": "2045b332cf19887885a74ef1bd6b2adb2a7ca634",
+            "path": "t5x/trainer_test.py",
+            "contentSha256": "b99652d14f1cba5b25cd445f22543372ae573685c426fb66326a4f77490bf9a4",
+            "bytes": 36711,
+            "sourceRoute": "github:contents/google-research/t5x@2045b332cf19887885a74ef1bd6b2adb2a7ca634"
+          },
+          {
+            "owner": "google-research",
+            "repo": "t5x",
+            "commitSha": "2045b332cf19887885a74ef1bd6b2adb2a7ca634",
+            "path": "t5x/trainer.py",
+            "contentSha256": "ddeed4bde3c4b9446224b7b57a82100310916fbf84359a325fce058752cedca8",
+            "bytes": 42749,
+            "sourceRoute": "github:contents/google-research/t5x@2045b332cf19887885a74ef1bd6b2adb2a7ca634"
+          }
+        ],
+        "failures": []
+      },
+      "failureCategory": null
+    },
+    {
+      "caseId": "v2-flamingo",
+      "taskId": "v2-flamingo-task",
+      "query": "How does Flamingo connect visual inputs to language modeling?",
+      "expectedStatus": "SUPPORTED",
+      "expectedAnswer": {
+        "formulation": "cross-attention"
+      },
+      "expectedSourceClass": [
+        "paper"
+      ],
+      "expectedLocator": "paper evidence",
+      "actualStatus": "SUPPORTED",
+      "actualAnswer": {
+        "formulation": "cross-attention"
+      },
+      "actualEvidence": [
+        {
+          "evidenceId": "real-paper-v2-flamingo-formulation-0",
+          "sourceId": "https://arxiv.org/pdf/2204.14198v1",
+          "authors": [],
+          "title": "Flamingo: a Visual Language Model for Few-Shot Learning",
+          "identifiers": {
+            "arxiv": "2204.14198"
+          },
+          "locator": {
+            "section": "Flamingo: a Visual Language Model for Few-Shot Learning",
+            "page": 61
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Ad-ditional transformer-based cross-attention layers incorporate vision features into the language model’s text predictions.",
+          "citationText": "https://arxiv.org/pdf/2204.14198v1#Flamingo: a Visual Language Model for Few-Shot Learning"
+        },
+        {
+          "evidenceId": "real-paper-v2-flamingo-formulation-1",
+          "sourceId": "https://arxiv.org/pdf/2204.14198v1",
+          "authors": [],
+          "title": "Flamingo: a Visual Language Model for Few-Shot Learning",
+          "identifiers": {
+            "arxiv": "2204.14198"
+          },
+          "locator": {
+            "section": "2021.",
+            "page": 45
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Exploring the limits of transfer learning with a uniﬁed text-to-text transformer.",
+          "citationText": "https://arxiv.org/pdf/2204.14198v1#2021."
+        }
+      ],
+      "actualSourceClass": [
+        "paper_pdf"
+      ],
+      "actualLocator": {
+        "section": "Flamingo: a Visual Language Model for Few-Shot Learning",
+        "page": 21
+      },
+      "workCorrect": false,
+      "identifierCorrect": false,
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "artifactStatus": "ACQUIRED",
+      "parserMode": "pymupdf-real-pdf",
+      "parserError": null,
+      "providerResolution": {
+        "mode": "known-work",
+        "candidates": 0,
+        "actualWork": null,
+        "providers": [
+          "arxiv"
+        ],
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "repositoryEvidence": {
+        "repository": "OpenGVLab/InternVL",
+        "commitSha": "2410d1dbf208f0e799459aff9376e5747dbf41a2",
+        "filesRead": 26,
+        "evidenceCount": 24,
+        "manifest": [
+          {
+            "owner": "OpenGVLab",
+            "repo": "InternVL",
+            "commitSha": "2410d1dbf208f0e799459aff9376e5747dbf41a2",
+            "path": "classification/README.md",
+            "contentSha256": "b9ae5fffdc72d34ad371ec8d2b8731e451ac2edde7b0260231b58a66f20095e6",
+            "bytes": 10335,
+            "sourceRoute": "github:contents/OpenGVLab/InternVL@2410d1dbf208f0e799459aff9376e5747dbf41a2"
+          },
+          {
+            "owner": "OpenGVLab",
+            "repo": "InternVL",
+            "commitSha": "2410d1dbf208f0e799459aff9376e5747dbf41a2",
+            "path": "clip_benchmark/benchmark/README.md",
+            "contentSha256": "f8566ab4bbecfea395ee39fbc3909ca60bdfa8534dc518eef839343a4373fc5a",
+            "bytes": 1988,
+            "sourceRoute": "github:contents/OpenGVLab/InternVL@2410d1dbf208f0e799459aff9376e5747dbf41a2"
+          },
+          {
+            "owner": "OpenGVLab",
+            "repo": "InternVL",
+            "commitSha": "2410d1dbf208f0e799459aff9376e5747dbf41a2",
+            "path": "clip_benchmark/README.md",
+            "contentSha256": "283b22befdfbe441a70e815ab31495c70aa2b57c4d4347b88c50371b3cbb8346",
+            "bytes": 58798,
+            "sourceRoute": "github:contents/OpenGVLab/InternVL@2410d1dbf208f0e799459aff9376e5747dbf41a2"
+          },
+          {
+            "owner": "OpenGVLab",
+            "repo": "InternVL",
+            "commitSha": "2410d1dbf208f0e799459aff9376e5747dbf41a2",
+            "path": "internvl_chat_gpt_oss/README.md",
+            "contentSha256": "a6931137bc7dc8c4d5b338aac6f18805f19c2600d21c643fdd3159fb5ca97bd5",
+            "bytes": 5086,
+            "sourceRoute": "github:contents/OpenGVLab/InternVL@2410d1dbf208f0e799459aff9376e5747dbf41a2"
+          },
+          {
+            "owner": "OpenGVLab",
+            "repo": "InternVL",
+            "commitSha": "2410d1dbf208f0e799459aff9376e5747dbf41a2",
+            "path": "internvl_chat_llava/README.md",
+            "contentSha256": "f4bea6bc9f702b2fe8541d20395319708394bb49c6dd4352478e1f2dc7ab0ba5",
+            "bytes": 28882,
+            "sourceRoute": "github:contents/OpenGVLab/InternVL@2410d1dbf208f0e799459aff9376e5747dbf41a2"
+          },
+          {
+            "owner": "OpenGVLab",
+            "repo": "InternVL",
+            "commitSha": "2410d1dbf208f0e799459aff9376e5747dbf41a2",
+            "path": "internvl_chat/README.md",
+            "contentSha256": "f8eca53df05a14e2d4c5e5e5a10ff445f5729c3371075987675d042cf0e808a4",
+            "bytes": 34742,
+            "sourceRoute": "github:contents/OpenGVLab/InternVL@2410d1dbf208f0e799459aff9376e5747dbf41a2"
+          },
+          {
+            "owner": "OpenGVLab",
+            "repo": "InternVL",
+            "commitSha": "2410d1dbf208f0e799459aff9376e5747dbf41a2",
+            "path": "internvl_g/README.md",
+            "contentSha256": "09b7b3ad5cba10e4544e78f1c1e645859be34dbfce370285b08b004a4bc8f9f2",
+            "bytes": 19959,
+            "sourceRoute": "github:contents/OpenGVLab/InternVL@2410d1dbf208f0e799459aff9376e5747dbf41a2"
+          },
+          {
+            "owner": "OpenGVLab",
+            "repo": "InternVL",
+            "commitSha": "2410d1dbf208f0e799459aff9376e5747dbf41a2",
+            "path": "README.md",
+            "contentSha256": "0d5338fba1508bf7ffc9ccb2479c852e20b195394376b3c648750706b1465e10",
+            "bytes": 70862,
+            "sourceRoute": "github:contents/OpenGVLab/InternVL@2410d1dbf208f0e799459aff9376e5747dbf41a2"
+          },
+          {
+            "owner": "OpenGVLab",
+            "repo": "InternVL",
+            "commitSha": "2410d1dbf208f0e799459aff9376e5747dbf41a2",
+            "path": "segmentation/README.md",
+            "contentSha256": "95300ca39dfb6b078ca97bfd48f927e04e8b061f081dee94ef26933576d23826",
+            "bytes": 6653,
+            "sourceRoute": "github:contents/OpenGVLab/InternVL@2410d1dbf208f0e799459aff9376e5747dbf41a2"
+          },
+          {
+            "owner": "OpenGVLab",
+            "repo": "InternVL",
+            "commitSha": "2410d1dbf208f0e799459aff9376e5747dbf41a2",
+            "path": "classification/train_in1k.sh",
+            "contentSha256": "e491154ef7cd949bfdb14ea96a9ede9d111bf6a3d32a900fc09fcf7098544355",
+            "bytes": 613,
+            "sourceRoute": "github:contents/OpenGVLab/InternVL@2410d1dbf208f0e799459aff9376e5747dbf41a2"
+          },
+          {
+            "owner": "OpenGVLab",
+            "repo": "InternVL",
+            "commitSha": "2410d1dbf208f0e799459aff9376e5747dbf41a2",
+            "path": "clip_benchmark/test_internvl_c_classification.sh",
+            "contentSha256": "48e514ec83144b703270b9fa029eeb422381bc656e9017a1f301b70b918adf07",
+            "bytes": 6076,
+            "sourceRoute": "github:contents/OpenGVLab/InternVL@2410d1dbf208f0e799459aff9376e5747dbf41a2"
+          },
+          {
+            "owner": "OpenGVLab",
+            "repo": "InternVL",
+            "commitSha": "2410d1dbf208f0e799459aff9376e5747dbf41a2",
+            "path": "clip_benchmark/test_internvl_c_imagenet.sh",
+            "contentSha256": "8091d7b4d48b7172ee50b2521981fe7f26bfcf66629fc2678b7c46ff3844ac31",
+            "bytes": 3127,
+            "sourceRoute": "github:contents/OpenGVLab/InternVL@2410d1dbf208f0e799459aff9376e5747dbf41a2"
+          },
+          {
+            "owner": "OpenGVLab",
+            "repo": "InternVL",
+            "commitSha": "2410d1dbf208f0e799459aff9376e5747dbf41a2",
+            "path": "clip_benchmark/test_internvl_c_retrieval.sh",
+            "contentSha256": "be4eb28e7a9cf201e07698c400f88bf3a996d3b1c0d66666a051ebd50975fb90",
+            "bytes": 1318,
+            "sourceRoute": "github:contents/OpenGVLab/InternVL@2410d1dbf208f0e799459aff9376e5747dbf41a2"
+          },
+          {
+            "owner": "OpenGVLab",
+            "repo": "InternVL",
+            "commitSha": "2410d1dbf208f0e799459aff9376e5747dbf41a2",
+            "path": "clip_benchmark/test_internvl_c_xtd.sh",
+            "contentSha256": "1f9beeeea3d408c576e916caba818afc348598d6e90992ab26bd1fe610378e3c",
+            "bytes": 2730,
+            "sourceRoute": "github:contents/OpenGVLab/InternVL@2410d1dbf208f0e799459aff9376e5747dbf41a2"
+          },
+          {
+            "owner": "OpenGVLab",
+            "repo": "InternVL",
+            "commitSha": "2410d1dbf208f0e799459aff9376e5747dbf41a2",
+            "path": "clip_benchmark/test_internvl_g_classification.sh",
+            "contentSha256": "8dee1db4ecb3838f7cad6105ac70ff6b0454a3b849cb92ccf5b36cea55da0e96",
+            "bytes": 6056,
+            "sourceRoute": "github:contents/OpenGVLab/InternVL@2410d1dbf208f0e799459aff9376e5747dbf41a2"
+          },
+          {
+            "owner": "OpenGVLab",
+            "repo": "InternVL",
+            "commitSha": "2410d1dbf208f0e799459aff9376e5747dbf41a2",
+            "path": "clip_benchmark/test_internvl_g_imagenet.sh",
+            "contentSha256": "f2da1d9373658d42a9ccb3911f153fb3ef4443f698e7949ec16d7b9a4f3ea68b",
+            "bytes": 3117,
+            "sourceRoute": "github:contents/OpenGVLab/InternVL@2410d1dbf208f0e799459aff9376e5747dbf41a2"
+          },
+          {
+            "owner": "OpenGVLab",
+            "repo": "InternVL",
+            "commitSha": "2410d1dbf208f0e799459aff9376e5747dbf41a2",
+            "path": "clip_benchmark/test_internvl_g_retrieval_finetune.sh",
+            "contentSha256": "438eb09c77ce16c6663e8175b7861084c2176470a0a77b110376a9e270725536",
+            "bytes": 1434,
+            "sourceRoute": "github:contents/OpenGVLab/InternVL@2410d1dbf208f0e799459aff9376e5747dbf41a2"
+          },
+          {
+            "owner": "OpenGVLab",
+            "repo": "InternVL",
+            "commitSha": "2410d1dbf208f0e799459aff9376e5747dbf41a2",
+            "path": "clip_benchmark/test_internvl_g_retrieval.sh",
+            "contentSha256": "596b8d40ef83c152669056ae8dc62b9418c13f51e223a752f92bcdaf9cd4c377",
+            "bytes": 1314,
+            "sourceRoute": "github:contents/OpenGVLab/InternVL@2410d1dbf208f0e799459aff9376e5747dbf41a2"
+          },
+          {
+            "owner": "OpenGVLab",
+            "repo": "InternVL",
+            "commitSha": "2410d1dbf208f0e799459aff9376e5747dbf41a2",
+            "path": "clip_benchmark/test_internvl_g_xtd.sh",
+            "contentSha256": "6abcc5f877227660254324fed7e836cd9970d18ed3f8ed0e5dc57d71edffcc64",
+            "bytes": 2722,
+            "sourceRoute": "github:contents/OpenGVLab/InternVL@2410d1dbf208f0e799459aff9376e5747dbf41a2"
+          },
+          {
+            "owner": "OpenGVLab",
+            "repo": "InternVL",
+            "commitSha": "2410d1dbf208f0e799459aff9376e5747dbf41a2",
+            "path": "internvl_chat/evaluate.sh",
+            "contentSha256": "a5a81416eabb503455d7058842a361912a7081cd0f8134c3ebbf08f516c49c4d",
+            "bytes": 22170,
+            "sourceRoute": "github:contents/OpenGVLab/InternVL@2410d1dbf208f0e799459aff9376e5747dbf41a2"
+          },
+          {
+            "owner": "OpenGVLab",
+            "repo": "InternVL",
+            "commitSha": "2410d1dbf208f0e799459aff9376e5747dbf41a2",
+            "path": "internvl_g/evaluate.sh",
+            "contentSha256": "24891faa0839d7cb871f96dfd9e9dd857dfca17cd49633cbecc31d72c1be8dfc",
+            "bytes": 1104,
+            "sourceRoute": "github:contents/OpenGVLab/InternVL@2410d1dbf208f0e799459aff9376e5747dbf41a2"
+          },
+          {
+            "owner": "OpenGVLab",
+            "repo": "InternVL",
+            "commitSha": "2410d1dbf208f0e799459aff9376e5747dbf41a2",
+            "path": "segmentation/dist_test.sh",
+            "contentSha256": "686862c4637453ff9d9dec6d984fc04fc5df57e86d166cfdc0daef1653f8e1f9",
+            "bytes": 245,
+            "sourceRoute": "github:contents/OpenGVLab/InternVL@2410d1dbf208f0e799459aff9376e5747dbf41a2"
+          },
+          {
+            "owner": "OpenGVLab",
+            "repo": "InternVL",
+            "commitSha": "2410d1dbf208f0e799459aff9376e5747dbf41a2",
+            "path": "segmentation/dist_train.sh",
+            "contentSha256": "4c4aa718739187ff9bfa90dd87dbcf6bdd20b8b5610e80dde2479eebe1d96494",
+            "bytes": 237,
+            "sourceRoute": "github:contents/OpenGVLab/InternVL@2410d1dbf208f0e799459aff9376e5747dbf41a2"
+          },
+          {
+            "owner": "OpenGVLab",
+            "repo": "InternVL",
+            "commitSha": "2410d1dbf208f0e799459aff9376e5747dbf41a2",
+            "path": "segmentation/slurm_test.sh",
+            "contentSha256": "d7724a37f23ae480efbf1badcfe797e57ac4f1d97cf87c3e11acb12c59520a30",
+            "bytes": 560,
+            "sourceRoute": "github:contents/OpenGVLab/InternVL@2410d1dbf208f0e799459aff9376e5747dbf41a2"
+          },
+          {
+            "owner": "OpenGVLab",
+            "repo": "InternVL",
+            "commitSha": "2410d1dbf208f0e799459aff9376e5747dbf41a2",
+            "path": "segmentation/slurm_train.sh",
+            "contentSha256": "e362efeabb174677b209f9f3c319d5fd4e4565ce57b0efdcb4fb9980c3a82d59",
+            "bytes": 533,
+            "sourceRoute": "github:contents/OpenGVLab/InternVL@2410d1dbf208f0e799459aff9376e5747dbf41a2"
+          },
+          {
+            "owner": "OpenGVLab",
+            "repo": "InternVL",
+            "commitSha": "2410d1dbf208f0e799459aff9376e5747dbf41a2",
+            "path": "segmentation/train.py",
+            "contentSha256": "daf69f18f9496c03eefab6eac65cbf967242c0ce648f37cc0fdff4422c288ced",
+            "bytes": 8442,
+            "sourceRoute": "github:contents/OpenGVLab/InternVL@2410d1dbf208f0e799459aff9376e5747dbf41a2"
+          }
+        ],
+        "failures": []
+      },
+      "failureCategory": null
+    },
+    {
+      "caseId": "v2-blip2",
+      "taskId": "v2-blip2-task",
+      "query": "What intermediary module bridges the frozen vision encoder and language model?",
+      "expectedStatus": "SUPPORTED",
+      "expectedAnswer": {
+        "component": "Q-Former"
+      },
+      "expectedSourceClass": [
+        "paper"
+      ],
+      "expectedLocator": "paper evidence",
+      "actualStatus": "SUPPORTED",
+      "actualAnswer": {
+        "component": "Q-Former"
+      },
+      "actualEvidence": [
+        {
+          "evidenceId": "real-paper-v2-blip2-component-0",
+          "sourceId": "https://arxiv.org/pdf/2301.12597v1",
+          "authors": [],
+          "title": "BLIP-2: Bootstrapping Language-Image Pre-training with Frozen Image Encoders and Large Language Models",
+          "identifiers": {
+            "arxiv": "2301.12597"
+          },
+          "locator": {
+            "section": "LLM",
+            "page": 13
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Model architecture for VQA ﬁnetuning, where the LLM receives Q-Former’s output and the question as input, then predicts answers.",
+          "citationText": "https://arxiv.org/pdf/2301.12597v1#LLM"
+        }
+      ],
+      "actualSourceClass": [
+        "paper_pdf"
+      ],
+      "actualLocator": {
+        "section": "…",
+        "page": 4
+      },
+      "workCorrect": false,
+      "identifierCorrect": false,
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "artifactStatus": "ACQUIRED",
+      "parserMode": "pymupdf-real-pdf",
+      "parserError": null,
+      "providerResolution": {
+        "mode": "known-work",
+        "candidates": 0,
+        "actualWork": null,
+        "providers": [
+          "arxiv"
+        ],
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "repositoryEvidence": null,
+      "failureCategory": null
+    },
+    {
+      "caseId": "v2-orpo",
+      "taskId": "v2-orpo-task",
+      "query": "Which preference-optimization method removes the reference model?",
+      "expectedStatus": "SUPPORTED",
+      "expectedAnswer": {
+        "method": "odds ratio preference optimization"
+      },
+      "expectedSourceClass": [
+        "paper"
+      ],
+      "expectedLocator": "paper evidence",
+      "actualStatus": "SUPPORTED",
+      "actualAnswer": {
+        "method": "odds ratio preference optimization"
+      },
+      "actualEvidence": [
+        {
+          "evidenceId": "real-paper-v2-orpo-method-0",
+          "sourceId": "https://arxiv.org/pdf/2403.07691v1",
+          "authors": [],
+          "title": "ORPO: Monolithic Preference Optimization without Reference Model",
+          "identifiers": {
+            "arxiv": "2403.07691"
+          },
+          "locator": {
+            "section": "1. GPT-4:",
+            "page": 22
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Mistral-ORPO-β: As an AI language model, I am an example of the technology used in ChatGPT.",
+          "citationText": "https://arxiv.org/pdf/2403.07691v1#1. GPT-4:"
+        }
+      ],
+      "actualSourceClass": [
+        "paper_pdf"
+      ],
+      "actualLocator": {
+        "section": "65.9 (0.33)",
+        "page": 7
+      },
+      "workCorrect": false,
+      "identifierCorrect": false,
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "artifactStatus": "ACQUIRED",
+      "parserMode": "pymupdf-real-pdf",
+      "parserError": null,
+      "providerResolution": {
+        "mode": "known-work",
+        "candidates": 0,
+        "actualWork": null,
+        "providers": [
+          "arxiv"
+        ],
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "repositoryEvidence": {
+        "repository": "huggingface/alignment-handbook",
+        "commitSha": "1de1fc996972aa76b7d40c64c07b66dec8b6976a",
+        "filesRead": 30,
+        "evidenceCount": 101,
+        "manifest": [
+          {
+            "owner": "huggingface",
+            "repo": "alignment-handbook",
+            "commitSha": "1de1fc996972aa76b7d40c64c07b66dec8b6976a",
+            "path": "README.md",
+            "contentSha256": "81968ef726bf2d77a3f0fc852f71446773492d64448b47c62ad51f2bceec9e91",
+            "bytes": 8375,
+            "sourceRoute": "github:contents/huggingface/alignment-handbook@1de1fc996972aa76b7d40c64c07b66dec8b6976a"
+          },
+          {
+            "owner": "huggingface",
+            "repo": "alignment-handbook",
+            "commitSha": "1de1fc996972aa76b7d40c64c07b66dec8b6976a",
+            "path": "recipes/constitutional-ai/README.md",
+            "contentSha256": "45cec670d980dee94b415f5957fa3854b2d51eb65598525cb19e34e836142eaa",
+            "bytes": 1039,
+            "sourceRoute": "github:contents/huggingface/alignment-handbook@1de1fc996972aa76b7d40c64c07b66dec8b6976a"
+          },
+          {
+            "owner": "huggingface",
+            "repo": "alignment-handbook",
+            "commitSha": "1de1fc996972aa76b7d40c64c07b66dec8b6976a",
+            "path": "recipes/pref_align_scan/README.md",
+            "contentSha256": "7e63aa013dfb29662b2df3039f0747cfe1266ccfddc55497f08380b1295eb767",
+            "bytes": 2035,
+            "sourceRoute": "github:contents/huggingface/alignment-handbook@1de1fc996972aa76b7d40c64c07b66dec8b6976a"
+          },
+          {
+            "owner": "huggingface",
+            "repo": "alignment-handbook",
+            "commitSha": "1de1fc996972aa76b7d40c64c07b66dec8b6976a",
+            "path": "recipes/smollm/README.md",
+            "contentSha256": "89cbeb1027b437fa8bc36ed30d377a17be58587cfa239899ff8f2ffb8d541810",
+            "bytes": 1128,
+            "sourceRoute": "github:contents/huggingface/alignment-handbook@1de1fc996972aa76b7d40c64c07b66dec8b6976a"
+          },
+          {
+            "owner": "huggingface",
+            "repo": "alignment-handbook",
+            "commitSha": "1de1fc996972aa76b7d40c64c07b66dec8b6976a",
+            "path": "recipes/smollm2/README.md",
+            "contentSha256": "9dbc468b03d4e05e5cfe6b7d2de36b0809972709531f563c791a8ff19a11a0b5",
+            "bytes": 1397,
+            "sourceRoute": "github:contents/huggingface/alignment-handbook@1de1fc996972aa76b7d40c64c07b66dec8b6976a"
+          },
+          {
+            "owner": "huggingface",
+            "repo": "alignment-handbook",
+            "commitSha": "1de1fc996972aa76b7d40c64c07b66dec8b6976a",
+            "path": "recipes/smollm3/README.md",
+            "contentSha256": "873cf33c53bdb0a47a6717c10b3cf408b6c71620a69e2417b90b1b35ffce24d7",
+            "bytes": 1272,
+            "sourceRoute": "github:contents/huggingface/alignment-handbook@1de1fc996972aa76b7d40c64c07b66dec8b6976a"
+          },
+          {
+            "owner": "huggingface",
+            "repo": "alignment-handbook",
+            "commitSha": "1de1fc996972aa76b7d40c64c07b66dec8b6976a",
+            "path": "recipes/starchat2-15b/README.md",
+            "contentSha256": "6ae57be18ffdd463fae1eccb96ca70bec1b1e812e7d34e1aa288c94ffa41a4aa",
+            "bytes": 1391,
+            "sourceRoute": "github:contents/huggingface/alignment-handbook@1de1fc996972aa76b7d40c64c07b66dec8b6976a"
+          },
+          {
+            "owner": "huggingface",
+            "repo": "alignment-handbook",
+            "commitSha": "1de1fc996972aa76b7d40c64c07b66dec8b6976a",
+            "path": "recipes/zephyr-141b-A35b/README.md",
+            "contentSha256": "9d9afdea0e5d90544b91fb748e90c1b4205e2f95e44fa9bc1d875c0cafe1bf2f",
+            "bytes": 1622,
+            "sourceRoute": "github:contents/huggingface/alignment-handbook@1de1fc996972aa76b7d40c64c07b66dec8b6976a"
+          },
+          {
+            "owner": "huggingface",
+            "repo": "alignment-handbook",
+            "commitSha": "1de1fc996972aa76b7d40c64c07b66dec8b6976a",
+            "path": "recipes/zephyr-7b-beta/README.md",
+            "contentSha256": "ae955c05438d70b61fd229dbe0631c14264ab396d9494c47927523a30eb7987f",
+            "bytes": 3283,
+            "sourceRoute": "github:contents/huggingface/alignment-handbook@1de1fc996972aa76b7d40c64c07b66dec8b6976a"
+          },
+          {
+            "owner": "huggingface",
+            "repo": "alignment-handbook",
+            "commitSha": "1de1fc996972aa76b7d40c64c07b66dec8b6976a",
+            "path": "recipes/zephyr-7b-gemma/README.md",
+            "contentSha256": "43f06c685a5c10bdea79b3a53ca44e056ae19a9752fb6fa5124e376b4c4a6601",
+            "bytes": 1437,
+            "sourceRoute": "github:contents/huggingface/alignment-handbook@1de1fc996972aa76b7d40c64c07b66dec8b6976a"
+          },
+          {
+            "owner": "huggingface",
+            "repo": "alignment-handbook",
+            "commitSha": "1de1fc996972aa76b7d40c64c07b66dec8b6976a",
+            "path": "scripts/README.md",
+            "contentSha256": "bead30532adbf4ec2cac8062733f470c3f01f925231e0d5273ebba8f06b832f3",
+            "bytes": 9650,
+            "sourceRoute": "github:contents/huggingface/alignment-handbook@1de1fc996972aa76b7d40c64c07b66dec8b6976a"
+          },
+          {
+            "owner": "huggingface",
+            "repo": "alignment-handbook",
+            "commitSha": "1de1fc996972aa76b7d40c64c07b66dec8b6976a",
+            "path": "recipes/constitutional-ai/dpo/config_anthropic.yaml",
+            "contentSha256": "0d550341b62c94cc20f51e3e2a6be3f57e163672db9c434b2651a055e27cf16b",
+            "bytes": 1539,
+            "sourceRoute": "github:contents/huggingface/alignment-handbook@1de1fc996972aa76b7d40c64c07b66dec8b6976a"
+          },
+          {
+            "owner": "huggingface",
+            "repo": "alignment-handbook",
+            "commitSha": "1de1fc996972aa76b7d40c64c07b66dec8b6976a",
+            "path": "recipes/constitutional-ai/sft/config_anthropic.yaml",
+            "contentSha256": "1b8a70d1fc7394c3820f2241ee1b41a8e19477e261f23064941f6fb233f7d16a",
+            "bytes": 1765,
+            "sourceRoute": "github:contents/huggingface/alignment-handbook@1de1fc996972aa76b7d40c64c07b66dec8b6976a"
+          },
+          {
+            "owner": "huggingface",
+            "repo": "alignment-handbook",
+            "commitSha": "1de1fc996972aa76b7d40c64c07b66dec8b6976a",
+            "path": "recipes/constitutional-ai/sft/config_grok.yaml",
+            "contentSha256": "a0d8e50d63f1c887d8b0200b2c5cbe7208cd1d7572606ab160a6ef0e7dfff5a6",
+            "bytes": 1766,
+            "sourceRoute": "github:contents/huggingface/alignment-handbook@1de1fc996972aa76b7d40c64c07b66dec8b6976a"
+          },
+          {
+            "owner": "huggingface",
+            "repo": "alignment-handbook",
+            "commitSha": "1de1fc996972aa76b7d40c64c07b66dec8b6976a",
+            "path": "recipes/pref_align_scan/dpo/config_openhermes.yaml",
+            "contentSha256": "bff504a05c19b064e3c7fccc585a2fcf14a73b03236da7e10b131358162f133d",
+            "bytes": 1196,
+            "sourceRoute": "github:contents/huggingface/alignment-handbook@1de1fc996972aa76b7d40c64c07b66dec8b6976a"
+          },
+          {
+            "owner": "huggingface",
+            "repo": "alignment-handbook",
+            "commitSha": "1de1fc996972aa76b7d40c64c07b66dec8b6976a",
+            "path": "recipes/pref_align_scan/dpo/config_zephyr.yaml",
+            "contentSha256": "028f87cdd33ac059db94021d93278c254a58907ea2eac02c85d3f71bf5b5a7e7",
+            "bytes": 1189,
+            "sourceRoute": "github:contents/huggingface/alignment-handbook@1de1fc996972aa76b7d40c64c07b66dec8b6976a"
+          },
+          {
+            "owner": "huggingface",
+            "repo": "alignment-handbook",
+            "commitSha": "1de1fc996972aa76b7d40c64c07b66dec8b6976a",
+            "path": "recipes/smollm/sft/config.yaml",
+            "contentSha256": "cd53661042ba1ab12ac906a2e2633c82eb144751af4a55f2b33fb8186de25621",
+            "bytes": 2915,
+            "sourceRoute": "github:contents/huggingface/alignment-handbook@1de1fc996972aa76b7d40c64c07b66dec8b6976a"
+          },
+          {
+            "owner": "huggingface",
+            "repo": "alignment-handbook",
+            "commitSha": "1de1fc996972aa76b7d40c64c07b66dec8b6976a",
+            "path": "recipes/smollm2/dpo/config_smol.yaml",
+            "contentSha256": "d2e6b0679d7e98976368b0f7ef091bf6728a5f5097d4e3a315f0813f88c64a5b",
+            "bytes": 1197,
+            "sourceRoute": "github:contents/huggingface/alignment-handbook@1de1fc996972aa76b7d40c64c07b66dec8b6976a"
+          },
+          {
+            "owner": "huggingface",
+            "repo": "alignment-handbook",
+            "commitSha": "1de1fc996972aa76b7d40c64c07b66dec8b6976a",
+            "path": "recipes/smollm2/dpo/config.yaml",
+            "contentSha256": "65851f952af9499181b2af2e88089d708fab7fb5727d61448d96e927b419698b",
+            "bytes": 1153,
+            "sourceRoute": "github:contents/huggingface/alignment-handbook@1de1fc996972aa76b7d40c64c07b66dec8b6976a"
+          },
+          {
+            "owner": "huggingface",
+            "repo": "alignment-handbook",
+            "commitSha": "1de1fc996972aa76b7d40c64c07b66dec8b6976a",
+            "path": "recipes/smollm2/sft/config_smol.yaml",
+            "contentSha256": "0a295380d69c334b7471df2bd1aaef261fdf3e55cac8a6563cb280ed5bd0df88",
+            "bytes": 1377,
+            "sourceRoute": "github:contents/huggingface/alignment-handbook@1de1fc996972aa76b7d40c64c07b66dec8b6976a"
+          },
+          {
+            "owner": "huggingface",
+            "repo": "alignment-handbook",
+            "commitSha": "1de1fc996972aa76b7d40c64c07b66dec8b6976a",
+            "path": "recipes/smollm2/sft/config.yaml",
+            "contentSha256": "441bba5a649a68456d3eb186ddbba532c84153005ac21cca405f1d95bca680b0",
+            "bytes": 1342,
+            "sourceRoute": "github:contents/huggingface/alignment-handbook@1de1fc996972aa76b7d40c64c07b66dec8b6976a"
+          },
+          {
+            "owner": "huggingface",
+            "repo": "alignment-handbook",
+            "commitSha": "1de1fc996972aa76b7d40c64c07b66dec8b6976a",
+            "path": "recipes/starchat2-15b/dpo/config_v0.1.yaml",
+            "contentSha256": "82596433a84114a615610d4a8b0d1988dc2b13101eb64adca2d30a8709893d49",
+            "bytes": 1501,
+            "sourceRoute": "github:contents/huggingface/alignment-handbook@1de1fc996972aa76b7d40c64c07b66dec8b6976a"
+          },
+          {
+            "owner": "huggingface",
+            "repo": "alignment-handbook",
+            "commitSha": "1de1fc996972aa76b7d40c64c07b66dec8b6976a",
+            "path": "recipes/starchat2-15b/sft/config_v0.1.yaml",
+            "contentSha256": "60325acb22b201aa3a81aa26c37894e5a9c47242d7813e84d0983a34b8091642",
+            "bytes": 2575,
+            "sourceRoute": "github:contents/huggingface/alignment-handbook@1de1fc996972aa76b7d40c64c07b66dec8b6976a"
+          },
+          {
+            "owner": "huggingface",
+            "repo": "alignment-handbook",
+            "commitSha": "1de1fc996972aa76b7d40c64c07b66dec8b6976a",
+            "path": "recipes/zephyr-141b-A35b/orpo/config_full.yaml",
+            "contentSha256": "fc16d5fcafb5f390281f4d8435d11b13a100f694542d7183790c56ce80f0c3e6",
+            "bytes": 1267,
+            "sourceRoute": "github:contents/huggingface/alignment-handbook@1de1fc996972aa76b7d40c64c07b66dec8b6976a"
+          },
+          {
+            "owner": "huggingface",
+            "repo": "alignment-handbook",
+            "commitSha": "1de1fc996972aa76b7d40c64c07b66dec8b6976a",
+            "path": "recipes/zephyr-7b-beta/dpo/config_full.yaml",
+            "contentSha256": "85294b7be6b40d9b94cd5984c0169b52a5516dd0fc9e1d089acec9011ac76803",
+            "bytes": 1148,
+            "sourceRoute": "github:contents/huggingface/alignment-handbook@1de1fc996972aa76b7d40c64c07b66dec8b6976a"
+          },
+          {
+            "owner": "huggingface",
+            "repo": "alignment-handbook",
+            "commitSha": "1de1fc996972aa76b7d40c64c07b66dec8b6976a",
+            "path": "recipes/zephyr-7b-beta/dpo/config_qlora.yaml",
+            "contentSha256": "f0d39984751d0bc2757a119d444910d96f5733b0b07b19cb990d254ce150ff52",
+            "bytes": 1178,
+            "sourceRoute": "github:contents/huggingface/alignment-handbook@1de1fc996972aa76b7d40c64c07b66dec8b6976a"
+          },
+          {
+            "owner": "huggingface",
+            "repo": "alignment-handbook",
+            "commitSha": "1de1fc996972aa76b7d40c64c07b66dec8b6976a",
+            "path": "recipes/zephyr-7b-beta/sft/config_full.yaml",
+            "contentSha256": "537b976b2febebc96bd9422e074578cbb171f28032557e1617cb05899f7b4075",
+            "bytes": 1672,
+            "sourceRoute": "github:contents/huggingface/alignment-handbook@1de1fc996972aa76b7d40c64c07b66dec8b6976a"
+          },
+          {
+            "owner": "huggingface",
+            "repo": "alignment-handbook",
+            "commitSha": "1de1fc996972aa76b7d40c64c07b66dec8b6976a",
+            "path": "recipes/zephyr-7b-beta/sft/config_qlora.yaml",
+            "contentSha256": "405c76507512f7a4e19661d4f85dcc2183a64a7992c0ca141c5a480e856393e5",
+            "bytes": 1839,
+            "sourceRoute": "github:contents/huggingface/alignment-handbook@1de1fc996972aa76b7d40c64c07b66dec8b6976a"
+          },
+          {
+            "owner": "huggingface",
+            "repo": "alignment-handbook",
+            "commitSha": "1de1fc996972aa76b7d40c64c07b66dec8b6976a",
+            "path": "recipes/zephyr-7b-gemma/dpo/config_full.yaml",
+            "contentSha256": "05c633d2957c671eb61e43f43efd1e67c08e34ba541bdc7a8345093eddfe6d50",
+            "bytes": 1087,
+            "sourceRoute": "github:contents/huggingface/alignment-handbook@1de1fc996972aa76b7d40c64c07b66dec8b6976a"
+          },
+          {
+            "owner": "huggingface",
+            "repo": "alignment-handbook",
+            "commitSha": "1de1fc996972aa76b7d40c64c07b66dec8b6976a",
+            "path": "recipes/zephyr-7b-gemma/sft/config_full.yaml",
+            "contentSha256": "0c21ab69a4aac877c6a34c87e2f42bbb1890faf4bbd891d7e68d1ed3cc6a2415",
+            "bytes": 1720,
+            "sourceRoute": "github:contents/huggingface/alignment-handbook@1de1fc996972aa76b7d40c64c07b66dec8b6976a"
+          }
+        ],
+        "failures": []
+      },
+      "failureCategory": null
+    },
+    {
+      "caseId": "v2-deepseekmath",
+      "taskId": "v2-deepseekmath-task",
+      "query": "Which reinforcement-learning algorithm is used for mathematical reasoning?",
+      "expectedStatus": "SUPPORTED",
+      "expectedAnswer": {
+        "algorithm": "GRPO"
+      },
+      "expectedSourceClass": [
+        "paper"
+      ],
+      "expectedLocator": "paper evidence",
+      "actualStatus": "SUPPORTED",
+      "actualAnswer": {
+        "algorithm": "GRPO"
+      },
+      "actualEvidence": [
+        {
+          "evidenceId": "real-paper-v2-deepseekmath-algorithm-0",
+          "sourceId": "https://arxiv.org/pdf/2402.03300v1",
+          "authors": [],
+          "title": "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models",
+          "identifiers": {
+            "arxiv": "2402.03300"
+          },
+          "locator": {
+            "section": "(18)",
+            "page": 29
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "",
+          "citationText": "https://arxiv.org/pdf/2402.03300v1#(18)"
+        }
+      ],
+      "actualSourceClass": [
+        "paper_pdf"
+      ],
+      "actualLocator": {
+        "section": "Math Seed",
+        "page": 5
+      },
+      "workCorrect": false,
+      "identifierCorrect": false,
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "artifactStatus": "ACQUIRED",
+      "parserMode": "pymupdf-real-pdf",
+      "parserError": null,
+      "providerResolution": {
+        "mode": "known-work",
+        "candidates": 0,
+        "actualWork": null,
+        "providers": [
+          "arxiv"
+        ],
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "repositoryEvidence": {
+        "repository": "deepseek-ai/DeepSeek-Math",
+        "commitSha": "b8b0f8ce093d80bf8e9a641e44142f06d092c305",
+        "filesRead": 2,
+        "evidenceCount": 0,
+        "manifest": [
+          {
+            "owner": "deepseek-ai",
+            "repo": "DeepSeek-Math",
+            "commitSha": "b8b0f8ce093d80bf8e9a641e44142f06d092c305",
+            "path": "evaluation/README.md",
+            "contentSha256": "3a44cae22d6ff0b783a07c23a5ffb41d2808d044f8ecc71837af766b85edf3f7",
+            "bytes": 1951,
+            "sourceRoute": "github:contents/deepseek-ai/DeepSeek-Math@b8b0f8ce093d80bf8e9a641e44142f06d092c305"
+          },
+          {
+            "owner": "deepseek-ai",
+            "repo": "DeepSeek-Math",
+            "commitSha": "b8b0f8ce093d80bf8e9a641e44142f06d092c305",
+            "path": "README.md",
+            "contentSha256": "6266dba5f54db9d34cbaf13c8116a933ba0a3f8bb81d3598b3fa220519fe1f26",
+            "bytes": 10684,
+            "sourceRoute": "github:contents/deepseek-ai/DeepSeek-Math@b8b0f8ce093d80bf8e9a641e44142f06d092c305"
+          }
+        ],
+        "failures": []
+      },
+      "failureCategory": null
+    },
+    {
+      "caseId": "v2-gqa",
+      "taskId": "v2-gqa-task",
+      "query": "What attention topology reduces key/value heads while retaining query heads?",
+      "expectedStatus": "SUPPORTED",
+      "expectedAnswer": {
+        "attention": "grouped-query attention"
+      },
+      "expectedSourceClass": [
+        "paper"
+      ],
+      "expectedLocator": "paper evidence",
+      "actualStatus": "SUPPORTED",
+      "actualAnswer": {
+        "attention": "grouped-query attention"
+      },
+      "actualEvidence": [
+        {
+          "evidenceId": "real-paper-v2-gqa-attention-0",
+          "sourceId": "https://arxiv.org/pdf/2305.13245v1",
+          "authors": [],
+          "title": "GQA: Training Generalized Multi-Query Transformer Models from Multi-Head Checkpoints",
+          "identifiers": {
+            "arxiv": "2305.13245"
+          },
+          "locator": {
+            "section": "A",
+            "page": 7
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Uptrained grouped-query attention models, however, appear to be stable.",
+          "citationText": "https://arxiv.org/pdf/2305.13245v1#A"
+        }
+      ],
+      "actualSourceClass": [
+        "paper_pdf"
+      ],
+      "actualLocator": {
+        "section": "GQA-8-XXL",
+        "page": 3
+      },
+      "workCorrect": false,
+      "identifierCorrect": false,
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "artifactStatus": "ACQUIRED",
+      "parserMode": "pymupdf-real-pdf",
+      "parserError": null,
+      "providerResolution": {
+        "mode": "known-work",
+        "candidates": 0,
+        "actualWork": null,
+        "providers": [
+          "arxiv"
+        ],
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "repositoryEvidence": null,
+      "failureCategory": null
+    },
+    {
+      "caseId": "v2-hyena",
+      "taskId": "v2-hyena-task",
+      "query": "What non-attention operator is central to Hyena?",
+      "expectedStatus": "SUPPORTED",
+      "expectedAnswer": {
+        "operator": "long convolutions"
+      },
+      "expectedSourceClass": [
+        "paper"
+      ],
+      "expectedLocator": "paper evidence",
+      "actualStatus": "SUPPORTED",
+      "actualAnswer": {
+        "operator": "long convolutions"
+      },
+      "actualEvidence": [
+        {
+          "evidenceId": "real-paper-v2-hyena-operator-0",
+          "sourceId": "https://arxiv.org/pdf/2302.10866v1",
+          "authors": [],
+          "title": "Hyena Hierarchy: Towards Larger Convolutional Language Models",
+          "identifiers": {
+            "arxiv": "2302.10866"
+          },
+          "locator": {
+            "section": "\u0003",
+            "page": 31
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "5: [Top]: Long convolution Hyena ﬁlters at initialization (153M parameters, 18 layer model).",
+          "citationText": "https://arxiv.org/pdf/2302.10866v1#\u0003"
+        }
+      ],
+      "actualSourceClass": [
+        "paper_pdf"
+      ],
+      "actualLocator": {
+        "section": "A.1",
+        "page": 18
+      },
+      "workCorrect": false,
+      "identifierCorrect": false,
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "artifactStatus": "ACQUIRED",
+      "parserMode": "pymupdf-real-pdf",
+      "parserError": null,
+      "providerResolution": {
+        "mode": "known-work",
+        "candidates": 0,
+        "actualWork": null,
+        "providers": [
+          "arxiv"
+        ],
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "repositoryEvidence": null,
+      "failureCategory": null
+    },
+    {
+      "caseId": "v2-colbert",
+      "taskId": "v2-colbert-task",
+      "query": "How does ColBERT compare query and document representations?",
+      "expectedStatus": "SUPPORTED",
+      "expectedAnswer": {
+        "interaction": "late interaction"
+      },
+      "expectedSourceClass": [
+        "paper"
+      ],
+      "expectedLocator": "paper evidence",
+      "actualStatus": "SUPPORTED",
+      "actualAnswer": {
+        "interaction": "late interaction"
+      },
+      "actualEvidence": [
+        {
+          "evidenceId": "real-paper-v2-colbert-interaction-0",
+          "sourceId": "https://arxiv.org/pdf/2004.12832v1",
+          "authors": [],
+          "title": "ColBERT: Efficient and Effective Passage Search via Contextualized Late Interaction over BERT",
+          "identifiers": {
+            "arxiv": "2004.12832"
+          },
+          "locator": {
+            "section": "CONCLUSIONS",
+            "page": 9
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "In this paper, we introduced ColBERT, a novel ranking model that employs contextualized late interaction over deep LMs (in particular, BERT) for eﬃcient retrieval.",
+          "citationText": "https://arxiv.org/pdf/2004.12832v1#CONCLUSIONS"
+        }
+      ],
+      "actualSourceClass": [
+        "paper_pdf"
+      ],
+      "actualLocator": {
+        "section": "Methodology",
+        "page": 6
+      },
+      "workCorrect": false,
+      "identifierCorrect": false,
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "artifactStatus": "ACQUIRED",
+      "parserMode": "pymupdf-real-pdf",
+      "parserError": null,
+      "providerResolution": {
+        "mode": "known-work",
+        "candidates": 0,
+        "actualWork": null,
+        "providers": [
+          "arxiv"
+        ],
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "repositoryEvidence": {
+        "repository": "stanford-futuredata/ColBERT",
+        "commitSha": "cc4f3dc91c0b45d2d08c251d9d95178285c65f1c",
+        "filesRead": 3,
+        "evidenceCount": 2,
+        "manifest": [
+          {
+            "owner": "stanford-futuredata",
+            "repo": "ColBERT",
+            "commitSha": "cc4f3dc91c0b45d2d08c251d9d95178285c65f1c",
+            "path": "README.md",
+            "contentSha256": "40897ba2f2db6854660a62893fb299941bf54350ddaad6a4ecfdd151ef028110",
+            "bytes": 11959,
+            "sourceRoute": "github:contents/stanford-futuredata/ColBERT@cc4f3dc91c0b45d2d08c251d9d95178285c65f1c"
+          },
+          {
+            "owner": "stanford-futuredata",
+            "repo": "ColBERT",
+            "commitSha": "cc4f3dc91c0b45d2d08c251d9d95178285c65f1c",
+            "path": "colbert/trainer.py",
+            "contentSha256": "4a22fdc9a872a559e5282fc4f1f0f5d4a7eb34dbf13f0a87d1e6da9c6c3dfe1f",
+            "bytes": 1257,
+            "sourceRoute": "github:contents/stanford-futuredata/ColBERT@cc4f3dc91c0b45d2d08c251d9d95178285c65f1c"
+          },
+          {
+            "owner": "stanford-futuredata",
+            "repo": "ColBERT",
+            "commitSha": "cc4f3dc91c0b45d2d08c251d9d95178285c65f1c",
+            "path": "colbert/training/training.py",
+            "contentSha256": "2595d083c38464cce602f88dd4050716a1281bb005871f5c1c2d3020c956a16a",
+            "bytes": 5797,
+            "sourceRoute": "github:contents/stanford-futuredata/ColBERT@cc4f3dc91c0b45d2d08c251d9d95178285c65f1c"
+          }
+        ],
+        "failures": []
+      },
+      "failureCategory": null
+    },
+    {
+      "caseId": "v2-dpr",
+      "taskId": "v2-dpr-task",
+      "query": "What retrieval representation does DPR learn?",
+      "expectedStatus": "SUPPORTED",
+      "expectedAnswer": {
+        "retriever": "dual-encoder dense retriever"
+      },
+      "expectedSourceClass": [
+        "paper"
+      ],
+      "expectedLocator": "paper evidence",
+      "actualStatus": "SUPPORTED",
+      "actualAnswer": {
+        "retriever": "dual-encoder dense retriever"
+      },
+      "actualEvidence": [
+        {
+          "evidenceId": "real-paper-v2-dpr-retriever-0",
+          "sourceId": "https://arxiv.org/pdf/2004.04906v1",
+          "authors": [],
+          "title": "Dense Passage Retrieval for Open-Domain Question Answering",
+          "identifiers": {
+            "arxiv": "2004.04906"
+          },
+          "locator": {
+            "section": "BM25+DPR",
+            "page": 8
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Single and Multi denote that our Dense Passage Retriever (DPR) was trained using individual or combined training datasets (all except SQuAD).",
+          "citationText": "https://arxiv.org/pdf/2004.04906v1#BM25+DPR"
+        }
+      ],
+      "actualSourceClass": [
+        "paper_pdf"
+      ],
+      "actualLocator": {
+        "section": "Experiments: Passage Retrieval",
+        "page": 5
+      },
+      "workCorrect": false,
+      "identifierCorrect": false,
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "artifactStatus": "ACQUIRED",
+      "parserMode": "pymupdf-real-pdf",
+      "parserError": null,
+      "providerResolution": {
+        "mode": "known-work",
+        "candidates": 0,
+        "actualWork": null,
+        "providers": [
+          "arxiv"
+        ],
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "repositoryEvidence": null,
+      "failureCategory": null
+    },
+    {
+      "caseId": "v2-cot",
+      "taskId": "v2-cot-task",
+      "query": "What intermediate outputs does chain-of-thought prompting elicit?",
+      "expectedStatus": "SUPPORTED",
+      "expectedAnswer": {
+        "trace": "intermediate reasoning steps"
+      },
+      "expectedSourceClass": [
+        "paper"
+      ],
+      "expectedLocator": "paper evidence",
+      "actualStatus": "SUPPORTED",
+      "actualAnswer": {
+        "trace": "intermediate reasoning steps"
+      },
+      "actualEvidence": [
+        {
+          "evidenceId": "real-paper-v2-cot-trace-0",
+          "sourceId": "https://arxiv.org/pdf/2201.11903v1",
+          "authors": [],
+          "title": "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models",
+          "identifiers": {
+            "arxiv": "2201.11903"
+          },
+          "locator": {
+            "section": "6.",
+            "page": 24
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Few-shot exemplars for full chain of thought prompt for math word problems.",
+          "citationText": "https://arxiv.org/pdf/2201.11903v1#6."
+        },
+        {
+          "evidenceId": "real-paper-v2-cot-trace-1",
+          "sourceId": "https://arxiv.org/pdf/2201.11903v1",
+          "authors": [],
+          "title": "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models",
+          "identifiers": {
+            "arxiv": "2201.11903"
+          },
+          "locator": {
+            "section": "19.5%",
+            "page": 16
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": ", 2021), which has a training set annotated with intermediate steps to arrive at the ﬁnal answer (similar to a chain of thought, except slightly more terse).",
+          "citationText": "https://arxiv.org/pdf/2201.11903v1#19.5%"
+        },
+        {
+          "evidenceId": "real-paper-v2-cot-trace-2",
+          "sourceId": "https://arxiv.org/pdf/2201.11903v1",
+          "authors": [],
+          "title": "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models",
+          "identifiers": {
+            "arxiv": "2201.11903"
+          },
+          "locator": {
+            "section": "137B LM",
+            "page": 15
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "A similar observation was made in Cobbe et al.",
+          "citationText": "https://arxiv.org/pdf/2201.11903v1#137B LM"
+        }
+      ],
+      "actualSourceClass": [
+        "paper_pdf"
+      ],
+      "actualLocator": {
+        "section": "6.",
+        "page": 24
+      },
+      "workCorrect": false,
+      "identifierCorrect": false,
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "artifactStatus": "ACQUIRED",
+      "parserMode": "pymupdf-real-pdf",
+      "parserError": null,
+      "providerResolution": {
+        "mode": "known-work",
+        "candidates": 0,
+        "actualWork": null,
+        "providers": [
+          "arxiv"
+        ],
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "repositoryEvidence": null,
+      "failureCategory": null
+    },
+    {
+      "caseId": "v2-selfconsistency",
+      "taskId": "v2-selfconsistency-task",
+      "query": "How does self-consistency select a final answer?",
+      "expectedStatus": "SUPPORTED",
+      "expectedAnswer": {
+        "method": "majority vote over sampled reasoning paths"
+      },
+      "expectedSourceClass": [
+        "paper"
+      ],
+      "expectedLocator": "paper evidence",
+      "actualStatus": "SUPPORTED",
+      "actualAnswer": {
+        "method": "majority vote over sampled reasoning paths"
+      },
+      "actualEvidence": [
+        {
+          "evidenceId": "real-paper-v2-selfconsistency-method-0",
+          "sourceId": "https://arxiv.org/pdf/2203.11171v1",
+          "authors": [],
+          "title": " self-consistency improves chain of thought reasoning in language models",
+          "identifiers": {
+            "arxiv": "2203.11171"
+          },
+          "locator": {
+            "section": "Conclusion",
+            "page": 10
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "We introduce a simple and effective method to improve reasoning in language models—sampling diverse reasoning paths in decoding and then choosing a ﬁnal answer via self-consistency.",
+          "citationText": "https://arxiv.org/pdf/2203.11171v1#Conclusion"
+        }
+      ],
+      "actualSourceClass": [
+        "paper_pdf"
+      ],
+      "actualLocator": {
+        "section": "Conclusion",
+        "page": 10
+      },
+      "workCorrect": false,
+      "identifierCorrect": false,
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "artifactStatus": "ACQUIRED",
+      "parserMode": "pymupdf-real-pdf",
+      "parserError": null,
+      "providerResolution": {
+        "mode": "known-work",
+        "candidates": 0,
+        "actualWork": null,
+        "providers": [
+          "arxiv"
+        ],
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "repositoryEvidence": null,
+      "failureCategory": null
+    },
+    {
+      "caseId": "v2-wav2vec",
+      "taskId": "v2-wav2vec-task",
+      "query": "What type of pretraining signal does wav2vec 2.0 use?",
+      "expectedStatus": "SUPPORTED",
+      "expectedAnswer": {
+        "objective": "contrastive learning"
+      },
+      "expectedSourceClass": [
+        "paper"
+      ],
+      "expectedLocator": "paper evidence",
+      "actualStatus": "SUPPORTED",
+      "actualAnswer": {
+        "objective": "contrastive learning"
+      },
+      "actualEvidence": [
+        {
+          "evidenceId": "real-paper-v2-wav2vec-objective-0",
+          "sourceId": "https://arxiv.org/pdf/2006.11477v1",
+          "authors": [],
+          "title": "wav2vec 2.0: A Framework for Self-Supervised Learning of Speech Representations",
+          "identifiers": {
+            "arxiv": "2006.11477"
+          },
+          "locator": {
+            "section": "0.10 U = 20",
+            "page": 19
+          },
+          "evidenceType": "DERIVED",
+          "sourceQuality": "C",
+          "evidence": "Given the leftmost or rightmost unmasked time step next to a masked span, we compute the contrastive loss only for the ﬁrst U masked time steps next to these unsmasked spans.",
+          "citationText": "https://arxiv.org/pdf/2006.11477v1#0.10 U = 20"
+        }
+      ],
+      "actualSourceClass": [
+        "paper_pdf"
+      ],
+      "actualLocator": {
+        "section": "Pre-training",
+        "page": 4
+      },
+      "workCorrect": false,
+      "identifierCorrect": false,
+      "answerCorrect": true,
+      "evidenceSourceCorrect": true,
+      "locatorCorrect": true,
+      "supportStatusCorrect": true,
+      "artifactStatus": "ACQUIRED",
+      "parserMode": "pymupdf-real-pdf",
+      "parserError": null,
+      "providerResolution": {
+        "mode": "known-work",
+        "candidates": 0,
+        "actualWork": null,
+        "providers": [
+          "arxiv"
+        ],
+        "failures": [
+          "arxiv: Error: arXiv request failed: 429"
+        ]
+      },
+      "repositoryEvidence": null,
+      "failureCategory": null
+    }
+  ]
+}
