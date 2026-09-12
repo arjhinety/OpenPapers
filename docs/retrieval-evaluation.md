@@ -1,5 +1,9 @@
 # Retrieval evaluation and experiments
 
+![Recall@1, Recall@5, and Recall@10 on the frozen 44-query offline fixture benchmark](../assets/retrieval-recall.png)
+
+Regenerate with `python scripts/plot-retrieval-recall.py [artifact.json]`. It reads Recall@1/5/10 and the query count from a recorded `baseline-v1-*.json` — defaulting to the newest by commit date — so the chart cannot drift from the artifact its footer cites. These are offline fixture-corpus numbers over the `lexical-hash-v1` retriever; they are not live fuzzy discovery, which is measured separately at Recall@10 ≈ 0.5 and sits outside the 1.0 contract (see [limitations](limitations.md)).
+
 ## Baselines
 
 `evals/results/baseline-v1-edadc8a31da6.json` is the clean Baseline V1 for the original 12-query / 12-work fixture set. It was generated from commit `edadc8a31da6` with `workingTreeDirty: false`.

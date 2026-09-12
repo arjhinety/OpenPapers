@@ -2,6 +2,8 @@
 
 This document defines what the OpenPapers test program covers, what each gate proves, and which recorded evidence backs every public claim a release makes. Evidence files are committed under `evals/results/` with their producing commit and timestamp; tests run deterministically and credential-free unless marked live.
 
+Every artifact filename embeds the 12-character commit that produced it. Some of those commits predate the 1.0.0 history squash and are not ancestors of `master`, so each one is preserved by an annotated `evidence/<commit>` tag — `git show evidence/02c9ae4cf29f` resolves the run that produced `live-search-reliability-02c9ae4cf29f.json`. An evidence artifact whose anchor does not resolve is not evidence; `scripts/plot-retrieval-recall.py` relies on this to order baselines by commit date rather than by filename.
+
 ## Test levels
 
 | Level | Gate | Command | What it proves |
@@ -21,14 +23,15 @@ All 37 registered MCP tools have behavioral tests at the handler boundary (`test
 - `npm run check` green on Node 22 and 24 (L0+L1).
 - `npm run test:e2e` green (L2): stdio, HTTP, SQLite restart.
 - `npm run test:docker` green with the persistence step passing (L4); evidence in `evals/results/docker-e2e-*.json`.
-- Live thresholds met (L3) in the recorded result: title-exact Recall@10 ≥ 0.9, identity correctness ≥ 0.95, zero-result-with-no-reported-failure = 0. Evidence: `evals/results/live-search-reliability-*.json`.
+- Live thresholds met (L3) in the recorded result: title-exact Recall@10 ≥ 0.9, identifier resolution ≥ 0.9, identity correctness ≥ 0.95, zero-result-with-no-reported-failure = 0. Evidence: `evals/results/live-search-reliability-*.json`.
+- The L3 run is **valid** (L3): at most half the cases hit a provider failure (`runValidity.providerFailureCaseRate` ≤ 0.5). Validity is checked before thresholds and is not a quality metric — a run whose providers were broadly rate-limited measures nothing, so `--strict` exits `2` (`LIVE RUN INVALID`) to distinguish it from a genuine quality failure, which exits `1`. See the 2026-09-08 degraded run recorded in [the release checklist](../RELEASE_CHECKLIST.md).
 
 ## Claims matrix
 
 | Public claim | Evidence (committed) | Scope and honest limits |
 |---|---|---|
-| Ranking and identity work deterministically offline | `evals/results/baseline-v1-*.json`: Recall@10 0.856, MRR 0.773 over 44 queries; identity accuracy 1.0 over 119 cases, false merge/split 0; `evals/results/retrieval-holdout-*.json`: Recall@1/5/10 1.0 (5 frozen queries, never used for tuning) | Fixture corpus; numbers are not comparable across datasets |
-| Search finds known works reliably | `evals/results/live-search-reliability-*.json`: title-exact Recall@10 1.0 (16 cases), identifier resolution 1.0 (8 cases: arXiv id, URL, DOI, doi.org URL forms) | 30-case run from one network region at one timestamp; fuzzy discovery Recall@10 0.5 is recorded as discovery quality, not a guarantee (see [limitations](limitations.md)) |
+| Ranking and identity work deterministically offline | `evals/results/baseline-v1-*.json`: Recall@10 0.856, MRR 0.773 over 44 queries; identity accuracy 1.0 over 119 cases, false merge/split 0; `evals/results/retrieval-holdout-*.json`: Recall@1/5/10 1.0 (5 frozen queries, never used for tuning) | Fixture corpus; numbers are not comparable across datasets. The holdout withholds **query phrasings, not documents**: all five target works (`lora`, `orpo`, `flashattention`, `self-instruct`, `mixtral`) also appear in the 44-query tuning set, so it measures paraphrase robustness over a tuned corpus, not generalization to unseen works. At n=5 a perfect score is weak evidence — treat it as a regression tripwire, not a quality estimate |
+| Search finds known works reliably | `evals/results/live-search-reliability-02c9ae4cf29f.json`: title-exact Recall@10 1.0 (16 cases), identifier resolution 1.0 (8 cases: arXiv id, URL, DOI, doi.org URL forms), 9/30 cases with provider failures | 30-case run from one network region at one timestamp; fuzzy discovery Recall@10 0.5 is recorded as discovery quality, not a guarantee (see [limitations](limitations.md)). A later run (`-80e161773c6a`) under sustained arXiv HTTP 429 recorded identifier resolution 0.0 and fuzzy 0.333 with 30/30 cases failing; it is retained as an invalid run, not a quality measurement |
 | Identity is never fabricated | Live identity correctness 1.0; `tests/identifier-probe.test.ts`; citation-integrity validation in the tool boundary; `tests/adversarial/full-flow.test.ts` | Heuristic extraction remains derived evidence, not verification |
 | Provider failures are surfaced, never silent | Live `zeroResultWithNoFailureReportedRate` 0; `evals/results/provider-degradation-*.json` (offline injected outages); per-case `providerFailures` in every live result row | Failure contents depend on provider responses; anonymous access degrades more than keyed access |
 | Every tool behaves per contract | `tests/tools-matrix.test.ts` (37/37) + `tests/mcp-contracts.test.ts` | Exercised with fixture providers over an in-memory database |

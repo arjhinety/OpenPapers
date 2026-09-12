@@ -3,14 +3,14 @@
   "version": "1.0.0",
   "license": "Apache-2.0",
   "description": "Provenance-first MCP server for reproducible LLM/ML research",
-  "mcpName": "io.github.arrogance231/openpapers",
+  "mcpName": "io.github.arjhinety/openpapers",
   "repository": {
     "type": "git",
-    "url": "https://github.com/arrogance231/OpenPapers.git"
+    "url": "https://github.com/arjhinety/OpenPapers.git"
   },
-  "homepage": "https://github.com/arrogance231/OpenPapers#readme",
+  "homepage": "https://github.com/arjhinety/OpenPapers#readme",
   "bugs": {
-    "url": "https://github.com/arrogance231/OpenPapers/issues"
+    "url": "https://github.com/arjhinety/OpenPapers/issues"
   },
   "keywords": [
     "mcp",

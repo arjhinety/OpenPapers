@@ -60,28 +60,45 @@ const aggregate = {
   maxLatencyMs: Math.max(...rows.map(row => row.latencyMs)),
 };
 
-const thresholds = { titleExactRecallAt10: 0.9, identityCorrectRate: 0.95, zeroResultWithNoFailureReportedRate: 0 };
+const thresholds = { titleExactRecallAt10: 0.9, identifierResolutionRate: 0.9, identityCorrectRate: 0.95, zeroResultWithNoFailureReportedRate: 0 };
 const thresholdsMet = {
   titleExactRecallAt10: aggregate.titleExactRecallAt10 >= thresholds.titleExactRecallAt10,
+  identifierResolutionRate: aggregate.identifierResolutionRate >= thresholds.identifierResolutionRate,
   identityCorrectRate: aggregate.identityCorrectRate >= thresholds.identityCorrectRate,
   zeroResultWithNoFailureReportedRate: aggregate.zeroResultWithNoFailureReportedRate <= thresholds.zeroResultWithNoFailureReportedRate,
 };
 
+// Run validity is separate from quality. A run whose providers were broadly unavailable does not
+// measure retrieval quality at all, so it must not be reported as a passing gate: on 2026-09-08 a
+// run with arXiv returning 429 for every case recorded identifierResolutionRate 0.0 while all three
+// gated thresholds still read true. Numerator counts CASES with at least one provider failure (not
+// the total failure count); denominator counts CASES. 9 of 30 -> 0.3 valid; 30 of 30 -> 1.0 invalid.
+const providerFailureCaseRate = aggregate.casesWithProviderFailures / (aggregate.cases || 1);
+const runValidity = {
+  providerFailureCaseRate,
+  maxProviderFailureCaseRate: 0.5,
+  valid: providerFailureCaseRate <= 0.5,
+};
+
 const commit = execFileSync('git', ['rev-parse', 'HEAD'], { cwd: root, encoding: 'utf8' }).trim();
 const result = {
-  schemaVersion: 'openpapers.live-search-reliability.v1',
+  schemaVersion: 'openpapers.live-search-reliability.v2',
   kind: 'live-provider',
   commit,
   timestamp: new Date().toISOString(),
   workingTreeDirty: execFileSync('git', ['status', '--porcelain'], { cwd: root, encoding: 'utf8' }).trim().length > 0,
   configuration: { providerMode: 'live', liveProviders: ['arxiv', 'crossref', 'openalex', 'semantic_scholar'], limit: LIMIT, throttleMs: THROTTLE_MS, networkRegion: 'single-region residential network' },
   dataset: { version: dataset.version, cases: dataset.cases.length, matchRule: dataset.protocol.matchRule },
-  thresholds, thresholdsMet, aggregate, cases: rows,
+  thresholds, thresholdsMet, runValidity, aggregate, cases: rows,
   limitations: 'Measured from one network region with anonymous provider access on one timestamp. Ranking metrics describe the top-10 of this run, not a guarantee; see docs/limitations.md.',
 };
 
 const output = join(root, 'evals/results', `live-search-reliability-${commit.slice(0, 12)}.json`);
 mkdirSync(dirname(output), { recursive: true });
 writeFileSync(output, JSON.stringify(result, null, 2) + '\n');
-console.log(JSON.stringify({ output, aggregate, thresholdsMet }, null, 2));
+console.log(JSON.stringify({ output, aggregate, thresholdsMet, runValidity }, null, 2));
+if (strict && !runValidity.valid) {
+  console.error(`LIVE RUN INVALID: ${aggregate.casesWithProviderFailures}/${aggregate.cases} cases had provider failures (max ${runValidity.maxProviderFailureCaseRate}); this run does not measure retrieval quality`);
+  process.exit(2);
+}
 if (strict && !Object.values(thresholdsMet).every(Boolean)) { console.error('LIVE THRESHOLDS NOT MET'); process.exit(1); }
