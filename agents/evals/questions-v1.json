@@ -1,0 +1,7 @@
+[
+  {"id": "dpo-mechanism", "query": "How does Direct Preference Optimization (DPO) avoid training an explicit reward model, and what does its beta parameter control?"},
+  {"id": "lora-rank", "query": "What low-rank decomposition does LoRA apply to transformer weight updates, and what ranks did the original paper find sufficient?"},
+  {"id": "qlora-memory", "query": "Which techniques does QLoRA combine to fine-tune a 65B model on a single 48GB GPU?"},
+  {"id": "flashattention-io", "query": "Why is FlashAttention faster than standard attention even though it performs the same FLOPs?"},
+  {"id": "rag-original", "query": "How did the original Retrieval-Augmented Generation (RAG) paper combine a retriever with a seq2seq generator, and how did RAG-Sequence differ from RAG-Token?"}
+]

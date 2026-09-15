@@ -1,0 +1,51 @@
+[project]
+name = "openpapers-agents"
+version = "0.1.0"
+description = "Multi-agent, citation-gated literature research over the OpenPapers MCP server (LangGraph, provider-agnostic)."
+authors = [
+    { name = "arrogance231", email = "alchemyofjhine@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "graphifyy==0.9.31",
+    "httpx>=0.28.1",
+    "langchain-core>=1.6.3",
+    "langchain-mcp-adapters>=0.3.2",
+    "langchain-openai>=1.6.2",
+    "langgraph>=1.2.11",
+    "pydantic>=2.13.5",
+    "python-dotenv>=1.0.1",
+]
+
+[project.scripts]
+openpapers-agents = "openpapers_agents.runner:main"
+openpapers-graph = "openpapers_agents.knowledge_graph:main"
+openpapers-doctor = "openpapers_agents.doctor:main"
+
+[project.optional-dependencies]
+tracing = [
+    "langchain>=1.0",
+    "langfuse>=4.15,<5",
+]
+grounding = [
+    "accelerate>=1.0",
+    "lettucedetect>=0.2.3,<0.3",
+    "minicheck",
+]
+
+[build-system]
+requires = ["uv_build>=0.12.13,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "pytest-asyncio>=1.4.0",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[tool.uv.sources]
+minicheck = { git = "https://github.com/Liyan06/MiniCheck.git", rev = "b58b9fa69acbd1015ec970fa65dd752413a053d2" }

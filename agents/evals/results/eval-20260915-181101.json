@@ -1,0 +1,395 @@
+{
+  "model": "cline-pass/deepseek-v4.1-flash",
+  "tier": "light",
+  "summary": {
+    "runs": 5,
+    "completed": 5,
+    "shipped": 4,
+    "evidence_recorded": 92,
+    "evidence_rejected": 1,
+    "evidence_rejection_rate": 0.0108,
+    "cited_sentences_before_repair": 163,
+    "supported_rate_before_repair": 0.816,
+    "cited_sentences_after_repair": 159,
+    "supported_rate_after_repair": 0.9937,
+    "unsupported_removed": 0,
+    "hard_gate_failures": 1,
+    "llm_calls": 174,
+    "cost_usd_reported": 0.2428,
+    "median_seconds": 588.6
+  },
+  "knowledge_graph": {
+    "nodes": 369,
+    "edges": 547,
+    "communities": 38,
+    "papers": 5,
+    "god_nodes": [
+      "QLoRA: Efficient Finetuning of Quantized LLMs",
+      "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness",
+      "Direct Preference Optimization: Your Language Model is Secretly a Reward Model",
+      "LoRA: Low-Rank Adaptation of Large Language Models",
+      "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks"
+    ],
+    "out_dir": "C:\\Users\\arro\\Downloads\\OpenPapers\\agents\\runs\\eval-20260915-181101\\graphify-out"
+  },
+  "runs": [
+    {
+      "id": "dpo-mechanism",
+      "query": "How does Direct Preference Optimization (DPO) avoid training an explicit reward model, and what does its beta parameter control?",
+      "run_dir": "C:\\Users\\arro\\Downloads\\OpenPapers\\agents\\runs\\eval-20260915-181101\\20260915-181101-how-does-direct-preference-optimization-dpo-avoi",
+      "metrics": {
+        "tier": "light",
+        "subquestions": 3,
+        "loci": 0,
+        "sources_seen": 34,
+        "evidence_recorded": 20,
+        "evidence_rejected": 1,
+        "evidence_rejection_reasons": {
+          "REJECTED_QUOTE_TOO_LONG": 1
+        },
+        "research_tool_calls": 55,
+        "critic_findings": 0,
+        "edits_applied": 7,
+        "edits_rejected": 0,
+        "citation_check_before": {
+          "supported": 24,
+          "partial": 6,
+          "unsupported": 0,
+          "unchecked": 0,
+          "total": 30,
+          "supported_rate": 0.8
+        },
+        "citation_check_after": {
+          "supported": 30,
+          "partial": 0,
+          "unsupported": 0,
+          "unchecked": 0,
+          "total": 30,
+          "supported_rate": 1.0
+        },
+        "unsupported_removed": 0,
+        "quote_violations_before_repair": 3,
+        "quotes_unquoted": 2,
+        "repeated_sentences_removed": 0,
+        "gate": {
+          "cited_sentences": 30,
+          "uncited_sentences": 0,
+          "unknown_ids": [],
+          "quote_violations": [
+            "reward inside this loss is the implicit reward \\(\\hat{r}_{\\theta}(x,y) = \\beta \\log(\\pi_{\\theta}(y|x)/\\pi_{\\text{ref}}(y|x))\\), which is defined by the language model \\(\\pi_{\\theta}\\) and the reference model \\(\\pi_{\\text{ref}}\\) without fitting an explicit, standalone reward model [E18, E15]. The gradient of the DPO loss increases the likelihood of preferred completions \\(y_w\\) and decreases the likelihood of dispreferred completions \\(y_l\\); examples are weighted by how much higher the implicit reward model rates the dispreferred completions, scaled by beta, i.e., how incorrectly the implicit reward model orders the completions, accounting for the strength of the KL constraint [E19]. DPO therefore implicitly optimizes the same objective as existing RLHF algorithms, reward maximization with a KL-divergence constraint"
+          ],
+          "untraceable_numbers": [],
+          "distinct_evidence_cited": 20,
+          "distinct_sources_cited": 1,
+          "hard_failures": 1
+        },
+        "ship": false,
+        "seconds": 686.9,
+        "node_seconds": {
+          "planner": 20.33,
+          "researcher": 1179.96,
+          "writer": 58.55,
+          "cite_check": 192.86,
+          "finalize": 0.03
+        },
+        "llm_calls": 35,
+        "input_tokens": 209273,
+        "output_tokens": 76475,
+        "cost_usd_reported": 0.062171,
+        "calls_by_role": {
+          "planner": 1,
+          "researcher": 27,
+          "writer": 1,
+          "verifier": 5,
+          "patcher": 1
+        },
+        "mcp_calls": 12
+      }
+    },
+    {
+      "id": "lora-rank",
+      "query": "What low-rank decomposition does LoRA apply to transformer weight updates, and what ranks did the original paper find sufficient?",
+      "run_dir": "C:\\Users\\arro\\Downloads\\OpenPapers\\agents\\runs\\eval-20260915-181101\\20260915-182229-what-low-rank-decomposition-does-lora-apply-to-t",
+      "metrics": {
+        "tier": "light",
+        "subquestions": 3,
+        "loci": 0,
+        "sources_seen": 17,
+        "evidence_recorded": 14,
+        "evidence_rejected": 0,
+        "evidence_rejection_reasons": {},
+        "research_tool_calls": 38,
+        "critic_findings": 0,
+        "edits_applied": 5,
+        "edits_rejected": 0,
+        "citation_check_before": {
+          "supported": 20,
+          "partial": 5,
+          "unsupported": 0,
+          "unchecked": 0,
+          "total": 25,
+          "supported_rate": 0.8
+        },
+        "citation_check_after": {
+          "supported": 25,
+          "partial": 0,
+          "unsupported": 0,
+          "unchecked": 0,
+          "total": 25,
+          "supported_rate": 1.0
+        },
+        "unsupported_removed": 0,
+        "quote_violations_before_repair": 0,
+        "quotes_unquoted": 0,
+        "repeated_sentences_removed": 0,
+        "gate": {
+          "cited_sentences": 26,
+          "uncited_sentences": 0,
+          "unknown_ids": [],
+          "quote_violations": [],
+          "untraceable_numbers": [
+            {
+              "sentence": "Section 7.2 reports that LoRA already performs competitively with a very small r, suggesting the update matrix ΔW could have a very small intrinsic rank [E10].",
+              "number": "7.2"
+            },
+            {
+              "sentence": "Section 7.2 refers to Table 6 [E10], but the ledger does not provide its exact numeric entries, so per-task optimum ranks are not quoted directly [E10].",
+              "number": "7.2"
+            }
+          ],
+          "distinct_evidence_cited": 14,
+          "distinct_sources_cited": 1,
+          "hard_failures": 0
+        },
+        "ship": true,
+        "seconds": 265.6,
+        "node_seconds": {
+          "planner": 10.29,
+          "researcher": 355.91,
+          "writer": 28.49,
+          "cite_check": 100.11,
+          "finalize": 0.0
+        },
+        "llm_calls": 35,
+        "input_tokens": 188748,
+        "output_tokens": 39755,
+        "cost_usd_reported": 0.038215,
+        "calls_by_role": {
+          "planner": 1,
+          "researcher": 27,
+          "writer": 1,
+          "verifier": 5,
+          "patcher": 1
+        },
+        "mcp_calls": 9
+      }
+    },
+    {
+      "id": "qlora-memory",
+      "query": "Which techniques does QLoRA combine to fine-tune a 65B model on a single 48GB GPU?",
+      "run_dir": "C:\\Users\\arro\\Downloads\\OpenPapers\\agents\\runs\\eval-20260915-181101\\20260915-182655-which-techniques-does-qlora-combine-to-fine-tune",
+      "metrics": {
+        "tier": "light",
+        "subquestions": 3,
+        "loci": 0,
+        "sources_seen": 20,
+        "evidence_recorded": 22,
+        "evidence_rejected": 0,
+        "evidence_rejection_reasons": {},
+        "research_tool_calls": 50,
+        "critic_findings": 0,
+        "edits_applied": 3,
+        "edits_rejected": 0,
+        "citation_check_before": {
+          "supported": 30,
+          "partial": 3,
+          "unsupported": 0,
+          "unchecked": 0,
+          "total": 33,
+          "supported_rate": 0.9091
+        },
+        "citation_check_after": {
+          "supported": 33,
+          "partial": 0,
+          "unsupported": 0,
+          "unchecked": 0,
+          "total": 33,
+          "supported_rate": 1.0
+        },
+        "unsupported_removed": 0,
+        "quote_violations_before_repair": 0,
+        "quotes_unquoted": 0,
+        "repeated_sentences_removed": 0,
+        "gate": {
+          "cited_sentences": 34,
+          "uncited_sentences": 0,
+          "unknown_ids": [],
+          "quote_violations": [],
+          "untraceable_numbers": [],
+          "distinct_evidence_cited": 21,
+          "distinct_sources_cited": 1,
+          "hard_failures": 0
+        },
+        "ship": true,
+        "seconds": 310.9,
+        "node_seconds": {
+          "planner": 9.73,
+          "researcher": 561.02,
+          "writer": 36.88,
+          "cite_check": 56.38,
+          "finalize": 0.01
+        },
+        "llm_calls": 34,
+        "input_tokens": 194297,
+        "output_tokens": 44534,
+        "cost_usd_reported": 0.041345,
+        "calls_by_role": {
+          "planner": 1,
+          "researcher": 25,
+          "writer": 1,
+          "verifier": 6,
+          "patcher": 1
+        },
+        "mcp_calls": 12
+      }
+    },
+    {
+      "id": "flashattention-io",
+      "query": "Why is FlashAttention faster than standard attention even though it performs the same FLOPs?",
+      "run_dir": "C:\\Users\\arro\\Downloads\\OpenPapers\\agents\\runs\\eval-20260915-181101\\20260915-183206-why-is-flashattention-faster-than-standard-atten",
+      "metrics": {
+        "tier": "light",
+        "subquestions": 3,
+        "loci": 0,
+        "sources_seen": 20,
+        "evidence_recorded": 22,
+        "evidence_rejected": 0,
+        "evidence_rejection_reasons": {},
+        "research_tool_calls": 64,
+        "critic_findings": 0,
+        "edits_applied": 10,
+        "edits_rejected": 0,
+        "citation_check_before": {
+          "supported": 31,
+          "partial": 8,
+          "unsupported": 2,
+          "unchecked": 0,
+          "total": 41,
+          "supported_rate": 0.7561
+        },
+        "citation_check_after": {
+          "supported": 38,
+          "partial": 1,
+          "unsupported": 0,
+          "unchecked": 0,
+          "total": 39,
+          "supported_rate": 0.9744
+        },
+        "unsupported_removed": 0,
+        "quote_violations_before_repair": 0,
+        "quotes_unquoted": 0,
+        "repeated_sentences_removed": 0,
+        "gate": {
+          "cited_sentences": 39,
+          "uncited_sentences": 0,
+          "unknown_ids": [],
+          "quote_violations": [],
+          "untraceable_numbers": [],
+          "distinct_evidence_cited": 21,
+          "distinct_sources_cited": 1,
+          "hard_failures": 0
+        },
+        "ship": true,
+        "seconds": 607.6,
+        "node_seconds": {
+          "planner": 14.06,
+          "researcher": 961.26,
+          "writer": 38.22,
+          "cite_check": 161.52,
+          "finalize": 0.02
+        },
+        "llm_calls": 34,
+        "input_tokens": 226547,
+        "output_tokens": 72703,
+        "cost_usd_reported": 0.063548,
+        "calls_by_role": {
+          "planner": 1,
+          "researcher": 24,
+          "writer": 1,
+          "verifier": 7,
+          "patcher": 1
+        },
+        "mcp_calls": 10
+      }
+    },
+    {
+      "id": "rag-original",
+      "query": "How did the original Retrieval-Augmented Generation (RAG) paper combine a retriever with a seq2seq generator, and how did RAG-Sequence differ from RAG-Token?",
+      "run_dir": "C:\\Users\\arro\\Downloads\\OpenPapers\\agents\\runs\\eval-20260915-181101\\20260915-184214-how-did-the-original-retrieval-augmented-generat",
+      "metrics": {
+        "tier": "light",
+        "subquestions": 3,
+        "loci": 0,
+        "sources_seen": 31,
+        "evidence_recorded": 14,
+        "evidence_rejected": 0,
+        "evidence_rejection_reasons": {},
+        "research_tool_calls": 48,
+        "critic_findings": 0,
+        "edits_applied": 6,
+        "edits_rejected": 0,
+        "citation_check_before": {
+          "supported": 28,
+          "partial": 4,
+          "unsupported": 2,
+          "unchecked": 0,
+          "total": 34,
+          "supported_rate": 0.8235
+        },
+        "citation_check_after": {
+          "supported": 32,
+          "partial": 0,
+          "unsupported": 0,
+          "unchecked": 0,
+          "total": 32,
+          "supported_rate": 1.0
+        },
+        "unsupported_removed": 0,
+        "quote_violations_before_repair": 0,
+        "quotes_unquoted": 0,
+        "repeated_sentences_removed": 0,
+        "gate": {
+          "cited_sentences": 32,
+          "uncited_sentences": 0,
+          "unknown_ids": [],
+          "quote_violations": [],
+          "untraceable_numbers": [],
+          "distinct_evidence_cited": 14,
+          "distinct_sources_cited": 1,
+          "hard_failures": 0
+        },
+        "ship": true,
+        "seconds": 588.6,
+        "node_seconds": {
+          "planner": 5.62,
+          "researcher": 1217.0,
+          "writer": 71.65,
+          "cite_check": 71.92,
+          "finalize": 0.04
+        },
+        "llm_calls": 36,
+        "input_tokens": 183543,
+        "output_tokens": 40978,
+        "cost_usd_reported": 0.037494,
+        "calls_by_role": {
+          "planner": 1,
+          "researcher": 27,
+          "writer": 1,
+          "verifier": 6,
+          "patcher": 1
+        },
+        "mcp_calls": 9
+      }
+    }
+  ]
+}
