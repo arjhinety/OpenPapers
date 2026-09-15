@@ -26,3 +26,24 @@ describe('OpenAlex graph provider', () => {
     expect((await provider.getCitations('https://openalex.org/W1',1))[0]?.openAlexId).toBe('https://openalex.org/W2');
   });
 });
+
+describe('OpenAlex authentication', () => {
+  it('sends OPENALEX_API_KEY as api_key on every request type', async () => {
+    const previous = { key: process.env.OPENALEX_API_KEY, email: process.env.OPENALEX_EMAIL };
+    process.env.OPENALEX_API_KEY = 'test-key'; delete process.env.OPENALEX_EMAIL;
+    const seen: string[] = [];
+    const child = {id:'https://openalex.org/W2',title:'Referenced',publication_year:2024,authorships:[]};
+    const provider = new OpenAlexProvider(async (input) => { const value=String(input); seen.push(value); const body=value.includes('filter=cites') || value.includes('search=') ? {results:[child]} : value.includes('W2') ? child : {referenced_works:['https://openalex.org/W2']}; return new Response(JSON.stringify(body),{status:200,headers:{'content-type':'application/json'}}); });
+    try {
+      await provider.search('lora', 1);
+      await provider.getReferences('https://openalex.org/W1', 1);
+      await provider.getCitations('https://openalex.org/W1', 1);
+      expect(seen.length).toBeGreaterThanOrEqual(4);
+      for (const url of seen) expect(new URL(url).searchParams.get('api_key')).toBe('test-key');
+      expect(seen.some(url => new URL(url).searchParams.has('mailto'))).toBe(false);
+    } finally {
+      if (previous.key === undefined) delete process.env.OPENALEX_API_KEY; else process.env.OPENALEX_API_KEY = previous.key;
+      if (previous.email !== undefined) process.env.OPENALEX_EMAIL = previous.email;
+    }
+  });
+});
