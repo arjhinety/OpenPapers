@@ -1,8 +1,8 @@
 """Optional Langfuse tracing: every graph node, LLM call and tool call as nested spans, with the
 run's gate metrics attached as trace scores.
 
-Enabled when LANGFUSE_PUBLIC_KEY and LANGFUSE_SECRET_KEY are set (plus LANGFUSE_HOST /
-LANGFUSE_BASE_URL for self-hosted) and `uv sync --extra tracing` installed the SDK. Otherwise
+Enabled when LANGFUSE_PUBLIC_KEY and LANGFUSE_SECRET_KEY are set (plus LANGFUSE_BASE_URL
+for another region or self-hosting) and `uv sync --extra tracing` installed the SDK. Otherwise
 every call here is a no-op, so tracing can never break a research run.
 """
 
@@ -59,7 +59,7 @@ def tracing_status() -> str:
         from langfuse.langchain import CallbackHandler  # noqa: F401  (needs the `langchain` package too)
     except ImportError as exc:
         return f"off (keys set but SDK incomplete: {exc}; run uv sync --extra tracing)"
-    return f"on ({os.getenv('LANGFUSE_HOST') or os.getenv('LANGFUSE_BASE_URL') or 'Langfuse Cloud'})"
+    return f"on ({os.getenv('LANGFUSE_BASE_URL') or os.getenv('LANGFUSE_HOST') or 'Langfuse Cloud'})"
 
 
 @contextmanager

@@ -18,6 +18,7 @@ from __future__ import annotations
 
 import gc
 import importlib.util
+import inspect
 import os
 import re
 from dataclasses import dataclass
@@ -25,7 +26,9 @@ from typing import Callable, Protocol
 
 DEFAULT_LETTUCE_MODEL = "KRLabsOrg/lettucedect-base-modernbert-en-v1"
 DEFAULT_MINICHECK_MODEL = "roberta-large"
-DEFAULT_THRESHOLD = 0.5
+# Calibrated for LettuceDetect on 127 blind-labelled pairs (evals/grounding): chosen on the QLoRA split,
+# held-out DPO balanced accuracy 0.848 -> 0.866 vs 0.5. MiniCheck is not calibrated; set it explicitly.
+DEFAULT_THRESHOLD = 0.45
 
 
 class GroundingChecker(Protocol):
@@ -50,11 +53,17 @@ class LettuceDetectChecker:
 
         self._detector = HallucinationDetector(method="transformer", model_path=model_path)
 
-    def support(self, pairs: list[tuple[str, str]], question: str) -> list[float]:
+    def support(self, pairs: list[tuple[str, str]], question: str, prefixes: list[str] | None = None) -> list[float]:
+        """`prefixes[i]` (the previous report sentence) is prepended to an anaphoric claim so "This…"
+        can be resolved; only spans inside the claim itself count, so the prefix can neither add
+        support nor be penalised."""
         scores = []
-        for context, claim in pairs:
-            spans = self._detector.predict(context=[context], question=question, answer=claim, output_format="spans")
-            worst = max((float(s.get("confidence", 1.0)) for s in spans), default=0.0)
+        for n, (context, claim) in enumerate(pairs):
+            prefix = (prefixes[n] if prefixes else "") or ""
+            answer = f"{prefix} {claim}" if prefix else claim
+            offset = len(prefix) + 1 if prefix else 0
+            spans = self._detector.predict(context=[context], question=question, answer=answer, output_format="spans")
+            worst = max((float(s.get("confidence", 1.0)) for s in spans if int(s.get("end", 0)) > offset), default=0.0)
             scores.append(round(1.0 - worst, 4))
         return scores
 
@@ -98,6 +107,14 @@ def plain(text: str) -> str:
     return re.sub(r"\s+([,.;:])", r"\1", text)
 
 
+_ANAPHOR_RE = re.compile(r"^\W*(this|these|that|those|it|its|they|their|such|both|thus|hence|therefore)\b", re.IGNORECASE)
+
+
+def is_anaphoric(sentence: str) -> bool:
+    """Opens by pointing back ("This keeps...", "They spill..."), so it needs the previous sentence."""
+    return bool(_ANAPHOR_RE.match(sentence))
+
+
 def is_meta(section: str) -> bool:
     """Sentences about gaps in the evidence cannot be supported by quotes; don't score them."""
     return bool(re.search(r"limitation|open question|future work", section, re.IGNORECASE))
@@ -132,16 +149,19 @@ def score_pairs(
     pairs: list[tuple[str, str]],
     question: str,
     on_error: Callable[[str, Exception], None] | None = None,
+    prefixes: list[str] | None = None,
 ) -> dict[str, list[float]]:
     """Score with each checker in turn. Names are built, used and released one at a time so at
-    most one model is resident; ready-made checker objects (tests) are used as-is."""
+    most one model is resident; ready-made checker objects (tests) are used as-is. `prefixes` go
+    only to checkers whose `support` accepts them (span-level ones)."""
     results: dict[str, list[float]] = {}
     for item in checkers:
         name = item if isinstance(item, str) else item.name
         checker = None
         try:
             checker = _BUILDERS[item]() if isinstance(item, str) else item
-            results[name] = checker.support(pairs, question)
+            takes_prefixes = "prefixes" in inspect.signature(checker.support).parameters
+            results[name] = checker.support(pairs, question, prefixes) if takes_prefixes else checker.support(pairs, question)
         except Exception as exc:  # noqa: BLE001 - a broken checker only loses its vote
             if on_error:
                 on_error(name, exc)

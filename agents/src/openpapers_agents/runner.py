@@ -15,7 +15,7 @@ from typing import Any, Literal
 from .config import Settings, load_settings
 from .evidence import Ledger, SourceStore
 from .graph import RunContext, build_graph
-from .grounding import resolve_checkers
+from .grounding import DEFAULT_THRESHOLD, resolve_checkers
 from .tracing import trace_run
 from .llm import LLM
 from .openpapers import OpenPapersBridge, ResearchTools
@@ -57,7 +57,8 @@ async def research(
                 research_steps=research_steps,
                 depth_steps=depth_steps,
                 grounding=checkers,
-                grounding_threshold=float(os.getenv("OPA_GROUNDING_THRESHOLD", "0.5")),
+                grounding_threshold=float(os.getenv("OPA_GROUNDING_THRESHOLD", str(DEFAULT_THRESHOLD))),
+                grounding_context=os.getenv("OPA_GROUNDING_CONTEXT", "0").strip().lower() in {"1", "true", "yes", "on"},
             )
             ctx.write("config.json", {"model": settings.llm.model, "role_models": settings.role_models, "base_url": settings.llm.base_url, "tier": tier, "max_subquestions": max_subquestions, "research_steps": research_steps, "depth_steps": depth_steps, "grounding": checkers, "grounding_problems": grounding_problems})
             trace_meta = {"run_dir": run_dir.name, "tier": tier, "model": settings.llm.model, "query": query}

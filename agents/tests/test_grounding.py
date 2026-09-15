@@ -2,7 +2,7 @@ from openpapers_agents.grounding import reconcile, resolve_checkers, score_pairs
 
 
 def test_vote_counts_checkers_at_or_above_threshold():
-    ballot = vote({"a": 0.5, "b": 0.49})
+    ballot = vote({"a": 0.5, "b": 0.49}, threshold=0.5)
     assert (ballot.supported_votes, ballot.total, ballot.all_reject) == (1, 2, False)
     assert vote({"a": 0.1, "b": 0.2}).all_reject
     assert not vote({}).all_reject  # no checkers means no veto
@@ -55,3 +55,10 @@ def test_meta_sections_are_not_grounded():
 
     sections = section_of_sentences("# T\n\nA claim here [E1].\n\n## Limitations and open questions\n\nThe paper does not report X [E2].")
     assert [is_meta(sections[s]) for s in ("A claim here [E1].", "The paper does not report X [E2].")] == [False, True]
+
+
+def test_default_threshold_is_the_calibrated_one():
+    from openpapers_agents.grounding import DEFAULT_THRESHOLD
+
+    assert DEFAULT_THRESHOLD == 0.45
+    assert vote({"lettucedetect": 0.46}).supported_votes == 1  # would have been a veto at 0.5

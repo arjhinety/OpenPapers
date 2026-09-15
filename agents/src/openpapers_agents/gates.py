@@ -218,6 +218,20 @@ def section_of_sentences(report: str) -> dict[str, str]:
     return out
 
 
+def previous_sentences(report: str) -> dict[str, str]:
+    """sentence -> the sentence before it in the same section ("" at a section start)."""
+    heading, prev = None, ""
+    out: dict[str, str] = {}
+    for line in body_of(report).splitlines():
+        if line.lstrip().startswith("#"):
+            heading, prev = line, ""
+            continue
+        for sentence in sentences(line):
+            out.setdefault(sentence, prev)
+            prev = sentence
+    return out
+
+
 def cited_pairs(report: str) -> list[tuple[str, list[str]]]:
     return [(s, ids) for s in sentences(report) if (ids := cited_ids(s))]
 

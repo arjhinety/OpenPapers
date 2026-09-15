@@ -159,7 +159,7 @@ async def test_independent_grounding_vetoes_llm_supported_sentence(tmp_path):
     # 2 scored pairs (the [E9] sentence cites unknown evidence and is never scored):
     #   S1 reward-model sentence: LLM supported, checker 0.1 -> disagree, downgraded to partial
     #   S2 70% sentence:          LLM partial,   checker 0.9 -> disagree (checkers never upgrade)
-    assert g == {"pairs_scored": 2, "agreement_rate": 0.0, "downgraded_to_repair": 1, "checker_support_rate": {"scripted": 0.5}}
+    assert g == {"pairs_scored": 2, "agreement_rate": 0.0, "downgraded_to_repair": 1, "checker_support_rate": {"scripted": 0.5}, "threshold": 0.45}
     before = result["metrics"]["citation_check_before"]
     assert (before["supported"], before["partial"]) == (0, 2)
     verdicts = result["cite_check"]["verdicts_before"]

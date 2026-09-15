@@ -116,7 +116,7 @@ small demo allowance; arXiv, Crossref and Semantic Scholar still cover search.
 ### 6. Verify the install
 
 ```bash
-uv run pytest                  # 36 offline tests, no network or API key needed
+uv run pytest                  # 40 offline tests, no network or API key needed
 uv run openpapers-doctor       # live checks: config, MCP handshake, LLM, tool calling, graphify
 ```
 
@@ -246,7 +246,7 @@ two small CPU models vote on every (cited quotes, sentence) pair as well:
 | `minicheck` | [MiniCheck](https://github.com/Liyan06/MiniCheck) RoBERTa-large | P(sentence supported by the quotes) |
 
 The rule is deliberately one-directional: when the LLM says *supported* but **every** checker
-scores below `OPA_GROUNDING_THRESHOLD` (0.5), the sentence is downgraded to *partial* and goes to
+scores below `OPA_GROUNDING_THRESHOLD` (0.45, calibrated below), the sentence is downgraded to *partial* and goes to
 repair. Checkers never upgrade a verdict, so a weak NLI model can cost a repair round but can never
 wave an unsupported sentence through. `cite_check.json` keeps both verdicts per sentence
 (`llm_verdict`, `grounding`), and `metrics.json → grounding` reports pairs scored, LLM/checker
@@ -267,6 +267,31 @@ LLM verifier on 75% of sentences and sent 6 LLM-"supported" sentences to repair;
 sentences were meta-statements in the Limitations section ("the paper does not report X"), which
 quotes cannot support. Those sections are now skipped — re-scoring the same run gives 85.2%
 agreement on 27 sentences with 3 vetoes.
+
+### Calibration against labelled data
+
+`evals/grounding/` holds 127 real (sentence, cited quotes) pairs from two grounded runs, labelled
+**blind** to every checker score and LLM verdict: *supported* only if every factual claim, numbers
+included, follows from the cited quotes (91 supported, 36 not — mostly inferences, rankings,
+computed figures, absence claims, and specifics the quotes never mention). The threshold is chosen
+on the QLoRA split (93 pairs) and evaluated on the **held-out** DPO split (34 pairs, different paper):
+
+| | Unsupported caught | Supported wrongly flagged |
+|---|---|---|
+| LLM verifier alone — QLoRA / DPO held-out | 23/31 · 4/5 | 0 · 0 |
+| LLM **and** LettuceDetect veto (pipeline rule) — QLoRA / DPO held-out | **29/31 · 5/5** | 8 · 2 |
+
+Across both splits the LLM verifier let 9 unsupported sentences through; the independent veto
+caught 7 of them, at the cost of 10 of 91 good sentences (11%) taking an unnecessary repair round
+(flagged sentences are rewritten, never deleted). Threshold 0.45 beat the old 0.5 on the held-out
+split (balanced accuracy 0.848 → 0.866: two more correct passes, no loss in catching unsupported
+ones); inside the veto rule it catches the same 34/36 unsupported sentences as 0.5 while wrongly
+flagging 10 good ones instead of 13. Giving anaphoric sentences ("This…") their previous sentence as context showed no measurable
+gain (only 6 of 127 pairs are anaphoric), so it is opt-in via `OPA_GROUNDING_CONTEXT=1`.
+
+Caveats: one labeller, two runs, two papers; the numbers show the veto's direction and rough size,
+not a benchmark. Re-run with `uv run python evals/grounding/calibrate.py` (needs `--extra grounding`);
+`calibration-v1.json` stores every pair's score.
 Loading takes ~25 s (LettuceDetect) and ~95 s (MiniCheck) per citation-check pass; scoring runs in
 a worker thread alongside the LLM verifier (~0.8 s/pair LettuceDetect, ~3 s/pair MiniCheck on CPU).
 
@@ -288,7 +313,7 @@ metrics are attached as trace scores (`supported_rate_after_repair`, `grounding_
 ```bash
 LANGFUSE_PUBLIC_KEY=pk-lf-...
 LANGFUSE_SECRET_KEY=sk-lf-...
-LANGFUSE_HOST=https://cloud.langfuse.com    # or your self-hosted URL
+LANGFUSE_BASE_URL=https://cloud.langfuse.com   # EU; US: https://us.cloud.langfuse.com; or self-hosted URL
 ```
 
 Langfuse Cloud's free tier needs no local infrastructure; self-hosting Langfuse runs it in Docker.
@@ -352,10 +377,11 @@ calls, cost and median wall time.
 | `OPA_MCP_LOG_LEVEL` | `error` | OpenPapers server log level |
 | `OPA_RUNS_DIR` | `agents/runs` | Where run folders are written |
 | `OPA_GROUNDING` | `auto` | Independent checkers: `auto` (LettuceDetect), `off`, or a comma list of `lettucedetect`, `minicheck` |
-| `OPA_GROUNDING_THRESHOLD` | `0.5` | Checker score below which a checker rejects a sentence |
+| `OPA_GROUNDING_THRESHOLD` | `0.45` | Checker score below which a checker rejects a sentence (calibrated for LettuceDetect) |
+| `OPA_GROUNDING_CONTEXT` | `0` | `1` gives anaphoric sentences ("This…") their previous sentence as context |
 | `OPA_LETTUCE_MODEL` | `KRLabsOrg/lettucedect-base-modernbert-en-v1` | LettuceDetect model (e.g. the `large` variant) |
 | `OPA_MINICHECK_MODEL` | `roberta-large` | MiniCheck model: `roberta-large`, `deberta-v3-large`, `flan-t5-large` |
-| `LANGFUSE_PUBLIC_KEY`, `LANGFUSE_SECRET_KEY`, `LANGFUSE_HOST` | — | Enable Langfuse tracing |
+| `LANGFUSE_PUBLIC_KEY`, `LANGFUSE_SECRET_KEY`, `LANGFUSE_BASE_URL` | — | Enable Langfuse tracing (`LANGFUSE_HOST` is the deprecated alias) |
 
 CLI flags: `--tier auto|light|full`, `--max-subquestions N` (default 4), `--research-steps N` and
 `--depth-steps N` (tool-loop budget per agent, default 10), `--run-dir PATH`, `--no-graph`,

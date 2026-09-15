@@ -22,8 +22,8 @@ from langgraph.types import Send
 
 from . import prompts
 from .evidence import Ledger, SourceStore
-from .gates import CITE_RE, apply_edits, section_of_sentences, check_report, cited_ids, cited_pairs, dedupe_repeats, render_references, sentences, unquote_unverified
-from .grounding import GroundingChecker, is_meta, plain, reconcile, score_pairs, vote
+from .gates import CITE_RE, apply_edits, previous_sentences, section_of_sentences, check_report, cited_ids, cited_pairs, dedupe_repeats, render_references, sentences, unquote_unverified
+from .grounding import DEFAULT_THRESHOLD, GroundingChecker, is_anaphoric, is_meta, plain, reconcile, score_pairs, vote
 from .llm import LLM, run_tool_agent
 from .openpapers import ResearchTools
 from .schemas import CriticReport, DepthNote, LociPlan, PatchSet, Plan, ResearchNote, VerdictSet
@@ -58,7 +58,8 @@ class RunContext:
     research_steps: int = 10
     depth_steps: int = 10
     grounding: list[str | GroundingChecker] = field(default_factory=list)  # names load lazily
-    grounding_threshold: float = 0.5
+    grounding_threshold: float = DEFAULT_THRESHOLD
+    grounding_context: bool = False  # previous sentence for anaphoric claims; no measured gain yet
     query: str = ""
     started: float = field(default_factory=time.time)
     timings: dict[str, float] = field(default_factory=dict)
@@ -230,10 +231,12 @@ def build_graph(ctx: RunContext):
         log = [{"stage": "critic_patch", "status": "applied", **e} for e in result.applied] + [{"stage": "critic_patch", "status": "rejected", **e} for e in result.rejected]
         return {"patched": result.text, "patch_log": log}
 
-    async def verify(report: str) -> dict[str, dict[str, Any]]:
-        """sentence -> verdict for every cited sentence."""
-        pairs = cited_pairs(report)
+    async def verify(report: str, only: set[str] | None = None) -> dict[str, dict[str, Any]]:
+        """sentence -> verdict for every cited sentence (or just `only`). Section and previous-
+        sentence context always come from the full report."""
+        pairs = [(s, ids) for s, ids in cited_pairs(report) if only is None or s in only]
         sections = section_of_sentences(report)
+        previous = previous_sentences(report)
         verdicts: dict[str, dict[str, Any]] = {}
         to_check: list[tuple[str, list[str]]] = []
         for sentence, ids in pairs:
@@ -266,7 +269,8 @@ def build_graph(ctx: RunContext):
             def on_error(name: str, exc: Exception) -> None:
                 ctx.event("grounding_error", checker=name, error=f"{type(exc).__name__}: {exc}"[:300])
 
-            by_checker = await asyncio.to_thread(score_pairs, ctx.grounding, items, ctx.query, on_error)
+            prefixes = [plain(CITE_RE.sub("", previous.get(s, ""))) if ctx.grounding_context and is_anaphoric(s) else "" for s, _ in scorable]
+            by_checker = await asyncio.to_thread(score_pairs, ctx.grounding, items, ctx.query, on_error, prefixes)
             for name, values in by_checker.items():
                 for (sentence, _), value in zip(scorable, values):
                     scores[sentence][name] = value
@@ -322,7 +326,7 @@ def build_graph(ctx: RunContext):
         verdicts_after = {s: v for s, v in verdicts_before.items() if s in final_pairs}
         changed = [s for s in final_pairs if s not in verdicts_before]
         if changed:
-            verdicts_after.update(await verify("\n".join(changed)))
+            verdicts_after.update(await verify(report, only=set(changed)))
 
         # hard floor: anything still unsupported is removed rather than shipped
         removed = []
@@ -339,7 +343,7 @@ def build_graph(ctx: RunContext):
             return {**counts, "total": total, "supported_rate": round(counts["supported"] / total, 4) if total else None}
 
         summary = {
-            "grounding": grounding_summary(verdicts_before),
+            "grounding": grounding_summary(verdicts_before, ctx.grounding_threshold),
             "before_repair": tally(verdicts_before),
             "after_repair": tally(verdicts_after),
             "flagged_for_repair": len(flagged),
@@ -417,7 +421,7 @@ def build_graph(ctx: RunContext):
     return graph.compile()
 
 
-def grounding_summary(verdicts: dict[str, dict[str, Any]]) -> dict[str, Any] | None:
+def grounding_summary(verdicts: dict[str, dict[str, Any]], threshold: float = DEFAULT_THRESHOLD) -> dict[str, Any] | None:
     """How often the independent checkers agree with the LLM verifier, per pair (same unit on
     both sides: one cited sentence)."""
     scored = [v for v in verdicts.values() if v.get("grounding")]
@@ -426,7 +430,7 @@ def grounding_summary(verdicts: dict[str, dict[str, Any]]) -> dict[str, Any] | N
     agree = 0
     per_checker: dict[str, list[float]] = {}
     for v in scored:
-        ballot = vote(v["grounding"])
+        ballot = vote(v["grounding"], threshold)
         llm_supported = v.get("llm_verdict", v["verdict"]) == "supported"
         agree += (ballot.supported_votes * 2 > ballot.total) == llm_supported
         for name, score in v["grounding"].items():
@@ -435,7 +439,8 @@ def grounding_summary(verdicts: dict[str, dict[str, Any]]) -> dict[str, Any] | N
         "pairs_scored": len(scored),
         "agreement_rate": round(agree / len(scored), 4),
         "downgraded_to_repair": sum(1 for v in scored if v.get("llm_verdict") == "supported" and v["verdict"] != "supported"),
-        "checker_support_rate": {name: round(sum(s >= 0.5 for s in vals) / len(vals), 4) for name, vals in per_checker.items()},
+        "checker_support_rate": {name: round(sum(s >= threshold for s in vals) / len(vals), 4) for name, vals in per_checker.items()},
+        "threshold": threshold,
     }
 
 

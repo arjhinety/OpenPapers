@@ -1,0 +1,127 @@
+{"id": "qlora-df8f9341", "label": 0, "reason": "inference beyond quotes"}
+{"id": "qlora-fb37d8fd", "label": 1, "reason": ""}
+{"id": "qlora-f942664d", "label": 1, "reason": ""}
+{"id": "qlora-b540b6e0", "label": 0, "reason": "interpretive framing ('primarily') + meta"}
+{"id": "qlora-e681da50", "label": 1, "reason": ""}
+{"id": "qlora-5d7a5613", "label": 1, "reason": ""}
+{"id": "qlora-dd37454b", "label": 1, "reason": ""}
+{"id": "qlora-07fdfba1", "label": 1, "reason": ""}
+{"id": "qlora-78d8eee6", "label": 1, "reason": ""}
+{"id": "qlora-55567f0b", "label": 1, "reason": ""}
+{"id": "qlora-b88f89d2", "label": 1, "reason": ""}
+{"id": "qlora-8643fa7f", "label": 1, "reason": ""}
+{"id": "qlora-068b5e74", "label": 1, "reason": ""}
+{"id": "qlora-692ede5b", "label": 1, "reason": ""}
+{"id": "qlora-bb229cf5", "label": 1, "reason": ""}
+{"id": "qlora-efe954d4", "label": 1, "reason": ""}
+{"id": "qlora-3afd7122", "label": 0, "reason": "ranking ('primarily') not in quotes"}
+{"id": "qlora-7a2f3646", "label": 0, "reason": "inference + absence claim"}
+{"id": "qlora-f71cc41c", "label": 0, "reason": "computed figures not in quotes"}
+{"id": "qlora-a0703255", "label": 0, "reason": "dataset/model names not in quotes"}
+{"id": "qlora-cd74fc2c", "label": 1, "reason": ""}
+{"id": "qlora-daf0c38c", "label": 1, "reason": ""}
+{"id": "qlora-a065e635", "label": 0, "reason": "optimizer-state inference"}
+{"id": "qlora-a244cb2e", "label": 0, "reason": "inference ('in memory', optimizer state)"}
+{"id": "qlora-3129bdd5", "label": 1, "reason": ""}
+{"id": "qlora-7f7a6529", "label": 0, "reason": "interpretive analysis"}
+{"id": "qlora-28dca52c", "label": 1, "reason": ""}
+{"id": "qlora-a044f08f", "label": 0, "reason": "absence claim"}
+{"id": "qlora-671e0ecb", "label": 1, "reason": ""}
+{"id": "qlora-e9ea8820", "label": 0, "reason": "absence claim"}
+{"id": "qlora-24a56bb0", "label": 0, "reason": "synthesis/exclusivity"}
+{"id": "qlora-b7ec1456", "label": 1, "reason": ""}
+{"id": "qlora-c7b37ef9", "label": 0, "reason": "FP8/FP32 types not stated"}
+{"id": "qlora-ff1ae5db", "label": 0, "reason": "negative clause inferred"}
+{"id": "qlora-3369833c", "label": 1, "reason": ""}
+{"id": "qlora-3f052b49", "label": 1, "reason": ""}
+{"id": "qlora-010376ec", "label": 0, "reason": "'NVIDIA unified memory' not in quote"}
+{"id": "qlora-5b9c376b", "label": 0, "reason": "inference"}
+{"id": "qlora-00aa1e75", "label": 1, "reason": ""}
+{"id": "qlora-b813c963", "label": 1, "reason": ""}
+{"id": "qlora-80a6f7a3", "label": 1, "reason": ""}
+{"id": "qlora-3f6599ef", "label": 0, "reason": "inference"}
+{"id": "qlora-064d4b7b", "label": 0, "reason": "normative interpretation"}
+{"id": "qlora-421de5b3", "label": 1, "reason": ""}
+{"id": "qlora-0fca693a", "label": 1, "reason": ""}
+{"id": "qlora-c1e3b06b", "label": 0, "reason": "meta reference to report structure"}
+{"id": "qlora-2673d5b9", "label": 0, "reason": "computed inference"}
+{"id": "qlora-1604f97a", "label": 1, "reason": ""}
+{"id": "qlora-f8029bb9", "label": 0, "reason": "dataset/model names not in quotes"}
+{"id": "qlora-efca8e6b", "label": 1, "reason": ""}
+{"id": "qlora-238ccf35", "label": 1, "reason": ""}
+{"id": "qlora-d089bdb4", "label": 0, "reason": "cause not in quote"}
+{"id": "qlora-f95954ef", "label": 1, "reason": ""}
+{"id": "qlora-2d3b947f", "label": 1, "reason": ""}
+{"id": "qlora-bf9d181f", "label": 1, "reason": ""}
+{"id": "qlora-2b0dd901", "label": 1, "reason": ""}
+{"id": "qlora-ccd52d96", "label": 1, "reason": ""}
+{"id": "qlora-93a839fd", "label": 1, "reason": ""}
+{"id": "qlora-a8527f47", "label": 0, "reason": "interpretive framing"}
+{"id": "qlora-0db4ac04", "label": 0, "reason": "meta/absence"}
+{"id": "qlora-80009f3c", "label": 0, "reason": "interpretive"}
+{"id": "qlora-06f73c2e", "label": 0, "reason": "interpretive"}
+{"id": "qlora-db478cb2", "label": 0, "reason": "exclusivity claim"}
+{"id": "qlora-ef2d50df", "label": 0, "reason": "absence claim"}
+{"id": "qlora-ef56b98d", "label": 1, "reason": ""}
+{"id": "qlora-fe0ef138", "label": 1, "reason": ""}
+{"id": "qlora-b90f67e2", "label": 1, "reason": ""}
+{"id": "qlora-31a74209", "label": 1, "reason": ""}
+{"id": "qlora-e6d107d3", "label": 1, "reason": ""}
+{"id": "qlora-8f8ad5e8", "label": 0, "reason": "absence claim"}
+{"id": "qlora-a65ca36a", "label": 1, "reason": ""}
+{"id": "qlora-5ec2a5a5", "label": 1, "reason": ""}
+{"id": "qlora-9733516c", "label": 1, "reason": ""}
+{"id": "qlora-d207e5d6", "label": 1, "reason": ""}
+{"id": "qlora-977c0a99", "label": 1, "reason": ""}
+{"id": "qlora-510eb577", "label": 1, "reason": ""}
+{"id": "qlora-f40a098f", "label": 1, "reason": ""}
+{"id": "qlora-497cff15", "label": 1, "reason": ""}
+{"id": "qlora-b0f0386b", "label": 1, "reason": ""}
+{"id": "qlora-a8b3562c", "label": 1, "reason": ""}
+{"id": "qlora-4108c278", "label": 1, "reason": ""}
+{"id": "qlora-b0d67cc7", "label": 1, "reason": ""}
+{"id": "qlora-fda4ae4f", "label": 1, "reason": ""}
+{"id": "qlora-c3b4a8fb", "label": 1, "reason": ""}
+{"id": "qlora-eb17504e", "label": 1, "reason": ""}
+{"id": "qlora-96bbe323", "label": 1, "reason": ""}
+{"id": "qlora-bdfea95c", "label": 1, "reason": ""}
+{"id": "qlora-a23a6e57", "label": 1, "reason": ""}
+{"id": "qlora-f4e41eaf", "label": 1, "reason": ""}
+{"id": "qlora-6a2f385e", "label": 1, "reason": ""}
+{"id": "qlora-4410fc2e", "label": 0, "reason": "inference ('in memory')"}
+{"id": "qlora-3853fc3a", "label": 1, "reason": ""}
+{"id": "qlora-c8e6ce60", "label": 0, "reason": "interpretive framing"}
+{"id": "dpo-e879f817", "label": 1, "reason": ""}
+{"id": "dpo-35a39f95", "label": 1, "reason": ""}
+{"id": "dpo-e54f5e3b", "label": 1, "reason": ""}
+{"id": "dpo-a59d6b92", "label": 1, "reason": ""}
+{"id": "dpo-3f63cbc0", "label": 1, "reason": ""}
+{"id": "dpo-bfc378c3", "label": 0, "reason": "closed-form claim not in quote"}
+{"id": "dpo-381a811c", "label": 1, "reason": ""}
+{"id": "dpo-158d79b9", "label": 1, "reason": ""}
+{"id": "dpo-3800ea6c", "label": 1, "reason": ""}
+{"id": "dpo-c42f551d", "label": 1, "reason": ""}
+{"id": "dpo-c33fe416", "label": 1, "reason": ""}
+{"id": "dpo-baee336d", "label": 1, "reason": ""}
+{"id": "dpo-458bcf04", "label": 1, "reason": ""}
+{"id": "dpo-dbe27355", "label": 0, "reason": "'expensive to estimate' not stated"}
+{"id": "dpo-59330716", "label": 1, "reason": ""}
+{"id": "dpo-0bfc5c3d", "label": 1, "reason": ""}
+{"id": "dpo-c28ff3fc", "label": 1, "reason": ""}
+{"id": "dpo-dc400b6d", "label": 1, "reason": ""}
+{"id": "dpo-21ad24b4", "label": 0, "reason": "meta/interpretive"}
+{"id": "dpo-c77b1cac", "label": 1, "reason": ""}
+{"id": "dpo-28f4c7ae", "label": 0, "reason": "inference"}
+{"id": "dpo-ae7750a6", "label": 1, "reason": ""}
+{"id": "dpo-679fe19a", "label": 1, "reason": ""}
+{"id": "dpo-ee501e0c", "label": 1, "reason": ""}
+{"id": "dpo-91d299a8", "label": 1, "reason": ""}
+{"id": "dpo-24628e53", "label": 1, "reason": ""}
+{"id": "dpo-80f8c135", "label": 0, "reason": "inference ('no generality lost')"}
+{"id": "dpo-0197b2e5", "label": 1, "reason": ""}
+{"id": "dpo-0602079e", "label": 1, "reason": ""}
+{"id": "dpo-d44f1410", "label": 1, "reason": ""}
+{"id": "dpo-9b3f8a8c", "label": 1, "reason": ""}
+{"id": "dpo-76fc9e1c", "label": 1, "reason": ""}
+{"id": "dpo-9dbbe4e6", "label": 1, "reason": ""}
+{"id": "dpo-d5c311ab", "label": 1, "reason": ""}
