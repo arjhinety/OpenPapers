@@ -63,7 +63,7 @@ jobs:
           OPENALEX_EMAIL: ${{ secrets.OPENALEX_EMAIL }}
       - name: Upload live evaluation results
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: live-eval-results-${{ github.run_id }}
           path: evals/results/live-search-reliability-*.json
